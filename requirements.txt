@@ -18,3 +18,17 @@ typing-extensions==3.10.0.2
 Werkzeug==2.0.2
 wrapt==1.12.1
 zipp==3.6.0
+numpy==1.17.2
+pandas==0.24.2
+requests
+beautifulsoup4==4.8.1
+selenium
+matplotlib
+seaborn
+scikit-learn
+scipy
+statsmodels==0.8.0
+pillow
+#mysqlclient
+#sqlalchemy
+#pymongo==2.8.1
