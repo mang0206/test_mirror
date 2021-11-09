@@ -8,19 +8,23 @@
     <link rel="stylesheet" href="../static/css/style.css">
 </head>
 
+{% block css %}
+{% endblock %}
+{% block script %}
+{% endblock %}
+
 <body>
     <header>
         <div class="wrapper">
-        <h1>
-            <a href="">Way to Beat Covid-19</a>
-        </h1>
-            <nav>
-                <ul class="menu">
-                    <li><a href="">DATA VISUALIZATION</a></li>
-                    <li><a href="">DIET</a></li>
-                    <li><a href="">KIT</a></li>
-                </ul>
-            </nav>
+            <h1>
+                <a href="">Way to Beat Covid-19</a>
+            </h1>
+            {% block navigation %}
+            {% endblock %}
+            <div class="content">
+                {% block content %}
+                {% endblock %}
+            </div>
         </div>
     </header>
 </body>

@@ -1,7 +1,15 @@
-from flask import Flask
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+def index():
+    return render_template("index.html")
+
+@app.route("/checker", methods=['GET', 'POST'])
+def kit():
+    if request.method == 'POST':
+        print(request.form.get('type1'))
+        return render_template('check.html', result=1)
+    else:
+        return render_template("checker.html")

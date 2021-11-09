@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block navigation %}
+  {% include 'header.html' %}
+{% endblock %}
+{% block content %}
+<div class='section'>
+  <form method="post">
+  <div>
+    <input type="checkbox" name="type1">Type1
+    <input type="checkbox" name="type2">Type2
+    <input type="checkbox" name="type3">Type3
+    <input type="checkbox" name="type4">Type4
+    <input type="checkbox" name="type5">Type5
+    <input type="checkbox" name="type6">Type6
+
+    <button name='button'>
+      검사
+    </button>
+  </div>
+  </form>
+</div>
+{% endblock %}
