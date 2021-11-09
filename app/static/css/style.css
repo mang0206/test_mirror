@@ -1,5 +1,8 @@
 /*reset*/
-*{margin: 0; padding: 0;}
+*{
+    margin: 0;
+    padding: 0;
+}
 
 /*common*/
 .wrapper{
@@ -36,4 +39,11 @@ h1{
     color: rgba(0, 0, 0, 0.5);
     padding: 0 30px;
     display: block;
+}
+
+/*index*/
+.section{
+    width: 1024px;
+    height: 100px;
+    overflow: hidden;
 }
