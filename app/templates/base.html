@@ -16,16 +16,24 @@
 <body>
     <header>
         <div class="wrapper">
+            <img src="../static/image/base_logo" alt="base_logo">
             <h1>
                 <a href="">Way to Beat Covid-19</a>
             </h1>
-            {% block navigation %}
-            {% endblock %}
-            <div class="content">
-                {% block content %}
-                {% endblock %}
-            </div>
         </div>
     </header>
+
+    <main>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+    <!-- 사용하게 될 경우 작성 -->
+    <footer>
+        <div>
+            <img src="" alt="">
+        </div>
+    </footer>
 </body>
 </html>
