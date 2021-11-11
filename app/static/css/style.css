@@ -9,7 +9,9 @@
     display: flex;
     justify-content: center;
     min-height: 100vh;
+    min-width: 1190px;
 }
+
 .clearfix{
     content: '';
     display: flex;
@@ -17,18 +19,40 @@
 
 /*header*/
 header{
-    position: fixed;
-    width: 100%;
+    position: relative;
+    min-width: 1190px;
     height: 100px;
+    overflow: hidden;
 }
 h1{
    line-height: 100px;
    float: left;
 }
 
+body{
+    font-size: 15px;
+    display: block;
+}
+
+/*base*/
+
+#container{
+    position: relative;
+    width: 1130;
+    padding: 20px 30px;
+    margin : 0 auto;
+    letter-spacing: -.2px;
+}
+
 /*index*/
 .section{
     width: 1024px;
     height: 100px;
+    overflow: hidden;
+}
+
+.bigsection{
+    width: 1024px;
+    height: 800px;
     overflow: hidden;
 }
