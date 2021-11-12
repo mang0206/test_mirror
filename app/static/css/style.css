@@ -1,34 +1,105 @@
+
 /*reset*/
 *{
-    margin: 0;
-    padding: 0;
+    background-color: rgb(175, 175, 175);
+    width: auto;
 }
 
-/*common*/
-.wrapper{
-    display: flex;
+/*title logo*/
+#way-to-beat-covid-19{
+    top: 0;
+    position: sticky;
     justify-content: center;
-    min-height: 100vh;
-}
-.clearfix{
-    content: '';
+    min-height: 80px;
     display: flex;
+    background-color: white;
+    z-index: 900;
+}
+/*스크롤하면 상단바 디자인 변경되는 기능*/
+.is-scrolled{
 }
 
-/*header*/
-header{
-    position: fixed;
-    width: 100%;
-    height: 100px;
+/*body margin 제거*/
+body{
+    margin: 0;
 }
-h1{
-   line-height: 100px;
-   float: left;
+
+/*content*/
+#content{
+    height: 100%;
+    margin-left: 80px;
+    margin-right: 80px;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /*index*/
-.section{
-    width: 1024px;
-    height: 100px;
-    overflow: hidden;
+#index{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#intro{
+    padding-bottom: 200px;
+    border: 1px solid;
+}
+#data_visual{
+    padding-bottom: 200px;
+    border: 1px solid;
+
+}
+#diet{
+    padding-bottom: 200px;
+    border: 1px solid;
+
+}
+#checker{
+    padding-bottom: 200px;
+    border: 1px solid;
+
+}
+#visualization{
+    padding-bottom: 200px;
+    border: 1px solid;
+
+}
+
+/*diet*/
+#diet{
+    width: 100%;
+    padding-bottom: 200px;
+    border: 1px solid;
+    text-align: center;
+
+}
+
+/*checker*/
+#checker{
+    width: 100%;
+    padding-bottom: 200px;
+    border: 1px solid;
+    text-align: center;
+
+}
+
+/*check*/
+#check{
+    width: 100%;
+    padding-bottom: 200px;
+    border: 1px solid;
+    text-align: center;
+
+}
+
+/*visualization*/
+#visualization{
+    width: 100%;
+    padding-bottom: 200px;
+    border: 1px solid;
+    text-align: center;
+
 }

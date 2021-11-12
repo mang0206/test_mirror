@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <title>Way to Beat Covid-19</title>
 
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css?ver=4.0">
+    <script defer src=""></script>
 </head>
 
 {% block css %}
@@ -13,27 +14,17 @@
 {% block script %}
 {% endblock %}
 
-<body>
-    <header>
-        <div class="wrapper">
-            <img src="../static/image/base_logo" alt="base_logo">
-            <h1>
-                <a href="">Way to Beat Covid-19</a>
-            </h1>
-        </div>
-    </header>
+<body id="base-body">
+    <!--class="is-scrolled" 마우스 스크롤 기능 적용 예정-->
+    <div id="way-to-beat-covid-19" class="is-scrolled"> 
+        <h1>
+            <a href="/">Way to Beat Covid-19</a>
+        </h1>
+    </div>
 
-    <main>
-        <div class="content">
-            {% block content %}
-            {% endblock %}
-        </div>
-    </main>
-    <!-- 사용하게 될 경우 작성 -->
-    <footer>
-        <div>
-            <img src="" alt="">
-        </div>
-    </footer>
+    <div id="content" class="">
+        {% block content %}
+        {% endblock %}
+    </div>
 </body>
 </html>
