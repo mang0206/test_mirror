@@ -22,15 +22,15 @@ Age_dict = {
 }
 
 Gender_dict = {
-    "Female":0,
-    "Male":1,
-    "Transgender":2
+    "Gender_Female":0,
+    "Gender_Male":1,
+    "Gender_Transgender":2
 }
 
 Contact_dict = {
-    "Dont-Know":0,
-    "No":1,
-    "Yes":2
+    "Contact_Dont-Know":0,
+    "Contact_No":1,
+    "Contact_Yes":2
 }
 
 model_params = {

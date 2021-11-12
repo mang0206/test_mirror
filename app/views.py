@@ -37,26 +37,27 @@ def checker():
             'Gender':0,
             'Contact':0
         }
+
         for i in request.form: # Fever
             value = request.form.get(i)
+
             if i not in ['Country', 'Age', 'Gender', 'Contact','button']:
                 input_data[i] = 1
             else:
-                if value == 'Country':
+                if i == 'Country':
                     input_data[i] = value
-                elif value == 'Age':
+                elif i == 'Age':
                     input_data[i] = Age_dict[value]
-                elif value == 'Gender':
+                elif i == 'Gender':
                     input_data[i] = Gender_dict[value]
-                elif value == 'Contact':
+                elif i == 'Contact':
                     input_data[i] = Contact_dict[value]
                 else:
-                    break
-        print(input_data)
+                    continue
+
         x = pd.DataFrame(input_data, index=[0])
-        print(x)
         pred = model.predict_proba(x)[:,1][0]
 
-        return render_template('check.html', result=pred)
+        return render_template('check.html', result=pred*0.3 + (1-pred)*0.7)
     else:
         return render_template("checker.html")
