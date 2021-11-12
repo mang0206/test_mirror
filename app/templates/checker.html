@@ -1,19 +1,88 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class='section'>
+<div class='bigsection'>
   <form method="post">
-  <div>
-    <input type="checkbox" name="type1">Type1
-    <input type="checkbox" name="type2">Type2
-    <input type="checkbox" name="type3">Type3
-    <input type="checkbox" name="type4">Type4
-    <input type="checkbox" name="type5">Type5
-    <input type="checkbox" name="type6">Type6
+    <div class='section'>
+      <input type="checkbox" name="Fever">고열
+      <input type="checkbox" name="Tiredness">피곤함
+      <input type="checkbox" name="Dry_Cough">마른기침
+      <input type="checkbox" name="Difficulty_in_Breathing">호흡곤란
+      <input type="checkbox" name="Sore_Throat">인후염
+      <input type="checkbox" name="None_Sympton">증상x
+    </div>
+    <div class='section'>
+      <input type="checkbox" name="Pains">근육통
+      <input type="checkbox" name="Nasal_Congestion">코막힘
+      <input type="checkbox" name="Runny_Nose">콧물
+      <input type="checkbox" name="Diarrhea">설사
+      <input type="checkbox" name="None_Experiencing">경험x
+    </div>
+      <div class='section'>
 
-    <button name='button'>
-      검사
-    </button>
-  </div>
+        <table style='display:inline;'>
+          <tr>
+            <td>
+              <select name="Country" id="">
+                <option value="Republic of Korean">Republic of Korean</option>
+                <option value="France">France</option>
+                <option value="Spain">Spain</option>
+                <option value="Italy">Italy</option>
+                <option value="Germany">Germany</option>
+                <option value="Other_EUR">Other_EUR</option>
+                <option value="UAE">UAE</option>
+                <option value="Iran">Iran</option>
+                <option value="China">China</option>
+                <option value="Other">Other</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+
+        <table style='display:inline;'>
+          <tr>
+            <td>
+              <select name="Age" id="">
+                <option value="Age_0-9">Age_0-9</option>
+                <option value="Age_10-19">Age_10-19</option>
+                <option value="Age_20-24">Age_20-24</option>
+                <option value="Age_25-59">Age_25-59</option>
+                <option value="Age_60+">Age_60+</option>
+
+              </select>
+            </td>
+          </tr>
+        </table>
+
+        <table style='display:inline;'>
+          <tr>
+            <td>
+              <select name="Gender" id="">
+                <option value="Gender_Female">Female</option>
+                <option value="Gender_Male">Male</option>
+                <option value="Gender_Transgender">Transgender</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+
+        <table style='display:inline;'>
+          <tr>
+            <td>
+              <select name="Contact" id="">
+                <option value="Contact_Dont-Know">Dont-Know</option>
+                <option value="Contact_No">No</option>
+                <option value="Contact_Yes">Yes</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+    </div>
+
+    <div>
+      <button name='button'>
+        검사
+      </button>
+    </div>
   </form>
 </div>
 {% endblock %}

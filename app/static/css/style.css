@@ -15,9 +15,9 @@
     background-color: white;
     z-index: 900;
 }
-/*스크롤하면 상단바 디자인 변경되는 기능*/
+/*스크롤하면 상단바 디자인 변경되는 기능 적용 예정
 .is-scrolled{
-}
+}*/
 
 /*body margin 제거*/
 body{
@@ -50,8 +50,8 @@ body{
 #data_visual{
     padding-bottom: 200px;
     border: 1px solid;
-
 }
+
 #diet{
     padding-bottom: 200px;
     border: 1px solid;
@@ -83,7 +83,6 @@ body{
     padding-bottom: 200px;
     border: 1px solid;
     text-align: center;
-
 }
 
 /*check*/
@@ -101,5 +100,27 @@ body{
     padding-bottom: 200px;
     border: 1px solid;
     text-align: center;
+}
 
+/*base*/
+
+#container{
+    position: relative;
+    width: 1130;
+    padding: 20px 30px;
+    margin : 0 auto;
+    letter-spacing: -.2px;
+}
+
+/*index*/
+.section{
+    width: 1024px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.bigsection{
+    width: 1024px;
+    height: 800px;
+    overflow: hidden;
 }
