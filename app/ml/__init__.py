@@ -47,5 +47,5 @@ model_params = {
 }
 
 model = CatBoostClassifier(**model_params)
-model.load_model(r'C:\Users\ghwls\diet_with_covid\app\ml\symptom_checker.cbm', format='cbm')
-
+model_path = os.path.join(".", "app", "ml", "symptom_checker.cbm")
+model.load_model(model_path, format='cbm')
