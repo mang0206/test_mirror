@@ -1,5 +1,6 @@
 .test
 
 app/__pycache__/
+app/ml/__pycache__/
 
 .ipynb_checkpoints
