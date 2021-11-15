@@ -2,8 +2,7 @@ from flask import Flask, render_template, request, redirect
 from .ml import model, Age_dict, Gender_dict, Contact_dict
 import pandas as pd
 from collections import defaultdict
-
-app = Flask(__name__)
+from . import app
 
 @app.route("/")
 def index():
