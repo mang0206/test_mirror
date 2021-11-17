@@ -1,6 +1,19 @@
 {% extends 'base.html' %}
+{% block member %}
+<div id="member">
+    <a href="/login">
+        <button id="login_button">
+            Log-in
+        </button>
+    </a>
+    <a href="/join">
+        <button id="join_button">
+            Join
+        </button>
+    </a>
+</div>
+{% endblock %}
 {% block content %}
-
 <div id="index" class="index">
     <div id="intro">
         <h2 id="with_corona">with Corona</h2>

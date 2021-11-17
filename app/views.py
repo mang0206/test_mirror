@@ -8,6 +8,18 @@ from . import app
 def index():
     return render_template("index.html")
 
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+@app.route("/join")
+def join():
+    return render_template("join.html")
+
+@app.route("/join_result")
+def join_result():
+    return render_template("join_result.html")
+
 @app.route("/diet")
 def diet():
     return render_template("diet.html")

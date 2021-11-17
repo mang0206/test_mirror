@@ -18,10 +18,23 @@
     <!--class="is-scrolled" 마우스 스크롤 기능 적용 예정-->
     <div id="top_bar" class="is-scrolled"> 
         <h1>
-            <a href="/">Way to Beat Covid-19</a>
+            <a href="/" style="background: white;">Way to Beat Covid-19</a>
         </h1>
+        {% block member %}
+        {% endblock %}
     </div>
-
+    <div id="base_login">
+        {% block login %}
+        {% endblock %}
+    </div>
+    <div id="base_join">
+        {% block join %}
+        {% endblock %}
+    </div>
+    <div id="join_result">
+        {% block join_result %}
+        {% endblock %}
+    </div>
     <div id="content" class="">
         {% block content %}
         {% endblock %}

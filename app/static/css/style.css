@@ -4,7 +4,11 @@
     background-color: rgb(175, 175, 175);
     width: auto;
 }
-
+/*--------body margin 제거--------*/
+body{
+    margin: 0;
+    margin-bottom: 50px;
+}
 /*--------title logo--------*/
 #top_bar{
     top: 0;
@@ -12,18 +16,135 @@
     justify-content: center;
     min-height: 80px;
     display: flex;
-    background-color: white;
+    background: white;
     z-index: 900;
 }
+/*--------index member--------*/
+#member{
+    top: 16px;
+    right: 20px;
+    position: absolute;
+    display: flex;
+    z-index: 1000;
+}
+#login_button{
+    font-size: 14px;
+    width: 100px;
+    height: 50px;
+    margin-right: 10px;
+    fill: none;
+    background-color: white;
+    border: 1px solid;
+}
+#join_button{
+    font-size: 14px;
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid;
+}
+/*--------login--------*/
+#base_login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#login{
+    width: 400px;
+    height: 500px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#login_email input {
+    width: 250px;
+    height: 40px;
+}
+#login_pw input {
+    width: 250px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+#forgot_pw{
+    margin-bottom: 30px;
+    text-decoration-line: underline;
+}
+#login_submit{
+    margin-bottom: 30px;
+    padding: 5px 15px 5px 15px;
+    border: 1px solid;
+}
+#login_join_button{
+    margin-right: 20px;
+    padding: 5px 15px 5px 15px;
+    border: 1px solid;
+}
+/*--------join--------*/
+#base_join{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#join{
+    width: 400px;
+    height: 500px;
+    border: 1px solid;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#user_name input {
+    width: 250px;
+    height: 40px;
+}
+#join_email input {
+    width: 250px;
+    height: 40px;
+}
+#join_pw input {
+    width: 250px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+#join_submit{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 5px 15px 5px 15px;
+    border: 1px solid;
+}
+/*--------join result--------*/
+#join_result_container{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#join_result_container h2{
+    margin-bottom: 100px;
+}
+#join_move_index{
+    margin-bottom: 40px;
+}
+#join_move_login{}
+/*--------link--------*/
+a:link{text-decoration: none; color: black;}
+a:visited{color: black;}
+a:active{color: white;}
+a:hover{color: gray;}
+
 /*스크롤하면 상단바 디자인 변경되는 기능 적용 예정
 .is-scrolled{
 }*/
-
-/*--------body margin 제거--------*/
-body{
-    margin: 0;
-    margin-bottom: 50px;
-}
 
 /*--------content--------*/
 #content{
@@ -49,7 +170,9 @@ body{
     border: 1px solid;
 }
 #with_corona{
-    font-family: , sans-serif;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    font-family: sans-serif;
     font-size: 120px;
 }
 
@@ -59,21 +182,21 @@ body{
 }
 
 #description{
+    display: flex;
+    justify-content: center;
     border: 1px solid;
 }
 
 #description_image{
     float: left;
     margin: 8px;
-    margin-left: 100px;
-    margin-right: 20px;
+    margin-right: 100px;
 }
 
 #description_text{
     float: right;
     height: 400px;
     margin-top: 100px;
-    margin-right: 100px;
     text-align: left;
 }
 
