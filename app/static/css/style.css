@@ -135,7 +135,7 @@ body{
 #join_move_index{
     margin-bottom: 40px;
 }
-#join_move_login{}
+#join_move_login
 /*--------link--------*/
 a:link{text-decoration: none; color: black;}
 a:visited{color: black;}
