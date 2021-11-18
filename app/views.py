@@ -24,11 +24,19 @@ def join_result():
 def diet():
     return render_template("diet.html")
 
+@app.route("/kit")
+def kit():
+    return render_template("checker.html")
+
+@app.route("/diet_result")
+def diet_result():
+    return render_template("diet_result.html")
+
 @app.route("/visualization")
 def visualization():
     return render_template("visualization.html")
 
-@app.route("/checker", methods=['GET', 'POST'])
+@app.route("/kit", methods=['GET', 'POST'])
 def checker():
     if request.method == 'POST':
         input_data = {
@@ -69,6 +77,6 @@ def checker():
         x = pd.DataFrame(input_data, index=[0])
         pred = model.predict_proba(x)[:,1][0]
 
-        return render_template('check.html', result=pred*0.3 + (1-pred)*0.7)
+        return render_template("check.html", result=pred*0.3 + (1-pred)*0.7)
     else:
         return render_template("checker.html")

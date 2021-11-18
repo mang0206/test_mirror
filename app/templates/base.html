@@ -6,7 +6,7 @@
     <title>Way to Beat Covid-19</title>
 
     <link rel="stylesheet" href="../static/css/style.css?ver=0.1">
-    <script defer src=""></script>
+    <script defer src="../static/js/javascript.js"></script>
 </head>
 
 {% block css %}
@@ -14,28 +14,27 @@
 {% block script %}
 {% endblock %}
 
-<body id="base_body">
-    <!--class="is-scrolled" 마우스 스크롤 기능 적용 예정-->
-    <div id="top_bar" class="is-scrolled"> 
+<body class="base_body">
+    <div class="top_bar"> 
         <h1>
             <a href="/" style="background: white;">Way to Beat Covid-19</a>
         </h1>
         {% block member %}
         {% endblock %}
     </div>
-    <div id="base_login">
+    <div class="base_login">
         {% block login %}
         {% endblock %}
     </div>
-    <div id="base_join">
+    <div class="base_join">
         {% block join %}
         {% endblock %}
     </div>
-    <div id="join_result">
+    <div class="join_result">
         {% block join_result %}
         {% endblock %}
     </div>
-    <div id="content" class="">
+    <div class="content">
         {% block content %}
         {% endblock %}
     </div>

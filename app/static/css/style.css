@@ -9,8 +9,14 @@ body{
     margin: 0;
     margin-bottom: 50px;
 }
+
+/*--------link style--------*/
+a:link{color: black; text-decoration: none;}
+a:visited{color: black}
+a:hover{color: gray;}
+a:active{color: white;}
 /*--------title logo--------*/
-#top_bar{
+.top_bar{
     top: 0;
     position: sticky;
     justify-content: center;
@@ -20,14 +26,14 @@ body{
     z-index: 900;
 }
 /*--------index member--------*/
-#member{
+.member{
     top: 16px;
     right: 20px;
     position: absolute;
     display: flex;
     z-index: 1000;
 }
-#login_button{
+.login_button{
     font-size: 14px;
     width: 100px;
     height: 50px;
@@ -36,7 +42,7 @@ body{
     background-color: white;
     border: 1px solid;
 }
-#join_button{
+.join_button{
     font-size: 14px;
     width: 100px;
     height: 50px;
@@ -44,13 +50,13 @@ body{
     border: 1px solid;
 }
 /*--------login--------*/
-#base_login{
+.base_login{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-#login{
+.login{
     width: 400px;
     height: 500px;
     padding-top: 30px;
@@ -61,37 +67,37 @@ body{
     align-items: center;
     justify-content: center;
 }
-#login_email input {
+.login_email input {
     width: 250px;
     height: 40px;
 }
-#login_pw input {
+.login_pw input {
     width: 250px;
     height: 40px;
     margin-bottom: 20px;
 }
-#forgot_pw{
+.forgot_pw{
     margin-bottom: 30px;
     text-decoration-line: underline;
 }
-#login_submit{
+.login_submit{
     margin-bottom: 30px;
     padding: 5px 15px 5px 15px;
     border: 1px solid;
 }
-#login_join_button{
+.login_join_button{
     margin-right: 20px;
     padding: 5px 15px 5px 15px;
     border: 1px solid;
 }
 /*--------join--------*/
-#base_join{
+.base_join{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-#join{
+.join{
     width: 400px;
     height: 500px;
     border: 1px solid;
@@ -102,52 +108,47 @@ body{
     align-items: center;
     justify-content: center;
 }
-#user_name input {
+.user_name input {
     width: 250px;
     height: 40px;
 }
-#join_email input {
+.join_email input {
     width: 250px;
     height: 40px;
 }
-#join_pw input {
+.join_pw input {
     width: 250px;
     height: 40px;
     margin-bottom: 20px;
 }
-#join_submit{
+.join_submit{
     margin-top: 20px;
     margin-bottom: 30px;
     padding: 5px 15px 5px 15px;
     border: 1px solid;
 }
 /*--------join result--------*/
-#join_result_container{
+.join_result_container{
     margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-#join_result_container h2{
+.join_result_container h2{
     margin-bottom: 100px;
 }
-#join_move_index{
+.join_move_index{
     margin-bottom: 40px;
 }
-#join_move_login
+.join_move_login
 /*--------link--------*/
 a:link{text-decoration: none; color: black;}
 a:visited{color: black;}
 a:active{color: white;}
 a:hover{color: gray;}
-
-/*스크롤하면 상단바 디자인 변경되는 기능 적용 예정
-.is-scrolled{
-}*/
-
 /*--------content--------*/
-#content{
+.content{
     height: 100%;
     margin-left: 80px;
     margin-right: 80px;
@@ -157,120 +158,141 @@ a:hover{color: gray;}
     align-items: center;
     justify-content: center;
 }
-
 /*--------index--------*/
-#index{
+.index{
     width: 100%;
     height: 100%;
     text-align: center;
 }
-
-#intro{
+.intro{
     padding-bottom: 150px;
     border: 1px solid;
 }
-#with_corona{
+.with_corona{
     padding-top: 100px;
     padding-bottom: 50px;
     font-family: sans-serif;
     font-size: 120px;
-}
 
-#data_visual{
-    padding-bottom: 200px;
+    animation: fadein 4s;
+    -webkit-animation: fadein 4s;
+}
+@-webkit-keyframes fadein {
+    from {opacity: 0;}
+    to{opacity: 1;}
+}
+.question{
+    font-size: 60px;
+}
+/*--------index diet--------*/
+.index_diet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border: 1px solid;
 }
-
-#description{
+.index_diet_image{
+    margin-top: 50px;
+}
+.index_diet_description{
+    height: 400px;
+    margin-top: 50px;
+}
+.index_diet_description_detail{
+    width: 500px;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+.index_diet_button{
+    padding: 15px 40px 15px 40px;
+    font-size: 20pt;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 1px;
+    border-radius: 15px;
+}
+/*--------index visual--------*/
+.index_visual{
     display: flex;
     justify-content: center;
     border: 1px solid;
 }
-
-#description_image{
+.index_visual_image{
     float: left;
     margin: 8px;
     margin-right: 100px;
 }
-
-#description_text{
+.index_visual_description{
     float: right;
     height: 400px;
     margin-top: 100px;
     text-align: left;
 }
-
-#description_diet_detail{
+.index_visual_description_detail{
+    width: 200px;
     margin-top: 30px;
     margin-bottom: 80px;
-
 }
-#description_checker_detail{
-    margin-top: 30px;
-    margin-bottom: 80px;
-
-}
-#description_visualization_detail{
-    margin-top: 30px;
-    margin-bottom: 80px;
-
-}
-
 /*--------diet--------*/
-#diet{
+.diet{
     width: 100%;
     padding-bottom: 200px;
     border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-
 }
-
+/*--------kit--------*/
+.kit{
+    width: 100%;
+    padding-bottom: 200px;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 /*--------checker--------*/
-#checker{
+.checker{
     width: 100%;
     padding-bottom: 200px;
-    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
-
 /*--------check--------*/
-#check{
-    width: 100%;
-    padding-bottom: 200px;
-    border: 1px solid;
+.check{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 
 }
+/*--------loading--------*/
 
+/*--------diet result--------*/
+.diet_result{
+    width: 100%;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.word_cloud{
+    margin-bottom: 100px;
+}
 /*--------visualization--------*/
-#visualization{
+.visualization{
     width: 100%;
     padding-bottom: 200px;
     border: 1px solid;
     text-align: center;
-}
-
-/*-----------------------------------------------------*/
-
-/*base*/
-
-#container{
-    position: relative;
-    width: 1130;
-    padding: 20px 30px;
-    margin : 0 auto;
-    letter-spacing: -.2px;
-}
-
-/*index*/
-.section{
-    width: 1024px;
-    height: 100px;
-    overflow: hidden;
-}
-
-.bigsection{
-    width: 1024px;
-    height: 800px;
-    overflow: hidden;
 }
