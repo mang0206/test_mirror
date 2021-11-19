@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="kit">
+    <div class="kit_analysis">
+        현재 식단 분석
+    </div>
+    <div>
+        분석 차트 - react
+    </div>
+    <div>
+        증상 여부 checkbox
+        {% block checker %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}

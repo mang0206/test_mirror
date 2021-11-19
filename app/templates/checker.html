@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
-{% block content %}
-<div class='bigsection'>
+{% extends 'kit.html' %}
+{% block checker %}
+<div class='checker'>
   <form method="post">
     <div class='section'>
       <input type="checkbox" name="Fever">고열
@@ -22,7 +22,7 @@
         <table style='display:inline;'>
           <tr>
             <td>
-              <select name="Country" id="">
+              <select name="Country">
                 <option value="Republic of Korean">Republic of Korean</option>
                 <option value="France">France</option>
                 <option value="Spain">Spain</option>
@@ -41,7 +41,7 @@
         <table style='display:inline;'>
           <tr>
             <td>
-              <select name="Age" id="">
+              <select name="Age">
                 <option value="Age_0-9">Age_0-9</option>
                 <option value="Age_10-19">Age_10-19</option>
                 <option value="Age_20-24">Age_20-24</option>
@@ -56,7 +56,7 @@
         <table style='display:inline;'>
           <tr>
             <td>
-              <select name="Gender" id="">
+              <select name="Gender">
                 <option value="Gender_Female">Female</option>
                 <option value="Gender_Male">Male</option>
                 <option value="Gender_Transgender">Transgender</option>
@@ -68,7 +68,7 @@
         <table style='display:inline;'>
           <tr>
             <td>
-              <select name="Contact" id="">
+              <select name="Contact">
                 <option value="Contact_Dont-Know">Dont-Know</option>
                 <option value="Contact_No">No</option>
                 <option value="Contact_Yes">Yes</option>
