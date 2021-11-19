@@ -5,24 +5,36 @@
     <meta charset="UTF-8">
     <title>Way to Beat Covid-19</title>
 
-    <link rel="stylesheet" href="../static/css/style.css?ver=">
-    <script defer src=""></script>
+    <link rel="stylesheet" href="../static/css/style.css?ver=0.1">
+    <script defer src="../static/js/javascript.js"></script>
 </head>
 
 {% block css %}
 {% endblock %}
-{% block script %}
+{% block javascript %}
 {% endblock %}
 
-<body id="base-body">
-    <!--class="is-scrolled" 마우스 스크롤 기능 적용 예정-->
-    <div id="way-to-beat-covid-19" class="is-scrolled"> 
+<body class="base_body">
+    <div class="top_bar"> 
         <h1>
-            <a href="/">Way to Beat Covid-19</a>
+            <a href="/" style="background: white;">Way to Beat Covid-19</a>
         </h1>
+        {% block member %}
+        {% endblock %}
     </div>
-
-    <div id="content" class="">
+    <div class="base_login">
+        {% block login %}
+        {% endblock %}
+    </div>
+    <div class="base_join">
+        {% block join %}
+        {% endblock %}
+    </div>
+    <div class="join_result">
+        {% block join_result %}
+        {% endblock %}
+    </div>
+    <div class="content">
         {% block content %}
         {% endblock %}
     </div>
