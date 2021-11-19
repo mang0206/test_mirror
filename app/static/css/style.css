@@ -141,12 +141,7 @@ a:active{color: white;}
 .join_move_index{
     margin-bottom: 40px;
 }
-.join_move_login
-/*--------link--------*/
-a:link{text-decoration: none; color: black;}
-a:visited{color: black;}
-a:active{color: white;}
-a:hover{color: gray;}
+
 /*--------content--------*/
 .content{
     height: 100%;
@@ -158,6 +153,16 @@ a:hover{color: gray;}
     align-items: center;
     justify-content: center;
 }
+/*--------scroll animation--------*/
+.scroll{
+    opacity: 0;
+    transition: all 3s ease;
+    transform: translate(0, 100px);
+}
+.scroll.show{
+    opacity: 1;
+    transform: none;
+}
 /*--------index--------*/
 .index{
     width: 100%;
@@ -168,21 +173,53 @@ a:hover{color: gray;}
     padding-bottom: 150px;
     border: 1px solid;
 }
-.with_corona{
-    padding-top: 100px;
-    padding-bottom: 50px;
+#intro_detail{
+    font-size: 25px;
+    margin-bottom: 200px;
+}
+#with_corona{
+    padding-top: 150px;
+    padding-bottom: 150px;
     font-family: sans-serif;
-    font-size: 120px;
+    font-size: 150px;
 
     animation: fadein 4s;
     -webkit-animation: fadein 4s;
+
+    -webkit-animation-name: zoomIn;
 }
 @-webkit-keyframes fadein {
     from {opacity: 0;}
     to{opacity: 1;}
 }
-.question{
-    font-size: 60px;
+@keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.9, 0.9, 0.9);
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+    50% {
+      opacity: 1;
+    }
+}
+#intro_detail{
+    margin-top: 50px;
+    margin-bottom: 300px;
+}
+#question{
+    font-size: 100px;
+    margin-bottom: -50px;
+    animation: blink 0.5s 2;
+}
+.question_detail{
+    font-size: 20px;
+}
+.blink{
+    animation: blink 0.5s infinite;
+    font-size: 20px;
+}
+@-webkit-keyframes blink {
+    to {opacity: 0;}
 }
 /*--------index diet--------*/
 .index_diet{
