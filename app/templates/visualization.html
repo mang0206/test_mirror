@@ -10,39 +10,58 @@
     <link rel="stylesheet" href="../static/css/style2.css?ver=0.1">
     <link rel="icon" href="../static/image/food-icon.ico?ver=0.1">
     <link rel="icon" href="../static/image/food-illus.jpeg?ver=0.1">
-    <script defer src=""></script>
 </head>
 <body>
-    <!--상단 banner-->
-    <header></header> 
-    <!--본문 영역-->
-    <main id="content">
-        <div class="titles diet01">
-            <img width="100%"
-                 height="500"
-                 src="../static/image/food-illus.jpeg" alt="food-illustration">
-            <h1 class="big-title diet01">Nothing Breaks Like A.I. Heart</h1>
-            <p class="small-title diet01">
-                "An essay about artificial intelligence, emotional intelligence, and finding an ending"
-            </p>
-            <div>
-                <p class="big-title">story</p>
-                <a href="#" target="_blank"><p class="small-title">"A"</p></a>
+    <!--chart.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+    <!--d3.js -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!--main.js-->
+    <script src="../static/js/main.js"></script>
+
+    <!--상단 베너-->
+    <header>
+        <nav>
+            <button class="header-left" type="button" name="button">
+                How Covid Is
+                <span>Beaten</span>
+            </button>
+            <div class="logo-wrapper">
+                <p>A project by the folks at</p>
+                <span><a href="#">logo</a></span>
             </div>
+            <div class="clear"></div>
+        </nav>
+    </header>
 
-            <form action="/" method="get">
-                <label for="username">Username</label>
-                <input name="username" type="text" id="username"/>
-                <label for="email">email</label>
-                <input name="email" type="email" id="email"/>
-                <button type="submit">Submit</button>
-            </form>
+    <!--본문 영역-->
+    <main>
+        <section class="illustration-section">
 
+
+        </section>
+        <section class="member-introduction-section">
+            <div class="job-division">
+                <p class="job-name">Analysis</p>
+                <p class="member-name">name</p>
+            </div>
+            <!--추가 사항: 분야, 이름 추가로 적기.-->
+        </section>
+        <section class="content">
+            <div class="content-titles">
+                <h1 class="big-title">big-title</h1>
+                <h2 class="small-title">small-title</h2>
+            </div>
+        </section>
+
+        <!--차트 삽입-->
+        <div class="chart">
+            <canvas id="myChart"></canvas>
         </div>
+
+
+
     </main>
-
-
-
-
+<!--footer-->
 </body>
 
