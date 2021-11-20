@@ -1,15 +1,10 @@
 
 /*--------reset--------*/
-*{
-    background-color: rgb(175, 175, 175);
-    width: auto;
-}
+*{width: auto;}
 /*--------body margin 제거--------*/
 body{
     margin: 0;
-    margin-bottom: 50px;
 }
-
 /*--------link style--------*/
 a:link{color: black; text-decoration: none;}
 a:visited{color: black}
@@ -23,6 +18,7 @@ a:active{color: white;}
     min-height: 80px;
     display: flex;
     background: white;
+    box-shadow: 0px 1px 10px gray;
     z-index: 900;
 }
 /*--------index member--------*/
@@ -145,9 +141,6 @@ a:active{color: white;}
 /*--------content--------*/
 .content{
     height: 100%;
-    margin-left: 80px;
-    margin-right: 80px;
-    background-color: gray;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -178,8 +171,9 @@ a:active{color: white;}
     margin-bottom: 200px;
 }
 #with_corona{
+    text-shadow: 1px 1px 1px gray;
     padding-top: 150px;
-    padding-bottom: 150px;
+    padding-bottom: 300px;
     font-family: sans-serif;
     font-size: 150px;
 
@@ -190,9 +184,9 @@ a:active{color: white;}
 }
 @-webkit-keyframes fadein {
     from {opacity: 0;}
-    to{opacity: 1;}
+    to {opacity: 1;}
 }
-@keyframes zoomIn {
+@-webkit-keyframes zoomIn {
     from {
       opacity: 0;
       -webkit-transform: scale3d(0.9, 0.9, 0.9);
@@ -203,13 +197,12 @@ a:active{color: white;}
     }
 }
 #intro_detail{
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 300px;
 }
 #question{
     font-size: 100px;
-    margin-bottom: -50px;
-    animation: blink 0.5s 2;
+    margin-bottom: -30px;
 }
 .question_detail{
     font-size: 20px;
@@ -237,7 +230,6 @@ a:active{color: white;}
     margin-top: 50px;
 }
 .index_diet_description_detail{
-    width: 500px;
     margin-top: 30px;
     margin-bottom: 80px;
     text-align: center;
@@ -252,6 +244,7 @@ a:active{color: white;}
 }
 /*--------index visual--------*/
 .index_visual{
+    padding-top: 150px;
     display: flex;
     justify-content: center;
     border: 1px solid;
@@ -259,7 +252,7 @@ a:active{color: white;}
 .index_visual_image{
     float: left;
     margin: 8px;
-    margin-right: 100px;
+    margin-right: 50px;
 }
 .index_visual_description{
     float: right;
@@ -275,7 +268,6 @@ a:active{color: white;}
 /*--------diet--------*/
 .diet{
     width: 100%;
-    padding-bottom: 200px;
     border: 1px solid;
     display: flex;
     flex-direction: column;
@@ -283,11 +275,44 @@ a:active{color: white;}
     justify-content: center;
     text-align: center;
 }
+.nav_food{
+    padding-top: 50px;
+    margin-bottom: 100px;
+}
+.nav_personal{
+    margin-bottom: 100px;
+}
+.gender{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.activity_checker{
+    display: flex;
+    align-items: left;
+}
+
+.move_kit{
+    margin-bottom: 50px;
+}
 /*--------kit--------*/
 .kit{
     width: 100%;
-    padding-bottom: 200px;
+    padding: 100px 0px 50px 0px;
     border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.kit_analysis{
+    margin-bottom: 100px;
+}
+.kit_chart{
+    margin-bottom: 100px;
+}
+.kit_checker{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -296,12 +321,18 @@ a:active{color: white;}
 /*--------checker--------*/
 .checker{
     width: 100%;
-    padding-bottom: 200px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+.symptom{
+    margin-bottom: 20px;
+}
+.checker button{
+    margin-top: 50px;
 }
 /*--------check--------*/
 .check{
@@ -313,10 +344,68 @@ a:active{color: white;}
 
 }
 /*--------loading--------*/
-
+.scan{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+.circle{
+    border-radius:50%;
+    width:10px;
+    height:10px;
+    background-color:#1e90ff;
+    margin-bottom:25px;
+    position:relative;
+}
+.container{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+}
+.rowc{
+    display:inline-block;
+    margin-left:2px;
+}
+.c1{
+    animation: c1 1.5s linear infinite;
+    -webkit-animation: c1 1.5s linear infinite;
+}
+.c2{
+    animation: c2 1.5s linear infinite;
+    -webkit-animation: c2 1.5s linear infinite;
+    background-color:#3fd1ff;
+}
+@-webkit-keyframes c1{
+    0%{transform:translateY(0px) scale(1);}
+    25%{transform:translateY(12px) scale(1.5);background-color:#0c87ff;z-index:10;}
+    50%{transform:translateY(34px) scale(1);}
+    75%{transform:translateY(12px) scale(.6);background-color:#3a9eff;z-index:1;opacity:.1}
+    100%{transform:translateY(0px) scale(1);}
+}
+@-webkit-keyframes c2{
+    0%{transform:translateY(0px) scale(1);}
+    25%{transform:translateY(-12px) scale(.6);background-color:#75deff;z-index:1;opacity:.1}
+    50%{transform:translateY(-34px) scale(1);}
+    75%{transform:translateY(-12px) scale(1.5);background-color:#0fc3ff;z-index:10;}
+    100%{transform:translateY(0px) scale(1);}
+}
+.row2 .c1{animation-delay:.1s;}.row2 .c2{animation-delay:.1s;}
+.row3 .c1{animation-delay:.22s;}.row3 .c2{animation-delay:.22s;}
+.row4 .c1{animation-delay:.37s;}.row4 .c2{animation-delay:.37s;}
+.row5 .c1{animation-delay:.49s;}.row5 .c2{animation-delay:.49s;}
+.row6 .c1{animation-delay:.67s;}.row6 .c2{animation-delay:.67s;}
+.row7 .c1{animation-delay:.89s;}.row7 .c2{animation-delay:.89s;}
+.row8 .c1{animation-delay:.95s;}.row8 .c2{animation-delay:.95s;}
+.row9 .c1{animation-delay:1.2s;}.row9 .c2{animation-delay:1.2s;}
+.row10 .c1{animation-delay:1.45s;}.row10 .c2{animation-delay:1.45s;}
+.row11 .c1{animation-delay:1.62s;}.row11 .c2{animation-delay:1.62s;}
+.row12 .c1{animation-delay:1.88s;}.row12 .c2{animation-delay:1.88s;}
+.row13 .c1{animation-delay:2s;}.row13 .c2{animation-delay:2s;}
 /*--------diet result--------*/
 .diet_result{
     width: 100%;
+    padding: 50px 0px 50px 0px;
     border: 1px solid;
     display: flex;
     flex-direction: column;
@@ -326,10 +415,33 @@ a:active{color: white;}
 .word_cloud{
     margin-bottom: 100px;
 }
+.move_index{
+    margin-bottom: 50px;
+}
 /*--------visualization--------*/
 .visualization{
     width: 100%;
-    padding-bottom: 200px;
+    padding: 100px 0px 150px 0px;
     border: 1px solid;
     text-align: center;
+}
+/*--------footer--------*/
+.footer{
+    width: 100%;
+    height: auto;
+    background: rgb(12, 48, 38);
+}
+.project_12{
+    color: white;
+    padding: 30px 60px 30px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+}
+.project_12>h6{
+    color: white;
+}
+.ydp01{
+    padding: 5px 0px 5px 0px;
 }

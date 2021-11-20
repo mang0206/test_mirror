@@ -2,7 +2,7 @@
 {% block checker %}
 <div class='checker'>
   <form method="post">
-    <div class='section'>
+    <div class='symptom'>
       <input type="checkbox" name="Fever">고열
       <input type="checkbox" name="Tiredness">피곤함
       <input type="checkbox" name="Dry_Cough">마른기침
@@ -10,7 +10,7 @@
       <input type="checkbox" name="Sore_Throat">인후염
       <input type="checkbox" name="None_Sympton">증상x
     </div>
-    <div class='section'>
+    <div class='symptom'>
       <input type="checkbox" name="Pains">근육통
       <input type="checkbox" name="Nasal_Congestion">코막힘
       <input type="checkbox" name="Runny_Nose">콧물
@@ -19,7 +19,7 @@
     </div>
       <div class='section'>
 
-        <table style='display:inline;'>
+        <table style='display:inline;'>국적
           <tr>
             <td>
               <select name="Country">
@@ -38,22 +38,22 @@
           </tr>
         </table>
 
-        <table style='display:inline;'>
+        <table style='display:inline;'>나이
           <tr>
             <td>
               <select name="Age">
-                <option value="Age_0-9">Age_0-9</option>
-                <option value="Age_10-19">Age_10-19</option>
-                <option value="Age_20-24">Age_20-24</option>
-                <option value="Age_25-59">Age_25-59</option>
-                <option value="Age_60+">Age_60+</option>
+                <option value="Age_0-9">9세 이하</option>
+                <option value="Age_10-19">10-19세</option>
+                <option value="Age_20-24">20-24세</option>
+                <option value="Age_25-59">25-59세</option>
+                <option value="Age_60+">60세 이상</option>
 
               </select>
             </td>
           </tr>
         </table>
 
-        <table style='display:inline;'>
+        <table style='display:inline;'>성별
           <tr>
             <td>
               <select name="Gender">
@@ -65,22 +65,21 @@
           </tr>
         </table>
 
-        <table style='display:inline;'>
+        <table style='display:inline;'>확진자 접촉 여부
           <tr>
             <td>
               <select name="Contact">
-                <option value="Contact_Dont-Know">Dont-Know</option>
-                <option value="Contact_No">No</option>
-                <option value="Contact_Yes">Yes</option>
+                <option value="Contact_Dont-Know">알 수 없음</option>
+                <option value="Contact_No">접촉 X</option>
+                <option value="Contact_Yes">접촉 O</option>
               </select>
             </td>
           </tr>
         </table>
     </div>
-
     <div>
       <button name='button'>
-        검사
+        <a href="/loading">검사 결과 보기</a>
       </button>
     </div>
   </form>
