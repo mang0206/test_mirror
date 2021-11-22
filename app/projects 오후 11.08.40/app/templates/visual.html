@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Visualization</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.1">
+    <link rel="stylesheet" href="../static/css/visual.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h1 class="nav-text">
+                <a href="#">Project</a>
+<!--                <br>Hello, world</br>-->
+            </h1>
+            <p class="nav-text">
+                A project by the folks at
+                <a href="#">The YearDream</a>
+            </p>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <section class="intro">
+            <h1 class="main-title">
+                Let's dive into
+                <em>your Diet</em>
+            </h1>
+            <p class="sub-title">We would like to see the Covid-19 in respect of the diet we've been taken.</p>
+            <div class="intro_members">
+                <div class="job-part">
+                    <p class="part"><strong>Analysis</strong></p>
+                    <p class="member">CY</p>
+                    <p class="member">MJM</p>
+                </div>
+                <div class="job-part">
+                    <p class="part"><strong>Modeling</strong></p>
+                    <p class="member">JC</p>
+                    <p class="member">GW</p>
+                </div>
+                <div class="job-part">
+                    <p class="part"><strong>Visualization</strong></p>
+                    <p class="member">MJJ</p>
+                </div>
+                <div class="job-part">
+                    <p class="part"><strong>Design</strong></p>
+                    <p class="member">HG</p>
+                </div>
+            </div>
+            <div class="animation">
+                <img class="diving-animation"
+                     src="../static/img/P" alt="diving-image">
+            </div>
+        </section>
+
+
+        <section class="contents">
+            <div class="prose-container">
+                <h1 class="prose-title">"Searching Story"</h1>
+                <p class="prose">
+                    In the iconic New York Times puzzle, OREO wasn’t used to reference the cookie until 1993, despite its invention in 1912. Its first appearance coincided with the start of the Shortz era.
+                    Until then, it was exclusively clued as the Greek prefix for mountain.
+                </p>
+                <p class="prose">
+                    Although the clue is odd, the answer — OREO — is common. For starters, OREO is the seventh most used four-letter answer since 1993, according to a database of over four million clues from numerous publications.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="test">
+            <svg
+                id="svg"
+                xmlns="http://www.w3.org/2000/svg"
+                viewbox="0 0 600 1200">
+
+                <path class="line01 line" d="M 10 200 600 200"></path>
+                <path class="line02 line" d="M 10 400 600 400"></path>
+                <path class="line03 line" d="M 10 600 600 600"></path>
+                <path class="line04 line" d="M 10 800 600 800"></path>
+                <path class="line05 line" d="M 10 1000 600 1000"></path>
+                <text class="text01" x="30" y="190">2018</text>
+                <text class="text01" x="30" y="390">2019</text>
+                <text class="text01" x="30" y="590">2020</text>
+
+                <path class="theLine"
+                      d="M -5,0
+                         Q 450 230 300 450
+                         T 130 750
+                         Q 100 850 300 1000
+                         T 150 1200"
+                      fill="none" stroke="#187AAF" stroke-width="10px" />
+
+                <circle class="ball ball01" r="20" cx="50" cy="100"></circle>
+                <circle class="ball ball02" r="20" cx="278" cy="201"></circle>
+                <circle class="ball ball03" r="20" cx="327" cy="401"></circle>
+                <circle class="ball ball04" r="20" cx="203" cy="601"></circle>
+
+            </svg>
+        </section>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/BezierPlugin.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin3.min.js"></script>
+    <script src="../static/js/visual-main.js"></script>
+
+
+</body>
+</html>

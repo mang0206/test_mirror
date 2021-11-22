@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/*body {*/
+/*    height: 100vh;*/
+/*}*/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: #160e01;
+    color: #feefd7;
+    font-size: 15px;
+
+}
+
+nav h1 {
+    /*font-family: "Playfair Regular 400 italic";*/
+}
+
+nav .header-text {
+    color: #fff;
+    text-decoration: none;
+
+}
+
+h2 {
+    font-size: 6rem;
+
+}
+
+nav p {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+p a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+    margin-left: 0.5rem;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 1.5rem;
+    transform: translate(-50%, -50%) scale(6);
+}
+
+
+/* parent */
+.container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+/* children */
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    scroll-snap-align: start;
+    /*font-size: 2rem;*/
+}
+
+.one {
+    background: darkslategray;
+}
+
+.two {
+    background: cornflowerblue;
+    /*height: 50vh;*/
+}
+
+.three {
+    background: purple;
+}
+
+.four {
+    background: grey;
+    /*height: 150vh;*/
+}
+
+.five {
+    background: rosybrown;
+}
+
+
+.first-page {
+    height: 100vh;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.home {
+    height: 100vh;
+
+}
+
+.first-page img {
+    height: 100%;
+}
+
+.square {
+    width: 10rem;
+    height: 10rem;
+    background: #f6d365;
+    position: absolute;
+    top: 70%;
+    left: 70%;
+}
+
