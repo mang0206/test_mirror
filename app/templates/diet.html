@@ -27,17 +27,22 @@
             </p>
             <p class="activity">활동량
                 <div class="activity_checker">
-                    <input type="radio" name="activity" id="">주로 앉아서 생활(사무직)<br>
-                    <input type="radio" name="activity" id="">가벼운 운동량(주 1-2회)<br>
-                    <input type="radio" name="activity" id="">보통 운동량(주 3-5회)<br>
-                    <input type="radio" name="activity" id="">많은 운동량(주 6-7회)<br>
-                    <input type="radio" name="activity" id="">운동 선수<br>
+                    <input type="radio" name="activity" id="lev1">
+                    <label for="lev1">주로 앉아서 생활<br>(사무직)</label>
+                    <input type="radio" name="activity" id="lev2">
+                    <label for="lev2">가벼운 운동량<br>(주 1-2회)</label>
+                    <input type="radio" name="activity" id="lev3">
+                    <label for="lev3">보통 운동량<br>(주 3-5회)</label>
+                    <input type="radio" name="activity" id="lev4">
+                    <label for="lev4">많은 운동량<br>(주 6-7회)</label>
+                    <input type="radio" name="activity" id="lev5">
+                    <label for="lev5">운동 선수</label>
                 </div>
             </p>
         </form>
     </div>
-    <div class="move_kit">
-        <a href="/kit">완료</a>
+    <div>
+        <a href="/kit" class="move_kit">입력 완료</a>
     </div>
 </div>
 {% endblock %}
