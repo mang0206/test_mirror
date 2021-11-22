@@ -5,7 +5,11 @@ db = SQLAlchemy()
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+<<<<<<< HEAD
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:root1234@localhost:3306/diet"
+=======
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:111111@localhost:3306/diet"
+>>>>>>> c3040dd6c17b8fd1afc12382fcc90a09beda37e7
 
 db.init_app(app)
 
