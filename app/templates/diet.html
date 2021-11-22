@@ -9,9 +9,40 @@
     </div>
     <div class="nav_personal">
         카테고리 - 개인 정보
+        <form action="">
+            <p class="gender">성별
+                <div>
+                    <input type="radio" name="gender">남성
+                    <input type="radio" name="gender">여성
+                </div>
+            </p>
+            <p class="age">나이
+                <input type="text" name="age" id="">
+            </p>
+            <p class="weight">몸무게
+                <input type="text" name="weight" id="">
+            </p>
+            <p class="height">키
+                <input type="text" name="height" id="">
+            </p>
+            <p class="activity">활동량
+                <div class="activity_checker">
+                    <input type="radio" name="activity" id="lev1">
+                    <label for="lev1">주로 앉아서 생활<br>(사무직)</label>
+                    <input type="radio" name="activity" id="lev2">
+                    <label for="lev2">가벼운 운동량<br>(주 1-2회)</label>
+                    <input type="radio" name="activity" id="lev3">
+                    <label for="lev3">보통 운동량<br>(주 3-5회)</label>
+                    <input type="radio" name="activity" id="lev4">
+                    <label for="lev4">많은 운동량<br>(주 6-7회)</label>
+                    <input type="radio" name="activity" id="lev5">
+                    <label for="lev5">운동 선수</label>
+                </div>
+            </p>
+        </form>
     </div>
-    <div class="move_kit">
-        <a href="/kit">완료</a>
+    <div>
+        <a href="/kit" class="move_kit">입력 완료</a>
     </div>
 </div>
 {% endblock %}
