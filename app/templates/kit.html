@@ -1,16 +1,34 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="kit">
-    <div class="kit_analysis">
-        현재 식단 분석
-    </div>
-    <div class="kit_chart">
-        분석 차트
-    </div>
-    <div class="kit_checker">
-        증상 여부 checkbox
-        {% block checker %}
-        {% endblock %}
+    <div class="kit_container">
+        <div class="doctor">
+            <img src="../static/image/thumbs_up.png" alt="doctor">
+            <div class="doctor_bubble">
+                섭취하신 음식을 분석해봤어요!
+            </div>
+        </div>
+        <div class="kit_chart">
+            분석 차트
+        </div>
+        <div class="doctor">
+            <img src="../static/image/wink.png" alt="doctor">
+            <div class="doctor_bubble">
+                마지막으로 COVID-진단 KIT 항목만 선택 해 주시면
+            </div>
+        </div>
+        <div class="personal">
+            <div class="personal_bubble">
+                {% block checker %}
+                {% endblock %}
+            </div>
+        </div>
+        <div>
+            <button><a href="/diet">&lt;</a></button>
+            <button class="move_result">
+              <a href="/loading">검사 결과 보기</a>
+            </button>
+          </div>
     </div>
 </div>
 {% endblock %}

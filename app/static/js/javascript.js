@@ -48,28 +48,15 @@ window.addEventListener('scroll', saFunc);
 //         },500); } 
 // });
 
-//diet 활동량 체크박스
-var chk_box = document.getElementsByName("activity");
-
-    function handleClick(event) {
-        console.log(event.target);
-
-        console.log(event.target.classList);
-
-        if (event.target.classList[1] === "clicked") {
-            event.target.classList.remove("clicked");
-        } else {
-          for (var i = 0; i < chk_box.length; i++) {
-            chk_box[i].classList.remove("clicked");
-            }
-            event.target.classList.add("clicked");
-        }
-    }
-
-    function init() {
-        for (var i = 0; i < chk_box.length; i++) {
-            chk_box[i].addEventListener("click", handleClick);
-        }
-    }
-
-    init();
+//클릭 버튼 색 변경
+const title = document.querySelector(".activity_chk");
+const CLICKED_CLASS = "clicked";
+ 
+function handClick(){
+    title.classList.toggle(CLICKED_CLASS);
+}
+ 
+function init(){
+    title.addEventListener("click", handClick)
+}
+init();

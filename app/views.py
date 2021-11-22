@@ -20,8 +20,20 @@ def join():
 def join_result():
     return render_template("join_result.html")
 
-@app.route("/diet")
-def diet():
+@app.route("/diet", methods=["GET", "POST"])
+def diet_food():
+    if request.method == "POST" and request.form.get('btn1') :
+        food_lst.append(request.form.get('food'))
+        return render_template('diet.html', food_lst=food_lst)
+   
+    if request.method == "POST" and request.form.get('btn2') :
+        age = int(request.form.get('age'))
+        sex = request.form.get('gender')
+        height = int(request.form.get('height'))
+        Z = cal_nutrients.body_classifier(sex, age, height)
+        nutrients = cal_nutrients.nutrient(Z, sex, age)
+        return render_template("kit.html", nutrients=nutrients)
+    
     return render_template("diet.html")
 
 @app.route("/kit")
