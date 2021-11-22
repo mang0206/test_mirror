@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, jsonify
 from .ml import model, Age_dict, Gender_dict, Contact_dict
 import pandas as pd
 from collections import defaultdict
 from . import app
+from .models import Food
 
 @app.route("/")
 def index():
@@ -80,3 +81,11 @@ def checker():
         return render_template("check.html", result=pred*0.3 + (1-pred)*0.7)
     else:
         return render_template("checker.html")
+
+@app.route('/testdb')
+def testdb():
+    test1 = Food.query.filter(Food.food_name == '닭갈비').first()
+    test2 = Food.query.filter(Food.food_name == '더커진비빔참치마요네즈').first()
+
+    print('show query testing --- ',test1, test2.calcium)
+    return jsonify({'test':1})
