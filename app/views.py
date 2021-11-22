@@ -29,6 +29,10 @@ def diet():
 def kit():
     return render_template("checker.html")
 
+@app.route("/loading")
+def loading():
+    return render_template("loading.html")
+
 @app.route("/diet_result")
 def diet_result():
     return render_template("diet_result.html")
