@@ -1,59 +1,54 @@
 // Selectors
-const searchInput = document.querySelector('.search-input');
-const searchButton = document.querySelector('.search-button');
+const searchInput = document.querySelector('.user-input');
+const searchButton = document.querySelector('.icon');
 const searchList = document.querySelector('.search-list');
-// const filterOption = document.querySelector('.filter-search');
 // const resetButton = document.querySelector('.reset-button');
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', getSearches);
 searchButton.addEventListener('click', addSearch);
 searchList.addEventListener('click', deleteSearch);
-// filterOption.addEventListener('click', filterSearch);
-resetButton.addEventListener('click', resetSearch);
+// resetButton.addEventListener('click', resetAll);
 
 // Functions
 function addSearch(event){
     //Prevent form from submitting
     event.preventDefault();
     // Search div
+
     const searchDiv = document.createElement('div');
     searchDiv.classList.add('search');
     // Create Li
     const newSearch = document.createElement('li');
     newSearch.innerText = searchInput.value;
 
-    if (searchInput.value !== "") {
+    if (searchInput.value === "") {
+        alert('음식을 선택하지 않으셨습니다!')
+    } else if (!(suggestions.includes(searchInput.value))) {
+        alert('검색 데이터에 없는 음식입니다!')
+    } else {
         newSearch.classList.add('search-item');
         searchDiv.appendChild(newSearch);
         // add searches to localstorage
         saveLocalSearches(searchInput.value);
 
-        // CHECK MARK BUTTON
-        // const completeButton = document.createElement('button');
-        // completeButton.innerHTML = '<i class="fas fa-check"></i>';
-        // completeButton.classList.add("complete-btn");
-        // searchDiv.appendChild(completeButton);
         //DELETE BUTTON
-        const trashButton = document.createElement('button');
-        trashButton.innerHTML = '<i class="far fa-times-circle"></i>';
-        trashButton.classList.add("trash-btn");
-        searchDiv.appendChild(trashButton);
+        const deleteButton = document.createElement('button');
+        deleteButton.innerHTML = '<i class="fas fa-times"></i>';
+        deleteButton.classList.add("delete-btn");
+        searchDiv.appendChild(deleteButton);
         //APPEND TO LIST
         searchList.appendChild(searchDiv);
 
         //Clear Search Input value
         searchInput.value = "";
-}   else {
-        alert('음식명을 기입해주세요.')
-        // 검색한 음식이 없다는 것을 알려주는 문장 추가할 것!!
     }
 }
 
 function deleteSearch(e) {
     const item = e.target;
     // Delete search
-    if (item.classList[0] === 'trash-btn') {
+    if (item.classList[0] === 'delete-btn') {
 
         const search = item.parentElement;
         // Animation
@@ -65,16 +60,15 @@ function deleteSearch(e) {
         item.remove();
     }
 
-    if (item.classList[0] === 'complete-btn') {
-        const search = item.parentElement;
-        search.classList.toggle('completed');
-    }
+    // if (item.classList[0] === 'complete-btn') {
+    //     const search = item.parentElement;
+    //     search.classList.toggle('completed');
+    // }
 }
 
-
-function resetSearch(event) {
-    console.log("reset button")
-}
+// function resetSearch(event) {
+//     console.log("reset button")
+// }
 
 
 
@@ -131,16 +125,12 @@ function getSearches() {
         newSearch.innerText = search;
         newSearch.classList.add('search-item');
         searchDiv.appendChild(newSearch);
-        // CHECK MARK BUTTON
-        // const completeButton = document.createElement('button');
-        // completeButton.innerHTML = '<i class="fas fa-check"></i>';
-        // completeButton.classList.add("complete-btn");
-        // searchDiv.appendChild(completeButton);
+
         //DELETE BUTTON
-        const trashButton = document.createElement('button');
-        trashButton.innerHTML = '<i class="far fa-times-circle"></i>';
-        trashButton.classList.add("trash-btn");
-        searchDiv.appendChild(trashButton);
+        const deleteButton = document.createElement('button');
+        deleteButton.innerHTML = '<i class="fas fa-times"></i>';
+        deleteButton.classList.add("delete-btn");
+        searchDiv.appendChild(deleteButton);
         //APPEND TO LIST
         searchList.appendChild(searchDiv);
     })
@@ -158,4 +148,8 @@ function removeLocalSearches(search) {
     localStorage.setItem('searches', JSON.stringify(searches));
 
 }
+
+
+
+
 

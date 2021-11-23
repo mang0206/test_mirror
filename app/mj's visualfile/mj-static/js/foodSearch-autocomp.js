@@ -2,12 +2,13 @@
 const searchWrapper = document.querySelector(".search-input");
 const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
-const icon = searchWrapper.querySelector(".search-button");
-let linkTag = searchWrapper.querySelector("a");
-let webLink;
+const icon = searchWrapper.querySelector(".icon");
+// let linkTag = searchWrapper.querySelector("a");
+// let webLi
 
 // if user press any key and release
 inputBox.onkeyup = (e)=>{
+    let userData = e.target.value; //user entered data
     let emptyArray = [];
     if(userData){
         // icon.onclick = ()=>{
@@ -46,12 +47,12 @@ function select(element){
     searchWrapper.classList.remove("active");
 }
 
-function showSuggestions(list) {
+function showSuggestions(list){
     let listData;
-    if (!list.length) {
+    if(!list.length){
         userValue = inputBox.value;
         listData = `<li>${userValue}</li>`;
-    } else {
+    }else{
         listData = list.join('');
     }
     suggBox.innerHTML = listData;
