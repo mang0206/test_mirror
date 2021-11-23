@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="kit">
-    <div class="kit_container">
+<div class="diet_background">
+    <div class="diet_container">
         <div class="doctor">
             <img src="../static/image/thumbs_up.png" alt="doctor">
             <div class="doctor_bubble">
-                섭취하신 음식을 분석해봤어요!
+                섭취하신 음식을 토대로 분석해봤어요!
             </div>
         </div>
         <div class="kit_chart">
@@ -24,7 +24,7 @@
             <div class="kit_clip_img">
                 <img src="../static/image/clip.png" alt="file_clip">
             </div>
-            <div class="personal_board">
+            <div class="kit_personal_board">
                 {% block checker %}
                 {% endblock %}
             </div>
@@ -38,5 +38,5 @@
           </div>
     </div>
 </div>
-<script src="../static/js/diet.js" defer="defer"></script>
+<script src="../static/js/checker.js" defer="defer"></script>
 {% endblock %}

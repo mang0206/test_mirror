@@ -4,30 +4,34 @@
   <form method="post">
     <div class="symptom_container">
       <div class='symptom_1'>
-        <input type="checkbox" name="Fever" id="Fever">
+        <input type="checkbox" name="Fever" id="Fever" class="input_checker">
         <label for="Fever" class="label_checker">고열</label>
-        <input type="checkbox" name="Tiredness" id="Tiredness">
+        <input type="checkbox" name="Tiredness" id="Tiredness" class="input_checker">
         <label for="Tiredness" class="label_checker">피곤함</label>
-        <input type="checkbox" name="Dry_Cough" id="Dry_Cough">
+        <input type="checkbox" name="Dry_Cough" id="Dry_Cough" class="input_checker">
         <label for="Dry_Cough" class="label_checker">마른 기침</label>
-        <input type="checkbox" name="Difficulty_in_Breathing" id="Difficulty_in_Breathing">
-        <label for="Difficulty_in_Breathing" class="label_checker">호흡 곤란</label>
-        <input type="checkbox" name="Sore_Throat" id="Sore_Throat">
-        <label for="Sore_Throat" class="label_checker">인후염</label>
-        <input type="checkbox" name="None_Sympton" id="None_Sympton">
-        <label for="None_Sympton" class="label_checker">증상 없음</label>
       </div>
-      <div class='symptom_2'>
-        <input type="checkbox" name="Pains" id="Pains">
+      <div class='symptom_1'>
+        <input type="checkbox" name="Difficulty_in_Breathing" id="Difficulty_in_Breathing" class="input_checker">
+        <label for="Difficulty_in_Breathing" class="label_checker">호흡 곤란</label>
+        <input type="checkbox" name="Sore_Throat" id="Sore_Throat" class="input_checker">
+        <label for="Sore_Throat" class="label_checker">인후염</label>
+        <input type="checkbox" name="None_Sympton" id="None_Sympton" class="input_checker">
+        <label for="None_Sympton" class="label_checker none_experience">증상 없음</label>
+      </div>
+      <div class='symptom_1'>
+        <input type="checkbox" name="Pains" id="Pains" class="input_checker">
         <label for="Pains" class="label_checker">근육통</label>
-        <input type="checkbox" name="Nasal_Congestion" id="Nasal_Congestion">
+        <input type="checkbox" name="Nasal_Congestion" id="Nasal_Congestion" class="input_checker">
         <label for="Nasal_Congestion" class="label_checker">코 막힘</label>
-        <input type="checkbox" name="Runny_Nose" id="Runny_Nose">
+      </div>
+      <div class='symptom_1'>
+        <input type="checkbox" name="Runny_Nose" id="Runny_Nose" class="input_checker">
         <label for="Runny_Nose" class="label_checker">콧물</label>
-        <input type="checkbox" name="Diarrhea" id="Diarrhea">
+        <input type="checkbox" name="Diarrhea" id="Diarrhea" class="input_checker">
         <label for="Diarrhea" class="label_checker">설사</label>
-        <input type="checkbox" name="None_Experiencing" id="None_Experiencing">
-        <label for="None_Experiencing" class="label_checker">경험 없음</label>
+        <input type="checkbox" name="None_Experiencing" id="None_Experiencing" class="input_checker">
+        <label for="None_Experiencing" class="label_checker none_experience">경험 없음</label>
       </div>
         <div class='section'>
   
@@ -92,5 +96,4 @@
     </div>
   </form>
 </div>
-<script src="../static/js/diet.js" defer="defer"></script>
 {% endblock %}

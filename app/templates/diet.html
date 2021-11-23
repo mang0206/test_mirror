@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="diet">
+<div class="diet_background">
     <div class="diet_container">
         <div class="doctor">
             <img src="../static/image/smile_hands_up.png" alt="Doctor">
@@ -12,7 +12,7 @@
             <div class="diet_clip_img">
                 <img src="../static/image/clip.png" alt="file_clip">
             </div>
-            <div class="personal_board">
+            <div class="diet_personal_board">
                 <form action="/diet" method="POST" id="form_personal">
                     <div class="gender">
                         <span>성별</span>
@@ -23,6 +23,7 @@
                             <label for="female" class="label_chk">여성</label>
                         </div>
                     </div>
+                    <hr>
                     <div name="age" class="text_input">
                         <span>나이</span>
                         <input type="text" name="age" class="text_box">
@@ -35,6 +36,7 @@
                         <span>키</span>
                         <input type="text" name="height" class="text_box">
                     </div>
+                    <hr>
                     <div class="activity">
                         <span>활동량</span>
                         <div class="diet_checker">
@@ -51,7 +53,7 @@
                         </div>
                     </div>
                     <div>
-                        <input type="submit" name="btn1" value='제출하기' class="move_kit">
+                        <input type="submit" name="btn1" value='제출하기' class="move_button">
                     </div>
                 </form>
             </div>
