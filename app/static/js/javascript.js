@@ -50,13 +50,17 @@ window.addEventListener('scroll', saFunc);
 
 //클릭 버튼 색 변경
 $(function(){
-    let $diet_chk = $(".diet_chk");
+    let $label_chk = $(".label_chk");
 
-    $diet_chk.click(function(){
-        if($diet_chk.hasClass("clicked")) {
-            $diet_chk.removeClass("clicked")
+    $label_chk.click(function(){
+        if($label_chk.hasClass("clicked")) {
+            $label_chk.removeClass("clicked")
         }
         $(this).addClass("clicked");
     });
     
 });
+
+// $( function () {
+//     alert('메시지를 띄웁니다.');
+// });

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../static/css/style.css?ver=0.3">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script defer src="../static/js/javascript.js"></script>
 
     {% block css %}
@@ -40,14 +41,7 @@
         {% block content %}
         {% endblock %}
     </div>
+    
     <script type="text/javascript" src="../static/js/javascript.js"></script>
-    <script type="text/javascript">
-        if (typeof jQuery == 'undefined') {
-            var script = document.createElement('script');
-            script.type = "text/javascript";
-            script.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js";
-            document.getElementsByTagName('head')[0].appendChild(script);
-        } 
-        </script>
 </body>
 </html>
