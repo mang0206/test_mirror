@@ -19,18 +19,24 @@
                 마지막으로 COVID-진단 KIT 항목만 선택 해 주시면
             </div>
         </div>
+        
         <div class="personal">
-            <div class="personal_bubble">
+            <div class="kit_clip_img">
+                <img src="../static/image/clip.png" alt="file_clip">
+            </div>
+            <div class="personal_board">
                 {% block checker %}
                 {% endblock %}
             </div>
         </div>
-        <div>
-            <button><a href="/diet">&lt;</a></button>
-            <button class="move_result">
+        <div class="kit_two_button">
+            <input type="button" value="&lt;" onClick="location.href='/diet'" class="kit_button">
+            <input type="submit" name="" value="검사 결과 보기" class="kit_button">
+            <!-- <button name="move_result" class="kit_button">
               <a href="/loading">검사 결과 보기</a>
-            </button>
+            </button> -->
           </div>
     </div>
 </div>
+<script src="../static/js/diet.js" defer="defer"></script>
 {% endblock %}

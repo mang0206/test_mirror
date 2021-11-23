@@ -40,10 +40,6 @@ def diet_food():
    
     return render_template("diet.html")
 
-@app.route("/kit")
-def kit():
-    return render_template("checker.html")
-
 @app.route("/loading")
 def loading():
     return render_template("loading.html")

@@ -9,26 +9,34 @@
             </div>
         </div>
         <div class="personal">
-            <div class="personal_bubble">
+            <div class="diet_clip_img">
+                <img src="../static/image/clip.png" alt="file_clip">
+            </div>
+            <div class="personal_board">
                 <form action="/diet" method="POST" id="form_personal">
-                    <p class="gender">성별
+                    <div class="gender">
+                        <span>성별</span>
                         <div class="gender_checker">
                             <input type="radio" name="gender" id="male" value="남">
-                            <label for="male">남성</label>
+                            <label for="male" class="label_chk">남성</label>
                             <input type="radio" name="gender" id="female" value="여">
-                            <label for="female">여성</label>
+                            <label for="female" class="label_chk">여성</label>
                         </div>
-                    </p>
-                    <p class="age">나이
-                        <input type="text" name="age">
-                    </p>
-                    <p class="weight">몸무게
-                        <input type="text" name="weight">
-                    </p>
-                    <p class="height">키
-                        <input type="text" name="height">
-                    </p>
-                    <p class="activity">활동량
+                    </div>
+                    <div name="age" class="text_input">
+                        <span>나이</span>
+                        <input type="text" name="age" class="text_box">
+                    </div>
+                    <div name="weight" class="text_input">
+                        <span>몸무게</span>
+                        <input type="text" name="weight" class="text_box">
+                    </div>
+                    <div name="height" class="text_input">
+                        <span>키</span>
+                        <input type="text" name="height" class="text_box">
+                    </div>
+                    <div class="activity">
+                        <span>활동량</span>
                         <div class="diet_checker">
                             <input type="radio" name="activity" id="lev1" class="input_chk">
                             <label for="lev1" class="label_chk">주로 앉아서 생활<br>(사무직)</label>
@@ -41,9 +49,9 @@
                             <input type="radio" name="activity" id="lev5" class="input_chk">
                             <label for="lev5" class="label_chk" >운동 선수</label>
                         </div>
-                    </p>
+                    </div>
                     <div>
-                        <input type="submit" name="btn1" value='제출' class="move_kit">
+                        <input type="submit" name="btn1" value='제출하기' class="move_kit">
                     </div>
                 </form>
             </div>
@@ -65,4 +73,5 @@
         </div>
     </div>
 </div>
+<script src="../static/js/diet.js" defer="defer"></script>
 {% endblock %}
