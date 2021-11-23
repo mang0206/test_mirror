@@ -4,6 +4,9 @@ import pandas as pd
 from collections import defaultdict
 from . import app
 from .models import Food
+from .cal_nutrients import cal_nutrients
+food_lst = []
+food_nutrients = [0] * 16
 
 @app.route("/")
 def index():
@@ -23,11 +26,43 @@ def join_result():
 
 @app.route("/diet")
 def diet():
+    if request.method == "POST" and request.form.get('btn1') :
+        food_lst.append(request.form.get('food'))
+        for food_name in food_lst:
+            food = Food.query.filter(Food.food_name == food_name).first()
+            food_nutrients[0] += food.calorie
+            food_nutrients[1] += food.protein
+            food_nutrients[2] += food.fat 
+            food_nutrients[3] += food.carbohydrate 
+            food_nutrients[4] += food.sugar
+            food_nutrients[5] += food.calcium * 1000
+            food_nutrients[6] += food.phosphorus * 1000   
+            food_nutrients[7] += food.iron * 1000
+            food_nutrients[8] += food.salt * 1000 
+            food_nutrients[9] += food.potassium * 1000
+            food_nutrients[10] += food.vitaminA 
+            food_nutrients[11] += food.vitaminB1 
+            food_nutrients[12] += food.vitaminB2 
+            food_nutrients[13] += food.niacin 
+            food_nutrients[14] += food.vitaminC 
+            food_nutrients[15] += food.folic_acid 
+
+        return render_template('diet.html', food_lst=food_lst)
+   
+    if request.method == "POST" and request.form.get('btn2') :
+        age = int(request.form.get('age'))
+        sex = request.form.get('gender')
+        height = int(request.form.get('height'))
+        Z = cal_nutrients.body_classifier(sex, age, height)
+        nutrients = cal_nutrients.nutrient(Z, sex, age)
+        return render_template("kit.html", nutrients=nutrients, food_nutrients=food_nutrients)
+    
     return render_template("diet.html")
 
-@app.route("/kit")
-def kit():
-    return render_template("checker.html")
+
+# @app.route("/kit")
+# def kit():
+#     return render_template("checker.html")
 
 @app.route("/loading")
 def loading():

@@ -3,17 +3,19 @@
 <div class="diet">
     <div class="nav_food">
         카테고리 - 음식
-        <div>한식</div>
-        <div>중식</div>
-        <div>양식</div>
+        <form action="/diet" method="POST">
+            <input type="text" name="food">
+            {{ food_lst }}
+            <input type="submit" name="btn1" value="제출">
+        </form>
     </div>
     <div class="nav_personal">
         카테고리 - 개인 정보
-        <form action="">
+        <form action="/diet" method="POST">
             <p class="gender">성별
                 <div>
-                    <input type="radio" name="gender">남성
-                    <input type="radio" name="gender">여성
+                    <input type="radio" name="gender" value='남'>남성
+                    <input type="radio" name="gender" value='여'>여성
                 </div>
             </p>
             <p class="age">나이
@@ -39,10 +41,11 @@
                     <label for="lev5">운동 선수</label>
                 </div>
             </p>
+            <input type="submit" name="btn2" value="제출">
         </form>
     </div>
     <div>
-        <a href="/kit" class="move_kit">입력 완료</a>
+        <a href="kit.html" class="move_kit">입력 완료</button>
     </div>
 </div>
 {% endblock %}
