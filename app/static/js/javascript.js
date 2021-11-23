@@ -48,28 +48,19 @@ window.addEventListener('scroll', saFunc);
 //         },500); } 
 // });
 
-//diet 활동량 체크박스
-var chk_box = document.getElementsByName("activity");
+//클릭 버튼 색 변경
+$(function(){
+    let $label_chk = $(".label_chk");
 
-    function handleClick(event) {
-        console.log(event.target);
-
-        console.log(event.target.classList);
-
-        if (event.target.classList[1] === "clicked") {
-            event.target.classList.remove("clicked");
-        } else {
-          for (var i = 0; i < chk_box.length; i++) {
-            chk_box[i].classList.remove("clicked");
-            }
-            event.target.classList.add("clicked");
+    $label_chk.click(function(){
+        if($label_chk.hasClass("clicked")) {
+            $label_chk.removeClass("clicked")
         }
-    }
+        $(this).addClass("clicked");
+    });
+    
+});
 
-    function init() {
-        for (var i = 0; i < chk_box.length; i++) {
-            chk_box[i].addEventListener("click", handleClick);
-        }
-    }
-
-    init();
+// $( function () {
+//     alert('메시지를 띄웁니다.');
+// });
