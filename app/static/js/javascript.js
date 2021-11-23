@@ -49,14 +49,14 @@ window.addEventListener('scroll', saFunc);
 // });
 
 //클릭 버튼 색 변경
-const title = document.querySelector(".activity_chk");
-const CLICKED_CLASS = "clicked";
- 
-function handClick(){
-    title.classList.toggle(CLICKED_CLASS);
-}
- 
-function init(){
-    title.addEventListener("click", handClick)
-}
-init();
+$(function(){
+    let $diet_chk = $(".diet_chk");
+
+    $diet_chk.click(function(){
+        if($diet_chk.hasClass("clicked")) {
+            $diet_chk.removeClass("clicked")
+        }
+        $(this).addClass("clicked");
+    });
+    
+});

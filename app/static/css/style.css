@@ -270,7 +270,17 @@ a:active{color: white;}
     margin-top: 30px;
     margin-bottom: 80px;
 }
-/*--------bubble--------*/
+/*--------img & bubble--------*/
+.doctor{
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.doctor img{
+    width: 100px;
+    height: 100px;
+    display: flex;
+}
 .doctor_bubble{
     position: relative;
     width: 470px;
@@ -283,6 +293,15 @@ a:active{color: white;}
     display: flex;
     justify-content: left;
 }
+.personal{
+    margin: 0px 10px 0px 190px;
+}
+.personal_bubble{
+    width: fit-content;
+    margin: 30px 0px 30px 0px;
+    border: 2px solid #A1A1A1;
+    border-radius: 10px;
+}
 /*--------diet--------*/
 .diet{
     width: 100%;
@@ -294,30 +313,11 @@ a:active{color: white;}
     text-align: center;
 }
 .diet_container{
-    width: 950px;
+    width: fit-content;
     background: white;
     margin: 30px 0px 30px 0px;
     padding: 10px 20px 10px 20px;
     border: 1px solid;
-    border-radius: 10px;
-}
-.doctor{
-    padding-top: 10px;
-    display: flex;
-    align-items: center;
-}
-.doctor img{
-    width: 100px;
-    height: 100px;
-    display: flex;
-}
-.personal{
-    margin: 0px 10px 0px 190px;
-}
-.personal_bubble{
-    width: 750px;
-    margin: 30px 0px 30px 0px;
-    border: 2px solid #A1A1A1;
     border-radius: 10px;
 }
 .gender{
@@ -346,57 +346,26 @@ input[id="male"]:checked + label {
 input[id="female"]:checked + label {
     background-color: rgb(244,237,124);
 }
-.activity_chk{
+.diet_checker{
+    display: flex;
+    align-items: center;
+}
+/* .diet_checker input{
+    display: none;
+} */
+.diet_checker label{
     font-weight: 500;
     background-color: white;
     padding: 5px 15px 5px 15px;
     border: 2px solid rgb(255,198,30);
     border-radius: 10px;
     margin: 0px 10px 10px 10px;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    cursor: pointer;
+    display: flex;
 }
 .clicked{
     background-color: rgb(244,237,124);
 }
-/* .activity_checker{
-    display: flex;
-    justify-content: center;
-}
-.activity_checker input{
-    display: none;
-}
-input[id="lev1"]:checked + label {
-    background-color: rgb(244,237,124);
-}
-input[id="lev2"]:checked + label {
-    background-color: rgb(244,237,124);
-}
-input[id="lev3"]:checked + label {
-    background-color: rgb(244,237,124);
-}
-input[id="lev4"]:checked + label {
-    background-color: rgb(244,237,124);
-}
-input[id="lev5"]:checked + label {
-    background-color: rgb(244,237,124);
-}
-.activity_checker label{
-    font-weight: 500;
-    background-color: white;
-    padding: 5px 15px 5px 15px;
-    border: 2px solid rgb(255,198,30);
-    border-radius: 10px;
-    margin: 0px 10px 10px 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-.activity_checker label:hover{
-    cursor: pointer;
-} */
 .move_kit{
     padding: 10px 20px 10px 20px;
     border: 1px solid;
