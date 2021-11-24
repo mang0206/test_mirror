@@ -1,0 +1,16 @@
+ body {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+ }
+
+ .chart-container {
+     position: relative;
+     width : 50vw;
+     height: 50vh;
+ }
+
+.chart h1 {
+    font-size: 4rem;
+}
