@@ -8,6 +8,11 @@
                 섭취하신 음식을 토대로 분석해봤어요!
             </div>
         </div>
+        <div name="diet_chart" class="diet_chart">
+            얍
+            {% block diet_chart %}
+            {% endblock %}
+        </div>
         <div class="kit_chart">
             분석 차트
             {{ nutrients }}
@@ -31,10 +36,8 @@
         </div>
         <div class="kit_two_button">
             <input type="button" value="&lt;" onClick="location.href='/diet'" class="kit_button">
-            <input type="submit" name="btn" value="diet_result" class="kit_button">
-            <!-- <button name="move_result" class="kit_button">
-              <a href="/loading">검사 결과 보기</a>
-            </button> -->
+            <input type="submit" id="kit_submit" name="btn" value="diet_result" class="kit_button_hidden">
+            <label for="kit_submit" class="kit_button">검사 결과 보기</label>
           </div>
     </div>
 </div>

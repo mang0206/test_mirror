@@ -420,6 +420,9 @@ a:active{color: white;}
 .move_button:hover{
     cursor: pointer;
 }
+.move_button_hidden{
+    display: none;
+}
 /*--------kit--------*/
 .kit_clip_img{
     top: 495px;
@@ -485,6 +488,10 @@ a:active{color: white;}
 .checker_container{
     border: 1px solid;
 }
+.diet_chart{
+    display: flex;
+    justify-content: center;
+}
 .kit_two_button{
     display: flex;
     justify-content: center;
@@ -498,6 +505,9 @@ a:active{color: white;}
 }
 .kit_button:hover{
     cursor: pointer;
+}
+.kit_button_hidden{
+    display: none;
 }
 .label_checker{
     cursor: pointer;

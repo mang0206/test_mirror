@@ -118,8 +118,8 @@ def loading():
 def diet_result():
     return render_template("diet_result.html")
 
-@app.route("/visualization")
+@app.route("/visual")
 def visualization():
-    return render_template("visualization.html")
+    return render_template("visual.html")
 
 

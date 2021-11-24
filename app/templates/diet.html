@@ -53,7 +53,8 @@
                         </div>
                     </div>
                     <div>
-                        <input type="submit" name="btn" value='form_personal' class="move_button">
+                        <input type="submit" id="personal_submit" name="btn" value='form_personal' class="move_button_hidden">
+                        <label for="personal_submit" class="move_button">제출 하기</label>
                     </div>
                 </form>
             </div>
@@ -65,11 +66,15 @@
             </div>
         </div>
         <div class="personal">
-            <div class="personal_bubble">
+            <div class="">
                 <form action="/diet" method="POST" id="form_food">
                     <input type="text" name="food">
+                    {% block content %}
+                    {% endblock %}
+                    
                     {{ food_lst }}
-                    <input type="submit" name="btn" value="form_food">
+                    <input type="submit" id="food_submit" name="btn" value="form_food" class="move_button_hidden">
+                    <label for="food_submit" class="move_button">음식 제출</label>
                 </form>
             </div>
         </div>
