@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request, redirect
 from .ml import model, Age_dict, Gender_dict, Contact_dict
 import pandas as pd
+from .cal_nutrients import cal_nutrients
 from collections import defaultdict
 from . import app
+
+food_lst = []
 
 @app.route("/")
 def index():
@@ -20,13 +23,30 @@ def join():
 def join_result():
     return render_template("join_result.html")
 
-@app.route("/diet")
-def diet():
+@app.route("/diet", methods=["GET", "POST"])
+def diet_food():
+    if request.method == "POST" and request.form.get('btn1') :
+        age = int(request.form.get('age'))
+        sex = request.form.get('gender')
+        height = int(request.form.get('height'))
+        Z = cal_nutrients.body_classifier(sex, age, height)
+        nutrients = cal_nutrients.nutrient(Z, sex, age)
+        return render_template("diet.html")
+
+    if request.method == "POST" and request.form.get('btn2') :
+        # nutrients = nutrients
+        food_lst.append(request.form.get('food'))
+        return render_template('kit.html', food_lst=food_lst, nutrients=nutrients)
+   
     return render_template("diet.html")
 
 @app.route("/kit")
 def kit():
     return render_template("checker.html")
+
+@app.route("/loading")
+def loading():
+    return render_template("loading.html")
 
 @app.route("/diet_result")
 def diet_result():

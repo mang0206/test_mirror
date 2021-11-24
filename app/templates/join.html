@@ -2,18 +2,20 @@
 {% block join %}
 <div class="join">
     <h2>Join</h2>
-    <div class="user_name">
-        <h4>User Name</h4>
-        <input type="text" placeholder="User Name">
-    </div>
-    <div class="join_email">
-        <h4>E-mail</h4>
-        <input type="email" placeholder="Email">
-    </div>
-    <div class="join_pw">
-        <h4>Password</h4>
-        <input type="password" placeholder="Password">
-    </div>
+    <form action="">
+        <div class="user_name">
+            <label for="user"><h4>User Name</h4></label>
+            <input type="text" placeholder="User Name" id="user" required>
+        </div>
+        <div class="join_email">
+            <label for="join_email"><h4>E-mail</h4></label>
+            <input type="email" placeholder="Email" id="join_email" required>
+        </div>
+        <div class="join_pw">
+            <label for="join_pw"><h4>Password</h4></label>
+            <input type="password" placeholder="Password" id="join_pw" required>
+        </div>
+    </form>
     <div class="join_submit">
         <a href="/join_result">Join</a>
     </div>
