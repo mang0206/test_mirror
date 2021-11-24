@@ -64,6 +64,21 @@ def diet_food():
    
     return render_template("diet.html")
 
+<<<<<<< HEAD
+=======
+@app.route("/loading")
+def loading():
+    return render_template("loading.html")
+
+@app.route("/diet_result")
+def diet_result():
+    return render_template("diet_result.html")
+
+@app.route("/visualization")
+def visualization():
+    return render_template("visualization.html")
+
+>>>>>>> testing
 @app.route("/kit", methods=['GET', 'POST'])
 def checker():
     global nutrients

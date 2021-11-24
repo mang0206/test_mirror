@@ -23,7 +23,7 @@ a:active{color: white;}
     display: flex;
     background: white;
     box-shadow: 0px 1px 10px gray;
-    z-index: 900;
+    z-index: 1000;
 }
 /*--------index member--------*/
 .member{
@@ -275,10 +275,11 @@ a:active{color: white;}
     padding-top: 10px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .doctor img{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     display: flex;
 }
 .doctor_bubble{
@@ -292,20 +293,49 @@ a:active{color: white;}
     border-radius: 10px;
     display: flex;
     justify-content: left;
+    box-shadow: 0px 1px 3px gray;
 }
 .personal{
-    margin: 0px 10px 0px 190px;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.diet_clip_img{
+    top: 235px;
+    z-index: 900;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.diet_clip_img img{
+    width: 200px;
+    height: 150px;
+}
+.diet_personal_board{
+    width: fit-content;
+    margin: 30px 0px 30px 0px;
+    padding: 10px 10px 0px 10px;
+    border: 4px solid #AD732E;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px gray;
 }
 .personal_bubble{
     width: fit-content;
     margin: 30px 0px 30px 0px;
-    border: 2px solid #A1A1A1;
+    border: 3px solid #999999;
     border-radius: 10px;
+    box-shadow: 0px 1px 3px gray;
 }
 /*--------diet--------*/
-.diet{
+.diet_background{
     width: 100%;
-    background: linear-gradient(to bottom, rgb(216,168,216) 50%, rgb(191,147,204));
+    background: linear-gradient(to bottom, rgb(240,207,240) 10%, rgb(216,168,216) 50%, rgb(191,147,204));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -313,82 +343,105 @@ a:active{color: white;}
     text-align: center;
 }
 .diet_container{
-    width: fit-content;
+    width: 900px;
     background: white;
     margin: 30px 0px 30px 0px;
     padding: 10px 20px 10px 20px;
-    border: 1px solid;
+    border: 4px solid #F1F1F1;
     border-radius: 10px;
+    box-shadow: 0px 2px 5px gray;
 }
 .gender{
+    padding: 20px 0px 10px 0px;
+}
+.gender_checker{
+    padding-top: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+.diet_checker{
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
 }
 .gender_checker input{
     display: none;
 }
-.gender_checker label{
-    font-weight: 500;
-    background-color: white;
-    padding: 5px 15px 5px 15px;
-    border: 2px solid rgb(255,198,30);
-    border-radius: 10px;
-    margin: 0px 10px 10px 10px;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-input[id="male"]:checked + label {
-    background-color: rgb(244,237,124);
-}
-input[id="female"]:checked + label {
-    background-color: rgb(244,237,124);
-}
-.diet_checker{
-    display: flex;
-    align-items: center;
-}
-/* .diet_checker input{
+.diet_checker input{
     display: none;
-} */
-.diet_checker label{
-    font-weight: 500;
+}
+.label_chk{
+    width: fit-content;
+    font-size: 15px;
+    font-weight: 400;
     background-color: white;
     padding: 5px 15px 5px 15px;
     border: 2px solid rgb(255,198,30);
     border-radius: 10px;
-    margin: 0px 10px 10px 10px;
+    margin: 5px 5px 10px 5px;
     cursor: pointer;
     display: flex;
 }
 .clicked{
     background-color: rgb(244,237,124);
 }
-.move_kit{
-    padding: 10px 20px 10px 20px;
+.text_input{
+    padding: 2px 0px 2px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.text_input span{
+    padding-bottom: 2px;
+}
+.text_box{
+    width: 100px;
+    height: 25px;
+    border: 2px solid rgb(255,198,30);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.activity{
+    padding: 10px 0px 10px 0px;
+}
+.move_button{
+    width: fit-content;
+    padding: 8px 15px 8px 15px;
     border: 1px solid;
     border-radius: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    background-color: rgb(239, 239, 239);
+}
+.move_button:hover{
+    cursor: pointer;
 }
 /*--------kit--------*/
-.kit{
-    width: 100%;
-    background: linear-gradient(to bottom, rgb(216,168,216) 50%, rgb(191,147,204));
+.kit_clip_img{
+    top: 495px;
+    z-index: 900;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
-.kit_container{
-    width: 950px;
-    background: white;
-    margin: 30px 0px 30px 0px;
-    padding: 10px 20px 10px 20px;
-    border: 1px solid;
+.kit_clip_img img{
+    width: 200px;
+    height: 150px;
+}
+.kit_personal_board{
+    width: fit-content;
+    margin: 15px 0px 30px 0px;
+    padding: 10px 10px 10px 10px;
+    border: 4px solid #AD732E;
     border-radius: 10px;
+    box-shadow: 0px 1px 3px gray;
 }
 .symptom_container{
     padding: 16px 20px 16px 20px;
@@ -398,7 +451,7 @@ input[id="female"]:checked + label {
     justify-content: center;
 }
 .symptom_1{
-    margin-bottom: 20px;
+    margin: 10px 0px 20px 0px;
     display: flex;
 }
 .symptom_1 label{
@@ -411,32 +464,14 @@ input[id="female"]:checked + label {
     flex-direction: column;
     justify-content: center;
 }
-.symptom_2{
-    width: 500px;
-    margin-bottom: 20px;
-    display: flex;
-}
-.symptom_2 label{
-    font-weight: 400;
-    background-color: white;
-    padding: 5px 15px 5px 15px;
-    border: 2px solid rgb(255,198,30);
-    border-radius: 10px;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+.symptom_1 .none_experience{
+    border: 2px solid #94C0FF;
 }
 .kit_analysis{
     margin-bottom: 100px;
 }
 .kit_chart{
     margin-bottom: 100px;
-}
-.kit_checker{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 /*--------checker--------*/
 .checker{
@@ -450,8 +485,22 @@ input[id="female"]:checked + label {
 .checker_container{
     border: 1px solid;
 }
-.move_result{
-    margin-bottom: 50px;
+.kit_two_button{
+    display: flex;
+    justify-content: center;
+}
+.kit_button{
+    padding: 8px 15px 8px 15px;
+    background-color: rgb(239, 239, 239);
+    border: 1px solid;
+    border-radius: 15px;
+    margin: 5px 10px 40px 0px;
+}
+.kit_button:hover{
+    cursor: pointer;
+}
+.label_checker{
+    cursor: pointer;
 }
 /*--------check--------*/
 .check{
@@ -460,7 +509,6 @@ input[id="female"]:checked + label {
     align-items: center;
     justify-content: center;
     text-align: center;
-
 }
 /*--------loading--------*/
 .scan{
