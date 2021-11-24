@@ -38,21 +38,21 @@ window.onload=function() {
 }
 
 // 스크롤 이벤트
-$(".intro_detail").on("mousewheel", function(e){
-    var wheel = e.originalEvent.wheelDelta;
-    var sHeight = $("#intro_detail").offset().top;
+// $(".intro_detail").on("mousewheel", function(e){
+//     var wheel = e.originalEvent.wheelDelta;
+//     var intro_detail = $("#intro_detail").offset().top;
 
-    if(wheel>0){
-        if(sHeight<)
-    }
-});
+//     if(wheel>0){
+//         if(intro_detail<)
+//     }
+// });
 
-$(function() {
-    $(window).scroll(function() {
-        if ($(this).scrollTop() >= Math.ceil($('.target').offset().top)) {
+// $(function() {
+//     $(window).scroll(function() {
+//         if ($(this).scrollTop() >= Math.ceil($('.intro_detail').offset().top)) {
+//             $()
+//         } else {
 
-        } else {
-
-        }
-    });
-});
+//         }
+//     });
+// });

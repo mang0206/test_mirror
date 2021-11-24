@@ -48,9 +48,9 @@ def loading():
 def diet_result():
     return render_template("diet_result.html")
 
-@app.route("/visualization")
-def visualization():
-    return render_template("visualization.html")
+@app.route("/visual")
+def visual():
+    return render_template("visual.html")
 
 @app.route("/kit", methods=['GET', 'POST'])
 def checker():
