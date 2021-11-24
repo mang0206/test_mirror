@@ -70,7 +70,7 @@ def diet_food():
 
 @app.route("/kit", methods=['GET', 'POST'])
 def checker():
-    global nutrients
+    global nutrients, food_lst, result, food_nutrients
     if request.method == 'POST':
         input_data = {
             'Fever':0,
@@ -109,10 +109,11 @@ def checker():
 
         x = pd.DataFrame(input_data, index=[0])
         pred = model.predict_proba(x)[:,1][0]
+        result = pred*0.3 + (1-pred)*0.7
 
-        return render_template("check.html", result=pred*0.3 + (1-pred)*0.7)
-    else:
-        return render_template("checker.html")
+        return render_template("check.html")
+    
+    return render_template("checker.html",nutrients=nutrients,food_lst=food_lst)
 
 @app.route("/loading")
 def loading():
@@ -120,7 +121,8 @@ def loading():
 
 @app.route("/diet_result")
 def diet_result():
-    return render_template("diet_result.html")
+    global nutrients, result
+    return render_template("diet_result.html",nutrients=nutrients,result=result)
 
 @app.route("/visualization")
 def visualization():
