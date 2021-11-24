@@ -1,9 +1,10 @@
-const ctx = document.getElementById('firstChart').getContext('2d');
+const ctx_kcal = document.getElementById('firstChart').getContext('2d');
+const ctx = document.getElementById('secondChart').getContext('2d');
 
 let delayed;
 
+const label = ["에너지"]
 const labels = [
-    "에너지",
     "단백질",
     "지방",
     "탄수화물",
@@ -22,9 +23,8 @@ const labels = [
 ]
 
 // 이 데이터를 서버에서 어떻게 받아올 것인가?
-const input_data = [
-    211, 326, 165, 350, 420, 370, 500, 375, 415, 370, 500, 415, 370, 500, 370, 500
-]
+let input_data_kcal = {{ kcal }};
+let input_data = {{ nutrients }};
 
 // Gradient Fill design
 let gradient = ctx.createLinearGradient(400,0,0,0);
@@ -32,8 +32,19 @@ gradient.addColorStop(0, '#d88771');
 gradient.addColorStop(1, '#f6d365');
 
 
-
 // data
+const data_kcal = {
+    labels: label,
+    datasets: [
+        {
+            data: input_data_kcal,
+            fill: true,
+            backgroundColor: gradient,
+            borderColor: "#fff",
+            // pointBackgroundColor: "rgb(189,195,199,0.4)",
+        },
+    ],
+};
 const data = {
     labels: labels,
     datasets: [
@@ -48,6 +59,32 @@ const data = {
 };
 
 // firstChart
+const config_kcal = {
+    type: 'bar',
+    data: data_kcal,
+    options: {
+        indexAxis: 'y',
+        elements: {
+            bar: {
+                borderWidth: 0.5,
+
+            }
+        },
+        responsive: true,
+        plugins: {
+            // legend: {
+            //     position: 'right',
+            // },
+            legend: false,
+            title: {
+                display: true,
+                // text: 'Inside Your Body'
+            }
+        }
+    }
+};
+
+// secondChart
 const config = {
     type: 'bar',
     data: data,
@@ -91,4 +128,6 @@ const config = {
     },
 };
 
-const firstChart = new Chart(ctx, config);
+const firstChart = new Chart(ctx_kcal, config_kcal);
+const secondChart = new Chart(ctx, config);
+
