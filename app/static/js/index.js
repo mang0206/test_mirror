@@ -37,16 +37,22 @@ window.onload=function() {
     setInterval(typing, 140)
 }
 
-// 스크롤 속도 조절
-// $(window).on('mousewheel', function(e){ 
-//     if(e.originalEvent.wheelDelta < 0) { 
-//         $('html, body').stop().animate({ 
-//             scrollTop : '+=250px' 
-//         },500); 
-//     }else { 
-//         $('html, body').stop().animate({ 
-//             scrollTop : '-=250px' 
-//         },500); } 
-// });
+// 스크롤 이벤트
+$(".intro_detail").on("mousewheel", function(e){
+    var wheel = e.originalEvent.wheelDelta;
+    var sHeight = $("#intro_detail").offset().top;
 
+    if(wheel>0){
+        if(sHeight<)
+    }
+});
 
+$(function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= Math.ceil($('.target').offset().top)) {
+
+        } else {
+
+        }
+    });
+});

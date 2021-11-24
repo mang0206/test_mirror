@@ -473,9 +473,6 @@ a:active{color: white;}
 .kit_chart{
     margin-bottom: 100px;
 }
-.label_checker .checked{
-    background-color: gray;
-}
 /*--------checker--------*/
 .checker{
     width: 100%;
