@@ -73,7 +73,7 @@ def diet_food():
         return redirect(url_for("diet_food"))
 
     if request.method == "POST" and request.form.get('btn') == 'form_food':
-        # food_lst = request.form.get('food')
+        food_lst = request.form.get('food')
         # for food_name in food_lst:
         #     food = Food.query.filter(Food.food_name == food_name).first()
         #     food_nutrients[0] += food.calorie
@@ -86,15 +86,15 @@ def diet_food():
         #     food_nutrients[7] += food.iron * 1000
         #     food_nutrients[8] += food.salt * 1000 
         #     food_nutrients[9] += food.potassium * 1000
-        #     food_nutrients[10] += food.vitaminA 
+        #     food_nutrients[10] += food.vitaminA * 1000 * 1000
         #     food_nutrients[11] += food.vitaminB1 
         #     food_nutrients[12] += food.vitaminB2 
         #     food_nutrients[13] += food.niacin 
         #     food_nutrients[14] += food.vitaminC 
-        #     food_nutrients[15] += food.folic_acid
+        #     food_nutrients[15] += food.folic_acid * 1000 * 1000
         
         # for i in range(len(nutrients)):
-        #     food_nutrients[i] = 
+        #     food_nutrients[i] = food_nutrients[i] / nutrients[i] * 100
 
         return redirect(url_for('checker'))
    
