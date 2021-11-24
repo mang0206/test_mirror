@@ -5,6 +5,7 @@ from .cal_nutrients import cal_nutrients
 from collections import defaultdict
 from . import app
 from .models import Food
+import bcrypt
 
 global nutrients, result, food_lst, food_nutrients
 food_lst = None
