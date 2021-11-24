@@ -5,12 +5,13 @@
      height: 100vh;
  }
 
- .chart-container {
+ .chart {
      position: relative;
      width : 50vw;
      height: 50vh;
  }
 
-.chart h1 {
-    font-size: 4rem;
-}
+.chart #firstChart {
+     height: 10vh;
+ }
+
