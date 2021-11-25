@@ -1,36 +1,42 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="kit">
-    <div class="kit_container">
+<div class="diet_background">
+    <div class="diet_container">
         <div class="doctor">
             <img src="../static/image/thumbs_up.png" alt="doctor">
             <div class="doctor_bubble">
-                섭취하신 음식을 분석해봤어요!
+                섭취하신 음식을 토대로 분석해봤어요!
             </div>
         </div>
-        <div class="kit_chart">
+        <div name="diet_chart" class="diet_chart">
             분석 차트
+            {% block diet_chart %}
+            {% endblock %}
+        </div>
+        <div class="kit_chart">
             {{ nutrients }}
             {{ food_lst }}
         </div>
+
         <div class="doctor">
             <img src="../static/image/wink.png" alt="doctor">
             <div class="doctor_bubble">
-                마지막으로 COVID-진단 KIT 항목만 선택 해 주시면
+                마지막으로 COVID-진단 KIT 항목을 선택 해 주세요
             </div>
         </div>
         <div class="personal">
-            <div class="personal_bubble">
+            <div class="kit_clip_img">
+                <img src="../static/image/clip.png" alt="file_clip">
+            </div>
+            <div class="">
                 {% block checker %}
                 {% endblock %}
             </div>
         </div>
-        <div>
-            <button><a href="/diet">&lt;</a></button>
-            <button class="move_result">
-              <a href="/loading">검사 결과 보기</a>
-            </button>
-          </div>
     </div>
 </div>
+<script src="../static/js/checker.js" defer="defer"></script>
+<script src="../static/js/food-suggestions.js" defer="defer"></script>
+<script src="../static/js/foodSearch-autocomp.js" defer="defer"></script>
+<script src="../static/js/foodSearch-hashtag.js" defer="defer"></script>
 {% endblock %}
