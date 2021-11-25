@@ -65,18 +65,9 @@
                 <span>오늘 드셨던 음식을 검색 해 골라주시면</span>
             </div>
         </div>
-        <div class="personal">
-            <div class="">
-                <form action="/diet" method="POST" id="form_food">
-                    <input type="text" name="food">
-                    {% block content %}
-                    {% endblock %}
-                    
-                    {{ food_lst }}
-                    <input type="submit" id="food_submit" name="btn" value="form_food" class="move_button_hidden">
-                    <label for="food_submit" class="move_button">음식 제출</label>
-                </form>
-            </div>
+        <div>
+            {% block food_search %}
+            {% endblock %}
         </div>
     </div>
 </div>

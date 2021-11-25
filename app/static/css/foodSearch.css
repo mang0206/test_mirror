@@ -1,24 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body{
-    background: lightsteelblue;
-    padding: 0 20px;
-    min-height: 100vh;
-
-}
 
 ::selection{
     color: #fff;
     background: #664AFF;
 }
-
-header {
+.food_search {
     font-size: 1.5rem;
     min-height: 20vh;
     display: flex;
@@ -27,27 +13,25 @@ header {
 
 }
 
-form {
+.search_input {
     width: 50%;
     background-color: #f6d365;
 }
 
-.wrapper{
+.food_search_wrapper{
     max-width: 450px;
     margin: 150px auto;
 
 }
-
-.wrapper .search-input{
+.food_search_wrapper .search_input{
     background: #fff;
     width: 100%;
     border-radius: 5px;
     position: relative;
     box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.1);
 }
-
 /* 검색란 */
-.search-input input{
+.search_input input{
     height: 55px;
     width: 100%;
     outline: none;
@@ -57,26 +41,22 @@ form {
     font-size: 18px;
     box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
 }
-
-.search-input.active input{
+.search_input .active input{
     border-radius: 5px 5px 0 0;
 }
-
-.search-input .autocom-box{
+.search_input .autocom_box{
     padding: 0;
     opacity: 0;
     pointer-events: none;
     max-height: 280px;
     overflow-y: auto;
 }
-
-.search-input.active .autocom-box{
+.search_input.active .autocom_box{
     padding: 10px 8px;
     opacity: 1;
     pointer-events: auto;
 }
-
-.autocom-box li{
+.autocom_box li{
     list-style: none;
     padding: 8px 12px;
     display: none;
@@ -84,17 +64,14 @@ form {
     cursor: default;
     border-radius: 3px;
 }
-
-.search-input.active .autocom-box li{
+.search_input.active .autocom_box li{
     display: block;
 }
-.autocom-box li:hover{
+.autocom_box li:hover{
     background: #efefef;
 }
-
-
 /* 검색 버튼 */
-.search-input .icon{
+.search_input .icon{
     position: absolute;
     right: 0px;
     top: 0px;
@@ -109,13 +86,10 @@ form {
     background-color: white;
     border-radius: 0 5px 5px 0;
 }
-
-.search-input .icon:hover {
+.search_input .icon:hover {
     color: #f6d365;
 }
-
-
-.delete-btn {
+.delete_btn {
     width: 25px;
     height: 25px;
     padding: 0 3px;
@@ -127,28 +101,21 @@ form {
     /*border-radius: 100rem;*/
     /*border: 1px solid #e3d1e1;*/
 }
-
-
-
-.delete-btn:hover {
+.delete_btn:hover {
     /*background: #d88771;*/
     color: #f6d365;
 }
-
-
-.search-container {
+.search_container {
     /*display: flex;*/
     display: block;
     justify-content: center;
     align-items: -webkit-center;
 }
-
-.search-list {
+.search_list {
     min-width: 30%;
     list-style: none;
     margin: 4px 3px;
 }
-
 .search {
     margin: 0.5rem;
     background: white;
@@ -161,28 +128,20 @@ form {
     transition: all 0.5s ease;
     box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.05);
     padding: 5px 8px 5px 10px;
-
 }
-
 .search li {
     flex: 1;
 }
-
-
-
-
 /*.complete-btn {*/
 /*    background: green;*/
 /*}*/
 
-.search-item {
+.search_item {
     padding: 0rem 0.5rem;
 }
-
-.fa-trash {
+.fa_trash {
     pointer-events: none;
 }
-
 .fail {
     transform: translateY(8rem) rotateZ(20deg);
     opacity: 0;
