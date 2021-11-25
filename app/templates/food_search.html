@@ -2,19 +2,19 @@
 {% block food_search %}
 <div class="food_search_wrapper">
     <div class="search_input">
-        <form action="/diet" method="POST" id="form_food" class="search_form">
+        <form action="/diet" method="POST" id="form_food" class="search_form" autocomplete="off">
             <div class="food_search">
                 <!--<a href="" target="_blank" hidden></a>-->
                 <div class="search_box">
-                    <div class="search_autocom">
+                    <div class="search_button">
                         <input type="text" id="searchBox" class="user_input" placeholder="오늘 먹은 음식을 검색해보세요.">
-                        <div class="autocom_box">
-                            <!-- here list are inserted from javascript -->
+                        <div>
+                            <input type="submit" id="food_submit" class="icon">
+                            <label for="food_submit" class="food_plus_button">+</label>
                         </div>
                     </div>
-                    <div>
-                        <input type="submit" id="food_submit" class="icon">
-                        <label for="food_submit" class="food_plus_button">+</label>
+                    <div class="autocom_box">
+                        <!-- here list are inserted from javascript -->
                     </div>
                 </div>
                 <div class="search_container">

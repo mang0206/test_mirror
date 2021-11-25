@@ -24,6 +24,8 @@ $(function(){
 });
 
 //개인정보 입력 완료 안내 창
-// $( function () {
-//     alert('메시지를 띄웁니다.');
-// });
+$(function(){
+    $(".move_button").click(function(){
+        alert("안전하게 제출되었습니다! :)")
+    })
+})
