@@ -140,7 +140,7 @@
 {% block checker %}
 <div class='checker'>
   <form method="post">
-    <div class="symptom_container">
+    <div class="kit_personal_board">
       <div class='symptom_1'>
         <input type="checkbox" name="Fever" id="Fever" class="input_checker">
         <label for="Fever" class="label_checker">고열</label>
@@ -231,6 +231,11 @@
             </tr>
           </table>
       </div>
+    </div>
+    <div class="kit_two_button">
+      <input type="button" value="&lt;" onClick="location.href='/diet'" class="kit_button">
+      <input type="submit" id="kit_submit" name="btn" value="diet_result" class="kit_button_hidden">
+      <label for="kit_submit" class="kit_button">검사 결과 보기</label>
     </div>
   </form>
 </div>
