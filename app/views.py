@@ -62,7 +62,7 @@ def diet_food():
         #     food_nutrients[15] += food.folic_acid 
         return redirect(url_for('checker'))
    
-    return render_template("diet.html")
+    return render_template("food_search.html")
 
 @app.route("/kit", methods=['GET', 'POST'])
 def checker():
