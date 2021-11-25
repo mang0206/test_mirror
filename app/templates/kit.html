@@ -8,19 +8,23 @@
                 섭취하신 음식을 토대로 분석해봤어요!
             </div>
         </div>
-        <div class="kit_chart">
+        <div name="diet_chart" class="diet_chart">
             분석 차트
+            {% block diet_chart %}
+            {% endblock %}
+        </div>
+        <div class="kit_chart">
             {{ nutrients }}
             {{ food_lst }}
             {{ food_nutrients }}
         </div>
+
         <div class="doctor">
             <img src="../static/image/wink.png" alt="doctor">
             <div class="doctor_bubble">
                 마지막으로 COVID-진단 KIT 항목을 선택 해 주세요
             </div>
         </div>
-        
         <div class="personal">
             <div class="kit_clip_img">
                 <img src="../static/image/clip.png" alt="file_clip">
@@ -32,11 +36,9 @@
         </div>
         <div class="kit_two_button">
             <input type="button" value="&lt;" onClick="location.href='/diet'" class="kit_button">
-            <input type="submit" name="btn" value="diet_result" class="kit_button">
-            <!-- <button name="move_result" class="kit_button">
-              <a href="/loading">검사 결과 보기</a>
-            </button> -->
-          </div>
+            <input type="submit" id="kit_submit" name="btn" value="diet_result" class="kit_button_hidden">
+            <label for="kit_submit" class="kit_button">검사 결과 보기</label>
+        </div>
     </div>
 </div>
 <script src="../static/js/checker.js" defer="defer"></script>
