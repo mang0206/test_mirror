@@ -384,6 +384,18 @@ a:active{color: white;}
     cursor: pointer;
     display: flex;
 }
+.gender_chk{
+    width: fit-content;
+    font-size: 15px;
+    font-weight: 400;
+    background-color: white;
+    padding: 5px 15px 5px 15px;
+    border: 2px solid rgb(255,198,30);
+    border-radius: 10px;
+    margin: 5px 5px 10px 5px;
+    cursor: pointer;
+    display: flex;
+}
 .clicked{
     background-color: rgb(244,237,124);
 }
@@ -425,7 +437,7 @@ a:active{color: white;}
 }
 /*--------kit--------*/
 .kit_clip_img{
-    top: 495px;
+    top: 800px;
     z-index: 900;
     position: absolute;
     display: flex;

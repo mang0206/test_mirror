@@ -1,51 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
-::selection{
-    color: #fff;
-    background: #664AFF;
-}
-.food_search {
-    font-size: 1.5rem;
-    min-height: 20vh;
+.food_search_wrapper{
+    margin-top: 30px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
-
 .search_input {
-    width: 50%;
-    background-color: #f6d365;
-}
-
-.food_search_wrapper{
-    max-width: 450px;
-    margin: 150px auto;
-
-}
-.food_search_wrapper .search_input{
-    background: #fff;
-    width: 100%;
-    border-radius: 5px;
-    position: relative;
-    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.1);
+    width: 450px;
 }
 /* 검색란 */
-.search_input input{
+.search_box{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+.user_input{
     height: 55px;
-    width: 100%;
+    width: 400px;
     outline: none;
     border: none;
+    padding: 0px 10px 0px 10px;
     border-radius: 5px;
-    padding: 0 60px 0 20px;
-    font-size: 18px;
+    font-size: 15px;
     box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
 }
-.search_input .active input{
+.search_input .active{
+    height: 55px;
     border-radius: 5px 5px 0 0;
 }
 .search_input .autocom_box{
-    padding: 0;
+    height: 150px;
+    padding: 5px 10px 5px 10px;
     opacity: 0;
     pointer-events: none;
     max-height: 280px;
@@ -55,6 +40,11 @@
     padding: 10px 8px;
     opacity: 1;
     pointer-events: auto;
+}
+.search_autocom{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
 }
 .autocom_box li{
     list-style: none;
@@ -71,20 +61,16 @@
     background: #efefef;
 }
 /* 검색 버튼 */
-.search_input .icon{
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    height: 55px;
-    width: 55px;
-    text-align: center;
-    line-height: 55px;
-    font-size: 20px;
-    color: #a5d8f3;
+.icon{
+    display: none;
+}
+.food_plus_button{
+    border: 1px solid;
+    padding: 10px;
+    font-size: 15px;
+}
+.food_plus_button:hover{
     cursor: pointer;
-    border: none;
-    background-color: white;
-    border-radius: 0 5px 5px 0;
 }
 .search_input .icon:hover {
     color: #f6d365;
@@ -93,13 +79,11 @@
     width: 25px;
     height: 25px;
     padding: 0 3px;
-    color: darkgray;
-    background: white;
+    background: #E5E5E5;
     cursor: pointer;
     transition: all 0.3s ease;
-    border: none;
-    /*border-radius: 100rem;*/
-    /*border: 1px solid #e3d1e1;*/
+    border-radius: 20px;
+    border: 1px solid #C0C0C0;
 }
 .delete_btn:hover {
     /*background: #d88771;*/
@@ -110,6 +94,7 @@
     display: block;
     justify-content: center;
     align-items: -webkit-center;
+    margin-bottom: 30px;
 }
 .search_list {
     min-width: 30%;
@@ -139,6 +124,9 @@
 .search_item {
     padding: 0rem 0.5rem;
 }
+.fa_times{
+    border: 1px;
+}
 .fa_trash {
     pointer-events: none;
 }
@@ -146,4 +134,10 @@
     transform: translateY(8rem) rotateZ(20deg);
     opacity: 0;
 }
-
+/*kit로 이동 버튼*/
+.move_kit{
+    margin-bottom: 50px;
+}
+.move_kit input{
+    display: none;
+}

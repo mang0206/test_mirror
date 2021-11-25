@@ -1,7 +1,7 @@
 // Selectors
-const searchInput = document.querySelector('.user-input');
-const searchButton = document.querySelector('.icon');
-const searchList = document.querySelector('.search-list');
+const searchInput = document.querySelector('.user_input');
+const searchButton = document.querySelector('.food_plus_button');
+const searchList = document.querySelector('.search_list');
 // const resetButton = document.querySelector('.reset-button');
 
 // Event Listeners
@@ -27,15 +27,15 @@ function addSearch(event){
     } else if (!(suggestions.includes(searchInput.value))) {
         alert('검색 데이터에 없는 음식입니다!')
     } else {
-        newSearch.classList.add('search-item');
+        newSearch.classList.add('search_item');
         searchDiv.appendChild(newSearch);
         // add searches to localstorage
         saveLocalSearches(searchInput.value);
 
         //DELETE BUTTON
         const deleteButton = document.createElement('button');
-        deleteButton.innerHTML = '<i class="fas fa-times"></i>';
-        deleteButton.classList.add("delete-btn");
+        deleteButton.innerHTML = '<i class="fas fa_times"></i>';
+        deleteButton.classList.add("delete_btn");
         searchDiv.appendChild(deleteButton);
         //APPEND TO LIST
         searchList.appendChild(searchDiv);
@@ -48,7 +48,7 @@ function addSearch(event){
 function deleteSearch(e) {
     const item = e.target;
     // Delete search
-    if (item.classList[0] === 'delete-btn') {
+    if (item.classList[0] === 'delete_btn') {
 
         const search = item.parentElement;
         // Animation
@@ -123,13 +123,13 @@ function getSearches() {
         // Create Li
         const newSearch = document.createElement('li');
         newSearch.innerText = search;
-        newSearch.classList.add('search-item');
+        newSearch.classList.add('search_item');
         searchDiv.appendChild(newSearch);
 
         //DELETE BUTTON
         const deleteButton = document.createElement('button');
-        deleteButton.innerHTML = '<i class="fas fa-times"></i>';
-        deleteButton.classList.add("delete-btn");
+        deleteButton.innerHTML = '<i class="fas fa_times"></i>';
+        deleteButton.classList.add("delete_btn");
         searchDiv.appendChild(deleteButton);
         //APPEND TO LIST
         searchList.appendChild(searchDiv);
