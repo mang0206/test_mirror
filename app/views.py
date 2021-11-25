@@ -4,7 +4,7 @@ import pandas as pd
 from .cal_nutrients import cal_nutrients
 from collections import defaultdict
 from . import app
-from .models import Food
+from .models import Food, User
 
 global nutrients, result, food_lst, food_nutrients
 food_lst = None
@@ -62,12 +62,13 @@ def diet_food():
         #     food_nutrients[15] += food.folic_acid 
         return redirect(url_for('checker'))
    
-    return render_template("diet.html")
+    return render_template("food_search.html")
 
 @app.route("/kit", methods=['GET', 'POST'])
 def checker():
-    global nutrients
-    if request.method == 'POST':
+    global nutrients, result, food_lst, food_nutrients
+
+    if request.method == 'POST' and request.form.get('btn') == "diet_result" :
         input_data = {
             'Fever':0,
             'Tiredness':0,
@@ -105,10 +106,11 @@ def checker():
 
         x = pd.DataFrame(input_data, index=[0])
         pred = model.predict_proba(x)[:,1][0]
+        result = pred*0.3 + (1-pred)*0.7
 
-        return render_template("check.html", result=pred*0.3 + (1-pred)*0.7)
-    else:
-        return render_template("checker.html")
+        return redirect(url_for("loading"))
+    
+    return render_template("checker.html",nutrients=nutrients,food_lst=food_lst,food_nutrients=food_nutrients)
 
 @app.route("/loading")
 def loading():
@@ -116,7 +118,9 @@ def loading():
 
 @app.route("/diet_result")
 def diet_result():
-    return render_template("diet_result.html")
+    global nutrients, result, food_lst, food_nutrients
+
+    return render_template("diet_result.html",nutrients=nutrients,food_lst=food_lst,food_nutrients=food_nutrients)
 
 @app.route("/visualization")
 def visualization():
