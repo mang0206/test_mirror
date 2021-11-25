@@ -100,7 +100,7 @@ def diet_food():
 def checker():
     global nutrients, result, food_lst, food_nutrients
 
-    if request.method == 'POST':
+    if request.method == 'POST' and request.form.get('btn') == "diet_result" :
         input_data = {
             'Fever':0,
             'Tiredness':0,
@@ -140,7 +140,7 @@ def checker():
         pred = model.predict_proba(x)[:,1][0]
         result = pred*0.3 + (1-pred)*0.7
 
-        return redirect(url_for("check.html"))
+        return redirect(url_for("loading"))
     
     return render_template("checker.html",nutrients=nutrients,food_lst=food_lst,food_nutrients=food_nutrients)
 
