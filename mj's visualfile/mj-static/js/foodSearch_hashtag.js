@@ -2,13 +2,14 @@
 const searchInput = document.querySelector('.user-input');
 const searchButton = document.querySelector('.icon');
 const searchList = document.querySelector('.search-list');
-// const resetButton = document.querySelector('.reset-button');
+// let searchResult = [];
 
 // Event Listeners
+
 document.addEventListener('DOMContentLoaded', getSearches);
 searchButton.addEventListener('click', addSearch);
 searchList.addEventListener('click', deleteSearch);
-// resetButton.addEventListener('click', resetAll);
+// submitSearches.addEventListener('click', submitSearching);
 
 // Functions
 function addSearch(event){
@@ -30,7 +31,10 @@ function addSearch(event){
         newSearch.classList.add('search-item');
         searchDiv.appendChild(newSearch);
         // add searches to localstorage
-        saveLocalSearches(searchInput.value);
+        // saveLocalSearches(searchInput.value);
+        // console.log(newSearch.innerText);
+        // searchResult.push(searchInput.value);
+        // console.log(searchResult);
 
         //DELETE BUTTON
         const deleteButton = document.createElement('button');
@@ -42,6 +46,7 @@ function addSearch(event){
 
         //Clear Search Input value
         searchInput.value = "";
+
     }
 }
 
@@ -53,17 +58,41 @@ function deleteSearch(e) {
         const search = item.parentElement;
         // Animation
         search.classList.add('fail');
-        removeLocalSearches(search);
+        // removeLocalSearches(search);
         search.addEventListener('transitionend', function () {
             search.remove();
         });
         item.remove();
+
+        // for(let i; i < searchResult.length; i++) {
+        //     if(this.children.classList.contains('fail')) {
+        //         searchResult.splice(i, 1);
+        //         i--;
+        //     }
+        // }
+
+        let ul = document.querySelector('.search-list');
+        let div = ul.querySelector('.search-item');
+
+    //     let li = div.querySelector('li');
+    //     // console.log(li.innerText);
+    //     let target = li.innerText;
+    //     //
+    //     // for(let i; i < searchResult.length; i++) {
+    //     //
+    //     //
+    //     // }
+
+        // console.log(div);
+
     }
 
     // if (item.classList[0] === 'complete-btn') {
     //     const search = item.parentElement;
     //     search.classList.toggle('completed');
     // }
+
+
 }
 
 // function resetSearch(event) {
@@ -97,17 +126,18 @@ function deleteSearch(e) {
 //     });
 // }
 
-function saveLocalSearches(search) {
-    // check
-    let searches;
-    if (localStorage.getItem('searches') === null) {
-        searches = [];
-    } else {
-        searches = JSON.parse(localStorage.getItem('searches'));
-    }
-    searches.push(search);
-    localStorage.setItem('searches', JSON.stringify(searches));
-}
+// function saveLocalSearches(search) {
+//     // check
+//     let searches;
+//     if (localStorage.getItem('searches') === null) {
+//         searches = [];
+//     } else {
+//         searches = JSON.parse(localStorage.getItem('searches'));
+//     }
+//     searches.push(search);
+//     localStorage.setItem('searches', JSON.stringify(searches));
+//     console.log(searches);
+// }
 
 function getSearches() {
     let searches;
@@ -136,19 +166,47 @@ function getSearches() {
     })
 }
 
-function removeLocalSearches(search) {
-    let searches;
-    if (localStorage.getItem('searches') === null) {
-        searches = [];
-    } else {
-        searches = JSON.parse(localStorage.getItem('searches'));
+// function removeLocalSearches(search) {
+//     let searches;
+//     if (localStorage.getItem('searches') === null) {
+//         searches = [];
+//     } else {
+//         searches = JSON.parse(localStorage.getItem('searches'));
+//     }
+//     const searchIndex = search.children[0].innerText;
+//     searches.splice(searches.indexOf(searchIndex), 1);
+//     localStorage.setItem('searches', JSON.stringify(searches));
+//
+// }
+
+// kit 전송 버튼
+
+// const submitBtn = document.querySelector('#move_kit');
+// submitBtn.addEventListener('click', submitAll);
+
+$('#move_kit').click(function submitAll() {
+    let foodResult = [];
+
+    for (let i = 0; i < searchList.childNodes.length; i++) {
+        foodResult.push(searchList.childNodes[i].childNodes[0].textContent);
+        // console.log(foodResult);
     }
-    const searchIndex = search.children[0].innerText;
-    searches.splice(searches.indexOf(searchIndex), 1);
-    localStorage.setItem('searches', JSON.stringify(searches));
+    let food = {'data':foodResult};
 
-}
-
+    $.ajax({
+        type: 'POST' ,
+        url: '{{url_for("diet_food")}}',
+        data: JSON.stringify(food),
+        dataType: "JSON",
+        contentType: "application/json",
+        success: function(){
+            alert('성공');
+        },
+        error: function(){
+            alert('실패');
+        }
+    })
+})
 
 
 

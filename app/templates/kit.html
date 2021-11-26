@@ -9,7 +9,6 @@
             </div>
         </div>
         <div name="diet_chart" class="diet_chart">
-            분석 차트
             {% block diet_chart %}
             {% endblock %}
         </div>
@@ -28,17 +27,15 @@
             <div class="kit_clip_img">
                 <img src="../static/image/clip.png" alt="file_clip">
             </div>
-            <div class="kit_personal_board">
+            <div class="">
                 {% block checker %}
                 {% endblock %}
             </div>
         </div>
-        <div class="kit_two_button">
-            <input type="button" value="&lt;" onClick="location.href='/diet'" class="kit_button">
-            <input type="submit" id="kit_submit" name="btn" value="diet_result" class="kit_button_hidden">
-            <label for="kit_submit" class="kit_button">검사 결과 보기</label>
-        </div>
     </div>
 </div>
 <script src="../static/js/checker.js" defer="defer"></script>
+<script src="../static/js/food-suggestions.js" defer="defer"></script>
+<script src="../static/js/foodSearch-autocomp.js" defer="defer"></script>
+<script src="../static/js/foodSearch-hashtag.js" defer="defer"></script>
 {% endblock %}
