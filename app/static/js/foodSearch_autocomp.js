@@ -1,8 +1,8 @@
 // getting all required elements
-const searchWrapper = document.querySelector(".search-input");
+const searchWrapper = document.querySelector(".search_input");
 const inputBox = searchWrapper.querySelector("input");
-const suggBox = searchWrapper.querySelector(".autocom-box");
-const icon = searchWrapper.querySelector(".icon");
+const suggBox = searchWrapper.querySelector(".autocom_box");
+const icon = searchWrapper.querySelector(".food_plus_button");
 // let linkTag = searchWrapper.querySelector("a");
 // let webLi
 

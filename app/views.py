@@ -84,7 +84,7 @@ def diet_food():
 
         return redirect(url_for('checker'))
    
-    return render_template("diet.html")
+    return render_template("food_search.html")
 
 @app.route("/kit", methods=['GET', 'POST'])
 def checker():
@@ -144,8 +144,8 @@ def diet_result():
 
     return render_template("diet_result.html",nutrients=nutrients,food_lst=food_lst,food_nutrients=food_nutrients)
 
-@app.route("/visualization")
+@app.route("/visual")
 def visualization():
-    return render_template("visualization.html")
+    return render_template("visual.html")
 
 
