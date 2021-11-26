@@ -6,9 +6,8 @@ from collections import defaultdict
 from . import app
 from .models import Food, User
 
-global nutrients, result, food_lst, food_nutrients
 food_lst = None
-food_nutrients = [0] * 16
+foods_nutrients = []
 nutrients = None
 result = None
 
@@ -30,7 +29,7 @@ def join_result():
 
 @app.route("/diet", methods=["GET", "POST"])
 def diet_food():
-    global nutrients, food_lst, food_nutrients
+    global nutrients, food_lst, foods_nutrients
 
     if request.method == "POST" and request.form.get('btn') == 'form_personal' :
         age = int(request.form.get('age'))
@@ -43,32 +42,37 @@ def diet_food():
     if request.method == "POST" and request.form.get('btn2'):
         food_lst = request.form.get('btn2')
         food_lst = food_lst.split(',')
-        # for food_name in food_lst:
-        #     food = Food.query.filter(Food.food_name == food_name).first()
-        #     food_nutrients[0] += food.calorie
-        #     food_nutrients[1] += food.protein
-        #     food_nutrients[2] += food.fat 
-        #     food_nutrients[3] += food.carbohydrate 
-        #     food_nutrients[4] += food.sugar
-        #     food_nutrients[5] += food.calcium * 1000
-        #     food_nutrients[6] += food.phosphorus * 1000   
-        #     food_nutrients[7] += food.iron * 1000
-        #     food_nutrients[8] += food.salt * 1000 
-        #     food_nutrients[9] += food.potassium * 1000
-        #     food_nutrients[10] += food.vitaminA 
-        #     food_nutrients[11] += food.vitaminB1 
-        #     food_nutrients[12] += food.vitaminB2 
-        #     food_nutrients[13] += food.niacin 
-        #     food_nutrients[14] += food.vitaminC 
-        #     food_nutrients[15] += food.folic_acid 
+        food_nutrients = [0] * 16
+        for food_name in food_lst:
+            food = Food.query.filter(Food.food_name == food_name).first()
+            food_nutrients[0] = food.calorie
+            food_nutrients[1] = food.protein
+            food_nutrients[2] = food.fat 
+            food_nutrients[3] = food.carbohydrate 
+            food_nutrients[4] = food.sugar
+            food_nutrients[5] = food.calcium * 1000
+            food_nutrients[6] = food.phosphorus * 1000   
+            food_nutrients[7] = food.iron * 1000
+            food_nutrients[8] = food.salt * 1000 
+            food_nutrients[9] = food.potassium * 1000
+            food_nutrients[10] = food.vitaminA * 1000 * 1000
+            food_nutrients[11] = food.vitaminB1 * 1000
+            food_nutrients[12] = food.vitaminB2 * 1000
+            food_nutrients[13] = food.niacin * 1000
+            food_nutrients[14] = food.vitaminC * 1000
+            food_nutrients[15] = food.folic_acid * 1000 * 1000
+
+            for i in range(len(food_nutrients)):
+                food_nutrients[i] = round(food_nutrients[i] / nutrients[i] * 100)
+            foods_nutrients.append({food_name:food_nutrients[:]})
+            
         return redirect(url_for('checker'))
    
     return render_template("food_search.html")
 
 @app.route("/kit", methods=['GET', 'POST'])
 def checker():
-    global nutrients, result, food_lst, food_nutrients
-
+    global nutrients, result, food_lst, foods_nutrients
     if request.method == 'POST' and request.form.get('btn') == "diet_result" :
         input_data = {
             'Fever':0,
@@ -111,7 +115,7 @@ def checker():
 
         return redirect(url_for("loading"))
     
-    return render_template("checker.html",nutrients=nutrients,food_lst=food_lst,food_nutrients=food_nutrients)
+    return render_template("checker.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients)
 
 @app.route("/loading")
 def loading():
@@ -119,9 +123,9 @@ def loading():
 
 @app.route("/diet_result")
 def diet_result():
-    global nutrients, result, food_lst, food_nutrients
+    global nutrients, result, food_lst, foods_nutrients
 
-    return render_template("check.html",nutrients=nutrients,food_lst=food_lst,food_nutrients=food_nutrients)
+    return render_template("check.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients)
 
 @app.route("/visual")
 def visualization():
