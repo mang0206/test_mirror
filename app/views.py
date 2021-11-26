@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from .ml import model, Age_dict, Gender_dict, Contact_dict
 import pandas as pd
 from .cal_nutrients import cal_nutrients
@@ -40,6 +40,9 @@ def diet_food():
         return redirect(url_for("diet_food"))
 
     if request.method == "POST" and request.form.get('btn2'):
+        if nutrients == None:
+            return redirect(url_for("diet_food",flag=1))
+
         food_lst = request.form.get('btn2')
         food_lst = food_lst.split(',')
         food_nutrients = [0] * 16
@@ -115,7 +118,7 @@ def checker():
 
         return redirect(url_for("loading"))
     
-    return render_template("checker.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients)
+    return render_template("checker.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients,result=result)
 
 @app.route("/loading")
 def loading():
