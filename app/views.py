@@ -65,7 +65,6 @@ def diet_food():
             for i in range(len(food_nutrients)):
                 food_nutrients[i] = round(food_nutrients[i] / nutrients[i] * 100)
             foods_nutrients.append({food_name:food_nutrients[:]})
-
         return redirect(url_for('checker'))
    
     return render_template("food_search.html")
@@ -125,7 +124,7 @@ def loading():
 def diet_result():
     global nutrients, result, food_lst, foods_nutrients
 
-    return render_template("check.html",nutrients=nutrients,food_lst=food_lst,food_nutrients=food_nutrients)
+    return render_template("check.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients)
 
 @app.route("/visual")
 def visualization():
