@@ -25,7 +25,7 @@ $(function(){
 
 //개인정보 입력 완료 안내 창
 $(function(){
-    $(".move_button").click(function(){
+    $(".submit_button").click(function(){
         alert("안전하게 제출되었습니다! :)")
     })
 })
