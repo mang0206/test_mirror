@@ -150,4 +150,3 @@ function post_food_lst() {
     submit_button.setAttribute('value',food_lst)
     console.log(food_lst)
 }
-
