@@ -18,9 +18,9 @@
                         <span>성별</span>
                         <div class="gender_checker">
                             <input type="radio" name="gender" id="male" value="남">
-                            <label for="male" class="label_chk">남성</label>
+                            <label for="male" class="gender_chk">남성</label>
                             <input type="radio" name="gender" id="female" value="여">
-                            <label for="female" class="label_chk">여성</label>
+                            <label for="female" class="gender_chk">여성</label>
                         </div>
                     </div>
                     <hr>
@@ -53,7 +53,8 @@
                         </div>
                     </div>
                     <div>
-                        <input type="submit" name="btn" value='form_personal' class="move_button">
+                        <input type="submit" id="personal_submit" name="btn" value='form_personal' class="move_button_hidden">
+                        <label for="personal_submit" id="personal_submit" class="move_button">제출 하기</label>
                     </div>
                 </form>
             </div>
@@ -64,14 +65,9 @@
                 <span>오늘 드셨던 음식을 검색 해 골라주시면</span>
             </div>
         </div>
-        <div class="personal">
-            <div class="personal_bubble">
-                <form action="/diet" method="POST" id="form_food">
-                    <input type="text" name="food">
-                    {{ food_lst }}
-                    <input type="submit" name="btn" value="form_food">
-                </form>
-            </div>
+        <div>
+            {% block food_search %}
+            {% endblock %}
         </div>
     </div>
 </div>

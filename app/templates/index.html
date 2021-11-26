@@ -18,11 +18,13 @@
 <div class="index" class="index">
     <div class="intro">
         <h2 id="with_corona">with Corona</h2>
-        <div id="intro_detail" class="scroll">
+        <div id="intro_detail" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000">
             <p>위드 코로나 시대에</p>
             <p>예방과 회복을 위한 식단을 추천드립니다</p>
         </div>
-        <div id="question" class="scroll"><p>Question</p></div>
+        <div id="question" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+            <p>Question</p>
+        </div>
         <div>
             <span class="question_detail">
                 <!-- 의학적 전문성이 아닌, 데이터 기반의 해석을 통해 식단을 제공 받을 수 있을까? -->
@@ -30,45 +32,41 @@
         </div>
     </div>
 
-    <div class="index_diet" name="index_diet">
-        <div class="index_diet_image">
-            <a href="/diet">
-                <img src="../static/image/diet-url-image.jpg" alt="diet 이동 링크">
-            </a><br>
+    <div class="index_inner" name="index_diet">
+        <div class="index_image" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="900">
+            <figure name="diet_img">
+                <a href="/diet"><img src="../static/image/diet_url_image.jpg" alt="diet_img"></a>
+            </figure>
         </div>
-    
-        <div class="index_diet_description">
-            <div>
-                <div class="index_diet_description_detail">
-                    <p>코로나 감염 예방 및 회복을 위한 식단을 추천드립니다</p>
-                    <p>배달 음식 주문 증가로 인한 불균형한 식단을 관리</p>
-                    <p>식단과 영양소에 따른 데이터로 코로나에 대항하기 좋은 영양소를 제안</p>
-                    <p>모델을 선정해 섭취한 음식의 영양소 데이터와</p>
-                    <p>코로나에 대항할 수 있는 식단 및 음식을 추천</p>
+
+        <div class="index_description">
+            <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1400">
+                <div class="index_description_detail_diet">
+                    <p class="diet_detail_header1">DIET WITH COVID</p>
+                    <p class="diet_detail_header2">코로나 감염 예방 및 회복을 위한<br>식단을 추천드립니다</p>
+                    <p class="diet_line">배달 음식 주문 증가로 인한 불균형한 식단을 관리</p>
+                    <p class="diet_line">식단과 영양소에 따른 데이터로 코로나에 대항하기 좋은 영양소를 제안</p>
+                    <p class="diet_line">모델을 선정해 섭취한 음식의 영양소 데이터와</p>
+                    <p class="diet_line">코로나에 대항할 수 있는 식단 및 음식을 추천</p>
                 </div>
-            </div>
-            <div>
-                <a href="/diet" class="index_diet_button" style="border: 1px solid;">
-                    TEST START!
-                </a>
             </div>
         </div>
     </div>
 
-    <div class="index_visual">
-        <div class="index_visual_image">
-            <a href="/visualization">
-                <img src="../static/image/visualization-url-image.jpg" alt="visualization 이동 링크">
-            </a><br>
+    <div class="index_inner" name="index_visual">
+        <div class="index_image" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="900">
+            <figure name="visual_img">
+                <a href="/visual"><img src="../static/image/visualization_url_image.jpg" alt="visual_img"></a>
+            </figure>
         </div>
     
-        <div class="index_visual_description">
-            <div>
-                <li style="font-size: 20pt; font-weight: bold;">
-                    <a href="/visualization">Data Visualization</a>
-                </li>
-                <div class="index_visual_description_detail">
-                    <p>사용된 데이터 셋</p>
+        <div class="index_description">
+            <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1400">
+                <div class="index_description_detail_visual">
+                    <p class="visual_detail_header">Data-sets Used</p>
+                    <p class="visual_line">국가별 영양소 분포에 따른 코로나 확진률 및 회복률 데이터</p>
+                    <p class="visual_line">식품의약안전처 DB 식품별 영양소 함량 데이터</p>
+                    <p class="visual_line">이스라엘 보건청 증상에 따른 코로나 검사 데이터</p>
                 </div>
             </div>
         </div>
