@@ -121,7 +121,7 @@ def loading():
 def diet_result():
     global nutrients, result, food_lst, food_nutrients
 
-    return render_template("cehck.html",nutrients=nutrients,food_lst=food_lst,food_nutrients=food_nutrients)
+    return render_template("check.html",nutrients=nutrients,food_lst=food_lst,food_nutrients=food_nutrients)
 
 @app.route("/visual")
 def visualization():
