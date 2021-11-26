@@ -214,7 +214,7 @@ a:active{color: white;}
     border: 1px solid;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 figure{
     display: flex;
@@ -232,14 +232,21 @@ figure img{
 .index_description{
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
     height: 400px;
-    margin-top: 50px;
 }
-.index_description_detail{
+.index_description_detail_diet{
+    width: 500px;
     margin-top: 30px;
     margin-bottom: 80px;
-    text-align: center;
+    text-align: left;
+}
+.index_description_detail_visual{
+    width: 500px;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    text-align: left;
 }
 .index_diet_button{
     padding: 15px 40px 15px 40px;
@@ -249,7 +256,31 @@ figure img{
     border: 1px;
     border-radius: 15px;
 }
-/*--------index visual--------*/
+/*--------diet detail--------*/
+.diet_detail_header1{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 25px;
+}
+.diet_detail_header2{
+    font-size: 30px;
+    font-weight: 500;
+}
+.diet_line{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+}
+/*--------visual detail--------*/
+.visual_detail_header{
+    font-size: 40px;
+    font-weight: 700;
+}
+.visual_line{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}
 /*--------img & bubble--------*/
 .doctor{
     padding-top: 10px;
@@ -616,6 +647,7 @@ figure img{
     justify-content: left;
 }
 .project_12>h6{
+    font-weight: 300;
     color: white;
 }
 .ydp01{
