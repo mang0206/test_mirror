@@ -216,18 +216,20 @@ a:active{color: white;}
     align-items: center;
     justify-content: space-evenly;
 }
-figure{
+.index_diet_image{
+    width: 500px;
+    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-evenly;
+
+    background: url("../image/diet_vegetable.jpg");
+    background-size: cover;
+    background-repeat: fixed 100%;
 }
-figure img{
+.diet_img{
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0;
-    height: 500px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    justify-content: center;
 }
 .index_description{
     display: flex;
@@ -236,50 +238,59 @@ figure img{
     justify-content: center;
     height: 400px;
 }
+/*--------index visual--------*/
+.index_visual_image{
+    width: 500px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    background: url("../image/tree_tech.jpg");
+    background-size: cover;
+    background-repeat: fixed 100%;
+}
+.visual_img{
+    display: flex;
+    justify-content: center;
+}
+/*--------diet detail--------*/
+.diet_detail_header1{
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 25px;
+}
+.diet_detail_header2{
+    font-size: 23px;
+    font-weight: 500;
+}
+.diet_line{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+}
 .index_description_detail_diet{
     width: 500px;
     margin-top: 30px;
     margin-bottom: 80px;
     text-align: left;
 }
+/*--------visual detail--------*/
+.visual_detail_header{
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 25px;
+}
+.visual_line{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+}
 .index_description_detail_visual{
     width: 500px;
     margin-top: 30px;
     margin-bottom: 80px;
     text-align: left;
-}
-.index_diet_button{
-    padding: 15px 40px 15px 40px;
-    font-size: 20pt;
-    font-weight: bold;
-    letter-spacing: 2px;
-    border: 1px;
-    border-radius: 15px;
-}
-/*--------diet detail--------*/
-.diet_detail_header1{
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 25px;
-}
-.diet_detail_header2{
-    font-size: 30px;
-    font-weight: 500;
-}
-.diet_line{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 20px;
-}
-/*--------visual detail--------*/
-.visual_detail_header{
-    font-size: 40px;
-    font-weight: 700;
-}
-.visual_line{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 30px;
 }
 /*--------img & bubble--------*/
 .doctor{
