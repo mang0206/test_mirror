@@ -1,14 +1,15 @@
 // Selectors
-const searchInput = document.querySelector('.user_input');
-const searchButton = document.querySelector('.food_plus_button');
-const searchList = document.querySelector('.search_list');
-// const resetButton = document.querySelector('.reset-button');
+const searchInput = document.querySelector('.user-input');
+const searchButton = document.querySelector('.icon');
+const searchList = document.querySelector('.search-list');
+// let searchResult = [];
 
 // Event Listeners
+
 document.addEventListener('DOMContentLoaded', getSearches);
 searchButton.addEventListener('click', addSearch);
 searchList.addEventListener('click', deleteSearch);
-// resetButton.addEventListener('click', resetAll);
+// submitSearches.addEventListener('click', submitSearching);
 
 // Functions
 function addSearch(event){
@@ -27,43 +28,71 @@ function addSearch(event){
     } else if (!(suggestions.includes(searchInput.value))) {
         alert('검색 데이터에 없는 음식입니다!')
     } else {
-        newSearch.classList.add('search_item');
+        newSearch.classList.add('search-item');
         searchDiv.appendChild(newSearch);
         // add searches to localstorage
-        saveLocalSearches(searchInput.value);
+        // saveLocalSearches(searchInput.value);
+        // console.log(newSearch.innerText);
+        // searchResult.push(searchInput.value);
+        // console.log(searchResult);
 
         //DELETE BUTTON
         const deleteButton = document.createElement('button');
-        deleteButton.innerHTML = '<i class="fas fa_times"></i>';
-        deleteButton.classList.add("delete_btn");
+        deleteButton.innerHTML = '<i class="fas fa-times"></i>';
+        deleteButton.classList.add("delete-btn");
         searchDiv.appendChild(deleteButton);
         //APPEND TO LIST
         searchList.appendChild(searchDiv);
 
         //Clear Search Input value
         searchInput.value = "";
+
     }
 }
 
 function deleteSearch(e) {
     const item = e.target;
     // Delete search
-    if (item.classList[0] === 'delete_btn') {
+    if (item.classList[0] === 'delete-btn') {
 
         const search = item.parentElement;
         // Animation
         search.classList.add('fail');
-        removeLocalSearches(search);
+        // removeLocalSearches(search);
         search.addEventListener('transitionend', function () {
             search.remove();
         });
         item.remove();
+
+        // for(let i; i < searchResult.length; i++) {
+        //     if(this.children.classList.contains('fail')) {
+        //         searchResult.splice(i, 1);
+        //         i--;
+        //     }
+        // }
+
+        let ul = document.querySelector('.search-list');
+        let div = ul.querySelector('.search-item');
+
+    //     let li = div.querySelector('li');
+    //     // console.log(li.innerText);
+    //     let target = li.innerText;
+    //     //
+    //     // for(let i; i < searchResult.length; i++) {
+    //     //
+    //     //
+    //     // }
+
+        // console.log(div);
+
     }
 
     // if (item.classList[0] === 'complete-btn') {
     //     const search = item.parentElement;
     //     search.classList.toggle('completed');
     // }
+
+
 }
 
 // function resetSearch(event) {
@@ -97,17 +126,18 @@ function deleteSearch(e) {
 //     });
 // }
 
-function saveLocalSearches(search) {
-    // check
-    let searches;
-    if (localStorage.getItem('searches') === null) {
-        searches = [];
-    } else {
-        searches = JSON.parse(localStorage.getItem('searches'));
-    }
-    searches.push(search);
-    localStorage.setItem('searches', JSON.stringify(searches));
-}
+// function saveLocalSearches(search) {
+//     // check
+//     let searches;
+//     if (localStorage.getItem('searches') === null) {
+//         searches = [];
+//     } else {
+//         searches = JSON.parse(localStorage.getItem('searches'));
+//     }
+//     searches.push(search);
+//     localStorage.setItem('searches', JSON.stringify(searches));
+//     console.log(searches);
+// }
 
 function getSearches() {
     let searches;
@@ -123,18 +153,36 @@ function getSearches() {
         // Create Li
         const newSearch = document.createElement('li');
         newSearch.innerText = search;
-        newSearch.classList.add('search_item');
+        newSearch.classList.add('search-item');
         searchDiv.appendChild(newSearch);
 
         //DELETE BUTTON
         const deleteButton = document.createElement('button');
-        deleteButton.innerHTML = '<i class="fas fa_times"></i>';
-        deleteButton.classList.add("delete_btn");
+        deleteButton.innerHTML = '<i class="fas fa-times"></i>';
+        deleteButton.classList.add("delete-btn");
         searchDiv.appendChild(deleteButton);
         //APPEND TO LIST
         searchList.appendChild(searchDiv);
     })
 }
+
+// function removeLocalSearches(search) {
+//     let searches;
+//     if (localStorage.getItem('searches') === null) {
+//         searches = [];
+//     } else {
+//         searches = JSON.parse(localStorage.getItem('searches'));
+//     }
+//     const searchIndex = search.children[0].innerText;
+//     searches.splice(searches.indexOf(searchIndex), 1);
+//     localStorage.setItem('searches', JSON.stringify(searches));
+//
+// }
+
+// kit 전송 버튼
+
+// const submitBtn = document.querySelector('#move_kit');
+// submitBtn.addEventListener('click', submitAll);
 
 $('#move_kit').click(function submitAll() {
     let foodResult = [];
@@ -159,4 +207,7 @@ $('#move_kit').click(function submitAll() {
         }
     })
 })
+
+
+
 
