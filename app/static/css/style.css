@@ -306,6 +306,9 @@ a:active{color: white;}
     align-items: center;
     justify-content: space-evenly;
 }
+.parallax{
+    margin: 75% 0;
+}
 .index_diet_image{
     top: 800px;
     width: 600px;
@@ -323,51 +326,23 @@ a:active{color: white;}
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-blend-mode: multiply;
-
-    overflow: hidden;
-    transition: all 0.45s ease;
-    z-index: 1;
-}
-.index_image_hover{
-    color: white;
-    opacity: 0.5;
-}
-.index_diet_image:hover,
-.index_diet_image.hover{
-    opacity: 0.1;
 }
 .diet_link{
     display: block;
-    backface-visibility: hidden;
 }
 .link_text{
     color: white;
     display: flex;
     justify-content: center;
     flex-direction: column;
-
-    z-index: 1;
 }
 .link_text_1{
     font-size: 20px;
-    font-weight: 400;
-
-    transform: translateY(-100%);
-    text-transform: uppercase;
-    font-style: italic;
-}
-.link_text_1:hover,
-.link_text_1.hover,
-.link_text_2:hover,
-.link_text_2.hover{
-    transform: translateY(0);
-    opacity: 1;
+    font-weight: 500;
 }
 .link_text_2{
     font-size: 40px;
     font-weight: 600;
-
-    transform: translateY(100%);
 }
 .index_description{
     color: white;
