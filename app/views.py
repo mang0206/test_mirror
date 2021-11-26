@@ -7,7 +7,7 @@ from . import app
 from .models import Food, User
 
 food_lst = None
-foods_nutrients = {}
+foods_nutrients = []
 nutrients = None
 result = None
 
@@ -107,17 +107,8 @@ def checker():
 
         for i in range(len(food_nutrients)):
             food_nutrients[i] = round(food_nutrients[i] / nutrients[i] * 100)
-        foods_nutrients[food_name] = food_nutrients[:]
+        foods_nutrients.append({food_name:food_nutrients[:]})
 
-    food_nutrients = [0] * 16
-    foods_nutrients['percent'] = []
-    for i in range(len(food_nutrients)):
-        for idx, key in enumerate(foods_nutrients):
-            if idx == len(foods_nutrients)-1:
-                break
-
-            food_nutrients[i] += foods_nutrients[key][i]
-        foods_nutrients['percent'].append(food_nutrients[i])
     print(foods_nutrients)
     if request.method == 'POST' and request.form.get('btn') == "diet_result" :
         input_data = {
