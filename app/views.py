@@ -39,10 +39,16 @@ def diet_food():
         nutrients = cal_nutrients.nutrient(Z, sex, age)
         return redirect(url_for("diet_food"))
 
+<<<<<<< HEAD
     if request.method == "POST" and request.form.get('btn') == 'form_food':
         # food_lst = request.form.get('food_form')
         # food_lst = ['닭갈비', '비타맥스', '갈아담은 유기농과일 아기꼬야 사과배']
         # food_nutrients = [0] * 16
+=======
+    if request.method == "POST" and request.form.get('btn2'):
+        food_lst = request.form.get('btn2')
+        food_lst = food_lst.split(',')
+>>>>>>> 53f2430311c8fe564152f873916043808953438f
         # for food_name in food_lst:
         #     food = Food.query.filter(Food.food_name == food_name).first()
         #     food_nutrients[0] = food.calorie
@@ -162,7 +168,11 @@ def loading():
 def diet_result():
     global nutrients, result, food_lst, foods_nutrients
 
+<<<<<<< HEAD
     return render_template("diet_result.html",nutrients=nutrients,food_lst=food_lst,food_nutrients=foods_nutrients)
+=======
+    return render_template("check.html",nutrients=nutrients,food_lst=food_lst,food_nutrients=food_nutrients)
+>>>>>>> 53f2430311c8fe564152f873916043808953438f
 
 @app.route("/visual")
 def visualization():
