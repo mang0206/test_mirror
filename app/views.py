@@ -40,8 +40,9 @@ def diet_food():
         nutrients = cal_nutrients.nutrient(Z, sex, age)
         return redirect(url_for("diet_food"))
 
-    if request.method == "POST" and request.form.get('btn') == 'form_food':
-        food_lst = request.form.get('food_form')
+    if request.method == "POST" and request.form.get('btn2'):
+        food_lst = request.form.get('btn2')
+        food_lst = food_lst.split(',')
         # for food_name in food_lst:
         #     food = Food.query.filter(Food.food_name == food_name).first()
         #     food_nutrients[0] += food.calorie
