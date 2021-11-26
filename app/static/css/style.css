@@ -150,16 +150,6 @@ a:active{color: white;}
     align-items: center;
     justify-content: center;
 }
-/*--------scroll animation--------*/
-.scroll{
-    opacity: 0;
-    transition: all 3s ease;
-    transform: translate(0, 100px);
-}
-.scroll.show{
-    opacity: 1;
-    transform: none;
-}
 /*--------index--------*/
 .index{
     width: 100%;
@@ -167,8 +157,7 @@ a:active{color: white;}
     text-align: center;
 }
 .intro{
-    padding-bottom: 150px;
-    border: 1px solid;
+    padding-bottom: 200px;
 }
 #intro_detail{
     font-size: 25px;
@@ -220,21 +209,34 @@ a:active{color: white;}
     to {opacity: 0;}
 }
 /*--------index diet--------*/
-.index_diet{
+.index_inner{
+    height: 500px;
+    border: 1px solid;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+figure{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+figure img{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    height: 500px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+.index_description{
+    display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid;
-}
-.index_diet_image{
-    margin-top: 50px;
-}
-.index_diet_description{
     height: 400px;
     margin-top: 50px;
 }
-.index_diet_description_detail{
+.index_description_detail{
     margin-top: 30px;
     margin-bottom: 80px;
     text-align: center;
@@ -248,28 +250,6 @@ a:active{color: white;}
     border-radius: 15px;
 }
 /*--------index visual--------*/
-.index_visual{
-    padding-top: 150px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid;
-}
-.index_visual_image{
-    float: left;
-    margin: 8px;
-    margin-right: 50px;
-}
-.index_visual_description{
-    float: right;
-    height: 400px;
-    margin-top: 100px;
-    text-align: left;
-}
-.index_visual_description_detail{
-    width: 200px;
-    margin-top: 30px;
-    margin-bottom: 80px;
-}
 /*--------img & bubble--------*/
 .doctor{
     padding-top: 10px;
@@ -468,6 +448,7 @@ a:active{color: white;}
 .symptom_1{
     margin: 10px 0px 20px 0px;
     display: flex;
+    align-items: center;
 }
 .symptom_1 label{
     font-weight: 400;
