@@ -136,20 +136,27 @@ function getSearches() {
     })
 }
 
-function removeLocalSearches(search) {
-    let searches;
-    if (localStorage.getItem('searches') === null) {
-        searches = [];
-    } else {
-        searches = JSON.parse(localStorage.getItem('searches'));
+$('#move_kit').click(function submitAll() {
+    let foodResult = [];
+
+    for (let i = 0; i < searchList.childNodes.length; i++) {
+        foodResult.push(searchList.childNodes[i].childNodes[0].textContent);
+        // console.log(foodResult);
     }
-    const searchIndex = search.children[0].innerText;
-    searches.splice(searches.indexOf(searchIndex), 1);
-    localStorage.setItem('searches', JSON.stringify(searches));
+    let food = {'data':foodResult};
 
-}
-
-
-
-
+    $.ajax({
+        type: 'POST' ,
+        url: '{{url_for("diet_food")}}',
+        data: JSON.stringify(food),
+        dataType: "JSON",
+        contentType: "application/json",
+        success: function(){
+            alert('성공');
+        },
+        error: function(){
+            alert('실패');
+        }
+    })
+})
 
