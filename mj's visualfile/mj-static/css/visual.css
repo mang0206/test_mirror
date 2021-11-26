@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #feefd7;
+    background-color: rgb(237, 230, 222);
     font-size: 62.5%;
     /*width: 100vm;*/
 
@@ -50,7 +50,7 @@ main {
     text-align: center;
     height: 100vh;
     width: 100vw;
-    color: #0C3F5A;
+    color: rgb(74,55,31);
 
 }
 
@@ -68,7 +68,7 @@ section {
 
 
 .intro-section {
-    height: 100vh;
+    height: 90vh;
     position: relative;
     text-align: center;
     /*overflow: hidden;*/
@@ -95,7 +95,7 @@ section {
 .intro-section .sub-title {
     font-size: 1.6rem;
     margin: 3rem 0;
-    color: #0C3F5A;
+    color: rgb(74,55,31);
     display: inline-block;
 
 }
@@ -107,14 +107,14 @@ section {
 
 .members div {
     margin: 1.2rem;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .members h2 {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: bold;
     margin: 0.5rem 0;
-    color: #0C3F5A;
+    color: rgb(74,55,31);
 }
 
 
@@ -156,50 +156,77 @@ article {
 }
 
 .graphic {
-    border-color: #0C3F5A;
+    border-color: rgb(74,55,31);
     align-items: center;
-    padding: 15rem;
+    padding: 14.8rem;
     /*color: #0C3F5A;*/
-    height: 160vh;
+    height: 94vh;
     /*position: -webkit-sticky;*/
-    position: sticky;
+    /*position: sticky;*/
     top: 0;
     left: 0;
     right: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    /*display: -webkit-box;*/
+    /*display: -ms-flexbox;*/
     display: flex;
     /*-webkit-box-orient: vertical;*/
     /*-webkit-box-direction: normal;*/
-    -ms-flex-direction: column;
+    /*-ms-flex-direction: column;*/
     flex-direction: column;
     overflow: hidden;
     z-index: 100;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-font-feature-settings: 'kern' 1,'onum' 0,'liga' 0,'tnum' 1;
-    font-feature-settings: 'kern' 1,'onum' 0,'liga' 0,'tnum' 1;
-    -webkit-font-smoothing: antialiased;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    /*-webkit-transform: translateZ(0);*/
+    /*transform: translateZ(0);*/
+    /*-webkit-font-feature-settings: 'kern' 1,'onum' 0,'liga' 0,'tnum' 1;*/
+    /*font-feature-settings: 'kern' 1,'onum' 0,'liga' 0,'tnum' 1;*/
+    /*-webkit-font-smoothing: antialiased;*/
+    /*-webkit-tap-highlight-color: rgba(0,0,0,0);*/
     /*background-color: #fff;*/
     /*color: #282828;*/
     /*font-weight: 500;*/
-    font-family: 'Yeon Sung', cursive;
+    /*font-family: 'Yeon Sung', cursive;*/
 }
+
 
 .visualization img {
+    /*flex-direction: column;*/
+    width: 230px;
+    height: 150px;
+    /*top: -10px;*/
+    /*z-index: 900;*/
+    position: static;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    /*overflow: hidden;*/
+    margin-bottom: -2.5rem;
+
+}
+
+.visualization {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+
+}
+
+.visualization .content-title {
+    /*padding: 4rem;*/
 }
 
 
-/*.visualization .doctor {*/
-/*    background-color: #f6d365;*/
-/*    border-radius: 6rem;*/
-/*    !*max-width: 800px;*!*/
-/*    width: 95%;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    flex-direction: column;*/
-/*    border: 5px saddlebrown;*/
-/*}*/
-
+.box {
+    /*width: fit-content;*/
+    /*align-items: center;*/
+    /*position: relative;*/
+    /*background-color: ;*/
+    height: 98vh;
+    /*margin: 4rem 0;*/
+    width: 80%;
+    border-radius: 2vh;
+    display: inline-block;
+    border: solid rgb(219, 205, 190) 11px;
+    padding: 0.2rem;
+}
