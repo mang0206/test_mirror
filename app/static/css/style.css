@@ -150,16 +150,6 @@ a:active{color: white;}
     align-items: center;
     justify-content: center;
 }
-/*--------scroll animation--------*/
-.scroll{
-    opacity: 0;
-    transition: all 3s ease;
-    transform: translate(0, 100px);
-}
-.scroll.show{
-    opacity: 1;
-    transform: none;
-}
 /*--------index--------*/
 .index{
     width: 100%;
@@ -167,8 +157,7 @@ a:active{color: white;}
     text-align: center;
 }
 .intro{
-    padding-bottom: 150px;
-    border: 1px solid;
+    padding-bottom: 200px;
 }
 #intro_detail{
     font-size: 25px;
@@ -220,21 +209,34 @@ a:active{color: white;}
     to {opacity: 0;}
 }
 /*--------index diet--------*/
-.index_diet{
+.index_inner{
+    height: 500px;
+    border: 1px solid;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+figure{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+figure img{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    height: 500px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+.index_description{
+    display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid;
-}
-.index_diet_image{
-    margin-top: 50px;
-}
-.index_diet_description{
     height: 400px;
     margin-top: 50px;
 }
-.index_diet_description_detail{
+.index_description_detail{
     margin-top: 30px;
     margin-bottom: 80px;
     text-align: center;
@@ -248,28 +250,6 @@ a:active{color: white;}
     border-radius: 15px;
 }
 /*--------index visual--------*/
-.index_visual{
-    padding-top: 150px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid;
-}
-.index_visual_image{
-    float: left;
-    margin: 8px;
-    margin-right: 50px;
-}
-.index_visual_description{
-    float: right;
-    height: 400px;
-    margin-top: 100px;
-    text-align: left;
-}
-.index_visual_description_detail{
-    width: 200px;
-    margin-top: 30px;
-    margin-bottom: 80px;
-}
 /*--------img & bubble--------*/
 .doctor{
     padding-top: 10px;
@@ -304,7 +284,7 @@ a:active{color: white;}
     text-align: center;
 }
 .diet_clip_img{
-    top: 235px;
+    top: 255px;
     z-index: 900;
     position: absolute;
     display: flex;
@@ -319,6 +299,7 @@ a:active{color: white;}
 }
 .diet_personal_board{
     width: fit-content;
+    height: 525px;
     margin: 30px 0px 30px 0px;
     padding: 10px 10px 0px 10px;
     border: 4px solid #AD732E;
@@ -352,7 +333,7 @@ a:active{color: white;}
     box-shadow: 0px 2px 5px gray;
 }
 .gender{
-    padding: 20px 0px 10px 0px;
+    padding-top: 20px;
 }
 .gender_checker{
     padding-top: 10px;
@@ -420,14 +401,16 @@ a:active{color: white;}
 }
 .activity{
     padding: 10px 0px 10px 0px;
+    margin-bottom: 13px;
 }
 .move_button{
     width: fit-content;
     padding: 8px 15px 8px 15px;
-    border: 1px solid;
-    border-radius: 15px;
     margin-bottom: 15px;
+    border: 1px solid #D7D7D7;
+    border-radius: 15px;
     background-color: rgb(239, 239, 239);
+    background: linear-gradient(to bottom, #F6F6F6 10%, #D7D7D7 50%, #A3A3A3);
 }
 .move_button:hover{
     cursor: pointer;
@@ -437,7 +420,7 @@ a:active{color: white;}
 }
 /*--------kit--------*/
 .kit_clip_img{
-    top: 800px;
+    top: 820px;
     z-index: 900;
     position: absolute;
     display: flex;
@@ -465,6 +448,7 @@ a:active{color: white;}
 .symptom_1{
     margin: 10px 0px 20px 0px;
     display: flex;
+    align-items: center;
 }
 .symptom_1 label{
     font-weight: 400;
@@ -507,10 +491,11 @@ a:active{color: white;}
 }
 .kit_button{
     padding: 8px 15px 8px 15px;
-    background-color: rgb(239, 239, 239);
-    border: 1px solid;
-    border-radius: 15px;
     margin: 5px 10px 40px 0px;
+    border: 1px solid #D7D7D7;
+    border-radius: 15px;
+    background-color: rgb(124, 71, 71);
+    background: linear-gradient(to bottom, #F6F6F6 10%, #D7D7D7 50%, #A3A3A3);
 }
 .kit_button:hover{
     cursor: pointer;
@@ -529,7 +514,12 @@ a:active{color: white;}
     justify-content: center;
     text-align: center;
 }
-/*--------loading--------*/
+/*--------loading animation--------*/
+.loading_background{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #FFFFFF, #D7D7D7);
+}
 .scan{
     margin-bottom: 10px;
     display: flex;

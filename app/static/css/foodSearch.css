@@ -6,23 +6,38 @@
     align-items: center;
 }
 .search_input {
-    width: 450px;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+}
+.food_search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 /* 검색란 */
 .search_box{
     height: 200px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+
+}
+.search_button{
+    width: fit-content;
+    padding: 0px 10px 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
 }
 .user_input{
     height: 55px;
     width: 400px;
-    outline: none;
     border: none;
-    padding: 0px 10px 0px 10px;
-    border-radius: 5px;
     font-size: 15px;
-    box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
 }
 .search_input .active{
     height: 55px;
@@ -50,7 +65,7 @@
     list-style: none;
     padding: 8px 12px;
     display: none;
-    width: 100%;
+    width: auto;
     cursor: default;
     border-radius: 3px;
 }
@@ -65,24 +80,24 @@
     display: none;
 }
 .food_plus_button{
-    border: 1px solid;
-    padding: 10px;
-    font-size: 15px;
+    color: #555555;
+    padding: 6px 15px 7px 15px;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+    border-radius: 5px;
 }
 .food_plus_button:hover{
     cursor: pointer;
 }
-.search_input .icon:hover {
-    color: #f6d365;
-}
 .delete_btn {
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 4px;
     padding: 0 3px;
-    background: #E5E5E5;
+    margin-right: 3px;
+    background: #858585;
     cursor: pointer;
     transition: all 0.3s ease;
-    border-radius: 20px;
     border: 1px solid #C0C0C0;
 }
 .delete_btn:hover {
@@ -97,7 +112,6 @@
     margin-bottom: 30px;
 }
 .search_list {
-    min-width: 30%;
     list-style: none;
     margin: 4px 3px;
 }
@@ -105,7 +119,6 @@
     margin: 0.5rem;
     background: white;
     border-radius: 4rem;
-    color: grey;
     font-size: 1rem;
     display: inline-flex;
     justify-content: space-between;
