@@ -39,42 +39,32 @@ def diet_food():
         nutrients = cal_nutrients.nutrient(Z, sex, age)
         return redirect(url_for("diet_food"))
 
-    if request.method == "POST" and request.form.get('btn') == 'form_food':
-        # food_lst = request.form.get('food_form')
-        # food_lst = ['닭갈비', '비타맥스', '갈아담은 유기농과일 아기꼬야 사과배']
-        # food_nutrients = [0] * 16
-        # for food_name in food_lst:
-        #     food = Food.query.filter(Food.food_name == food_name).first()
-        #     food_nutrients[0] = food.calorie
-        #     food_nutrients[1] = food.protein
-        #     food_nutrients[2] = food.fat 
-        #     food_nutrients[3] = food.carbohydrate 
-        #     food_nutrients[4] = food.sugar
-        #     food_nutrients[5] = food.calcium * 1000
-        #     food_nutrients[6] = food.phosphorus * 1000   
-        #     food_nutrients[7] = food.iron * 1000
-        #     food_nutrients[8] = food.salt * 1000 
-        #     food_nutrients[9] = food.potassium * 1000
-        #     food_nutrients[10] = food.vitaminA * 1000 * 1000
-        #     food_nutrients[11] = food.vitaminB1 * 1000
-        #     food_nutrients[12] = food.vitaminB2 * 1000
-        #     food_nutrients[13] = food.niacin * 1000
-        #     food_nutrients[14] = food.vitaminC * 1000
-        #     food_nutrients[15] = food.folic_acid * 1000 * 1000
-        
-        #     for i in range(len(nutrients)):
-        #         food_nutrients[i] = food_nutrients[i] / nutrients[i] * 100
-        
-        #     foods_nutrients[food_name] = food_nutrients
+    if request.method == "POST" and request.form.get('btn2'):
+        food_lst = request.form.get('btn2')
+        food_lst = food_lst.split(',')
+        food_nutrients = [0] * 16
+        for food_name in food_lst:
+            food = Food.query.filter(Food.food_name == food_name).first()
+            food_nutrients[0] = food.calorie
+            food_nutrients[1] = food.protein
+            food_nutrients[2] = food.fat 
+            food_nutrients[3] = food.carbohydrate 
+            food_nutrients[4] = food.sugar
+            food_nutrients[5] = food.calcium * 1000
+            food_nutrients[6] = food.phosphorus * 1000   
+            food_nutrients[7] = food.iron * 1000
+            food_nutrients[8] = food.salt * 1000 
+            food_nutrients[9] = food.potassium * 1000
+            food_nutrients[10] = food.vitaminA * 1000 * 1000
+            food_nutrients[11] = food.vitaminB1 * 1000
+            food_nutrients[12] = food.vitaminB2 * 1000
+            food_nutrients[13] = food.niacin * 1000
+            food_nutrients[14] = food.vitaminC * 1000
+            food_nutrients[15] = food.folic_acid * 1000 * 1000
 
-        # food_nutrients = [0] * 16
-        # foods_nutrients['percent'] = []
-        # for i in range(len(food_nutrients)):
-        #     for key in foods_nutrients:
-        #         food_nutrients[i] += foods_nutrients[key][i]
-            
-        #     foods_nutrients['percent'].append(food_nutrients[i])
-
+            for i in range(len(food_nutrients)):
+                food_nutrients[i] = round(food_nutrients[i] / nutrients[i] * 100)
+            foods_nutrients.append({food_name:food_nutrients[:]})
 
         return redirect(url_for('checker'))
    
@@ -83,33 +73,6 @@ def diet_food():
 @app.route("/kit", methods=['GET', 'POST'])
 def checker():
     global nutrients, result, food_lst, foods_nutrients
-# , '비타맥스', '갈아담은 유기농과일 아기꼬야 사과배'
-    food_lst = ['닭갈비', '비타맥스', '갈아담은 유기농과일 아기꼬야 사과배']
-    food_nutrients = [0] * 16
-    for food_name in food_lst:
-        food = Food.query.filter(Food.food_name == food_name).first()
-        food_nutrients[0] = food.calorie
-        food_nutrients[1] = food.protein
-        food_nutrients[2] = food.fat 
-        food_nutrients[3] = food.carbohydrate 
-        food_nutrients[4] = food.sugar
-        food_nutrients[5] = food.calcium * 1000
-        food_nutrients[6] = food.phosphorus * 1000   
-        food_nutrients[7] = food.iron * 1000
-        food_nutrients[8] = food.salt * 1000 
-        food_nutrients[9] = food.potassium * 1000
-        food_nutrients[10] = food.vitaminA * 1000 * 1000
-        food_nutrients[11] = food.vitaminB1 * 1000
-        food_nutrients[12] = food.vitaminB2 * 1000
-        food_nutrients[13] = food.niacin * 1000
-        food_nutrients[14] = food.vitaminC * 1000
-        food_nutrients[15] = food.folic_acid * 1000 * 1000
-
-        for i in range(len(food_nutrients)):
-            food_nutrients[i] = round(food_nutrients[i] / nutrients[i] * 100)
-        foods_nutrients.append({food_name:food_nutrients[:]})
-
-    print(foods_nutrients)
     if request.method == 'POST' and request.form.get('btn') == "diet_result" :
         input_data = {
             'Fever':0,
@@ -162,7 +125,7 @@ def loading():
 def diet_result():
     global nutrients, result, food_lst, foods_nutrients
 
-    return render_template("diet_result.html",nutrients=nutrients,food_lst=food_lst,food_nutrients=foods_nutrients)
+    return render_template("check.html",nutrients=nutrients,food_lst=food_lst,food_nutrients=food_nutrients)
 
 @app.route("/visual")
 def visualization():
