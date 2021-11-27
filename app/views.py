@@ -70,8 +70,9 @@ def diet_food():
             age = int(request.form.get('age'))
             sex = request.form.get('gender')
             height = int(request.form.get('height'))
+            activity = int(request.form.get('activity'))
             Z = cal_nutrients.body_classifier(sex, age, height)
-            nutrients = cal_nutrients.nutrient(Z, sex, age)
+            nutrients = cal_nutrients.nutrient(Z, sex, age, activity)
             return redirect(url_for("diet_food"))
 
     if request.method == "POST" and request.form.get('btn2'):
