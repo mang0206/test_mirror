@@ -53,7 +53,7 @@ def join():
             user = User(id,encoded_password.decode("utf-8"),email)
             db.session.add(user)
             db.session.commit()
-            return redirect(url_for("login",flag=True))
+            return redirect(url_for("index",flag=True))
     
     return render_template("join.html")
 
