@@ -2,12 +2,14 @@ from . import db
 
 class User(db.Model) :
     _id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    id = db.Column(db.String(32), primary_key=True)
-    password = db.Column(db.String(50))
+    id = db.Column(db.String(32), nullable=False)
+    password = db.Column(db.String(50), nullable=False)
+    email = db.Column(db.String(100),nullable=False)
 
-    def __init__(self,id,password) :
+    def __init__(self,id,password,email) :
         self.id = id
         self.password = password
+        self.email = email
 
 class Food(db.Model) :
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

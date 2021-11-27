@@ -39,7 +39,7 @@ def login():
 
     return render_template("login.html")
 
-@app.route("/join")
+@app.route("/join",methods=['GET','POST'])
 def join():
     global nutrients, food_lst
     if request.method == "POST" :
