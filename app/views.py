@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, session
 from .ml import model, Age_dict, Gender_dict, Contact_dict
 import pandas as pd
 from .cal_nutrients import cal_nutrients
 from collections import defaultdict
-from . import app
+from . import app, db
 from .models import Food, User
+import bcrypt
 
 global nutrients, result, food_lst, foods_nutrients
 food_lst = None
@@ -14,14 +15,46 @@ result = None
 
 @app.route("/")
 def index():
+    user_id = session.get('login')
+    if user_id :
+        return render_template("index_login.html")
+
     return render_template("index.html")
 
-@app.route("/login")
+@app.route("/login",methods=['GET','POST'])
 def login():
+    if request.method == "POST" :
+        id = request.form.get('id')
+        password = request.form.get('password')
+        user = User.query.filter(User.id==id).first()
+        if user :
+            encoded_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
+            if bcrypt.checkpw(user.password, encoded_password) :
+                session['login'] = user.id
+                return redirect(url_for('index'))
+            else :
+                return redirect(url_for('login',flag=1))
+        else :
+            return redirect(url_for('login',flag=2))
+
     return render_template("login.html")
 
 @app.route("/join")
 def join():
+    global nutrients, food_lst
+    if request.method == "POST" :
+        id = request.form.get('id')
+        password = request.form.get('password')
+        email = request.form.get('email')
+        encoded_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
+        if User.query.filter(User.id==id).first() :
+            return redirect(url_for("join",flag=False))
+        else :
+            user = User(id,encoded_password.decode("utf-8"),email)
+            db.session.add(user)
+            db.session.commit()
+            return redirect(url_for("login",flag=True))
+    
     return render_template("join.html")
 
 @app.route("/join_result")
