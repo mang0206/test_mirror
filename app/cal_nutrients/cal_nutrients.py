@@ -60,33 +60,33 @@ def body_classifier(sex,age,height) :
                 return Z.values
 
 # 구한 Z값을 토대로 사람별 필요한 영양소를 딕셔너리 형태로 소수점 두자리까지 도출
-def nutrient(Z,sex,age) :
+def nutrient(Z,sex,age,activity) :
     result = []
     if sex == '남' :
         if age >= int(nutrients_M.columns[-2][2:4]) :
             n_mean = nutrients_M[nutrients_M.columns[-2]]
             n_std = nutrients_M[nutrients_M.columns[-1]]
             for i in range(len(nutrients_M)-2):
-                result.append(round(float(n_mean[i] + Z*int(n_std[i])),2))
+                result.append(round(activity*(float(n_mean[i] + Z*int(n_std[i]))),2))
             return result
         for i in range(9,16,2) :
             if age >= int(nutrients_M.columns[i][:2]) and age <= float(nutrients_M.columns[i][3:5]) :
                 n_mean = nutrients_M[nutrients_M.columns[i]]
                 n_std = nutrients_M[nutrients_M.columns[i+1]]
                 for i in range(len(nutrients_M)-2):
-                    result.append(round(float(n_mean[i] + Z*int(n_std[i])),2))
+                    result.append(round(activity*(float(n_mean[i] + Z*int(n_std[i]))),2))
                 return result
     else :
         if age >= int(nutrients_W.columns[-2][2:4]) :
             n_mean = nutrients_W[nutrients_W.columns[-2]]
             n_std = nutrients_W[nutrients_W.columns[-1]]
             for i in range(len(nutrients_M)-2):
-                result.append(round(float(n_mean[i] + Z*int(n_std[i])),2))
+                result.append(round(activity*(float(n_mean[i] + Z*int(n_std[i]))),2))
             return result
         for i in range(9,16,2) :
             if age >= int(nutrients_W.columns[i][:2]) and age <= float(nutrients_W.columns[i][3:5]) :
                 n_mean = nutrients_W[nutrients_W.columns[i]]
                 n_std = nutrients_W[nutrients_W.columns[i+1]]
                 for i in range(len(nutrients_M)-2):
-                    result.append(round(float(n_mean[i] + Z*int(n_std[i])),2))
+                    result.append(round(activity*(float(n_mean[i] + Z*int(n_std[i]))),2))
                 return result

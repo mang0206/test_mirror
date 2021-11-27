@@ -6,6 +6,7 @@ from collections import defaultdict
 from . import app
 from .models import Food, User
 
+global nutrients, result, food_lst, foods_nutrients
 food_lst = None
 foods_nutrients = []
 nutrients = None
@@ -32,16 +33,17 @@ def diet_food():
     global nutrients, food_lst, foods_nutrients
 
     if request.method == "POST" and request.form.get('btn') == 'form_personal' :
-        age = int(request.form.get('age'))
-        sex = request.form.get('gender')
-        height = int(request.form.get('height'))
-        Z = cal_nutrients.body_classifier(sex, age, height)
-        nutrients = cal_nutrients.nutrient(Z, sex, age)
-        return redirect(url_for("diet_food"))
+        if request.form.get('age') and request.form.get('gender') and request.form.get('height') and request.form.get('activity') :
+            age = int(request.form.get('age'))
+            sex = request.form.get('gender')
+            height = int(request.form.get('height'))
+            Z = cal_nutrients.body_classifier(sex, age, height)
+            nutrients = cal_nutrients.nutrient(Z, sex, age)
+            return redirect(url_for("diet_food"))
 
     if request.method == "POST" and request.form.get('btn2'):
         if nutrients == None:
-            return redirect(url_for("diet_food",flag=1))
+            return redirect(url_for("diet_food"))
 
         food_lst = request.form.get('btn2')
         food_lst = food_lst.split(',')
@@ -128,7 +130,7 @@ def loading():
 def diet_result():
     global nutrients, result, food_lst, foods_nutrients
 
-    return render_template("check.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients)
+    return render_template("check.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients,result=result)
 
 @app.route("/visual")
 def visualization():
