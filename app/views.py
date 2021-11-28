@@ -161,7 +161,6 @@ def checker():
         result = pred*0.3 + (1-pred)*0.7
 
         return redirect(url_for("loading"))
-    
     return render_template("checker.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients,result=result)
 
 @app.route("/loading")
