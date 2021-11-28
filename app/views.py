@@ -42,7 +42,7 @@ def login():
 
     return render_template("login.html")
 
-@app.route("/join")
+@app.route("/join",methods=['GET','POST'])
 def join():
     global nutrients, food_lst
     if request.method == "POST" :
@@ -70,18 +70,18 @@ def diet_food():
 
     if request.method == "POST" and request.form.get('btn') == 'form_personal' :
         if request.form.get('age') and request.form.get('gender') and request.form.get('height') and request.form.get('activity') :
-            age = int(request.form.get('age'))
+            age = float(request.form.get('age'))
             sex = request.form.get('gender')
-            height = int(request.form.get('height'))
+            height = float(request.form.get('height'))
+            activity = float(request.form.get('activity'))
+
             Z = cal_nutrients.body_classifier(sex, age, height)
-            nutrients = cal_nutrients.nutrient(Z, sex, age)
-
-            if age == None:
-                flash("개인정보 입력 후 버튼을 눌러주세요 :)")
-            else:
-                flash("정보가 안전하게 제출되었습니다! :)")
-
+            nutrients = cal_nutrients.nutrient(Z, sex, age, activity)
+            
+            flash("정보가 안전하게 제출되었습니다")
             return redirect(url_for("diet_food"))
+        else:
+            flash("개인정보 입력 후 버튼을 눌러주세요 :)")
 
     if request.method == "POST" and request.form.get('btn2'):
         if nutrients == None:
@@ -89,7 +89,7 @@ def diet_food():
 
         food_lst = request.form.get('btn2')
         food_lst = food_lst.split(',')
-        food_nutrients = [0] * 16
+        food_nutrients = [0] * 19
         for food_name in food_lst:
             food = Food.query.filter(Food.food_name == food_name).first()
             food_nutrients[0] = food.calorie
@@ -105,11 +105,14 @@ def diet_food():
             food_nutrients[10] = food.vitaminA * 1000 * 1000
             food_nutrients[11] = food.vitaminB1 * 1000
             food_nutrients[12] = food.vitaminB2 * 1000
-            food_nutrients[13] = food.niacin * 1000
-            food_nutrients[14] = food.vitaminC * 1000
-            food_nutrients[15] = food.folic_acid * 1000 * 1000
-
-            for i in range(len(food_nutrients)):
+            food_nutrients[13] = food.folic_acid * 1000 * 1000
+            food_nutrients[14] = food.niacin * 1000
+            food_nutrients[15] = food.vitaminC * 1000
+            food_nutrients[16] = food.selenium * 1000 * 1000 #일일 권장량 55
+            food_nutrients[17] = food.vitaminD2 * 1000 * 1000 #일일 권장량 19
+            food_nutrients[18] = food.zinc * 1000 #일일 권장량 10
+            # food_nutrients[19] = food.fatty_acid #필수 지방산
+            for i in range(len(nutrients)):
                 food_nutrients[i] = round(food_nutrients[i] / nutrients[i] * 100)
             foods_nutrients.append({food_name:food_nutrients[:]})
             
@@ -176,5 +179,4 @@ def diet_result():
 @app.route("/visual")
 def visualization():
     return render_template("visual.html")
-
 

@@ -67,26 +67,26 @@ def nutrient(Z,sex,age,activity) :
             n_mean = nutrients_M[nutrients_M.columns[-2]]
             n_std = nutrients_M[nutrients_M.columns[-1]]
             for i in range(len(nutrients_M)-2):
-                result.append(round(activity*(float(n_mean[i] + Z*int(n_std[i]))),2))
+                result.append(round(activity*(float(n_mean[i] + Z*float(n_std[i]))),2))
             return result
         for i in range(9,16,2) :
             if age >= int(nutrients_M.columns[i][:2]) and age <= float(nutrients_M.columns[i][3:5]) :
                 n_mean = nutrients_M[nutrients_M.columns[i]]
                 n_std = nutrients_M[nutrients_M.columns[i+1]]
                 for i in range(len(nutrients_M)-2):
-                    result.append(round(activity*(float(n_mean[i] + Z*int(n_std[i]))),2))
+                    result.append(round(activity*(float(n_mean[i] + Z*float(n_std[i]))),2))
                 return result
     else :
         if age >= int(nutrients_W.columns[-2][2:4]) :
             n_mean = nutrients_W[nutrients_W.columns[-2]]
             n_std = nutrients_W[nutrients_W.columns[-1]]
             for i in range(len(nutrients_M)-2):
-                result.append(round(activity*(float(n_mean[i] + Z*int(n_std[i]))),2))
+                result.append(round(activity*(float(n_mean[i] + Z*float(n_std[i]))),2))
             return result
         for i in range(9,16,2) :
             if age >= int(nutrients_W.columns[i][:2]) and age <= float(nutrients_W.columns[i][3:5]) :
                 n_mean = nutrients_W[nutrients_W.columns[i]]
                 n_std = nutrients_W[nutrients_W.columns[i+1]]
                 for i in range(len(nutrients_M)-2):
-                    result.append(round(activity*(float(n_mean[i] + Z*int(n_std[i]))),2))
+                    result.append(round(activity*(float(n_mean[i] + Z*float(n_std[i]))),2))
                 return result
