@@ -20,9 +20,9 @@ window.onload=function() {
     setInterval(typing, 140)
 }
 
-//diet, visual hover 효과
-$(".hover").mouseleave(
-    function() {
-      $(this).removeClass("hover");
-    }
-  );
+// //diet, visual hover 효과
+// $(".hover").mouseleave(
+//     function() {
+//       $(this).removeClass("hover");
+//     }
+//   );

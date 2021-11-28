@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 from .ml import model, Age_dict, Gender_dict, Contact_dict
 import pandas as pd
 from .cal_nutrients import cal_nutrients
@@ -12,6 +12,9 @@ food_lst = None
 foods_nutrients = []
 nutrients = None
 result = None
+
+# flash(alert) 기능 위한 key 설정
+app.config["SECRET_KEY"] = "diet"
 
 @app.route("/")
 def index():
@@ -71,9 +74,14 @@ def diet_food():
             sex = request.form.get('gender')
             height = float(request.form.get('height'))
             activity = float(request.form.get('activity'))
+
             Z = cal_nutrients.body_classifier(sex, age, height)
             nutrients = cal_nutrients.nutrient(Z, sex, age, activity)
+            
+            flash("정보가 안전하게 제출되었습니다")
             return redirect(url_for("diet_food"))
+        else:
+            flash("개인정보 입력 후 버튼을 눌러주세요 :)")
 
     if request.method == "POST" and request.form.get('btn2'):
         if nutrients == None:
@@ -173,7 +181,3 @@ def diet_result():
 def visualization():
     return render_template("visual.html")
 
-@app.route('/cleaning')
-def cleaning():
-
-    return 

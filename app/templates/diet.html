@@ -14,8 +14,17 @@
             <div class="diet_clip_img">
                 <img src="../static/image/clip.png" alt="file_clip">
             </div>
+            <!-- flask flash 기능 -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <script type="text/javascript">
+                        alert("{{messages[0]}}");
+                    </script>
+                {% endif %}
+            {% endwith %}
+
             <div class="diet_personal_board">
-                <form action="/diet" method="POST" id="form_personal">
+                <form action="/diet" method="POST" id="form_personal" name="personal_form" onsubmit="return personal_submit()">
                     <div class="gender">
                         <span>성별</span>
                         <div class="gender_checker">
@@ -55,7 +64,7 @@
                         </div>
                     </div>
                     <div>
-                        <input type="submit" id="personal_submit" name="btn" value='form_personal' class="move_button_hidden">
+                        <input type="submit" id="personal_submit" name="btn" value='form_personal' onclick="personal()" class="move_button_hidden">
                         <label for="personal_submit" id="personal_submit" class="submit_button">제출 하기</label>
                     </div>
                 </form>
@@ -75,5 +84,15 @@
         </div>
     </div>
 </div>
+<!-- <script>
+    function personal_submit(){
+        let form = document.personal_form
+        if(form.age.value == ""){
+            alert("개인정보 입력 후 버튼을 눌러주세요 :)")
+            return false
+        }
+        return true
+    }
+</script> -->
 <script src="../static/js/diet.js" defer="defer"></script>
 {% endblock %}

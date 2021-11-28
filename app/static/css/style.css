@@ -307,9 +307,6 @@ a:active{color: white;}
     align-items: center;
     justify-content: space-evenly;
 }
-.parallax{
-    margin: 75% 0;
-}
 .index_diet_image{
     top: 800px;
     width: 600px;
@@ -369,7 +366,7 @@ a:active{color: white;}
     background-attachment: fixed;
     background-blend-mode: multiply;
 }
-.visual_link{
+.index_img_link{
     display: flex;
     justify-content: center;
 }
