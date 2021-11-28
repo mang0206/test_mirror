@@ -28,6 +28,11 @@ class Food(db.Model) :
     vitaminA = db.Column(db.Float, nullable=False)
     vitaminB1 = db.Column(db.Float, nullable=False)
     vitaminB2 = db.Column(db.Float, nullable=False)
+    folic_acid = db.Column(db.Float, nullable=False)
     niacin = db.Column(db.Float, nullable=False)
     vitaminC = db.Column(db.Float, nullable=False)
-    folic_acid = db.Column(db.Float, nullable=False)
+    selenium = db.Column(db.Float, nullable=False)
+    vitaminD2 = db.Column(db.Float, nullable=False)
+    zinc = db.Column(db.Float, nullable=False)
+    fatty_acid = db.Column(db.Float, nullable=False)
+    
