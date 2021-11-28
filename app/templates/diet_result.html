@@ -5,7 +5,8 @@
         <div class="doctor">
             <img src="../static/image/thumbs_up.png" alt="doctor img">
             <div class="doctor_bubble">
-                분석을 모두 마쳤습니다!
+                <span>분석을 모두 마쳤습니다!</span>
+                <span></span>
             </div>
         </div>
         <div class="diet_result_chart">
@@ -13,7 +14,7 @@
                 <span>현재 상태와 추천 음식 섭취 후 달라지는 차트</span>
             </div>
             <div>
-                <span>오각형 차트 or 누적바 그래프</span>
+                <span>오각형 차트</span>
             </div>
         </div>
         <div>
@@ -21,8 +22,8 @@
             {% block check %}
             {% endblock %}
         </div>
-        <div class="word_cloud">
-            워드 클라우드 활용 -> 필요한 영양소가 포함된 식품 추천
+        <div class="">
+            필요한 영양소 랭킹 별 랜덤 추천
         </div>
         <div>
             <input type="button" value="메인 페이지로 이동" onClick="location.href='/'" class="move_button">

@@ -5,7 +5,9 @@
         <div class="doctor">
             <img src="../static/image/smile_hands_up.png" alt="Doctor">
             <div class="doctor_bubble" name="bubble">
-                <span>안녕하세요! Doctor YDK 입니다!</span>
+                <span>안녕하세요! 신체 정보와 드신 음식을 분석해</span>
+                <span>균형잡힌 식단을 추천해 드리는 Doctor YDK 입니다!</span>
+                <span>신체 정보를 입력 후 '제출 하기' 버튼을 눌러주세요!</span>
             </div>
         </div>
         <div class="personal">
@@ -40,21 +42,21 @@
                     <div class="activity">
                         <span>활동량</span>
                         <div class="diet_checker">
-                            <input type="radio" name="activity" id="lev1" class="input_chk">
+                            <input type="radio" name="activity" id="lev1" class="input_chk", value=1.2>
                             <label for="lev1" class="label_chk">주로 앉아서 생활<br>(사무직)</label>
-                            <input type="radio" name="activity" id="lev2" class="input_chk">
+                            <input type="radio" name="activity" id="lev2" class="input_chk", value=1.375>
                             <label for="lev2" class="label_chk" >가벼운 운동량<br>(주 1-2회)</label>
-                            <input type="radio" name="activity" id="lev3" class="input_chk">
+                            <input type="radio" name="activity" id="lev3" class="input_chk", value=1.55>
                             <label for="lev3" class="label_chk" >보통 운동량<br>(주 3-5회)</label>
-                            <input type="radio" name="activity" id="lev4" class="input_chk">
+                            <input type="radio" name="activity" id="lev4" class="input_chk", value=1.725>
                             <label for="lev4" class="label_chk" >많은 운동량<br>(주 6-7회)</label>
-                            <input type="radio" name="activity" id="lev5" class="input_chk">
+                            <input type="radio" name="activity" id="lev5" class="input_chk", value=1.9>
                             <label for="lev5" class="label_chk" >운동 선수</label>
                         </div>
                     </div>
                     <div>
                         <input type="submit" id="personal_submit" name="btn" value='form_personal' class="move_button_hidden">
-                        <label for="personal_submit" id="personal_submit" class="move_button">제출 하기</label>
+                        <label for="personal_submit" id="personal_submit" class="submit_button">제출 하기</label>
                     </div>
                 </form>
             </div>
@@ -62,7 +64,9 @@
         <div class="doctor">
             <img src="../static/image/smile.png" alt="Doctor">
             <div class="doctor_bubble" name="bubble">
-                <span>오늘 드셨던 음식을 검색 해 골라주시면</span>
+                <span>오늘 먹었던 음식을 검색 창에 입력하고 목록에서 고르면 ' + ' 버튼으로</span>
+                <span>추가할 수 있습니다!</span>
+                <span>음식을 바꾸고 싶을 땐 해시 태그의 ' - ' 버튼을 눌러주세요!</span>
             </div>
         </div>
         <div>
