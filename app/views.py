@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 from .ml import model, Age_dict, Gender_dict, Contact_dict
 import pandas as pd
 from .cal_nutrients import cal_nutrients
@@ -179,3 +179,7 @@ def diet_result():
 def visualization():
     return render_template("visual.html")
 
+@app.route('/cleaning')
+def cleaning():
+    food = Food.query.order_by(Food.niacin.desc()).all()
+    return jsonify({'':food})
