@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash, json
 from .ml import model, Age_dict, Gender_dict, Contact_dict
 import pandas as pd
 from .cal_nutrients import cal_nutrients
@@ -175,6 +175,10 @@ def diet_result():
     global nutrients, result, food_lst, foods_nutrients
 
     return render_template("check.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients,result=result)
+
+@app.route("/food_direction")
+def food_direction():
+    return render_template("food_direction.html")
 
 @app.route("/visual")
 def visualization():
