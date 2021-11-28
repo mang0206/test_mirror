@@ -181,5 +181,6 @@ def visualization():
 
 @app.route('/cleaning')
 def cleaning():
-    food = Food.query.order_by(Food.niacin.desc()).all()
-    return jsonify({'':food})
+    # food = Food.query.order_by(Food.niacin.desc()).all()
+    food = Food.query.filter(Food.food_name =='젖산음료, 복숭아맛').first()
+    return jsonify({'':food.food_name})
