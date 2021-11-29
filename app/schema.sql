@@ -14,9 +14,6 @@ CREATE TABLE food
 (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	food_name  VARCHAR(64) NOT NULL,
-	food_category VARCHAR(32) NOT NULL,
-	food_detail_category VARCHAR(32) NOT NULL,
-	serving_size FLOAT NOT NULL,
 	calorie FLOAT NOT NULL,
 	protein FLOAT NOT NULL,
 	fat FLOAT NOT NULL,

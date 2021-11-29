@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 from .ml import model, Age_dict, Gender_dict, Contact_dict
 import pandas as pd
 from .cal_nutrients import cal_nutrients
@@ -164,7 +164,6 @@ def checker():
         result = pred*0.3 + (1-pred)*0.7
 
         return redirect(url_for("loading"))
-    
     return render_template("checker.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients,result=result)
 
 @app.route("/loading")
@@ -174,10 +173,14 @@ def loading():
 @app.route("/diet_result")
 def diet_result():
     global nutrients, result, food_lst, foods_nutrients
-
     return render_template("check.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients,result=result)
 
 @app.route("/visual")
 def visualization():
     return render_template("visual.html")
 
+@app.route('/cleaning')
+def cleaning():
+    # food = Food.query.order_by(Food.niacin.desc()).all()
+    food = Food.query.filter(Food.food_name =='젖산음료, 복숭아맛').first()
+    return jsonify({'':food.food_name})
