@@ -376,7 +376,7 @@ a:active{color: white;}
     text-shadow: 0px 1px 3px black;
 }
 .question_detail{
-    font-size: 20px;
+    weight: 800px;
 }
 .blink{
     animation: blink 0.5s infinite;
@@ -494,6 +494,7 @@ a:active{color: white;}
 }
 /*--------img & bubble--------*/
 .doctor{
+    height: fit-content;
     padding-top: 10px;
     display: flex;
     align-items: center;
@@ -694,7 +695,7 @@ a:active{color: white;}
 }
 /*--------kit--------*/
 .kit_clip_img{
-    top: 820px;
+    top: 1580px;
     z-index: 900;
     position: absolute;
     display: flex;
@@ -710,7 +711,7 @@ a:active{color: white;}
 .kit_personal_board{
     width: fit-content;
     margin: 15px 0px 30px 0px;
-    padding: 16px 20px 16px 20px;
+    padding: 30px 25px 30px 25px;
     border: 10px solid #AD732E;
     border-radius: 10px;
     box-shadow: 0px 1px 3px gray;
@@ -741,7 +742,7 @@ a:active{color: white;}
     margin-bottom: 100px;
 }
 .kit_chart{
-    margin-bottom: 100px;
+    height: 850px;
 }
 /*--------checker--------*/
 .checker{
@@ -754,6 +755,17 @@ a:active{color: white;}
 }
 .checker_container{
     border: 1px solid;
+}
+#firstChart{
+    height: 600px;
+    margin-bottom: 200px;
+}
+#secondChart{
+    height: 800px;
+    margin-bottom: 200px;
+}
+.chart{
+    height: 1000px;
 }
 .diet_chart{
     display: flex;
