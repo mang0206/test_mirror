@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
+
+from app.utils import valid_password
 from .ml import model, Age_dict, Gender_dict, Contact_dict
 import pandas as pd
 from .cal_nutrients import cal_nutrients
@@ -7,8 +9,8 @@ from . import app, db
 from .models import Food, User
 import bcrypt
 from datetime import datetime
+from .utils import valid_email
 
-global nutrients, result, food_lst, foods_nutrients
 food_lst = None
 foods_nutrients = []
 nutrients = None
@@ -28,13 +30,13 @@ def index():
 @app.route("/login",methods=['GET','POST'])
 def login():
     if request.method == "POST" :
-        id = request.form.get('id')
+        user_id = request.form.get('user_id')
         password = request.form.get('password')
-        user = User.query.filter(User.id==id).first()
+        user = User.query.filter(User.user_id==user_id).first()
         if user :
             encoded_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
             if bcrypt.checkpw(user.password, encoded_password) :
-                session['login'] = user.id
+                session['login'] = user.user_id
                 return redirect(url_for('index'))
             else :
                 return redirect(url_for('login',flag=1))
@@ -47,11 +49,15 @@ def login():
 def join():
     global nutrients, food_lst
     if request.method == "POST" :
-        id = request.form.get('id')
+        user_id = request.form.get('user_id')
         password = request.form.get('password')
+        if valid_password(password):
+            pass
         email = request.form.get('email')
+        if valid_email(email):
+            pass # alert 적용
         encoded_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
-        if User.query.filter(User.id==id).first() :
+        if User.query.filter(User.user_id==user_id).first() :
             return redirect(url_for("join",flag=False))
         else :
             user = User(id,encoded_password.decode("utf-8"),email)
@@ -132,21 +138,14 @@ def checker():
             'sore_throat':0,
             'shortness_of_breath':0,
             'head_ache':0,
-            # 'Pains':0,
-            # 'Nasal-Congestion':0,
-            # 'Runny-Nose':0,
-            # 'Diarrhea':0,
-            # 'None_Experiencing':0,
-            # 'Country':0,
             'age_60_and_above':0,
             'gender':0,
             'test_indication':0,
             'sum_symptom':0
         }
 
-        for i in request.form: # Fever
+        for i in request.form: 
             value = request.form.get(i)
-
             if i not in ['test_indication','age_60_and_above', 'gender', 'button']:
                 input_data[i] = 1
                 input_data['sum_symptom'] += 1
@@ -165,7 +164,7 @@ def checker():
 
         x = pd.DataFrame(input_data, index=[0])
         pred = model.predict_proba(x)[:,1][0]
-        result = pred*0.85 + (1-pred)*0.15
+        result = str((pred*0.85 + (1-pred)*0.15)*100)[:6]
 
         return redirect(url_for("loading"))
     

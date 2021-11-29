@@ -11,4 +11,4 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:ydp01!!!@13.124.23
 
 db.init_app(app)
 
-from app import views, models
+from app import views, models, utils
