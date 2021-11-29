@@ -1,87 +1,239 @@
 {% extends 'kit.html' %}
+{% block diet_chart %}
+<div class="chart">
+    <h1>Inside Your Body 👀</h1>
+    <canvas id="firstChart"></canvas>
+    <canvas id="secondChart"></canvas>
+</div>
+<!--chart.js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+<!--d3-->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<!--JavaScript -->
+<script>
+    const ctx_kcal = document.getElementById('firstChart').getContext('2d');
+    const ctx = document.getElementById('secondChart').getContext('2d');
+    let delayed;
+    const label = ["에너지"]
+    const labels = [
+    "단백질",
+    "지방",
+    "탄수화물",
+    "당",
+    "칼슘",
+    "인",
+    "철",
+    "나트륨",
+    "칼륨",
+    "비타민A",
+    "비타민B1",
+    "비타민B2",
+    "나이아신",
+    "비타민C",
+    "엽산"
+    ]
+    // 이 데이터를 서버에서 어떻게 받아올 것인가?
+    // let input_data_kcal = {{ kcal }};
+    let input_data = {{ nutrients }};
+    // Gradient Fill design
+    let gradient = ctx.createLinearGradient(400,0,0,0);
+    gradient.addColorStop(0, '#d88771');
+    gradient.addColorStop(1, '#f6d365');
+
+    // data
+    // const data_kcal = {
+    //     labels: label,
+    //     datasets: [
+    //     {
+    //     data: input_data_kcal,
+    //     fill: true,
+    //     backgroundColor: gradient,
+    //     borderColor: "#fff",
+    //     // pointBackgroundColor: "rgb(189,195,199,0.4)",
+    //     },
+    //     ],
+    // };
+    const data = {
+        labels: labels,
+        datasets: [
+        {
+        data: input_data,
+        fill: true,
+        backgroundColor: gradient,
+        borderColor: "#fff",
+        // pointBackgroundColor: "rgb(189,195,199,0.4)",
+        },
+        ],
+    };
+    // // firstChart
+    // const config_kcal = {
+    //     type: 'bar',
+    //     data: data_kcal,
+    //     options: {
+    //     indexAxis: 'y',
+    //     elements: {
+    //     bar: {
+    //     borderWidth: 2,
+    //     }
+    //     },
+    //     responsive: true,
+    //     plugins: {
+    //     // legend: {
+    //     //     position: 'right',
+    //     // },
+    //     legend: false,
+    //     title: {
+    //     display: true,
+    //     // text: 'Inside Your Body'
+    //     }
+    //     }
+    //     }
+    // };
+    // secondChart
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {
+        indexAxis: 'y',
+        elements: {
+        bar: {
+        borderWidth: 2,
+        }
+        },
+        responsive: true,
+        plugins: {
+        // legend: {
+        //     position: 'right',
+        // },
+        legend: false,
+        title: {
+        display: true,
+        // text: 'Inside Your Body'
+        }
+        },
+        // animation: {
+        //     onComplete: () => {
+        //         delayed = true;
+        //     },
+        // delay: (context) => {
+        //     let delay = 0;
+        //     if (context.type == "data" && context.mode == "default" && !delayed) {
+        //         delay = context.dataIndex * 300 + context.datasetIndex * 100;
+        //     }
+        //     return delay;
+        // }
+        // },
+        // 100 퍼센트 기준 얼마나 충족.
+        // scales: {
+        //     x: {
+        //
+        // },
+        },
+    };
+    // const firstChart = new Chart(ctx_kcal, config_kcal);
+    const secondChart = new Chart(ctx, config);
+</script>
+{% endblock %}
+
 {% block checker %}
 <div class='checker'>
   <form method="post">
-    <div class='section'>
-      <input type="checkbox" name="Fever">고열
-      <input type="checkbox" name="Tiredness">피곤함
-      <input type="checkbox" name="Dry_Cough">마른기침
-      <input type="checkbox" name="Difficulty_in_Breathing">호흡곤란
-      <input type="checkbox" name="Sore_Throat">인후염
-      <input type="checkbox" name="None_Sympton">증상x
+    <div class="kit_personal_board">
+      <div class='symptom_1'>
+        <input type="checkbox" name="Fever" id="Fever" class="input_checker">
+        <label for="Fever" class="label_checker">고열</label>
+        <input type="checkbox" name="Tiredness" id="Tiredness" class="input_checker">
+        <label for="Tiredness" class="label_checker">피곤함</label>
+        <input type="checkbox" name="Dry_Cough" id="Dry_Cough" class="input_checker">
+        <label for="Dry_Cough" class="label_checker">마른 기침</label>
+      </div>
+      <div class='symptom_1'>
+        <input type="checkbox" name="Difficulty_in_Breathing" id="Difficulty_in_Breathing" class="input_checker">
+        <label for="Difficulty_in_Breathing" class="label_checker">호흡 곤란</label>
+        <input type="checkbox" name="Sore_Throat" id="Sore_Throat" class="input_checker">
+        <label for="Sore_Throat" class="label_checker">인후염</label>
+        <input type="checkbox" name="None_Sympton" id="None_Sympton" class="input_checker">
+        <label for="None_Sympton" class="label_checker none_experience">증상 없음</label>
+      </div>
+      <div class='symptom_1'>
+        <input type="checkbox" name="Pains" id="Pains" class="input_checker">
+        <label for="Pains" class="label_checker">근육통</label>
+        <input type="checkbox" name="Nasal_Congestion" id="Nasal_Congestion" class="input_checker">
+        <label for="Nasal_Congestion" class="label_checker">코 막힘</label>
+      </div>
+      <div class='symptom_1'>
+        <input type="checkbox" name="Runny_Nose" id="Runny_Nose" class="input_checker">
+        <label for="Runny_Nose" class="label_checker">콧물</label>
+        <input type="checkbox" name="Diarrhea" id="Diarrhea" class="input_checker">
+        <label for="Diarrhea" class="label_checker">설사</label>
+        <input type="checkbox" name="None_Experiencing" id="None_Experiencing" class="input_checker">
+        <label for="None_Experiencing" class="label_checker none_experience">경험 없음</label>
+      </div>
+        <div class='section'>
+  
+          <table style='display:inline;'>국적
+            <tr>
+              <td>
+                <select name="Country">
+                  <option value="Republic of Korean">Republic of Korean</option>
+                  <option value="France">France</option>
+                  <option value="Spain">Spain</option>
+                  <option value="Italy">Italy</option>
+                  <option value="Germany">Germany</option>
+                  <option value="Other_EUR">Other_EUR</option>
+                  <option value="UAE">UAE</option>
+                  <option value="Iran">Iran</option>
+                  <option value="China">China</option>
+                  <option value="Other">Other</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+  
+          <table style='display:inline;'>나이
+            <tr>
+              <td>
+                <select name="Age">
+                  <option value="Age_0-9">9세 이하</option>
+                  <option value="Age_10-19">10-19세</option>
+                  <option value="Age_20-24">20-24세</option>
+                  <option value="Age_25-59">25-59세</option>
+                  <option value="Age_60+">60세 이상</option>
+  
+                </select>
+              </td>
+            </tr>
+          </table>
+  
+          <table style='display:inline;'>성별
+            <tr>
+              <td>
+                <select name="Gender">
+                  <option value="Gender_Female">Female</option>
+                  <option value="Gender_Male">Male</option>
+                  <option value="Gender_Transgender">Transgender</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+  
+          <table style='display:inline;'>확진자 접촉 여부
+            <tr>
+              <td>
+                <select name="Contact">
+                  <option value="Contact_Dont-Know">알 수 없음</option>
+                  <option value="Contact_No">접촉 X</option>
+                  <option value="Contact_Yes">접촉 O</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+      </div>
     </div>
-    <div class='section'>
-      <input type="checkbox" name="Pains">근육통
-      <input type="checkbox" name="Nasal_Congestion">코막힘
-      <input type="checkbox" name="Runny_Nose">콧물
-      <input type="checkbox" name="Diarrhea">설사
-      <input type="checkbox" name="None_Experiencing">경험x
-    </div>
-      <div class='section'>
-
-        <table style='display:inline;'>
-          <tr>
-            <td>
-              <select name="Country">
-                <option value="Republic of Korean">Republic of Korean</option>
-                <option value="France">France</option>
-                <option value="Spain">Spain</option>
-                <option value="Italy">Italy</option>
-                <option value="Germany">Germany</option>
-                <option value="Other_EUR">Other_EUR</option>
-                <option value="UAE">UAE</option>
-                <option value="Iran">Iran</option>
-                <option value="China">China</option>
-                <option value="Other">Other</option>
-              </select>
-            </td>
-          </tr>
-        </table>
-
-        <table style='display:inline;'>
-          <tr>
-            <td>
-              <select name="Age">
-                <option value="Age_0-9">Age_0-9</option>
-                <option value="Age_10-19">Age_10-19</option>
-                <option value="Age_20-24">Age_20-24</option>
-                <option value="Age_25-59">Age_25-59</option>
-                <option value="Age_60+">Age_60+</option>
-
-              </select>
-            </td>
-          </tr>
-        </table>
-
-        <table style='display:inline;'>
-          <tr>
-            <td>
-              <select name="Gender">
-                <option value="Gender_Female">Female</option>
-                <option value="Gender_Male">Male</option>
-                <option value="Gender_Transgender">Transgender</option>
-              </select>
-            </td>
-          </tr>
-        </table>
-
-        <table style='display:inline;'>
-          <tr>
-            <td>
-              <select name="Contact">
-                <option value="Contact_Dont-Know">Dont-Know</option>
-                <option value="Contact_No">No</option>
-                <option value="Contact_Yes">Yes</option>
-              </select>
-            </td>
-          </tr>
-        </table>
-    </div>
-
-    <div>
-      <button name='button'>
-        검사
-      </button>
+    <div class="kit_two_button">
+      <input type="button" value="&lt;" onClick="location.href='/diet'" class="kit_button">
+      <input type="submit" id="kit_submit" name="btn" value="diet_result" class="kit_button_hidden">
+      <label for="kit_submit" class="kit_button">검사 결과 보기</label>
     </div>
   </form>
 </div>

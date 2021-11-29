@@ -1,16 +1,39 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="kit">
-    <div class="kit_analysis">
-        현재 식단 분석
-    </div>
-    <div>
-        분석 차트 - react
-    </div>
-    <div>
-        증상 여부 checkbox
-        {% block checker %}
-        {% endblock %}
+<div class="diet_background">
+    <div class="diet_container">
+        <div class="doctor">
+            <img src="../static/image/thumbs_up.png" alt="doctor">
+            <div class="doctor_bubble">
+                <span>선택하신 음식을 분석 해 본 차트입니다!</span>
+                <span>현재까지 섭취한 음식에 담긴 영양소를 확인하실 수 있어요</span>
+                <span></span>
+            </div>
+        </div>
+        <div name="diet_chart" class="diet_chart">
+            {% block diet_chart %}
+            {% endblock %}
+        </div>
+        <div class="kit_chart">
+        </div>
+
+        <div class="doctor">
+            <img src="../static/image/wink.png" alt="doctor">
+            <div class="doctor_bubble">
+                <span>마지막으로 COVID-진단 KIT로 증상별 확진률을 알 수 있습니다</span>
+                <span>해당하는 증상에 체크 해주시면 최종 검사 결과를 안내 해 드릴게요!</span>
+            </div>
+        </div>
+        <div class="personal">
+            <div class="kit_clip_img">
+                <img src="../static/image/clip.png" alt="file_clip">
+            </div>
+            <div class="">
+                {% block checker %}
+                {% endblock %}
+            </div>
+        </div>
     </div>
 </div>
+<script src="../static/js/checker.js" defer="defer"></script>
 {% endblock %}

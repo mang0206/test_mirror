@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="graphic__explore">
+    <div class="explore__filter">
+        <p>Cities with at least
+            <select data-col="nearby">
+                <option>1</option>
+                <option>3</option>
+                <option selected="">5</option>
+            </select>
+            breweries within
+            <select data-col="dist">
+                <option>5</option>
+                <option>10</option>
+                <option selected="">20</option>
+                <option>50</option>
+            </select> " miles based on "
+            <select data-col="abv">
+                <option>light</option>
+                <option>medium</option>
+                <option>heavy</option>
+                <option selected="">all</option>
+            </select> " beers."
+        </p>
+        <div class="chart__key tk-atlas">
+            <p>Average rating of all beers</p>
+            <p>Number of breweries nearby</p>
+        </div>
+        <div class="explore__slider slider tk-atlas noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr">
+            <div class="noUi-base">
+                <div class="noUi-connects">
+                    <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.44, 1);">
+                    </div>
+                </div>
+                <div class="noUi-origin" style="transform: translate(-560%, 0px); z-index: 4;">
+                    <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="44.0" aria-valuetext="44.00">
+                        <div class="noUi-touch-area"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider__result tk-atlas">
+            <p class="result__quality">56%</p>
+            <p class="result__quantity">44%</p>
+        </div>
+        <ul class="explore__toggle tk-atlas">
+            <li class="is-selected">Chart</li>
+            <li>Table</li>
+        </ul>
+    </div>
+    <div class="explore__chart tk-atlas">
+        <svg width="1166" height="425">
+            <g class="g-graphic" transform="translate(20, 20)">
+                <line class="connector"></line>
+            <g class="target" transform="translate(360.5,60)">
+                <circle cx="0" cy="0" r="3"></circle>
+                <text>
+                    <tspan text-anchor="middle" x="0" y="-33">Closer to here</tspan>
+                    <tspan text-anchor="middle" x="0" y="-18">the better</tspan>
+                </text>
+            </g>
+            <g class="g-cities" transform="translate(360.5, 120.89927343560959) rotate(-38.15722658736905 0 224.1007265643904)">
+                <g class="g-cities-plot">
+                    <g class="city city-28" transform="translate(176.07914230059248, 111.08577382752067)">
+                        <circle cx="0" cy="0" r="15.363636363636363" style="fill: rgb(255, 56, 20); stroke: rgb(206, 45, 16);"></circle>
+                    </g>
+                    <g class="city city-57" transform="translate(56.0251816410976, 106.29618395096104)">
+                        <circle cx="0" cy="0" r="13.136363636363637" style="fill: rgb(254, 92, 52); stroke: rgb(205, 74, 42);"></circle>
+                    </g>
+                    <g class="city city-31" transform="translate(0, 106.38244508462859)">
+                        <circle cx="0" cy="0" r="10.59090909090909" style="fill: rgb(252, 118, 79); stroke: rgb(203, 95, 64);"></circle>
+                    </g>
+                    <g class="city city-136" transform="translate(32.01438950919864, 118.75061836073613)">
+                        <circle cx="0" cy="0" r="11.227272727272727" style="fill: rgb(252, 118, 79); stroke: rgb(203, 95, 64);"></circle>
+                    </g>
+                    <g class="city city-0" transform="translate(8.00359737729966, 117.15498334286222)">
+                        <circle cx="0" cy="0" r="10.272727272727273" style="fill: rgb(252, 118, 79); stroke: rgb(203, 95, 64);"></circle>
+                    </g>
+                    <g class="city city-13" transform="translate(40.01798688649829, 124.50400727076783)">
+                        <circle cx="0" cy="0" r="12.181818181818182" style="fill: rgb(254, 92, 52); stroke: rgb(205, 74, 42);"></circle>
+                    </g>
+                    <g class="city city-98" transform="translate(8.00359737729966, 121.95815159355067)">
+                        <circle cx="0" cy="0" r="9" style="fill: rgb(248, 141, 105); stroke: rgb(200, 114, 85);"></circle>
+                    </g>
+                    <g class="city city-364" transform="translate(0, 129.62009922836077)">
+                        <circle cx="0" cy="0" r="7.409090909090908" style="fill: rgb(242, 163, 133); stroke: rgb(195, 132, 107);"></circle>
+                    </g>
+                    <g class="city city-21" transform="translate(176.07914230059248, 85.27406382635019)">
+                        <circle cx="0" cy="0" r="15.681818181818182" style="fill: rgb(255, 56, 20); stroke: rgb(206, 45, 16);"></circle>
+                    </g>
+                    <g class="city city-45" transform="translate(104.04676590489557, 92.72215143642197)">
+                        <circle cx="0" cy="0" r="14.727272727272727" style="fill: rgb(255, 56, 20); stroke: rgb(206, 45, 16);"></circle>
+                    </g>
+                    <g class="city city-123" transform="translate(8.00359737729966, 92.70497370468664)">
+                        <circle cx="0" cy="0" r="11.863636363636363" style="fill: rgb(252, 118, 79); stroke: rgb(203, 95, 64);"></circle>
+                    </g>
+                    <g class="city city-10" transform="translate(120.05396065949486, 131.11459342738948)">
+                        <circle cx="0" cy="0" r="14.090909090909092" style="fill: rgb(255, 56, 20); stroke: rgb(206, 45, 16);"></circle>
+                    </g>
+                    <g class="city city-22" transform="translate(32.01438950919864, 135.37005301561493)">
+                        <circle cx="0" cy="0" r="10.90909090909091" style="fill: rgb(252, 118, 79); stroke: rgb(203, 95, 64);"></circle>
+                    </g>
+                    <g class="city city-3" transform="translate(0, 140.66812960969094)">
+                        <circle cx="0" cy="0" r="6.454545454545455" style="fill: rgb(242, 163, 133); stroke: rgb(195, 132, 107);"></circle>
+                    </g>
+                    <g class="city city-8" transform="translate(16.00719475459932, 142.12065578004007)">
+                        <circle cx="0" cy="0" r="7.727272727272727" style="fill: rgb(242, 163, 133); stroke: rgb(195, 132, 107);"></circle>
+                    </g>
+                    <g class="city city-356" transform="translate(40.01798688649829, 150.11371214364073)">
+                        <circle cx="0" cy="0" r="9.954545454545453" style="fill: rgb(248, 141, 105); stroke: rgb(200, 114, 85);"></circle>
+                    </g>
+                    <g class="city city-14" transform="translate(32.01438950919864, 143.78998350866024)">
+                        <circle cx="0" cy="0" r="9.636363636363637" style="fill: rgb(248, 141, 105); stroke: rgb(200, 114, 85);"></circle>
+                    </g>
+                    <g class="city city-15" transform="translate(8.00359737729966, 145.86141865637515)">
+                        <circle cx="0" cy="0" r="6.772727272727273" style="fill: rgb(242, 163, 133); stroke: rgb(195, 132, 107);"></circle>
+                    </g>
+                    <g class="city city-82" transform="translate(24.010792131898974, 137.30938497975276)">
+                        <circle cx="0" cy="0" r="9.318181818181818" style="fill: rgb(248, 141, 105); stroke: rgb(200, 114, 85);"></circle>
+                    </g>
+                    <g class="city city-25" transform="translate(0, 152.55723898254269)">
+                        <circle cx="0" cy="0" r="4.545454545454545" style="fill: rgb(232, 184, 160); stroke: rgb(187, 149, 129);"></circle>
+                    </g>
+                    <g class="city city-39" transform="translate(32.01438950919864, 154.8258002862093)">
+                        <circle cx="0" cy="0" r="8.363636363636363" style="fill: rgb(248, 141, 105); stroke: rgb(200, 114, 85);"></circle>
+                    </g>
+                    <g class="city city-389" transform="translate(0, 150.57328517360014)">
+                        <circle cx="0" cy="0" r="5.181818181818182" style="fill: rgb(232, 184, 160); stroke: rgb(187, 149, 129);"></circle>
+                    </g>
+                    <g class="city city-278" transform="translate(32.01438950919864, 157.91676624808827)">
+                        <circle cx="0" cy="0" r="8.045454545454545" style="fill: rgb(248, 141, 105); stroke: rgb(200, 114, 85);"></circle>
+                    </g>
+                    <g class="city city-122" transform="translate(0, 174.6488979131435)">
+                        <circle cx="0" cy="0" r="3.2727272727272734" style="fill: rgb(219, 205, 189); stroke: rgb(177, 166, 153);"></circle>
+                    </g>
+                    <g class="city city-20" transform="translate(112.0503632821952, 160.64644875325902)">
+                        <circle cx="0" cy="0" r="13.772727272727273" style="fill: rgb(254, 92, 52); stroke: rgb(205, 74, 42);"></circle>
+                    </g>
+                    <g class="city city-159" transform="translate(16.00719475459932, 157.768584550725)">
+                        <circle cx="0" cy="0" r="6.136363636363637" style="fill: rgb(242, 163, 133); stroke: rgb(195, 132, 107);"></circle>
+                    </g>
+                    <g class="city city-65" transform="translate(24.010792131898974, 160.7562676129544)">
+                        <circle cx="0" cy="0" r="7.090909090909092" style="fill: rgb(242, 163, 133); stroke: rgb(195, 132, 107);"></circle>
+                    </g>
+                    <g class="city city-609" transform="translate(16.00719475459932, 164.353838537811)">
+                        <circle cx="0" cy="0" r="5.818181818181818" style="fill: rgb(232, 184, 160); stroke: rgb(187, 149, 129);"></circle>
+                    </g>
+                    <g class="city city-4" transform="translate(24.010792131898974, 177.60679840023482)">
+                        <circle cx="0" cy="0" r="4.227272727272727" style="fill: rgb(232, 184, 160); stroke: rgb(187, 149, 129);"></circle>
+                    </g>
+                    <g class="city city-64" transform="translate(48.02158426379795, 166.3969815940893)">
+                        <circle cx="0" cy="0" r="8.681818181818182" style="fill: rgb(248, 141, 105); stroke: rgb(200, 114, 85);"></circle>
+                    </g>
+                    <g class="city city-32" transform="translate(0, 171.26309014408852)">
+                        <circle cx="0" cy="0" r="3.5909090909090917" style="fill: rgb(219, 205, 189); stroke: rgb(177, 166, 153);"></circle>
+                    </g>
+                    <g class="city city-12" transform="translate(0, 179.15605951052964)">
+                        <circle cx="0" cy="0" r="2.6363636363636367" style="fill: rgb(219, 205, 189); stroke: rgb(177, 166, 153);"></circle>
+                    </g>
+                    <g class="city city-61" transform="translate(24.010792131898974, 175.96920690857715)">
+                        <circle cx="0" cy="0" r="4.863636363636363" style="fill: rgb(232, 184, 160); stroke: rgb(187, 149, 129);"></circle>
+                    </g>
+                    <g class="city city-11" transform="translate(32.01438950919864, 182.13538201889818)">
+                        <circle cx="0" cy="0" r="5.5" style="fill: rgb(232, 184, 160); stroke: rgb(187, 149, 129);"></circle>
+                    </g>
+                    <g class="city city-24" transform="translate(8.00359737729966, 184.60335714345086)">
+                        <circle cx="0" cy="0" r="2.954545454545455" style="fill: rgb(219, 205, 189); stroke: rgb(177, 166, 153);"></circle>
+                    </g>
+                    <g class="city city-30" transform="translate(32.01438950919864, 188.9745179834744)">
+                        <circle cx="0" cy="0" r="3.9090909090909083" style="fill: rgb(219, 205, 189); stroke: rgb(177, 166, 153);"></circle>
+                    </g>
+                    <g class="city city-29" transform="translate(16.00719475459932, 218.42963993705217)">
+                        <circle cx="0" cy="0" r="2" style="fill: rgb(219, 205, 189); stroke: rgb(177, 166, 153);"></circle>
+                    </g>
+                    <g class="city city-869" transform="translate(24.010792131898974, 224.1007265643904)">
+                        <circle cx="0" cy="0" r="2.3181818181818183" style="fill: rgb(219, 205, 189); stroke: rgb(177, 166, 153);"></circle>
+                    </g>
+                    <g class="city city-228" transform="translate(0, 85.37793444065272)">
+                        <circle cx="0" cy="0" r="11.545454545454547" style="fill: rgb(252, 118, 79); stroke: rgb(203, 95, 64);"></circle>
+                    </g>
+                    <g class="city city-7" transform="translate(160.07194754599317, 53.20117824768661)">
+                        <circle cx="0" cy="0" r="16" style="fill: rgb(255, 56, 20); stroke: rgb(206, 45, 16);"></circle>
+                    </g>
+                    <g class="city city-397" transform="translate(32.01438950919864, 95.48773962555603)">
+                        <circle cx="0" cy="0" r="12.818181818181818" style="fill: rgb(254, 92, 52); stroke: rgb(205, 74, 42);"></circle>
+                    </g>
+                    <g class="city city-518" transform="translate(24.010792131898974, 103.42629883421259)">
+                        <circle cx="0" cy="0" r="12.5" style="fill: rgb(254, 92, 52); stroke: rgb(205, 74, 42);"></circle>
+                    </g>
+                    <g class="city city-139" transform="translate(32.01438950919864, 0)">
+                        <circle cx="0" cy="0" r="15.045454545454545" style="fill: rgb(255, 56, 20); stroke: rgb(206, 45, 16);"></circle>
+                    </g>
+                    <g class="city city-2" transform="translate(112.0503632821952, 110.01922647422522)">
+                        <circle cx="0" cy="0" r="14.40909090909091" style="fill: rgb(255, 56, 20); stroke: rgb(206, 45, 16);"></circle></g><g class="city city-62" transform="translate(0, 49.50519104083443)"><circle cx="0" cy="0" r="13.454545454545455" style="fill: rgb(254, 92, 52); stroke: rgb(205, 74, 42);"></circle></g></g><g class="cities-axis"><g class="axis--x" transform="translate(0,244.1007265643904)"><text text-anchor="start" alignment-baseline="hanging" y="6">Quantity →</text><line x1="0" y1="0" x2="176.07914230059248" y2="0"></line></g><g class="axis--y" transform="translate(-20,224.1007265643904) rotate(90)"><text text-anchor="end" alignment-baseline="hanging" y="6">← Quality</text><line x1="0" y1="0" x2="-224.1007265643904" y2="0"></line></g></g><g class="g-tooltip" transform="translate(0, 49.50519104083443) rotate(38.15722658736905)"><text class="tooltip__text shadow" text-anchor="middle" alignment-baseline="middle">Anchorage, AK</text><text class="tooltip__text" text-anchor="middle" alignment-baseline="middle">Anchorage, AK</text><text class="tooltip__quality shadow" text-anchor="middle" alignment-baseline="middle" y="14.399999999999999">rating: A</text><text class="tooltip__quality" text-anchor="middle" alignment-baseline="middle" y="14.399999999999999">rating: A</text><text class="tooltip__quantity shadow" text-anchor="middle" alignment-baseline="middle" y="28.799999999999997">breweries: 5</text><text class="tooltip__quantity" text-anchor="middle" alignment-baseline="middle" y="28.799999999999997">breweries: 5</text></g><g class="g-voronoi"><path d="M97.27091560558662,23.64534932176935L139.49466096567602,83.50199856268415L196.07914230059248,55.26136034517582L196.07914230059248,-20L115.40326198485796,-20Z"></path><path d="M139.49466096567602,83.50199856268415L139.82208873759086,86.66863724177225L144.27084656780016,98.179919L196.07914230059248,98.179919L196.07914230059248,55.26136034517582Z"></path><path d="M144.07503824122102,109.93500931838739L161.3103856399208,158.1462122660018L196.07914230059248,203.06491114027915L196.07914230059248,98.179919L144.27084656780016,98.179919Z"></path><path d="M-20,1.4671912777225824L51.55956490165765,47.74387L66.25060505518181,47.74387L97.27091560558662,23.64534932176935L115.40326198485796,-20L-20,-20Z"></path><path d="M66.25060505518181,47.74387L66.38371477917345,51.21083840630347L83.74137492758089,112.61796294034582L139.82208873759086,86.66863724177225L139.49466096567602,83.50199856268415L97.27091560558662,23.64534932176935Z"></path><path d="M82.36378117741245,133.3483063524416L144.07503824122102,109.93500931838739L144.27084656780016,98.179919L139.82208873759086,86.66863724177225L83.74137492758089,112.61796294034582Z"></path><path d="M81.17042979770022,136.42702230723708L161.3103856399208,158.1462122660018L144.07503824122102,109.93500931838739L82.36378117741245,133.3483063524416Z"></path><path d="M78.06029138302443,141.5236652945528L84.11602898626944,208.95071678354802L88.10845788384992,220.23062193526064L105.31276996558289,244.1007265643904L196.07914230059248,244.1007265643904L196.07914230059248,203.06491114027915L161.3103856399208,158.1462122660018L81.17042979770022,136.42702230723708L78.38581324163982,139.29745259067505Z"></path><path d="M-20,67.4415625L23.267596490946634,67.4415625L51.55956490165765,47.74387L-20,1.4671912777225824Z"></path><path d="M41.21660790323635,107.119179L43.408164305369496,111.34426100114814L72.94230902798706,137.30885949999998L78.38581324163982,139.29745259067505L81.17042979770022,136.42702230723708L82.36378117741245,133.3483063524416L83.74137492758089,112.61796294034582L66.38371477917345,51.21083840630347Z"></path><path d="M20.290058544979466,91.67121790654488L35.61248610444683,107.119179L41.21660790323635,107.119179L66.38371477917345,51.21083840630347L66.25060505518181,47.74387L51.55956490165765,47.74387L23.267596490946634,67.4415625L22.999969249537013,68.289048879176Z"></path><path d="M11.915544441551598,104.17456803200233L12.108941968588681,105.74540648010395L20.193786679186474,115.17207008655431L35.61248610444683,107.119179L20.290058544979466,91.67121790654488Z"></path><path d="M32.11065767867716,127.06033549999998L46.02451831110329,137.3088595L72.94230902798706,137.30885949999998L43.408164305369496,111.34426100114814Z"></path><path d="M-2.2588476267252684,95.8801895L11.915544441551598,104.17456803200233L20.290058544979466,91.67121790654488L22.999969249537013,68.289048879176Z"></path><path d="M-20,95.8801895L-2.2588476267252684,95.8801895L22.999969249537013,68.289048879176L23.267596490946634,67.4415625L-20,67.4415625Z"></path><path d="M19.90241531422142,119.5565675L20.607762255044136,124.83661734180288L25.76412657664664,127.06033549999998L32.11065767867716,127.06033549999998L43.408164305369496,111.34426100114814L41.21660790323635,107.119179L35.61248610444683,107.119179L20.193786679186474,115.17207008655431Z"></path><path d="M25.76412657664664,127.06033549999998L28.797739943004636,139.5800185L41.84075020898859,139.5800185L46.02451831110329,137.3088595L32.11065767867716,127.06033549999998Z"></path><path d="M-20,118.00127199999999L-4.386988178315262,118.00127199999999L12.108941968588681,105.74540648010395L11.915544441551598,104.17456803200233L-2.2588476267252684,95.8801895L-20,95.8801895Z"></path><path d="M-4.386988178315262,118.00127199999999L-1.9647099424447951,119.5565675L19.90241531422142,119.5565675L20.193786679186474,115.17207008655431L12.108941968588681,105.74540648010395Z"></path><path d="M34.15465281647771,149.307892L38.31319802688847,156.37128299999998L41.40369985099528,159.5412125081023L78.06029138302443,141.5236652945528L78.38581324163982,139.29745259067505L72.94230902798706,137.30885949999998L46.02451831110329,137.3088595L41.84075020898859,139.5800185Z"></path><path d="M23.348307516739908,149.307892L34.15465281647771,149.307892L41.84075020898859,139.5800185L28.797739943004636,139.5800185L23.707150803293942,145.86694183184173Z"></path><path d="M14.741889319280588,130.95314048544807L23.707150803293942,145.86694183184173L28.797739943004636,139.5800185L25.76412657664664,127.06033549999998L20.607762255044136,124.83661734180288Z"></path><path d="M-1.9647099424447951,119.5565675L10.541547643692597,132.62048528716775L14.741889319280588,130.95314048544807L20.607762255044136,124.83661734180288L19.90241531422142,119.5565675Z"></path><path d="M35.849079210964646,170.026074L51.117193162629135,185.55495L84.11602898626944,208.95071678354802L78.06029138302443,141.5236652945528L41.40369985099528,159.5412125081023Z"></path><path d="M22.842926825031956,149.94462049999998L23.055542264252754,151.10113611212182L26.960590652972567,156.371283L38.31319802688847,156.37128299999998L34.15465281647771,149.307892L23.348307516739908,149.307892Z"></path><path d="M26.960590652972567,156.371283L31.214897158079285,168.36273749999998L34.96662032425986,170.026074L35.849079210964646,170.026074L41.40369985099528,159.5412125081023L38.31319802688847,156.37128299999998Z"></path><path d="M8.456906133991843,136.39881997790536L14.788012393755528,149.94462049999998L22.842926825031956,149.94462049999998L23.348307516739908,149.307892L23.707150803293942,145.86694183184173L14.741889319280588,130.95314048544807L10.541547643692597,132.62048528716775L8.570760705576683,135.1441145Z"></path><path d="M-20,135.1441145L8.570760705576683,135.1441145L10.541547643692597,132.62048528716775L-1.9647099424447951,119.5565675L-4.386988178315262,118.00127199999999L-20,118.00127199999999Z"></path><path d="M19.337520303761295,161.061212L22.619514186581785,168.36273749999998L31.214897158079285,168.36273749999998L26.960590652972567,156.371283L23.055542264252754,151.10113611212182Z"></path><path d="M2.4731057217857764,145.62070749999998L5.9727752121033255,151.565262L8.277843001021933,154.3205382231042L14.788012393755528,149.94462049999998L8.456906133991843,136.39881997790536Z"></path><path d="M-20,145.62070749999998L2.4731057217857764,145.62070749999998L8.456906133991843,136.39881997790536L8.570760705576683,135.1441145L-20,135.1441145Z"></path><path d="M6.0833308879046175,161.061212L19.337520303761295,161.061212L23.055542264252754,151.10113611212182L22.842926825031956,149.94462049999998L14.788012393755528,149.94462049999998L8.277843001021933,154.3205382231042Z"></path><path d="M5.45769016437373,161.9101645L10.225446696277336,172.955994L10.931798564139493,174.0542598853615L13.110091754211016,174.9152276881245L22.619514186581785,168.36273749999998L19.337520303761295,161.061212L6.0833308879046175,161.061212Z"></path><path d="M24.796557729183554,185.55495L51.117193162629135,185.55495L35.849079210964646,170.026074L34.96662032425986,170.026074L29.75705901589735,176.7880025Z"></path><path d="M-20,151.565262L5.9727752121033255,151.565262L2.4731057217857764,145.62070749999998L-20,145.62070749999998Z"></path><path d="M13.110091754211016,174.9152276881245L14.12025116327392,176.7880025L29.75705901589735,176.7880025L34.96662032425986,170.026074L31.214897158079285,168.36273749999998L22.619514186581785,168.36273749999998Z"></path><path d="M-20,161.9101645L5.45769016437373,161.9101645L6.0833308879046175,161.061212L8.277843001021933,154.3205382231042L5.9727752121033255,151.565262L-20,151.565262Z"></path><path d="M14.12025116327392,176.7880025L19.56280638979102,189.23984387075504L24.796557729183554,185.55495L29.75705901589735,176.7880025Z"></path><path d="M17.567425611061317,200.200473056973L30.106415725771058,207.0147059048027L88.10845788384992,220.23062193526064L84.11602898626944,208.95071678354802L51.117193162629135,185.55495L24.796557729183554,185.55495L19.56280638979102,189.23984387075504Z"></path><path d="M-20,172.955994L10.225446696277336,172.955994L5.45769016437373,161.9101645L-20,161.9101645Z"></path><path d="M-20,176.902479L7.389331296024264,176.902479L10.931798564139493,174.0542598853615L10.225446696277336,172.955994L-20,172.955994Z"></path><path d="M-13.464770929086733,207.5429654663322L17.567425611061317,200.200473056973L19.56280638979102,189.23984387075504L14.12025116327392,176.7880025L13.110091754211016,174.9152276881245L10.931798564139493,174.0542598853615L7.389331296024264,176.902479Z"></path><path d="M-20,210.20660565670389L-13.464770929086733,207.5429654663322L7.389331296024264,176.902479L-20,176.902479Z"></path><path d="M105.31276996558289,244.1007265643904L88.10845788384992,220.23062193526064L30.106415725771058,207.0147059048027L3.828474739447105,244.1007265643904Z"></path><path d="M3.828474739447105,244.1007265643904L30.106415725771058,207.0147059048027L17.567425611061317,200.200473056973L-13.464770929086733,207.5429654663322L-20,210.20660565670389L-20,244.1007265643904Z"></path><path d="M-20,185.5883365L20,185.5883365L20,184.87274L-20,184.87274Z"></path><path d="M-20,186.5772455L20,186.5772455L20,185.5883365L-20,185.5883365Z"></path><path d="M-20,187.270623L20,187.270623L20,186.5772455L-20,186.5772455Z"></path><path d="M-20,189.1751865L20,189.1751865L20,187.270623L-20,187.270623Z"></path><path d="M-20,191.553823L20,191.553823L20,189.1751865L-20,189.1751865Z"></path><path d="M-20,193.0954365L20,193.0954365L20,191.553823L-20,191.553823Z"></path><path d="M-20,194.1570055L20,194.1570055L20,193.0954365L-20,193.0954365Z"></path><path d="M-20,194.8476485L20,194.8476485L20,194.1570055L-20,194.1570055Z"></path><path d="M-20,196.37818699999997L20,196.37818699999997L20,194.8476485L-20,194.8476485Z"></path><path d="M-20,198.79224649999998L20,198.79224649999998L20,196.37818699999997L-20,196.37818699999997Z"></path><path d="M-20,200.747719L20,200.747719L20,198.79224649999998L-20,198.79224649999998Z"></path><path d="M-20,201.55102599999998L20,201.55102599999998L20,200.747719L-20,200.747719Z"></path><path d="M-20,205.50433749999996L20,205.50433749999996L20,201.55102599999998L-20,201.55102599999998Z"></path><path d="M-20,209.748423L20,209.748423L20,205.50433749999996L-20,205.50433749999996Z"></path><path d="M-20,210.42312349999997L20,210.42312349999997L20,209.748423L-20,209.748423Z"></path><path d="M-20,211.67294549999997L20,211.67294549999997L20,210.42312349999997L-20,210.42312349999997Z"></path><path d="M-20,213.3095245L20,213.3095245L20,211.67294549999997L-20,211.67294549999997Z"></path><path d="M-20,215.0041435L20,215.0041435L20,213.3095245L-20,213.3095245Z"></path><path d="M-20,216.64206L20,216.64206L20,215.0041435L-20,215.0041435Z"></path><path d="M-20,218.27383199999997L20,218.27383199999997L20,216.64206L-20,216.64206Z"></path><path d="M-20,221.7414855L20,221.7414855L20,218.27383199999997L-20,218.27383199999997Z"></path><path d="M-20,224.63160349999998L20,224.63160349999998L20,221.7414855L-20,221.7414855Z"></path><path d="M-20,234.76446199999998L20,234.76446199999998L20,224.63160349999998L-20,224.63160349999998Z"></path><path d="M-20,248.03373799999997L20,248.03373799999997L20,234.76446199999998L-20,234.76446199999998Z"></path><path d="M-20,252.9404715L20,252.9404715L20,248.03373799999997L-20,248.03373799999997Z"></path><path d="M-20,255.038591L20,255.038591L20,252.9404715L-20,252.9404715Z"></path><path d="M-20,259.835018L20,259.835018L20,255.038591L-20,255.038591Z"></path><path d="M-20,274.4713585L20,274.4713585L20,259.835018L-20,259.835018Z"></path><path d="M20,274.4713585L-20,274.4713585L-20,305L20,305Z"></path><path d="M-20,251.7585565L20,251.7585565L20,251.28067199999998L-20,251.28067199999998Z"></path><path d="M-20,252.35461399999997L20,252.35461399999997L20,251.7585565L-20,251.7585565Z"></path><path d="M-20,252.7402285L20,252.7402285L20,252.35461399999997L-20,252.35461399999997Z"></path><path d="M-20,253.5980325L20,253.5980325L20,252.7402285L-20,252.7402285Z"></path><path d="M-20,255.3745995L20,255.3745995L20,253.5980325L-20,253.5980325Z"></path><path d="M-20,257.437265L20,257.437265L20,255.3745995L-20,255.3745995Z"></path><path d="M-20,258.9998915L20,258.9998915L20,257.437265L-20,257.437265Z"></path><path d="M-20,260.79430549999995L20,260.79430549999995L20,258.9998915L-20,258.9998915Z"></path><path d="M-20,262.25830599999995L20,262.25830599999995L20,260.79430549999995L-20,260.79430549999995Z"></path><path d="M-20,263.164068L20,263.164068L20,262.25830599999995L-20,262.25830599999995Z"></path><path d="M-20,264.464766L20,264.464766L20,263.164068L-20,263.164068Z"></path><path d="M-20,265.18269799999996L20,265.18269799999996L20,264.464766L-20,264.464766Z"></path><path d="M-20,265.600891L20,265.600891L20,265.18269799999996L-20,265.18269799999996Z"></path><path d="M-20,267.9697595L20,267.9697595L20,265.600891L-20,265.600891Z"></path><path d="M-20,270.551915L20,270.551915L20,267.9697595L-20,267.9697595Z"></path><path d="M-20,271.928519L20,271.928519L20,270.551915L-20,270.551915Z"></path><path d="M-20,273.413908L20,273.413908L20,271.928519L-20,271.928519Z"></path><path d="M-20,273.962028L20,273.962028L20,273.413908L-20,273.413908Z"></path><path d="M-20,274.8255395L20,274.8255395L20,273.962028L-20,273.962028Z"></path><path d="M-20,276.247922L20,276.247922L20,274.8255395L-20,274.8255395Z"></path><path d="M-20,277.3720525L20,277.3720525L20,276.247922L-20,276.247922Z"></path><path d="M-20,279.459277L20,279.459277L20,277.3720525L-20,277.3720525Z"></path><path d="M-20,281.888349L20,281.888349L20,279.459277L-20,279.459277Z"></path><path d="M-20,283.096897L20,283.096897L20,281.888349L-20,281.888349Z"></path><path d="M-20,284.212319L20,284.212319L20,283.096897L-20,283.096897Z"></path><path d="M20,284.212319L-20,284.212319L-20,305L20,305Z"></path></g></g><text class="table__title" alignment-baseline="baseline" y="-21" transform="translate(603, 60)">Best cities</text><g class="g-table" transform="translate(603, 60)"><g class="table__brews" transform="translate(166, 144)"><text class="brews__label" style="font-size: 12px;">Top breweries</text><line x1="-160" y1="3" x2="-6" y2="3"></line><line x1="-6" y1="-15" x2="-6" y2="3"></line><line x1="-6" y1="-15" x2="107.2" y2="-15"></line><g class="brew" transform="translate(0, 18)"><text style="font-size: 12px;">Anchorage Brewing Company</text></g><g class="brew" transform="translate(0, 36)"><text style="font-size: 12px;">Midnight Sun Brewing Company</text></g><g class="brew" transform="translate(0, 54)"><text style="font-size: 12px;">Glacier Brewhouse</text></g><g class="brew" transform="translate(0, 72)"><text style="font-size: 12px;">Broken Tooth Brewing Company</text></g><g class="brew" transform="translate(0, 90)"><text style="font-size: 12px;">King Street Brewing Company</text></g></g><g class="table__rows"><g class="row row-139" transform="translate(0, 54)"><text style="font-size: 12px; fill: rgb(255, 56, 20);">04. Santa Rosa, CA</text><rect x="0" y="-15" height="18" width="113.2750015258789"></rect></g><g class="row row-7" transform="translate(0, 0)"><text style="font-size: 12px; fill: rgb(255, 56, 20);">01. San Diego, CA</text><rect x="0" y="-15" height="18" width="105.5625"></rect></g><g class="row row-21" transform="translate(0, 18)"><text style="font-size: 12px; fill: rgb(255, 56, 20);">02. Denver, CO</text><rect x="0" y="-15" height="18" width="88.4625015258789"></rect></g><g class="row row-45" transform="translate(0, 72)"><text style="font-size: 12px; fill: rgb(255, 56, 20);">05. Minneapolis, MN</text><rect x="0" y="-15" height="18" width="121.4000015258789"></rect></g><g class="row row-57" transform="translate(0, 162)"><text style="font-size: 12px; fill: rgb(254, 92, 52);">10. St. Louis, MO</text><rect x="0" y="-15" height="18" width="101.9000015258789"></rect></g><g class="row row-397" transform="translate(0, 180)"><text style="font-size: 12px; fill: rgb(254, 92, 52);">11. Bend, OR</text><rect x="0" y="-15" height="18" width="77.88750457763672"></rect></g><g class="row row-2" transform="translate(0, 90)"><text style="font-size: 12px; fill: rgb(255, 56, 20);">06. Chicago, IL</text><rect x="0" y="-15" height="18" width="88.5"></rect></g><g class="row row-28" transform="translate(0, 36)"><text style="font-size: 12px; fill: rgb(255, 56, 20);">03. Portland, OR</text><rect x="0" y="-15" height="18" width="99.17500305175781"></rect></g><g class="row row-20" transform="translate(0, 126)"><text style="font-size: 12px; fill: rgb(254, 92, 52);">08. Seattle, WA</text><rect x="0" y="-15" height="18" width="92.61250305175781"></rect></g><g class="row row-518" transform="translate(0, 198)"><text style="font-size: 12px; fill: rgb(254, 92, 52);">12. Portland, ME</text><rect x="0" y="-15" height="18" width="99.67500305175781"></rect></g><g class="row row-10" transform="translate(0, 108)"><text style="font-size: 12px; fill: rgb(255, 56, 20);">07. Austin, TX</text><rect x="0" y="-15" height="18" width="84.86250305175781"></rect></g><g class="row row-13" transform="translate(0, 216)"><text style="font-size: 12px; fill: rgb(254, 92, 52);">13. San Francisco, CA</text><rect x="0" y="-15" height="18" width="128.90000915527344"></rect></g><g class="row row-62" transform="translate(0, 144)"><text style="font-size: 12px; fill: rgb(254, 92, 52);">09. Anchorage, AK</text><rect x="0" y="-15" height="18" width="110.11250305175781"></rect></g><g class="row row-123" transform="translate(0, 234)"><text style="font-size: 12px; fill: rgb(252, 118, 79);">14. Salt Lake City, UT</text><rect x="0" y="-15" height="18" width="128.5500030517578"></rect></g><g class="row row-228" transform="translate(0, 252)"><text style="font-size: 12px; fill: rgb(252, 118, 79);">15. Ann Arbor, MI</text><rect x="0" y="-15" height="18" width="104.3375015258789"></rect></g></g></g></g></svg>
+        <div class="chart__note">
+            <p>
+                <strong>Note:</strong> Brewery counts are lower than the number that actually exist due to criteria restrictions to account for
+                lack of data. See methodology below.</p>
+        </div>
+    </div>
+    <div class="explore__transition">
+        <p>It should come as no surprise that picking ‘‘the best’’ city is highly subjective, even for a computer. Regardless of the
+            results, there is no doubt that the beer scene has swept across the country. Let’s see just how trendy it is.</p>
+    </div>
+</div>
+<script src="../static/js/food_direction.js" defer="defer"></script>
+{% endblock %}
