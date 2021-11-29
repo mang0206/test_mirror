@@ -1,6 +1,75 @@
 {% extends 'base.html' %}
 {% block content %}
-<div id="diet">
-    <h2>diet page test</h2>
+<div class="diet_background">
+    <div class="diet_container">
+        <div class="doctor">
+            <img src="../static/image/smile_hands_up.png" alt="Doctor">
+            <div class="doctor_bubble" name="bubble">
+                <span>안녕하세요! Doctor YDK 입니다!</span>
+            </div>
+        </div>
+        <div class="personal">
+            <div class="diet_clip_img">
+                <img src="../static/image/clip.png" alt="file_clip">
+            </div>
+            <div class="diet_personal_board">
+                <form action="/diet" method="POST" id="form_personal">
+                    <div class="gender">
+                        <span>성별</span>
+                        <div class="gender_checker">
+                            <input type="radio" name="gender" id="male" value="남">
+                            <label for="male" class="gender_chk">남성</label>
+                            <input type="radio" name="gender" id="female" value="여">
+                            <label for="female" class="gender_chk">여성</label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div name="age" class="text_input">
+                        <span>나이</span>
+                        <input type="text" name="age" class="text_box">
+                    </div>
+                    <div name="weight" class="text_input">
+                        <span>몸무게</span>
+                        <input type="text" name="weight" class="text_box">
+                    </div>
+                    <div name="height" class="text_input">
+                        <span>키</span>
+                        <input type="text" name="height" class="text_box">
+                    </div>
+                    <hr>
+                    <div class="activity">
+                        <span>활동량</span>
+                        <div class="diet_checker">
+                            <input type="radio" name="activity" id="lev1" class="input_chk">
+                            <label for="lev1" class="label_chk">주로 앉아서 생활<br>(사무직)</label>
+                            <input type="radio" name="activity" id="lev2" class="input_chk">
+                            <label for="lev2" class="label_chk" >가벼운 운동량<br>(주 1-2회)</label>
+                            <input type="radio" name="activity" id="lev3" class="input_chk">
+                            <label for="lev3" class="label_chk" >보통 운동량<br>(주 3-5회)</label>
+                            <input type="radio" name="activity" id="lev4" class="input_chk">
+                            <label for="lev4" class="label_chk" >많은 운동량<br>(주 6-7회)</label>
+                            <input type="radio" name="activity" id="lev5" class="input_chk">
+                            <label for="lev5" class="label_chk" >운동 선수</label>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="submit" id="personal_submit" name="btn" value='form_personal' class="move_button_hidden">
+                        <label for="personal_submit" id="personal_submit" class="move_button">제출 하기</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="doctor">
+            <img src="../static/image/smile.png" alt="Doctor">
+            <div class="doctor_bubble" name="bubble">
+                <span>오늘 드셨던 음식을 검색 해 골라주시면</span>
+            </div>
+        </div>
+        <div>
+            {% block food_search %}
+            {% endblock %}
+        </div>
+    </div>
 </div>
+<script src="../static/js/diet.js" defer="defer"></script>
 {% endblock %}

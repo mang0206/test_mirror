@@ -1,0 +1,35 @@
+{% extends 'diet.html' %}
+{% block food_search %}
+<div class="food_search_wrapper">
+    <div class="search_input">
+        <form action="/diet" method="POST" id="form_food" class="search_form" autocomplete="off">
+            <div class="food_search">
+                <!--<a href="" target="_blank" hidden></a>-->
+                <div class="search_box">
+                    <div class="search_button">
+                        <input type="text" id="searchBox" class="user_input" placeholder="오늘 먹은 음식을 검색해보세요.">
+                        <div>
+                            <input type="submit" id="food_submit" class="icon">
+                            <label for="food_submit" class="food_plus_button">+</label>
+                        </div>
+                    </div>
+                    <div class="autocom_box">
+                        <!-- here list are inserted from javascript -->
+                    </div>
+                </div>
+                <div class="search_container">
+                    <ul class="search_list"></ul>
+                    <!-- here list are inserted from javascript : div, li, button-->
+                </div>
+            </div>
+            <div class="move_kit">
+                <input type="submit" id="move_kit" name="btn" value="form_food">
+                <label for="move_kit" class="move_button">음식 제출</label>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../static/js/foodSearch_autocomp.js" defer="defer"></script>
+<script src="../static/js/foodSearch_hashtag.js" defer="defer"></script>
+<script src="../static/js/food_suggestions.js" defer="defer"></script>
+{% endblock %}

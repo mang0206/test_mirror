@@ -1,24 +1,26 @@
 {% extends 'base.html' %}
 {% block login %}
-<div id="login">
+<div class="login">
     <h2>Log-in</h2>
-    <div id="login_email">
-        <h4>E-mail</h4>
-        <input type="email" placeholder="Email">
-    </div>
-    <div id="login_pw">
-        <h4>Password</h4>
-        <input type="password" placeholder="Password">
-    </div>
-    <div id="forgot_pw">
+    <form action="">
+        <div class="login_email">
+            <label for="email"><h4>E-mail</h4></label>
+            <input type="email" placeholder="Email" id="email" required>
+        </div>
+        <div class="login_pw">
+            <label for="password"><h4>Password</h4></label>
+            <input type="password" placeholder="Password" id="password" required>
+        </div>
+    </form>
+    <div class="forgot_pw">
         <a>비밀번호를 잊으셨나요?</a>
     </div>
-    <div id="login_submit">
+    <div class="login_submit">
         <a href="/">Log-in</a>
     </div>
-    <div id="login_join">
+    <div class="login_join">
         <span style="margin-right: 10px;">회원가입 하기</span>
-        <a href="/join" id="login_join_button">Join</a>
+        <a href="/join" class="login_join_button">Join</a>
     </div>
 </div>
 {% endblock %}

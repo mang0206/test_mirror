@@ -5,37 +5,44 @@
     <meta charset="UTF-8">
     <title>Way to Beat Covid-19</title>
 
-    <link rel="stylesheet" href="../static/css/style.css?ver=0.1">
-    <script defer src=""></script>
+    <link rel="stylesheet" href="../static/css/style.css?ver=0.3">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="../static/css/diet_chart.css">
+    <link rel="stylesheet" href="../static/css/foodSearch.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    
+    {% block css %}
+    {% endblock %}
+    
 </head>
 
-{% block css %}
-{% endblock %}
-{% block script %}
-{% endblock %}
-
-<body id="base_body">
-    <!--class="is-scrolled" 마우스 스크롤 기능 적용 예정-->
-    <div id="top_bar" class="is-scrolled"> 
+<body class="base_body">
+    <script>AOS.init();</script>
+    <div class="top_bar"> 
         <h1>
             <a href="/" style="background: white;">Way to Beat Covid-19</a>
         </h1>
         {% block member %}
         {% endblock %}
     </div>
-    <div id="base_login">
+    <div class="base_login">
         {% block login %}
         {% endblock %}
     </div>
-    <div id="base_join">
+    <div class="base_join">
         {% block join %}
         {% endblock %}
     </div>
-    <div id="join_result">
+    <div class="join_result">
         {% block join_result %}
         {% endblock %}
     </div>
-    <div id="content" class="">
+    <div class="content">
         {% block content %}
         {% endblock %}
     </div>

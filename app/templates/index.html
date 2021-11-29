@@ -1,91 +1,90 @@
 {% extends 'base.html' %}
 {% block member %}
-<div id="member">
-    <a href="/login">
-        <button id="login_button">
+<div class="member">
+    <a href="/login" style="background: white;">
+        <button class="login_button">
             Log-in
         </button>
     </a>
     <a href="/join">
-        <button id="join_button">
+        <button class="join_button">
             Join
         </button>
     </a>
 </div>
 {% endblock %}
+
 {% block content %}
-<div id="index" class="index">
-    <div id="intro">
+<div class="index" class="index">
+    <div class="intro">
         <h2 id="with_corona">with Corona</h2>
-        <div>
-            <p>위드 코로나 시대에 </p>
+        <div id="intro_detail" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000">
+            <p>위드 코로나 시대에</p>
             <p>예방과 회복을 위한 식단을 추천드립니다</p>
         </div>
-        <div><p>Question</p></div>
+        <div id="question" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+            <p>Question</p>
+        </div>
         <div>
-            <p>의학적 전문성이 아닌, 데이터 기반의 해석을 통해 식단을 제공 받을 수 있을까?</p>
+            <span class="question_detail">
+                <!-- 의학적 전문성이 아닌, 데이터 기반의 해석을 통해 식단을 제공 받을 수 있을까? -->
+            </span><span class="blink">|</span>
         </div>
     </div>
 
-    <div id="data_visual">
-        <h2>data 시각화 자료</h2>
-        <div>
-            대략적인 웹 서비스 소개
+    <div class="index_inner" name="index_diet">
+        <div class="index_image" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="900">
+            <figure name="diet_img">
+                <img src="../static/image/diet_url_image.jpg" alt="diet_img">
+            </figure>
         </div>
-        <div>
-            <p>Python</p><p>mySQL</p><p>JavaScript</p>
-        </div>
-    </div>
 
-    <div id="description">
-        <div id="description_image">
-            <a href="/diet">
-                <img src="../static/image/diet-url-image.jpg" alt="diet 이동 링크">
-            </a><br>
-            <a href="/checker">
-                <img src="../static/image/checker-url-image.jpg" alt="checker 이동 링크">
-            </a><br>
-            <a href="/visualization">
-                <img src="../static/image/visualization-url-image.jpg" alt="visualization 이동 링크">
-            </a><br>
-        </div>
-    
-        <div id="description_text">
-            <div id="description_diet">
-                <li style="font-size: 20pt; font-weight: bold;">
-                    <a href="/diet">DIET</a>
-                </li>
-                <div id="description_diet_detail">
+        <div class="index_description">
+            <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1400">
+                <div class="index_description_detail">
                     <p>코로나 감염 예방 및 회복을 위한 식단을 추천드립니다</p>
                     <p>배달 음식 주문 증가로 인한 불균형한 식단을 관리</p>
                     <p>식단과 영양소에 따른 데이터로 코로나에 대항하기 좋은 영양소를 제안</p>
                     <p>모델을 선정해 섭취한 음식의 영양소 데이터와</p>
                     <p>코로나에 대항할 수 있는 식단 및 음식을 추천</p>
                 </div>
-            </div>
-            
-            <div id="description_checker">
-                <li style="font-size: 20pt; font-weight: bold;">
-                    <a href="/checker">COVID-19 Test Kit</a>
-                </li>
-                <div id="description_checker_detail">
-                    <p>증상에 따른 코로나 확진 확률</p>
-                    <p>진단 키트를 구비하지 않아도 확진률을 알 수 있다</p>
-                    <p>전문 의학으로 항상 진료 받을 수 없다</p>
+                <div>
+                    <a href="/diet" class="index_diet_button" style="border: 1px solid;">
+                        TEST START!
+                    </a>
                 </div>
             </div>
-            
-            <div id="description_visualization">
-                <li style="font-size: 20pt; font-weight: bold;">
-                    <a href="/visualization">Data Visualization</a>
-                </li>
-                <div id="description_visualization_detail">
+        </div>
+    </div>
+
+    <div class="index_inner" name="index_visual">
+        <div class="index_image" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="900">
+            <figure name="visual_img">
+                <img src="../static/image/visualization_url_image.jpg" alt="visual_img">
+            </figure>
+        </div>
+    
+        <div class="index_description">
+            <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1400">
+                <div class="index_description_detail">
                     <p>사용된 데이터 셋</p>
                 </div>
             </div>
-        </div><div style="clear: both;"></div>
+        </div>
     </div>
-
 </div>
-
+<div class="footer">
+    <div class="project_12">
+        <div>
+            <h3>Member</h3>
+        </div>
+        <span class="ydp01">김준철</span>
+        <span class="ydp01">김현경</span>
+        <span class="ydp01">맹민재</span>
+        <span class="ydp01">박미주</span>
+        <span class="ydp01">손창엽</span>
+        <span class="ydp01">정현우</span>
+    </div>
+</div>
+<script src="../static/js/index.js" defer="defer"></script>
 {% endblock %}
