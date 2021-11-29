@@ -20,4 +20,9 @@ window.onload=function() {
     setInterval(typing, 140)
 }
 
-// 스크롤 속도 조절
+// //diet, visual hover 효과
+// $(".hover").mouseleave(
+//     function() {
+//       $(this).removeClass("hover");
+//     }
+//   );
