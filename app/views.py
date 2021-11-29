@@ -6,6 +6,7 @@ from collections import defaultdict
 from . import app, db
 from .models import Food, User
 import bcrypt
+from datetime import datetime
 
 global nutrients, result, food_lst, foods_nutrients
 food_lst = None
@@ -125,43 +126,46 @@ def checker():
     global nutrients, result, food_lst, foods_nutrients
     if request.method == 'POST' and request.form.get('btn') == "diet_result" :
         input_data = {
-            'Fever':0,
-            'Tiredness':0,
-            'Dry-Cough':0,
-            'Difficulty-in-Breathing':0,
-            'Sore-Throat':0,
-            'None_Sympton':0,
-            'Pains':0,
-            'Nasal-Congestion':0,
-            'Runny-Nose':0,
-            'Diarrhea':0,
-            'None_Experiencing':0,
-            'Country':0,
-            'Age':0,
-            'Gender':0,
-            'Contact':0
+            'test_date':int(datetime.today().month),
+            'cough':0,
+            'fever':0,
+            'sore_throat':0,
+            'shortness_of_breath':0,
+            'head_ache':0,
+            # 'Pains':0,
+            # 'Nasal-Congestion':0,
+            # 'Runny-Nose':0,
+            # 'Diarrhea':0,
+            # 'None_Experiencing':0,
+            # 'Country':0,
+            'age_60_and_above':0,
+            'gender':0,
+            'test_indication':0,
+            'sum_symptom':0
         }
 
         for i in request.form: # Fever
             value = request.form.get(i)
 
-            if i not in ['Country', 'Age', 'Gender', 'Contact','button']:
+            if i not in ['test_indication','age_60_and_above', 'gender', 'button']:
                 input_data[i] = 1
+                input_data['sum_symptom'] += 1
+            elif i == 'None_Sympton':
+                for j in ['cough','fever','shortness_of_breath','head_ache']:
+                    input_data[j] = 0
             else:
-                if i == 'Country':
-                    input_data[i] = value
-                elif i == 'Age':
-                    input_data[i] = Age_dict[value]
-                elif i == 'Gender':
-                    input_data[i] = Gender_dict[value]
-                elif i == 'Contact':
+                if i == 'test_indication':
                     input_data[i] = Contact_dict[value]
+                elif i == 'age_60_and_above':
+                    input_data[i] = Age_dict[value]
+                elif i == 'gender':
+                    input_data[i] = Gender_dict[value]
                 else:
                     continue
 
         x = pd.DataFrame(input_data, index=[0])
         pred = model.predict_proba(x)[:,1][0]
-        result = pred*0.3 + (1-pred)*0.7
+        result = pred*0.85 + (1-pred)*0.15
 
         return redirect(url_for("loading"))
     
