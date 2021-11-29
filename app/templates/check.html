@@ -2,28 +2,10 @@
 {% block check %}
 <div class="check">
     <span>확진 확률</span>
-    <span>{{ result }}</span>
-        <div>
-            <script>
-                var memberCountConTxt = {{ result | tojson}}
-
-                    $({ val : 0 }).animate({ val : memberCountConTxt }, {
-                        duration: 2000,
-                    step: function() {
-                        var num = numberWithCommas(Math.floor(this.val));
-                        $(".number_count").text(num);
-                    },
-                    complete: function() {
-                        var num = numberWithCommas(Math.floor(this.val));
-                        $(".number_count").text(num);
-                    }
-                });
-
-                function numberWithCommas(x) {
-                    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                }
-            </script>
-        </div>
-    <div class="number_count"></div>
+    <span>
+        <!-- {{ result }} -->
+    </span>
+    <div class="number_count", id="my-data" data-name= "{{ result }}"> </div>
+    
 </div>
 {% endblock %}
