@@ -14,9 +14,6 @@ class User(db.Model) :
 class Food(db.Model) :
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     food_name = db.Column(db.String(64), nullable=False)
-    food_category = db.Column(db.String(32), nullable=False)
-    food_detail_category = db.Column(db.String(32), nullable=False)
-    serving_size = db.Column(db.Float, nullable=False)
     calorie = db.Column(db.Float, nullable=False)
     protein = db.Column(db.Float, nullable=False)
     fat =  db.Column(db.Float, nullable=False)

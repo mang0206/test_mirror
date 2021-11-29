@@ -1,6 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash
-
-from app.utils import valid_password
+from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 from .ml import model, Age_dict, Gender_dict, Contact_dict
 import pandas as pd
 from .cal_nutrients import cal_nutrients
@@ -9,7 +7,7 @@ from . import app, db
 from .models import Food, User
 import bcrypt
 from datetime import datetime
-from .utils import valid_email
+from .utils import valid_email, valid_password
 
 food_lst = None
 foods_nutrients = []
@@ -85,13 +83,14 @@ def diet_food():
             Z = cal_nutrients.body_classifier(sex, age, height)
             nutrients = cal_nutrients.nutrient(Z, sex, age, activity)
             
-            flash("정보가 안전하게 제출되었습니다")
-            return redirect(url_for("diet_food"))
+            flash("정보가 안전하게 제출되었습니다! :)")
+            return redirect(url_for('diet_food'))
         else:
             flash("개인정보 입력 후 버튼을 눌러주세요 :)")
 
     if request.method == "POST" and request.form.get('btn2'):
         if nutrients == None:
+            flash("해시태그 추가 후 음식 제출 버튼을 눌러주세요 :)")
             return redirect(url_for("diet_food"))
 
         food_lst = request.form.get('btn2')
@@ -167,7 +166,6 @@ def checker():
         result = str((pred*0.85 + (1-pred)*0.15)*100)[:6]
 
         return redirect(url_for("loading"))
-    
     return render_template("checker.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients,result=result)
 
 @app.route("/loading")
@@ -177,10 +175,12 @@ def loading():
 @app.route("/diet_result")
 def diet_result():
     global nutrients, result, food_lst, foods_nutrients
-
     return render_template("check.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients,result=result)
+
+@app.route("/food_direction")
+def food_direction():
+    return render_template("food_direction.html")
 
 @app.route("/visual")
 def visualization():
     return render_template("visual.html")
-
