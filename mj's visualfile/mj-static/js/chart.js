@@ -3,7 +3,8 @@
 
 // ** Chart 1 **
 // kcalChart, mainChart sheet 준비
-const ctx = document.querySelector('#barChart').getContext('2d');
+const ctx_common = document.querySelector('#barChart1').getContext('2d');
+const ctx_important = document.querySelector('#barChart2').getContext('2d');
 
 // Chart.plugins.register({
 //     beforeRender: function (chart) {
@@ -49,11 +50,9 @@ const ctx = document.querySelector('#barChart').getContext('2d');
 //     }
 // });
 
-
-const labels =  [
-    "에너지", "단백질", "지방", "탄수화물", "당", "칼슘", "인", "철", "나트륨", "칼륨", "비타민 A", "비타민 B1", "비타민 B2",
-    "엽산", "📌나이아신", "📌비타민 C", "📌셀레늄", "📌비타민 D2", "📌아연", "📌총필수지방산",
-];
+let labels_common =  ["에너지", "단백질", "지방", "탄수화물", "당", "칼슘", "인", "철",
+                    "나트륨", "칼륨", "비타민 A", "비타민 B1", "비타민 B2", "엽산"];
+let labels_important = [ "나이아신", "비타민 C", "셀레늄", "비타민 D2", "아연", "총필수지방산"]
 
 
 // flask jinja 로 받아오는 값 => nutrients  = dict 으로 받으면,
@@ -65,60 +64,78 @@ let input_data = [{'사과': [10, 20, 30, 10, 15, 12, 30, 20, 11, 14, 53, 33, 10
     {'바나나': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]},
     {'멜론': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]},
 ];
+// flask에서 nutrients의 합계를 받아온다.
+// let sum_nutrients = {{ sum_nutrients }}
+let sum_nutrients = [82, 199, 140, 54, 121, 65, 74, 133, 134, 54, 130, 80, 101, 122, 54, 19, 132, 110, 64, 67]
 
+for(let i=0; i<14;i++) {
+    if (sum_nutrients[i]>120) {
+        labels_common[i] = "🚨" + labels_common[i]
+    } else if (sum_nutrients[i]<80) {
+        labels_common[i] = "⛔" + labels_common[i]
+    }
+}
 
-// Gradient Fill design
-// let gradient = ctx.createLinearGradient(400,0,0,0);
-// gradient.addColorStop(0, '#d88771');
-// gradient.addColorStop(1, '#f6d365');
+for(let j=0;j<6;j++){
+    if (sum_nutrients[j+14]>120) {
+        labels_important[j] = "🚨" + labels_important[j]
+    } else if (sum_nutrients[j+14]<80) {
+        labels_important[j] = "⛔" + labels_important[j]
+    }
+}
+
+console.log(labels_important)
 
 // color list 만들기.
 const color_lst = ['rgb(229, 139, 150)', 'rgb(240, 201, 78)', 'rgb(115, 188, 189)', 'rgb(60, 142, 14)',
     '#ac9bdb', 'rgb(191, 33, 107)',  'rgb(66, 39, 0)',
     'rgb(189,156,77)', 'rgb(21,119,143)'];
 
-const color_gray = ['']
-
-let data = {
-    labels: labels,
+let data_common = {
+    labels: labels_common,
+    datasets: []
+};
+let data_important = {
+    labels: labels_important,
     datasets: []
 };
 
-let lst = [];
+let lst_common = [];
+let lst_important = [];
 
 for (let data in input_data) {
     let key = Object.keys(input_data[data]).toString()
-    let values = input_data[data][key];
+    let values = input_data[data][key].slice(0,14);
     let temp = {
         label: key,
         data: values,
         fill: true,
-        backgroundColor: color_lst[data],
-        borderWidth: 1.5,
-        borderColor: 'white',
+        backgroundColor: color_lst[data]
     }
-    lst.push(temp)
+    lst_common.push(temp)
+};
 
-    // console.log(temp)
-}
-data['datasets']=lst
-// console.log(data['datasets']) ;
+data_common['datasets']=lst_common
 
+for (let data in input_data) {
+    let key = Object.keys(input_data[data]).toString()
+    let values = input_data[data][key].slice(-6);
+    let temp = {
+        label: key,
+        data: values,
+        fill: true,
+        backgroundColor: color_lst[data]
+    }
+    lst_important.push(temp)
+};
 
+data_important['datasets']=lst_important
 
-
-const config = {
+const config_important = {
     type: 'bar',
-    data: data,
+    data: data_important,
     options: {
         indexAxis: 'y',
-        elements: {
-            bar: {
-                // borderWidth: 0.5,
-                // borderRadius: 10,
-
-            }
-        },
         radius: 5,
         hitRadius: 30,
         hoverRadius: 12,
@@ -126,122 +143,62 @@ const config = {
             legend: {
                 position: 'right',
             },
-            // title: {
-            //     display: true,
-            //     text: 'Chart version.Stacked'
-            // },
         },
         responsive: true,
         scales: {
             y: {
-                stacked: true},
+                stacked: true
+            },
             x: {
-                stacked: true},
+                stacked: true,
             },
-                // ticks: {
-                //     callback: function(value) {
-                //         return "$" + value + "m";
-                //     }
-                // }
-
-            },
+        },
+    },
     animation: {
         animateScale: true,
         animateRotate: true,
-    },
-    scales: {
-        xAxes: [{
-            ticks: {
-                min: 0,
-                beginAtZero: true,
-                max: 100,
-            }
-        }]
     },
     layout: {
         padding: {
             top:20,
         }
     },
-    // scaleShowLabelBackdrop: true,
-    // showAllTooltips: true,
-    // tooltips: {
-    //     displayColors: false,
-    //     filter: function (tooltipItem, data) {
-    //             console.log()
-    //
-    //         let backgroundColor =
-    //             data.datasets[0].backgroundColor[tooltipItem.index];
-    //         if (backgroundColor ==='red') {
-    //             return true;
-    //         } else {
-    //             return false;
-    //         }
-    //     },
-    //     callbacks: {
-    //         title: function(tooltipItem, data) {
-    //             return false;
-    //         },
-    //         label: function(tooltipItem, data) {
-    //             let backgroundColor =
-    //                 data.datasets[0].backgroundColor[tooltipItem.index];
-    //             if (backgroundColor == 'red') {
-    //                 return data['labels']
-    //
-    //                 [tooltipItem['index']] + ':' + data['datasets'][0]
-    //                 ['data'][tooltipItem['index']];
-    //
-    //             } else {
-    //                 return false;
-    //             }
-    //         }
-    //     }
-    // }
 };
-
-const config_radar = {
-    type: 'radar',
-    data: data,
+const config_common = {
+    type: 'bar',
+    data: data_common,
     options: {
-        responsive: true,
-        // elements: {
-        //     bar: {
-                // borderWidth: 0.5,
-                // borderRadius: 10,
-
-            // }
-        },
-        // radius: 5,
-        // hitRadius: 30,
-        // hoverRadius: 12,
-        // tension: 10;
+        indexAxis: 'y',
+        radius: 5,
+        hitRadius: 30,
+        hoverRadius: 12,
         plugins: {
             legend: {
                 position: 'right',
             },
-            display: true,
-            title: {
-                display: true,
-                text: 'Chart version.Radar'
+        },
+        responsive: true,
+        scales: {
+            y: {
+                stacked: true
+            },
+            x: {
+                stacked: true,
             },
         },
-        // scales: {
-        //     y: {
-        //         stacked: true},
-        //     x: {
-        //         stacked: true},
-        // },
-        // ticks: {
-        //     callback: function(value) {
-        //         return "$" + value + "m";
-        //     }
-        // }
-
-
-
+    },
+    animation: {
+        animateScale: true,
+        animateRotate: true,
+    },
+    layout: {
+        padding: {
+            top:20,
+        }
+    },
 };
 
-
-
-const barChart = new Chart(ctx, config);
-const radarChart = new Chart(ctx_radar, config_radar);
+const barChart_common = new Chart(ctx_common, config_common);
+const barChart_important = new Chart(ctx_important, config_important);
+// const barChart = new Chart(ctx, config_common);
+// const radarChart = new Chart(ctx_radar, config_radar);
