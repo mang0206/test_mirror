@@ -94,8 +94,8 @@ for (let data in input_data) {
         data: values,
         fill: true,
         backgroundColor: color_lst[data],
-        // borderWidth: 1.5,
-        // borderColor: 'white',
+        borderWidth: 1.5,
+        borderColor: 'white',
     }
     lst.push(temp)
 
