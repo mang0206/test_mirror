@@ -5,7 +5,7 @@ const searchList = document.querySelector('.search_list');
 // const resetButton = document.querySelector('.reset-button');
 
 // Event Listeners
-document.addEventListener('DOMContentLoaded', getSearches);
+// document.addEventListener('DOMContentLoaded', getSearches);
 searchButton.addEventListener('click', addSearch);
 searchList.addEventListener('click', deleteSearch);
 // resetButton.addEventListener('click', resetAll);
@@ -30,7 +30,7 @@ function addSearch(event){
         newSearch.classList.add('search_item');
         searchDiv.appendChild(newSearch);
         // add searches to localstorage
-        saveLocalSearches(searchInput.value);
+        // saveLocalSearches(searchInput.value);
 
         //DELETE BUTTON
         const deleteButton = document.createElement('button');
@@ -53,7 +53,7 @@ function deleteSearch(e) {
         const search = item.parentElement;
         // Animation
         search.classList.add('fail');
-        removeLocalSearches(search);
+        // removeLocalSearches(search);
         search.addEventListener('transitionend', function () {
             search.remove();
         });
@@ -97,66 +97,56 @@ function deleteSearch(e) {
 //     });
 // }
 
-function saveLocalSearches(search) {
-    // check
-    let searches;
-    if (localStorage.getItem('searches') === null) {
-        searches = [];
-    } else {
-        searches = JSON.parse(localStorage.getItem('searches'));
-    }
-    searches.push(search);
-    localStorage.setItem('searches', JSON.stringify(searches));
-}
+// function saveLocalSearches(search) {
+//     // check
+//     let searches;
+//     if (localStorage.getItem('searches') === null) {
+//         searches = [];
+//     } else {
+//         searches = JSON.parse(localStorage.getItem('searches'));
+//     }
+//     searches.push(search);
+//     localStorage.setItem('searches', JSON.stringify(searches));
+// }
 
-function getSearches() {
-    let searches;
-    if (localStorage.getItem('searches') === null) {
-        searches = [];
-    } else {
-        searches = JSON.parse(localStorage.getItem('searches'));
-    }
-    searches.forEach(function(search) {
-        // Search div
-        const searchDiv = document.createElement('div');
-        searchDiv.classList.add('search');
-        // Create Li
-        const newSearch = document.createElement('li');
-        newSearch.innerText = search;
-        newSearch.classList.add('search_item');
-        searchDiv.appendChild(newSearch);
+// function getSearches() {
+//     let searches;
+//     if (localStorage.getItem('searches') === null) {
+//         searches = [];
+//     } else {
+//         searches = JSON.parse(localStorage.getItem('searches'));
+//     }
+//     searches.forEach(function(search) {
+//         // Search div
+//         const searchDiv = document.createElement('div');
+//         searchDiv.classList.add('search');
+//         // Create Li
+//         const newSearch = document.createElement('li');
+//         newSearch.innerText = search;
+//         newSearch.classList.add('search_item');
+//         searchDiv.appendChild(newSearch);
 
-        //DELETE BUTTON
-        const deleteButton = document.createElement('button');
-        deleteButton.innerHTML = '<i class="fas fa_times"></i>';
-        deleteButton.classList.add("delete_btn");
-        searchDiv.appendChild(deleteButton);
-        //APPEND TO LIST
-        searchList.appendChild(searchDiv);
-    })
-}
+//         //DELETE BUTTON
+//         const deleteButton = document.createElement('button');
+//         deleteButton.innerHTML = '<i class="fas fa_times"></i>';
+//         deleteButton.classList.add("delete_btn");
+//         searchDiv.appendChild(deleteButton);
+//         //APPEND TO LIST
+//         searchList.appendChild(searchDiv);
+//     })
+// }
 
-$('#move_kit').click(function submitAll() {
+const submit_button=document.querySelector('#move_kit')
+submit_button.addEventListener('click',post_food_lst)
+
+function post_food_lst() {
     let foodResult = [];
 
     for (let i = 0; i < searchList.childNodes.length; i++) {
         foodResult.push(searchList.childNodes[i].childNodes[0].textContent);
-        // console.log(foodResult);
     }
-    let food = {'data':foodResult};
 
-    $.ajax({
-        type: 'POST' ,
-        url: '{{url_for("diet_food")}}',
-        data: JSON.stringify(food),
-        dataType: "JSON",
-        contentType: "application/json",
-        success: function(){
-            alert('성공');
-        },
-        error: function(){
-            alert('실패');
-        }
-    })
-})
-
+    let food_lst = foodResult.join(',');
+    submit_button.setAttribute('value',food_lst)
+    console.log(food_lst)
+}
