@@ -18,11 +18,11 @@
 }
 /* 검색란 */
 .search_box{
+    width: 450px;
     height: 200px;
     display: flex;
     justify-content: center;
     flex-direction: column;
-
 }
 .search_button{
     width: fit-content;
@@ -65,7 +65,7 @@
     list-style: none;
     padding: 8px 12px;
     display: none;
-    width: auto;
+    width: inherit;
     cursor: default;
     border-radius: 3px;
 }
