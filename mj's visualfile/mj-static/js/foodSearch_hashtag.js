@@ -2,14 +2,12 @@
 const searchInput = document.querySelector('.user-input');
 const searchButton = document.querySelector('.icon');
 const searchList = document.querySelector('.search-list');
-// let searchResult = [];
 
 // Event Listeners
 
 document.addEventListener('DOMContentLoaded', getSearches);
 searchButton.addEventListener('click', addSearch);
 searchList.addEventListener('click', deleteSearch);
-// submitSearches.addEventListener('click', submitSearching);
 
 // Functions
 function addSearch(event){
@@ -64,67 +62,9 @@ function deleteSearch(e) {
         });
         item.remove();
 
-        // for(let i; i < searchResult.length; i++) {
-        //     if(this.children.classList.contains('fail')) {
-        //         searchResult.splice(i, 1);
-        //         i--;
-        //     }
-        // }
-
-        let ul = document.querySelector('.search-list');
-        let div = ul.querySelector('.search-item');
-
-    //     let li = div.querySelector('li');
-    //     // console.log(li.innerText);
-    //     let target = li.innerText;
-    //     //
-    //     // for(let i; i < searchResult.length; i++) {
-    //     //
-    //     //
-    //     // }
-
-        // console.log(div);
-
     }
-
-    // if (item.classList[0] === 'complete-btn') {
-    //     const search = item.parentElement;
-    //     search.classList.toggle('completed');
-    // }
-
-
 }
 
-// function resetSearch(event) {
-//     console.log("reset button")
-// }
-
-
-
-// function filterSearch(e) {
-//     const searches = searchList.childNodes;
-//     searches.forEach(function(search) {
-//         switch (e.target.value) {
-//             case "all":
-//                 search.style.display = 'flex';
-//                 break;
-//             case "completed":
-//                 if (search.classList.contains('completed')) {
-//                     search.style.display = 'flex';
-//                 } else {
-//                     search.style.display = 'none';
-//                 }
-//                 break;
-//             case "uncompleted":
-//                 if (!search.classList.contains('completed')) {
-//                     search.style.display = 'flex';
-//                 } else {
-//                     search.style.display = 'none';
-//             }
-//                 break;
-//         }
-//     });
-// }
 
 // function saveLocalSearches(search) {
 //     // check

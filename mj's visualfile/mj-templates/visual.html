@@ -7,18 +7,20 @@
     <meta name="robots" content="index,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../mj-static/css/visual.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto">
-    <link href="https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/jejugothic.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/jejumyeongjo.css">
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto">-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap" rel="stylesheet">-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <nav>
-            <h1 id="project"><a href="#">A Way to Beat Covid-19</a></h1>
+            <h1 id="project"><a href="#">< Home</a></h1>
             <p>
                 A project by the folks at
                 <a href="#">The YearDream</a>
@@ -26,34 +28,38 @@
         </nav>
     </header>
 
-    <main class="contents">
+    <main class="contents" style="font-family: 'Jeju Myeongjo', sans-serif">
 
         <!--도입부-->
         <section class="intro-section">
             <h1 class="main-title">
-                Let's dive into
-                <em>your Diet</em>
+                Our Diet in <em>Covid</em>
             </h1>
-            <p class="sub-title">We would like to see the Covid-19 in respect of the diet we've been taken.</p>
+            <!-- 저희 팀원을 소개합니다. -->
+
+            <p class="sub-title">위드 코로나(with covid-19) 시대를 살아가는 우리가 선택해야 할 음식에 대하여</p>
             <div class="members">
+                <p>✒︎</p>
                 <div>
                     <h2>Analysis</h2>
-                    <p>CY</p>
-                    <p>MJM</p>
+                    <p>A</p>
+                    <p>B</p>
                 </div>
                 <div>
                     <h2>Modeling</h2>
-                    <p>JC</p>
-                    <p>GW</p>
+                    <p>C</p>
+                    <p>D</p>
                 </div>
                 <div>
                     <h2>Visualization</h2>
-                    <p>MJJ</p>
+                    <p>E</p>
                 </div>
                 <div>
                     <h2>Design</h2>
-                    <p>HG</p>
+                    <p>F</p>
                 </div>
+                <p>✒︎</p>
+
             </div>
 <!--            <div class="animation">-->
 <!--                <img class="diving-animation"-->
@@ -64,30 +70,173 @@
         <!-- 본문 -->
         <section class="contents-section">
             <article class="content">
-                <h2 class="content-title">"Chapter 1"</h2>
+                <h2 class="content-title">Intro</h2>
                 <p class="content-prose">
-                    In the iconic New York Times puzzle, OREO wasn’t used to reference the cookie until 1993, despite its invention in 1912. Its first appearance coincided with the start of the Shortz era.
-                    Until then, it was exclusively clued as the Greek prefix for mountain.
+                    여름엔 냉면, 겨울엔 군고구마 (... 비유적 표현) 처럼 코로나를 상징할 수 있는 음식은 무엇일까요?
+                    이를 위해, 코로나 확진 및 회복에 영향을 주는 식품에 살펴보도록 하겠습니다.
+                    다음의 두 차트는 코로나 확진 및 회복에 긍정적/부정적 영향을 주는 식품들을 보여줍니다.
+                    모델 분석을 통해 입증.
+                    + 콩 종류, 해산물
+
                 </p>
+<!--                <div class="buttons">-->
+<!--                    <button>확진에 좋고, 나쁜</button>-->
+<!--                    <button>회복에 좋고, 나쁜</button>-->
+<!--                </div>-->
+<!--                <div style="overflow: hidden">-->
+                    <button id="confirm-btn">확진률</button>
+                    <button id="recover-btn">회복률</button>
+                    <div class="carousel-container">
+                        <div class="carousel-slide">
+                            <div class="chart" id="confirmed" style="margin-bottom: 9rem">
+                                <p style="font-family: 'Jeju Myeongjo', sans-serif; font-size:16px; margin-top:12px"><strong>확진률_음식 간 상관관계</strong></p>
+                                <canvas id="confirm-chart"></canvas>
+            <!--                    <canvas id="corr-chart2"></canvas>-->
+                                <div class="content-prose-box-big">
+                                    <div class="content-prose-box-small-left" >
+                                        <p class="content-prose-arrow" style="margin-bottom:6px"><i class="fas fa-arrow-down"></i></p>
+                                        <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color:forestgreen"><strong>Negative</strong></p>
+                                        <p class="content-prose-inbox">
+                                            확진을 방지할 수 있는 음식
+                                        </p>
+                                    </div>
+                                    <div class="content-prose-box-small-right" style="margin-left: 70px">
+                                        <p class="content-prose-arrow" style="margin-bottom:6px"><i class="fas fa-arrow-down"></i></p>
+                                        <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color: grey"><strong>Positive</strong></p>
+                                        <p class="content-prose-inbox">
+                                            확진에 가까워질 수 있는 음식
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart" id="recovered" style="margin-bottom: 9rem">
+                                <p style="font-family: 'Jeju Myeongjo', sans-serif; font-size:16px; margin-top:12px"><strong>회복률_음식 간 상관관계</strong></p>
+                                <canvas id="recover-chart"></canvas>
+                                <!--                    <canvas id="corr-chart2"></canvas>-->
+                                <div class="content-prose-box-big" style="width: 900px">
+                                    <div class="content-prose-box-small-left" style="margin-left: 115px; width: 320px">
+                                        <p class="content-prose-arrow" style="margin-bottom:6px"><i class="fas fa-arrow-down"></i></p>
+                                        <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color:grey"><strong>Negative</strong></p>
+                                        <p class="content-prose-inbox">
+                                            회복으로부터 멀어질 수 있는 음식
+                                        </p>
+                                    </div>
+                                    <div class="content-prose-box-small-right" style="width: 330px; margin-left: 20px">
+                                        <p class="content-prose-arrow" style="margin-bottom:6px;"><i class="fas fa-arrow-down"></i></p>
+                                        <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color: forestgreen"><strong>Positive</strong></p>
+                                        <p class="content-prose-inbox">
+                                            회복에 가까워질 수 있는 음식
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 <p class="content-prose">
-                    Although the clue is odd, the answer — OREO — is common. For starters, OREO is the seventh most used four-letter answer since 1993, according to a database of over four million clues from numerous publications.
+                    <p class="content-prose">
+                        확진률에선 명확한 상관관계가 보이지만 회복률에선 모호하였다.
+                        이를 해결하기 위해 학습모델을 통해 앞선 상관관계의 근거를 명확하게 하는 동시에
+                        그 과정에서 주요 식품을 추가로 발견하였다.
+                        (spices, offals, sugar crops)
+                        (obecity, eggs)
+                    </p>
+                    <!-- 아마 모델링 그래프 2개가 들어가야 할 것 같다.-->
+
+                    div.modeling
+
+                    <p class="content-prose">Best: 확진률은 낮추고 회복률을 높이는 식품</p>
+                    <p class="content-prose">Worst: 획진률은 높이고 회복률은 줄이는 식품</p>
                 </p>
             </article>
             <article class="content">
-                <h2 class="content-title">"Chapter 2"</h2>
+                <h2 class="content-title">
+                    <span>Insight 1.</span>
+                    <span style="color: rgb(60, 142, 14); font-size: 3rem">Good</span>  vs  <span style="color: dimgray; font-size: 3rem"> Bad </span>
+                </h2>
                 <p class="content-prose">
-                    In the iconic New York Times puzzle, OREO wasn’t used to reference the cookie until 1993, despite its invention in 1912. Its first appearance coincided with the start of the Shortz era.
-                    Until then, it was exclusively clued as the Greek prefix for mountain.
+                    두 식품군의 차이를 설명하기 위해 좋은 영양소로 불리는 6개의 요소를 기준
+                    으로 접근.
+                    (비타민 D, 비타민 D2, 비타민 D3, 비타민 C, 아연, 셀레늄)
                 </p>
+                <div class="category-container">
+                    <div class="left-container"></div>
+                    <div class="set">
+    <!--                    <div>-->
+    <!--                        <p class="left">-->
+
+    <!--                        </p>-->
+    <!--                        <p class="right">-->
+
+    <!--                        </p>-->
+    <!--                    </div>-->
+
+                        <!-- 마우스 오버 시 구체적인 시각화 자료 등장하는 방향으로 추가. -->
+                        <div class="circle-titles">
+                            <p class="circle-title">🔎마우스를 올려보세요.</p>
+                            <p class="left"><strong>Good</strong></p>
+                            <p class="right"><strong>Bad</strong></p>
+                        </div>
+                        <div class="left-circle">
+                            <p id="vitD2">비타민 D2</p>
+                            <span>➡️️채소(버섯), 해산물</span>
+                            <p id="vitD3">비타민 D3</p>
+                            <span>➡채소(버섯, 당근),</span>
+                            <br>
+                            <span>곡물, 해산물</span>
+                            <p id="sel">셀레늄</p>
+                            <span>➡해산물</span>
+                            <p id="vitC">비타민 C</p>
+                            <span>➡과일</span>
+                            <p id="total">총필수지방산</p>
+                            <span>➡견과류</span>
+                        </div>
+                        <div class="right-circle">
+                            <p id="milk">유당</p>
+                            <span>➡우유</span>
+                            <p id="nai">나이아신</p>
+                            <p id="ay">아연</p>
+                        </div>
+                        <div class="leave">
+                            <span class="vertical"></span>
+                            <div style="font-family: 'Jeju Myeongjo', sans-serif; font-size: 0.8rem; margin: 0 0 1rem -9rem;">
+                                <p style="font-size: 0.7rem">나이아신</p>
+                                <p style="color: dimgray">➡육고기, 곡물, 해산물, 채소</p>
+                                <br>
+                                <p style="font-size: 0.7rem">아연</p>
+                                <p style="color: dimgray">➡해산물, 육고기</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-container"></div>
+                </div>
+
                 <p class="content-prose">
-                    Although the clue is odd, the answer — OREO — is common. For starters, OREO is the seventh most used four-letter answer since 1993, according to a database of over four million clues from numerous publications.
                 </p>
             </article>
-
-            <article class="visualization">
-                <h2 class="content-title">"Chapter 3"</h2>
+            <article class="content">
+                <h2 class="content-title">
+                    <span>Insight 2.</span>
+                    탄수화물
+                </h2>
                 <p class="content-prose">
-                    Although the clue is odd, the answer — OREO — is common. For starters, OREO is the seventh most used four-letter answer since 1993, according to a database of over four million clues from numerous publications.
+                    회복률을 높이는데는 탄수화물을 잘챙겨먹는 것이 도움되는 것으로 분석됨 – 영양실조가 영향을 끼치는 것으로 보아 회복에는 잘 먹는게 중요하게 보여짐 -> 든든한 1일 식단
+                </p>
+            </article>
+<!--            <article class="content">-->
+<!--                <h2 class="content-title">Why Bad?</h2>-->
+<!--                <p class="content-prose">-->
+<!--                    우유(유당)가 좋지 않은 이유.-->
+
+<!--                </p>-->
+<!--            </article>-->
+            <article class="visualization">
+                <h2 class="content-title">
+                    <span>Challenge.</span>
+                    증상관련 시각화
+                </h2>
+                <p class="content-prose">
+                    증상관련 시각화(4) - 질문!
                 </p>
                 <img src="../mj-static/img/clip.png" alt="docter's chart">
                 <div class="box">
@@ -370,25 +519,12 @@
                 </div>
             </article>
             <article class="content">
-                <h2 class="content-title">"Chapter 4"</h2>
+                <h2 class="content-title">결론</h2>
                 <p class="content-prose">
-                    In the iconic New York Times puzzle, OREO wasn’t used to reference the cookie until 1993, despite its invention in 1912. Its first appearance coincided with the start of the Shortz era.
-                    Until then, it was exclusively clued as the Greek prefix for mountain.
-                </p>
-                <p class="content-prose">
-                    Although the clue is odd, the answer — OREO — is common. For starters, OREO is the seventh most used four-letter answer since 1993, according to a database of over four million clues from numerous publications.
+                    분석 자료를 통해 얻은 인사이트.
                 </p>
             </article>
-            <article class="content">
-                <h2 class="content-title">"Chapter 5"</h2>
-                <p class="content-prose">
-                    In the iconic New York Times puzzle, OREO wasn’t used to reference the cookie until 1993, despite its invention in 1912. Its first appearance coincided with the start of the Shortz era.
-                    Until then, it was exclusively clued as the Greek prefix for mountain.
-                </p>
-                <p class="content-prose">
-                    Although the clue is odd, the answer — OREO — is common. For starters, OREO is the seventh most used four-letter answer since 1993, according to a database of over four million clues from numerous publications.
-                </p>
-            </article>
+
 
         </section>
 
@@ -396,15 +532,17 @@
 
 
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/BezierPlugin.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/BezierPlugin.min.js"></script>-->
+<!--    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin3.min.js"></script>-->
     <script src="../mj-static/js/visual-main.js"></script>
+    <script src="../mj-static/js/good-badChart.js"></script>
 
 
 </body>
