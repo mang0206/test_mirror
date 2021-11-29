@@ -8,6 +8,8 @@
 body{
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    background-color: #effeff;
 }
 /*--------link style--------*/
 a:link{color: black; text-decoration: none;}
@@ -258,12 +260,17 @@ a:active{color: white;}
     margin-bottom: 200px;
 }
 #with_corona{
-    text-shadow: 1px 1px 1px gray;
+    color: #19193e;
     padding-top: 150px;
-    padding-bottom: 50px;
-    margin-top: 0;
+    margin: 100px 0px 100px 0px;
+
     font-family: sans-serif;
     font-size: 150px;
+    /* text-shadow: 0px 0px 10px #000072,
+                0px 0px 20px #000072,
+                0px 0px 40px #000072; */
+    text-shadow: 0px 0px 10px #a9d3f6,
+                0px 0px 20px #a9d3f6;
 
     animation: fadein 4s;
     -webkit-animation: fadein 4s;
@@ -284,12 +291,86 @@ a:active{color: white;}
       opacity: 1;
     }
 }
+.light_bar{
+    position: absolute;
+    top: 310px;
+    width: 100%;
+    height: 10px;
+    opacity: 0.8;
+    border-radius: 10px;
+    background-color: white;
+    z-index: 2;
+    box-shadow: 0px 0px 10px #65b1ff,
+                0px 0px 20px #65b1ff;
+    animation: animateLightbar 4s linear infinite;
+}
+@keyframes animateLightbar
+{
+    0%,5%
+    {
+        transform: scaleX(0) translateY(0);
+    }
+    10%
+    {
+        transform: scaleX(1) translateY(0);
+    }
+    90%
+    {
+        transform: scaleX(1) translateY(calc(350px - 10px));
+    }
+    95%,100%
+    {
+        transform: scaleX(0) translateY(calc(350px - 10px));
+    }
+}
+.virus_blur1{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+
+    top: 490px;
+    right: 350px;
+	-webkit-animation: text-blur-out 2.5s ease-out 2s both infinite;
+    animation: text-blur-out 2.5s ease-out 2s both infinite;
+}
+.virus_blur2{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+
+    top: 400px;
+    left: 150px;
+	-webkit-animation: text-blur-out 2s ease-out 1.5s both infinite;
+    animation: text-blur-out 2s ease-out 1.5s both infinite;
+}
+.virus_blur3{
+    width: 132px;
+    height: 132px;
+    position: absolute;
+
+    top: 300px;
+    right: 200px;
+	-webkit-animation: text-blur-out 1.5s ease-out 1s both infinite;
+    animation: text-blur-out 1.5s ease-out 1s both infinite;
+}
+@keyframes text-blur-out {
+    0% {
+      -webkit-filter: blur(0.01);
+              filter: blur(0.01);
+    }
+    100% {
+      -webkit-filter: blur(12px) opacity(0%);
+              filter: blur(12px) opacity(0%);
+    }
+}
+
 #intro_detail{
-    /* margin-top: 100px; */
-    margin-bottom: 300px;
+    color: #19193e;
+    margin: 150px 0px 300px 0px;
     text-shadow: 0px 1px 3px white;
 }
 #question{
+    color: #19193e;
     font-size: 100px;
     margin-bottom: -30px;
     text-shadow: 0px 1px 3px black;
@@ -323,8 +404,8 @@ a:active{color: white;}
     align-items: center;
     justify-content: space-evenly;
 
-    background: url("../image/diet_img2.jpeg"), rgba(0, 0, 0, 0.5);
-    background-size: 850px auto;
+    background: url("../image/egg_avocado.jpeg"), rgba(0, 0, 0, 0.5);
+    background-size: contain;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-blend-mode: multiply;
@@ -345,7 +426,7 @@ a:active{color: white;}
 }
 .index_description{
     color: white;
-    text-shadow: 0px 1px 3px black;
+    /* text-shadow: 0px 1px 3px black; */
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -379,6 +460,8 @@ a:active{color: white;}
     font-size: 45px;
     font-weight: 700;
     line-height: 25px;
+    text-decoration: underline;
+    text-underline-position: under;
 }
 .detail_header2{
     font-size: 23px;
@@ -390,6 +473,7 @@ a:active{color: white;}
     line-height: 20px;
 }
 .index_description_detail_diet{
+    color: #182558;
     width: 500px;
     margin-top: 30px;
     margin-bottom: 80px;
@@ -402,6 +486,7 @@ a:active{color: white;}
     line-height: 30px;
 }
 .index_description_detail_visual{
+    color: #182558;
     width: 500px;
     margin-top: 30px;
     margin-bottom: 80px;
@@ -793,20 +878,30 @@ a:active{color: white;}
 /*--------footer--------*/
 .footer{
     width: 100%;
-    height: auto;
-    background: #051F18;
+    height: fit-content;
+    background: #19193e;
+    padding: 40px 0px 60px 0px;
+
+    display: flex;
+    justify-content: space-around;
 }
-.project_12{
+.footer_1{
     color: white;
-    padding: 30px 60px 30px 60px;
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: left;
 }
-.project_12>h6{
-    font-weight: 300;
+.footer_3{
+    width: 700px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+
+    font-size: 15px;
+    line-height: 30px;
 }
 .ydp01{
     padding: 5px 0px 5px 0px;
