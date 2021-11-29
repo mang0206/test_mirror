@@ -132,8 +132,6 @@
     };
     // const firstChart = new Chart(ctx_kcal, config_kcal);
     const secondChart = new Chart(ctx, config);
-
-    console.log(hello);
 </script>
 {% endblock %}
 
@@ -142,22 +140,22 @@
   <form method="post">
     <div class="kit_personal_board">
       <div class='symptom_1'>
-        <input type="checkbox" name="Fever" id="Fever" class="input_checker">
-        <label for="Fever" class="label_checker">고열</label>
-        <input type="checkbox" name="Tiredness" id="Tiredness" class="input_checker">
-        <label for="Tiredness" class="label_checker">피곤함</label>
-        <input type="checkbox" name="Dry_Cough" id="Dry_Cough" class="input_checker">
-        <label for="Dry_Cough" class="label_checker">마른 기침</label>
+        <input type="checkbox" name="fever" id="fever" class="input_checker">
+        <label for="fever" class="label_checker">고열</label>
+        <input type="checkbox" name="head_ache" id="head_ache" class="input_checker">
+        <label for="head_ache" class="label_checker">두통</label>
+        <input type="checkbox" name="cough" id="cough" class="input_checker">
+        <label for="cough" class="label_checker">마른 기침</label>
       </div>
       <div class='symptom_1'>
-        <input type="checkbox" name="Difficulty_in_Breathing" id="Difficulty_in_Breathing" class="input_checker">
-        <label for="Difficulty_in_Breathing" class="label_checker">호흡 곤란</label>
-        <input type="checkbox" name="Sore_Throat" id="Sore_Throat" class="input_checker">
-        <label for="Sore_Throat" class="label_checker">인후염</label>
+        <input type="checkbox" name="shortness_of_breath" id="shortness_of_breath" class="input_checker">
+        <label for="shortness_of_breath" class="label_checker">호흡 곤란</label>
+        <input type="checkbox" name="sore_throat" id="sore_throat" class="input_checker">
+        <label for="sore_throat" class="label_checker">인후염</label>
         <input type="checkbox" name="None_Sympton" id="None_Sympton" class="input_checker">
         <label for="None_Sympton" class="label_checker none_experience">증상 없음</label>
       </div>
-      <div class='symptom_1'>
+      <!-- <div class='symptom_1'>
         <input type="checkbox" name="Pains" id="Pains" class="input_checker">
         <label for="Pains" class="label_checker">근육통</label>
         <input type="checkbox" name="Nasal_Congestion" id="Nasal_Congestion" class="input_checker">
@@ -170,10 +168,10 @@
         <label for="Diarrhea" class="label_checker">설사</label>
         <input type="checkbox" name="None_Experiencing" id="None_Experiencing" class="input_checker">
         <label for="None_Experiencing" class="label_checker none_experience">경험 없음</label>
-      </div>
+      </div> -->
         <div class='section'>
   
-          <table style='display:inline;'>국적
+          <!-- <table style='display:inline;'>국적
             <tr>
               <td>
                 <select name="Country">
@@ -190,16 +188,18 @@
                 </select>
               </td>
             </tr>
-          </table>
+          </table> -->
   
           <table style='display:inline;'>나이
             <tr>
               <td>
-                <select name="Age">
-                  <option value="Age_0-9">9세 이하</option>
+                <select name="age_60_and_above">
+                  <!-- <option value="Age_0-9">9세 이하</option>
                   <option value="Age_10-19">10-19세</option>
                   <option value="Age_20-24">20-24세</option>
                   <option value="Age_25-59">25-59세</option>
+                  <option value="Age_60+">60세 이상</option> -->
+                  <option value="Age_60-">60세 이하</option>
                   <option value="Age_60+">60세 이상</option>
   
                 </select>
@@ -210,10 +210,10 @@
           <table style='display:inline;'>성별
             <tr>
               <td>
-                <select name="Gender">
+                <select name="gender">
                   <option value="Gender_Female">Female</option>
                   <option value="Gender_Male">Male</option>
-                  <option value="Gender_Transgender">Transgender</option>
+                  <!-- <option value="Gender_Transgender">Transgender</option> -->
                 </select>
               </td>
             </tr>
@@ -222,14 +222,18 @@
           <table style='display:inline;'>확진자 접촉 여부
             <tr>
               <td>
-                <select name="Contact">
-                  <option value="Contact_Dont-Know">알 수 없음</option>
+                <select name="test_indication">
+                  <!-- <option value="Contact_Dont-Know">알 수 없음</option>
                   <option value="Contact_No">접촉 X</option>
-                  <option value="Contact_Yes">접촉 O</option>
+                  <option value="Contact_Yes">접촉 O</option> -->
+                  <option value="Contact_with_confirmed">확진자 접촉</option>
+                  <option value="Abroad">해외</option>
+                  <option value="Other">기타</option>
                 </select>
               </td>
             </tr>
           </table>
+
       </div>
     </div>
     <div class="kit_two_button">

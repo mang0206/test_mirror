@@ -1,9 +1,11 @@
 {% extends 'diet_result.html' %}
 {% block check %}
 <div class="check">
-    <span>확진 확롤</span>
+    <span>확진 확률</span>
     <span>
-        {{ result }}
+        <!-- {{ result }} -->
     </span>
+    <div class="number_count", id="my-data" data-name= "{{ result }}"> </div>
+    
 </div>
 {% endblock %}

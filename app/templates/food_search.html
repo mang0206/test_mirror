@@ -2,6 +2,14 @@
 {% block food_search %}
 <div class="food_search_wrapper">
     <div class="search_input">
+        <!-- flask flash 기능 -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <script type="text/javascript">
+                    alert("{{messages[0]}}");
+                </script>
+            {% endif %}
+        {% endwith %}
         <form action="/diet" method="POST" id="form_food" class="search_form" autocomplete="off">
             <div class="food_search">
                 <!--<a href="" target="_blank" hidden></a>-->
@@ -23,7 +31,7 @@
                 </div>
             </div>
             <div class="move_kit">
-                <input type="submit" id="move_kit" name="btn" value="form_food">
+                <input type="submit" id="move_kit" name="btn2">
                 <label for="move_kit" class="move_button">음식 제출</label>
             </div>
         </form>

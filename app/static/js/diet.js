@@ -23,9 +23,10 @@ $(function(){
     
 });
 
-//개인정보 입력 완료 안내 창
-$(function(){
-    $(".move_button").click(function(){
-        alert("안전하게 제출되었습니다! :)")
-    })
-})
+// personal submit 버튼 입력시 스크롤 이동
+$(document).ready(function() {
+    $("#personal_submit").click(function(event) {
+        window.scrollTo(200, 500);
+        $('html, body').animate({scrollTop:$(this.hash).offset().top}, 500);
+    });
+});
