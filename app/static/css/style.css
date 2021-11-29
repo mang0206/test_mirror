@@ -445,7 +445,7 @@ a:active{color: white;}
     text-align: center;
 }
 .diet_clip_img{
-    top: 255px;
+    top: 260px;
     z-index: 900;
     position: absolute;
     display: flex;
