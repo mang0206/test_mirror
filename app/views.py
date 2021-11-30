@@ -72,7 +72,7 @@ def join_result():
 @app.route("/diet", methods=["GET", "POST"])
 def diet_food():
     global nutrients, food_lst, foods_nutrients
-
+    covid_nutrients = [100,50,19,30]
     if request.method == "POST" and request.form.get('btn') == 'form_personal' :
         if request.form.get('age') and request.form.get('gender') and request.form.get('height') and request.form.get('activity') :
             age = float(request.form.get('age'))
@@ -94,7 +94,7 @@ def diet_food():
             return redirect(url_for("diet_food"))
 
         food_lst = request.form.get('btn2')
-        food_lst = food_lst.split(',')
+        food_lst = food_lst.split('=')
         food_nutrients = [0] * 19
         for food_name in food_lst:
             food = Food.query.filter(Food.food_name == food_name).first()
@@ -116,12 +116,13 @@ def diet_food():
             food_nutrients[15] = food.vitaminC * 1000
             food_nutrients[16] = food.selenium * 1000 * 1000 #일일 권장량 55
             food_nutrients[17] = food.vitaminD2 * 1000 * 1000 #일일 권장량 19
-            food_nutrients[18] = food.zinc * 1000 #일일 권장량 10
+            food_nutrients[18] = food.zinc * 1000 #일일 권장량 30
             # food_nutrients[19] = food.fatty_acid #필수 지방산
             for i in range(len(nutrients)):
                 food_nutrients[i] = round(food_nutrients[i] / nutrients[i] * 100)
+            for i in range(len(covid_nutrients)):
+                food_nutrients[15+i] = round(food_nutrients[15 + i] / covid_nutrients[i] * 100)
             foods_nutrients.append({food_name:food_nutrients[:]})
-            
         return redirect(url_for('checker'))
    
     return render_template("food_search.html")
