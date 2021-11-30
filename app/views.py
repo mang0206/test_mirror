@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 from .ml import model, Age_dict, Gender_dict, Contact_dict
 import pandas as pd
+import numpy as np
 from .cal_nutrients import cal_nutrients
 from collections import defaultdict
 from . import app, db
@@ -49,11 +50,11 @@ def join():
     if request.method == "POST" :
         user_id = request.form.get('user_id')
         password = request.form.get('password')
-        if valid_password(password):
-            pass
+        if not valid_password(password):
+            flash("유효한 비밀번호 형식이 아닙니다")
         email = request.form.get('email')
-        if valid_email(email):
-            pass # alert 적용
+        if not valid_email(email):
+            flash("유효한 e-mail 형식이 아닙니다") # alert 적용
         encoded_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
         if User.query.filter(User.user_id==user_id).first() :
             return redirect(url_for("join",flag=False))
