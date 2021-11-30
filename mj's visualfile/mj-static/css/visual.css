@@ -140,7 +140,7 @@ section {
 .content-prose-box-big {
     display: flex;
     /*align-items: baseline;*/
-    width: 800px;
+    width: 450px;
     /*padding: 1rem;*/
     font-family: 'Jeju Myeongjo', sans-serif;
     font-size: 1.1rem;
@@ -150,7 +150,7 @@ section {
 
 
 .content-prose-box-small-left {
-    margin-left: 145px;
+    /*margin-left: 45px;*/
     padding: 1rem;
     /*align-items: baseline;*/
     /*background-color: #f6d365;*/
@@ -158,7 +158,7 @@ section {
 }
 
 .content-prose-box-small-right {
-    margin-left: 50px;
+    margin-right: -50px;
     padding: 1rem;
     /*background-color: #f6d365;*/
 
@@ -181,53 +181,48 @@ section {
     max-width: 800px;
     width: 95%;
     text-align: left;
-    /*padding: 0.5rem;*/
+    padding: 0.5rem;
     font-family: 'Jeju Myeongjo', sans-serif;
 
 }
 
 
 .carousel-container {
-    width: 100vw;
-    /*margin: auto;*/
-    /*padding-left: 280px;*/
-    padding-bottom: 3rem;
-    /*overflow-x: auto;*/
-}
-
-.carousel-slide {
+    /*width: 1200px;*/
     display: flex;
-    width: 100%;
-    height: 100%;
-    /*overflow: hidden;*/
-    min-width: 100px;
-    margin: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    /*margin-left: 22rem;*/
+    /*transform: translate(-600px);*/
+    /*transition: transform 0.5s;*/
 }
 
-#confirm-btn,
-#recover-btn {
-    border: none;
-    outline: none;
-    background: #888;
-    padding: 8px 20px;
-    font-size: 20px;
-    color: #ddd;
-    border-radius: 30px;
-    cursor: pointer;
-    margin: 10px auto;
-}
 
-#confirm-btn:hover,
-#recover-btn:hover {
-    background-color: #111;
+/*#confirm-btn,*/
+/*#recover-btn {*/
+/*    border: none;*/
+/*    outline: none;*/
+/*    background: #888;*/
+/*    padding: 8px 20px;*/
+/*    font-size: 20px;*/
+/*    color: #ddd;*/
+/*    border-radius: 30px;*/
+/*    cursor: pointer;*/
+/*    margin: 10px auto;*/
+/*}*/
 
-}
+/*#confirm-btn:hover,*/
+/*#recover-btn:hover {*/
+/*    background-color: #111;*/
+
+/*}*/
 
 .corr-chart {
     margin: 1.8rem;
     text-align: center;
-    width: 800px;
+    width: 500px;
     height: 400px;
+
 }
 
 .corr-chart  #corr-chart {
@@ -309,14 +304,14 @@ article {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
     border: solid rgb(219, 205, 190) 11px;
     overflow: hidden;
     background: url("../img/사람.jpeg");
     background-repeat: no-repeat;
-    background-position: 20% 100%;
+    background-position: bottom;
     background-size: 30rem;
-    /*position: relative;*/
+    position: relative;
 }
 
 .set {
@@ -393,6 +388,7 @@ article {
 }
 
 .right-circle button {
+    padding: 0.4rem;
     display: flex;
     font-weight: bold;
     border: none;
@@ -456,39 +452,16 @@ label {
     margin-bottom: 0;
 }
 
-.vertical {
-    position: absolute;
-    border-left: 4px dotted darkslategrey;
-    display: block;
-    height: 100px;
-    left: -4.5rem;
-    bottom: 4.5rem;
-    /*border-radius: 88px 100px 0 0;*/
-}
-
-/*.vertical-line {*/
-/*    height: 80px;*/
-/*    width: 200px;*/
-/*    background: transparent;*/
-/*    border-radius: 10px 0px 0px 370px/225px;*/
-/*    border: solid 3px darkslategrey;*/
-/*    border-top:none;*/
-/*    border-right:none;*/
-/*    margin:20px;*/
+/*.vertical {*/
+/*    position: absolute;*/
+/*    border-left: 4px dotted darkslategrey;*/
+/*    display: block;*/
+/*    height: 100px;*/
+/*    left: -4.5rem;*/
+/*    bottom: 4.5rem;*/
+/*    !*border-radius: 88px 100px 0 0;*!*/
 /*}*/
 
-/*!*.vertical-line:before {*!*/
-/*!*    height:20px;*!*/
-/*!*    width: 10px;*!*/
-/*!*    border: 3px solid darkslategrey;*!*/
-/*!*    border-radius: 30px 30px 0px 0px /75px 75px 0px 0px ;*!*/
-/*!*    display: block;*!*/
-/*!*    content: "";*!*/
-/*!*    border-bottom:none;*!*/
-/*!*    position:relative;*!*/
-/*!*    top: -9px;*!*/
-/*!*    left: -12px;*!*/
-/*!*}*!*/
 
 .leave {
     position: absolute;
@@ -496,27 +469,7 @@ label {
     left: 20rem;
 }
 
-/*.left-container,*/
-/*.right-container {*/
-/*    width: 28%;*/
-/*    height: 600px;*/
-/*    position: absolute;*/
-/*}*/
 
-/*.left-container {*/
-/*    background-color: #949494;*/
-/*    left: 0;*/
-/*    position: absolute;*/
-/*    margin-left: 50px;*/
-/*}*/
-
-/*.right-container {*/
-/*    background-color: #949494;*/
-/*    right: 0;*/
-/*    position: absolute;*/
-/*    margin-right: 50px;*/
-
-/*}*/
 
 .category-container {
     position: relative;
@@ -561,6 +514,8 @@ label {
     margin-top: 5rem;
     margin-right: 1rem;
     position: absolute;
+    display: flex;
+    flex-direction: column;
 }
 
 .food-chart-area-right {
@@ -584,7 +539,7 @@ label {
     height: 1px;
     border-radius: 50%;
     border: 3px solid rgb(183, 93, 135);
-    background-color:  #ac9bdb;
+    background-color: coral;
     opacity: 0.6;
     /*margin-bottom: 5rem;*/
     /*position: absolute;*/
@@ -602,20 +557,11 @@ label {
 #btn-throat:hover,
 #btn-cough:hover,
 #btn-breathe:hover {
-    background-color: #f6d365;
+    background-color: lightcoral;
+    border: 5px solid indianred;
 }
 
 
-
-
-
-#person {
-    margin-top: 4rem;
-    position: relative;
-    /*margin-right: 11rem;*/
-    /*z-index: 900;*/
-
-}
 
 .body-circle-name {
     font-size: 20px;
@@ -627,46 +573,53 @@ label {
 
 
 .body-circle {
-    display: flex;
+    display: inline-block;
     align-items: baseline;
-    /*bottom: 3;*/
-    /*z-index: 1;*/
 }
 
 
 
 
 .body-circle.head {
-    position: absolute;
-    left: 0;
+    z-index: 9;
+    position: static;
+    margin-top: 12rem;
+    margin-right: 8rem;
+    padding-top: 2rem;
+
 }
 
 .body-circle.fever {
-    /*z-index: 9;*/
-    /*position: static;*/
-    /*    margin-left: 10rem;*/
-    /*    margin-top: -2rem;*/
-    margin-left: 10rem;
+    z-index: 9;
+    position: static;
+    margin-left: 9rem;
+    margin-top: -3rem;
+    margin-bottom: 1rem;
 }
 
 .body-circle.cough {
     /*z-index: 9;*/
     position: static;
     margin-right: 8rem;
-    /*margin-bottom: 3rem;*/
+    margin-top: 1rem;
 }
 
 .body-circle.throat {
     /*z-index: 9;*/
     position: static;
-    margin-right: 6rem;
-    margin-top: -1rem;
-    margin-bottom: 2rem;
+    margin-left: 6rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 .body-circle.breathe {
     position: static;
-    margin-left: 2rem;
+    margin-top: 1rem;
+    padding-top: 2rem;
+    margin-bottom: 17rem;
+
+
+
     /*bottom: 6.5rem;*/
     /*margin-bottom: -5rem;*/
     /*left: 3rem;*/
@@ -693,12 +646,12 @@ label {
     padding: 0.2rem;
 }
 
-.mouse-title {
-    position: absolute;
-    top: 2rem;
-    font-size: 16px;
-    color: dimgrey;
-}
+/*.mouse-title {*/
+/*    position: static;*/
+/*    font-size: 16px;*/
+/*    !*left: 10rem;*!*/
+/*    color: dimgrey;*/
+/*}*/
 
 
 .number-left {
@@ -716,4 +669,14 @@ label {
     position: absolute;
     left: 4rem;
 }
+
+/*.inner-box {*/
+/*    !*position: relative;*!*/
+/*    right: 10rem;*/
+/*    !*top: -2rem;*!*/
+/*    width: 300px;*/
+/*    height: 300px;*/
+/*    background-color: #f6d365;*/
+/*}*/
+
 

@@ -65,6 +65,7 @@
         </section>
 
         <!-- 본문 -->
+<!--        <div style="overflow: hidden">-->
         <section class="contents-section">
             <article class="content">
                 <h2 class="content-title">Intro</h2>
@@ -81,54 +82,51 @@
 <!--                    <button>회복에 좋고, 나쁜</button>-->
 <!--                </div>-->
 <!--                <div style="overflow: hidden">-->
-                    <button id="confirm-btn" onclick="prev()">확진률</button>
-                    <button id="recover-btn" onclick="next()">회복률</button>
+<!--                    <button id="confirm-btn">확진률</button>-->
+<!--                    <button id="recover-btn">회복률</button>-->
                     <div class="carousel-container">
-                        <div class="carousel-slide">
-                            <div class="corr-chart" id="confirmed" style="margin-bottom: 9rem">
-                                <p style="font-family: 'Jeju Myeongjo', sans-serif; font-size:16px; margin-top:12px"><strong>확진률_음식 간 상관관계</strong></p>
-                                <canvas id="confirm-chart"></canvas>
-            <!--                    <canvas id="corr-chart2"></canvas>-->
-                                <div class="content-prose-box-big">
-                                    <div class="content-prose-box-small-left" >
-                                        <p class="content-prose-arrow" style="margin-bottom:6px"><i class="fas fa-arrow-down"></i></p>
-                                        <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color:forestgreen"><strong>Negative</strong></p>
-                                        <p class="content-prose-inbox">
-                                            확진을 방지할 수 있는 음식
-                                        </p>
-                                    </div>
-                                    <div class="content-prose-box-small-right" style="margin-left: 70px">
-                                        <p class="content-prose-arrow" style="margin-bottom:6px"><i class="fas fa-arrow-down"></i></p>
-                                        <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color: grey"><strong>Positive</strong></p>
-                                        <p class="content-prose-inbox">
-                                            확진에 가까워질 수 있는 음식
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="corr-chart" id="recovered" style="margin-bottom: 9rem">
-                                <p style="font-family: 'Jeju Myeongjo', sans-serif; font-size:16px; margin-top:12px"><strong>회복률_음식 간 상관관계</strong></p>
-                                <canvas id="recover-chart"></canvas>
-                                <!--                    <canvas id="corr-chart2"></canvas>-->
-                                <div class="content-prose-box-big" style="width: 900px">
-                                    <div class="content-prose-box-small-left" style="margin-left: 115px; width: 320px">
-                                        <p class="content-prose-arrow" style="margin-bottom:6px"><i class="fas fa-arrow-down"></i></p>
-                                        <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color:grey"><strong>Negative</strong></p>
-                                        <p class="content-prose-inbox">
-                                            회복으로부터 멀어질 수 있는 음식
-                                        </p>
-                                    </div>
-                                    <div class="content-prose-box-small-right" style="width: 330px; margin-left: 20px">
-                                        <p class="content-prose-arrow" style="margin-bottom:6px;"><i class="fas fa-arrow-down"></i></p>
-                                        <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color: forestgreen"><strong>Positive</strong></p>
-                                        <p class="content-prose-inbox">
-                                            회복에 가까워질 수 있는 음식
-                                        </p>
-                                    </div>
-                                </div>
+                        <div class="corr-chart" id="confirmed" style="margin-bottom: 9rem">
+                            <p style="font-family: 'Jeju Myeongjo', sans-serif; font-size:16px; margin-top:12px"><strong>확진률_음식 간 상관관계</strong></p>
+                            <canvas id="confirm-chart"></canvas>
+<!--                            <div class="content-prose-box-big">-->
+<!--                                <div class="content-prose-box-small-left" >-->
+<!--                                    <p class="content-prose-arrow" style="margin-bottom:6px"><i class="fas fa-arrow-down"></i></p>-->
+<!--                                    <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color:forestgreen"><strong>Negative</strong></p>-->
+<!--                                    <p class="content-prose-inbox">-->
+<!--                                        확진을 방지할 수 있는 음식-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                                <div class="content-prose-box-small-right" style="margin-left: 70px">-->
+<!--                                    <p class="content-prose-arrow" style="margin-bottom:6px"><i class="fas fa-arrow-down"></i></p>-->
+<!--                                    <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color: grey"><strong>Positive</strong></p>-->
+<!--                                    <p class="content-prose-inbox">-->
+<!--                                        확진에 가까워질 수 있는 음식-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </div>
+                        <div class="corr-chart" id="recovered" style="margin-bottom: 9rem">
+                            <p style="font-family: 'Jeju Myeongjo', sans-serif; font-size:16px; margin-top:12px"><strong>회복률_음식 간 상관관계</strong></p>
+                            <canvas id="recover-chart"></canvas>
+                            <div class="content-prose-box-big" style="width: 900px">
+<!--                                <div class="content-prose-box-small-left" style="margin-left: 115px; width: 320px">-->
+<!--                                    <p class="content-prose-arrow" style="margin-bottom:6px"><i class="fas fa-arrow-down"></i></p>-->
+<!--                                    <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color:grey"><strong>Negative</strong></p>-->
+<!--                                    <p class="content-prose-inbox">-->
+<!--                                        회복으로부터 멀어질 수 있는 음식-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                                <div class="content-prose-box-small-right" style="width: 330px; margin-left: 20px">-->
+<!--                                    <p class="content-prose-arrow" style="margin-bottom:6px;"><i class="fas fa-arrow-down"></i></p>-->
+<!--                                    <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color: forestgreen"><strong>Positive</strong></p>-->
+<!--                                    <p class="content-prose-inbox">-->
+<!--                                        회복에 가까워질 수 있는 음식-->
+<!--                                    </p>-->
+<!--                                </div>-->
                             </div>
                         </div>
                     </div>
+<!--                </div>-->
 
                 <p class="content-prose">
                     <p class="content-prose">
@@ -159,11 +157,57 @@
                     <div class="left-side-chart">
                         <div class="food-chart-area-left">
                             <canvas class="left-input-chart"></canvas>
+                            <div id="sel_div" class="createText_hidden">
+                                <li>셀레노단백질이 되어 산화 스트레스 및 종양인자의 문지기 역할을 수행한다.</li>
+                                <li>셀레늄이 부족 시, RNA 바이러스에 취약하게 된다.</li>
+                                <li>코로나 계열의 SARS-CoV, MERS-CoV, SARS-CoV-2에 긍정적 영향을 끼친다.</li>
+                                <li>증상의 심각성 완화에 도움을 준다.</li>
+                            </div>
+                            <div id="vitD2_div" class="createText_hidden">
+                                <li>비타민 d는 세포단위의 면역체계에 도움을 준다.</li>
+                                <li>바이러스 공격과 종양인자를 억제하는 역할을 한다.</li>
+                                <li>비타민D가 적은 그룹에 대해 양성 판정률이 1.77배 높은 연구결과</li>
+                            </div>
+                            <div id="vitD3_div" class="createText_hidden">
+                                <li>비타민 d는 세포단위의 면역체계에 도움을 준다.</li>
+                                <li>바이러스 공격과 종양인자를 억제하는 역할을 한다.</li>
+                                <li>비타민D가 적은 그룹에 대해 양성 판정률이 1.77배 높은 연구결과</li>
+                            </div>
+                            <div id="vitC_div" class="createText_hidden">
+                                <li>감염기간이나 걸렸을때 심각성을 줄이는데 역할을 한 연구결과가 있다.</li>
+                                <li>박테리아, 바이러스, 프로토조아의 감염을 예방하는데 도움을 주는 연구가 있음</li>
+                                <li>염증이나 산화 스트레스에 효과가 있었음</li>
+                                <li>호흡기 질환에 중요한 규제역할을 함</li>
+
+                            </div>
+                            <div id="total-div" class="createText_hidden">
+                                두 식품군의 차이를 설명하기 위해 좋은 영양소로 불리는 6개의 요소를 기준으로 해석.
+                            </div>
+                            <div id="nai_div" class="createText_hidden">
+                                <li>DNA 복원에 도움줌</li>
+                                <li>과복용은 간에 유독함</li>
+                                <li>비타민 b3가 만드는 NAD+는 셀 단위의 면역에 큰 역할을 끼침</li>
+                                <li>NAD+는 림프구 바이러스 감염에 도움을 줌</li>
+                                <li>실제로 비타민 b3를 복용한 그룹이 30프로 이상 빠르게 회복된 연구결과</li>
+                            </div>
+                            <div id="ay_div" class="createText_hidden">
+                                <li>WHO에 따르면 인구의 3분의 1이 아연 부족을 겪어 식단으로 채울 것을 권고</li>
+                                <li>채식주의자에게 아연 부족현상에 민감함 - 데이터 분석결과 고기류에 모두 존재했었음</li>
+                                <li>조직의 바이러스 감염과 관련되어있음</li>
+                                <li>증상을 줄이는데 큰 도움을 준 연구가 존재함</li>
+                                <li>호흡기 질환의 발현 억제</li>
+                                <li>RNA 바이러스에 대해 30~50 mg/day가 제안됨</li>
+                            </div>
                         </div>
                     </div>
                     <img class="sticker-right" src="../mj-static/img/sticker.png" alt="tape">
                     <div class="right-side-chart">
-                        <div class="food-chart-area-right"></div>
+                        <div class="food-chart-area-right">
+                            <canvas class="right-input-chart"></canvas>
+                            <div id="milk_div" class="createText_hidden">
+<!--                                <li></li>-->
+                            </div>
+                        </div>
                     </div>
                     <div class="set">
 
@@ -211,13 +255,7 @@
                     회복률을 높이는데는 탄수화물을 잘챙겨먹는 것이 도움되는 것으로 분석됨 – 영양실조가 영향을 끼치는 것으로 보아 회복에는 잘 먹는게 중요하게 보여짐 -> 든든한 1일 식단
                 </p>
             </article>
-<!--            <article class="content">-->
-<!--                <h2 class="content-title">Why Bad?</h2>-->
-<!--                <p class="content-prose">-->
-<!--                    우유(유당)가 좋지 않은 이유.-->
 
-<!--                </p>-->
-<!--            </article>-->
             <article class="visualization">
                 <h2 class="content-title">
                     <div class="hidden-text">Challenge.</div>
@@ -227,14 +265,11 @@
                     증상별 코로나 확진률을 보여드립니다.
                 </p>
                 <img class="clip" src="../mj-static/img/clip.png" alt="docter's chart">
-<!--                <p class="circle-title">🔎마우스를 올려보세요.</p>-->
-
                 <div class="box">
-                    <div class="mouse-title">
+                    <p class="mouse-title">
                         🔎마우스를 올려보세요.
-                    </div>
+                    </p>
                     <div class="body-circle head">
-                        <div class="number"></div>
                         <label class="body-circle-name" for="btn-headache">두통</label>
                         <button id="btn-headache"></button>
                     </div>
@@ -254,13 +289,8 @@
                         <label class="body-circle-name" for="btn-breathe">호흡곤란</label>
                         <button id="btn-breathe"></button>
                     </div>
-                    <div class="number-left"></div>
-                    <div class="number-right"></div>
+                    <div class="inner-box"></div>
 
-
-
-
-<!--                    </div>-->
                 </div>
             </article>
             <article class="content">
