@@ -291,7 +291,7 @@ a:active{color: white;}
       opacity: 1;
     }
 }
-.light_bar{
+/* .light_bar{
     position: absolute;
     top: 290px;
     width: 100%;
@@ -322,7 +322,7 @@ a:active{color: white;}
     {
         transform: scaleX(0) translateY(calc(290px - 10px));
     }
-}
+} */
 .virus_blur1{
     width: 120px;
     height: 120px;
@@ -330,8 +330,8 @@ a:active{color: white;}
 
     top: 490px;
     right: 350px;
-	-webkit-animation: text-blur-out 2.5s ease-out 2s both infinite;
-    animation: text-blur-out 2.5s ease-out 2s both infinite;
+	-webkit-animation: text-blur-out 4s ease-out 2s both infinite;
+    animation: text-blur-out 4s ease-out 2s both infinite;
 }
 .virus_blur2{
     width: 150px;
@@ -340,8 +340,8 @@ a:active{color: white;}
 
     top: 400px;
     left: 150px;
-	-webkit-animation: text-blur-out 2s ease-out 1.5s both infinite;
-    animation: text-blur-out 2s ease-out 1.5s both infinite;
+	-webkit-animation: text-blur-out 3s ease-out 2.5s both infinite;
+    animation: text-blur-out 3s ease-out 2.5s both infinite;
 }
 .virus_blur3{
     width: 132px;
@@ -350,8 +350,8 @@ a:active{color: white;}
 
     top: 300px;
     right: 200px;
-	-webkit-animation: text-blur-out 1.5s ease-out 1s both infinite;
-    animation: text-blur-out 1.5s ease-out 1s both infinite;
+	-webkit-animation: text-blur-out 3.5s ease-out 3.5s both infinite;
+    animation: text-blur-out 3.5s ease-out 3.5s both infinite;
 }
 @keyframes text-blur-out {
     0% {
@@ -440,8 +440,8 @@ a:active{color: white;}
     display: flex;
     justify-content: center;
 
-    background: url("../image/visual_img1.jpeg"), rgba(0, 0, 0, 0.5);
-    background-position: 10% 30%;
+    background: url("../image/visual_image.jpeg"), rgba(0, 0, 0, 0.5);
+    background-position: 20% -10%;
     background-size: 850px auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
