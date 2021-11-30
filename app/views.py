@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
 from .ml import model, Age_dict, Gender_dict, Contact_dict
 import pandas as pd
+import numpy as np
 from .cal_nutrients import cal_nutrients
 from collections import defaultdict
 from . import app, db
