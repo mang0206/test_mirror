@@ -255,3 +255,17 @@ const recoveredChart = new Chart(ctx_recovered, config_recovered);
 //
 // })
 
+
+let slider_chart = document.querySelector('#confirmed');
+let charts = []
+
+function prev() {
+    if (i <= 0) i = charts.length;
+    i--
+    return setChart();
+}
+
+function setChart() {
+    return slider_chart
+}
+

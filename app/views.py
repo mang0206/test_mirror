@@ -49,11 +49,11 @@ def join():
     if request.method == "POST" :
         user_id = request.form.get('user_id')
         password = request.form.get('password')
-        if valid_password(password):
-            pass
+        if not valid_password(password):
+            flash("유효한 비밀번호 형식이 아닙니다")
         email = request.form.get('email')
-        if valid_email(email):
-            pass # alert 적용
+        if not valid_email(email):
+            flash("유효한 e-mail 형식이 아닙니다") # alert 적용
         encoded_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
         if User.query.filter(User.user_id==user_id).first() :
             return redirect(url_for("join",flag=False))
@@ -176,6 +176,14 @@ def loading():
 @app.route("/diet_result")
 def diet_result():
     global nutrients, result, food_lst, foods_nutrients
+    percent_list = [0] * 19
+    for food in foods_nutrients:
+        tmp = list(food.values())
+        tmp = tmp[0]
+        for i in range(len(tmp)):
+            print(type(tmp), tmp)
+            percent_list[i] += tmp[i]
+    print(percent_list)
     return render_template("check.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients,result=result)
 
 @app.route("/food_direction")

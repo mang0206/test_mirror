@@ -6,11 +6,16 @@
      background-color: white;
  }
 
- .chart {
+ .chart_common {
      position: relative;
      width : 60vw;
-     height: 90vh;
+     height: 70vh;
  }
+ .chart_important{
+    position: relative;
+    width : 60vw;
+    height: 30vh;
+}
 
  .vertical-line {
 
