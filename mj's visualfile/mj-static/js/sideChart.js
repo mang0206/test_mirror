@@ -9,7 +9,7 @@ const input_data_sel =[32, 4, 4]
 let data_sel = {
     labels: label_sel,
     datasets: [ {
-        label: 'firstChart',
+        label: 'sel_chart',
         data: input_data_sel,
         fill: true,
         backgroundColor: ['rgb(60, 142, 14)', 'grey', 'grey'],
@@ -74,8 +74,8 @@ const config_vitD2 = {
 
 // vit D3
 // const ctx_vitD3 = document.querySelector('.vitD3-Canvas').getContext('2d');
-const label_vitD3 = ['🥇채소', '🥈설탕', '🥉사과']
-const input_data_vitD3 =[14,11,6]
+const label_vitD3 = ['🥇해산물', '🥈고기', '🥉달걀']
+const input_data_vitD3 =[22,8,4]
 let data_vitD3 = {
     labels: label_vitD3,
     datasets: [ {
@@ -231,12 +231,45 @@ const config_total = {
 }
 // const total_Chart = new Chart(ctx_total, config_total);
 
+//milk
+
+const label_milk = ['🥇우유', '🥈동물성 지방', '🥉설탕']
+const input_data_milk =[16,11,0]
+let data_milk = {
+    labels: label_milk,
+    datasets: [ {
+        label: 'milk_Chart',
+        data: input_data_milk,
+        fill: true,
+        backgroundColor: ['rgb(60, 142, 14)', 'grey', 'grey']
+    }]
+};
+const config_milk = {
+    type: 'bar',
+    data: data_milk,
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: false,
+            },
+            title: {
+                display: true,
+                text: '유당'
+            }
+        }
+    }
+}
+
+
+
+
 
 // selector
 
 const btn_sel =  document.querySelector('#sel');
 const btn_vitD2 =  document.querySelector('#vitD2');
-// const btn_vitD3 =  document.querySelector('#vitD3');
+const btn_vitD3 =  document.querySelector('#vitD3');
 const btn_vitC =  document.querySelector('#vitC');
 const btn_ay =  document.querySelector('#ay');
 const btn_total =  document.querySelector('#total');
@@ -250,8 +283,8 @@ btn_sel.addEventListener('mouseover', showSel);
 btn_sel.addEventListener('mouseout', deleteCanvas);
 btn_vitD2.addEventListener('mouseover', showvitD2);
 btn_vitD2.addEventListener('mouseout', deleteCanvas);
-// btn_vitD3.addEventListener('mouseover', showvitD3);
-// btn_vitD3.addEventListener('mouseout', deleteCanvas);
+btn_vitD3.addEventListener('mouseover', showvitD3);
+btn_vitD3.addEventListener('mouseout', deleteCanvas);
 btn_nai.addEventListener('mouseover', shownai);
 btn_nai.addEventListener('mouseout', deleteCanvas);
 btn_vitC.addEventListener('mouseover', showvitC);
@@ -260,44 +293,61 @@ btn_ay.addEventListener('mouseover', showAy);
 btn_ay.addEventListener('mouseout', deleteCanvas);
 btn_total.addEventListener('mouseover', showtotal);
 btn_total.addEventListener('mouseout', deleteCanvas);
-// btn_milk.addEventListener('mouseover', showMilk);
-// btn_milk.addEventListener('mouseout', deleteRightCanvas);
+btn_milk.addEventListener('mouseover', showMilk);
+btn_milk.addEventListener('mouseout', deleteRightCanvas);
 
 
 function showSel() {
      let ctx = document.querySelector('.left-input-chart').getContext('2d');
      new Chart(ctx, config_sel);
+     let sel = document.querySelector('#sel_div');
+     sel.style.display = 'block';
 }
 
 function showvitD2() {
     let ctx = document.querySelector('.left-input-chart').getContext('2d');
     new Chart(ctx, config_vitD2);
+    let vitD2 = document.querySelector('#vitD2_div');
+    vitD2.style.display = 'block';
 }
-// function showvitD3() {
-//     let ctx = document.querySelector('.left-input-chart').getContext('2d');
-//     new Chart(ctx, config_vitD3);
-// }
+function showvitD3() {
+    let ctx = document.querySelector('.left-input-chart').getContext('2d');
+    new Chart(ctx, config_vitD3);
+    let vitD3 = document.querySelector('#vitD3_div');
+    vitD3.style.display = 'block';
+}
 function showvitC() {
     let ctx = document.querySelector('.left-input-chart').getContext('2d');
     new Chart(ctx, config_vitC);
+    let vitC = document.querySelector('#vitC_div');
+    vitC.style.display = 'block';
 }
 function showAy() {
     let ctx = document.querySelector('.left-input-chart').getContext('2d');
     new Chart(ctx, config_ay);
+    let ay = document.querySelector('#ay_div');
+    ay.style.display = 'block';
 }
+
 function showtotal() {
     let ctx = document.querySelector('.left-input-chart').getContext('2d');
     new Chart(ctx, config_total);
+    // let total = document.querySelector('#total_div');
+    // total.style.display = 'block';
 }
 function shownai() {
     let ctx = document.querySelector('.left-input-chart').getContext('2d');
     new Chart(ctx, config_nai);
+    let nai = document.querySelector('#nai_div');
+    nai.style.display = 'block';
 }
 
-// function showMilk() {
-//     let ctx = document.querySelector('.right-input-chart').getContext('2d');
-//     new Chart(ctx, config_milk);
-// }
+function showMilk() {
+    let ctx = document.querySelector('.right-input-chart').getContext('2d');
+    new Chart(ctx, config_milk);
+    let milk = document.querySelector('#milk_div');
+    milk.style.display = 'block';
+}
 
 
 
@@ -305,9 +355,29 @@ function shownai() {
 function deleteCanvas() {
     $('.left-input-chart').remove(); // this is my <canvas> element
     $('.food-chart-area-left').append('<canvas class="left-input-chart"><canvas>');
-}
-// function deleteRightCanvas() {
-//     $('.right-input-chart').remove(); // this is my <canvas> element
-//     $('.food-chart-area-right').append('<canvas class="right-input-chart"><canvas>');
-// }
 
+    let sel = document.querySelector('#sel_div');
+    let vitD2 = document.querySelector('#vitD2_div');
+    let vitD3 = document.querySelector('#vitD3_div');
+    let vitC = document.querySelector('#vitC_div');
+    let ay = document.querySelector('#ay_div');
+    let nai = document.querySelector('#nai_div');
+    // let total = document.querySelector('#total_div');
+
+    sel.style.display = 'none';
+    vitD2.style.display = 'none';
+    vitD3.style.display = 'none';
+    vitC.style.display = 'none';
+    ay.style.display = 'none';
+    nai.style.display = 'none';
+    // total.style.display = 'none';
+
+
+}
+
+function deleteRightCanvas() {
+    $('.right-input-chart').remove();
+    $('.food-chart-area-right').append('<canvas class="right-input-chart"><canvas>');
+    // let milk = document.querySelector('#milk_div');
+    // milk.style.display = 'none';
+}
