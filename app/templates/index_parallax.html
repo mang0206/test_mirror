@@ -1,0 +1,65 @@
+<!-- {% extends 'base.html' %}
+{% block content %} -->
+<!-- <div class="scroll_dist"></div>
+<div class="parallax"> main-->
+    <!-- <section class="parallax_container"><mask id="m"> -->
+        <!-- <g class="cloud"> -->
+            <!-- <rect fill="#fff" width="100%" height="700px"> --> -->
+            <!-- 맨 앞의 구름 -->
+            <!-- <img class="cloud_mask" src="../static/image/index_front_cloud.png" alt="front_cloud" width="100%"> -->
+        <!-- </g> -->
+    <!-- </mask> -->
+<!-- <image class="back_l_cloud" src="../static/image/index_back_l_cloud.png" alt="back_l_cloud"/> -->
+<!-- <image class="back_r_cloud" src="../static/image/index_back_r_cloud.png" alt="back_r_cloud"/> -->
+<!-- <image class="l_cloud" src="../static/image/index_l_cloud.png" alt="l_cloud"/> -->
+<!-- <image class="r_cloud" src="../static/image/index_r_cloud.png" alt="r_cloud"/> -->
+<!-- <img class="front_cloud" src="../static/image/index_front_cloud.png" alt="front_cloud" width="100%"> -->
+<!-- <g> -->
+    <!-- <rect fill="#fff" width="100%" height="100%"></rect> -->
+    <!-- <text id="text">Life with</text> -->
+    <!-- <text id="text">COVID</text> -->
+<!-- </g> -->
+<!-- <g mask="url(#m)"> -->
+    <!-- <rect fill="#fff" width="100%" height="100%"></rect> -->
+    <!-- <g> -->
+        <!-- <text id="text">and</text> -->
+        <!-- <text id="text">Beyond</text> -->
+    <!-- </g> -->
+<!-- </g> -->
+<!-- </section> -->
+<!-- </div> -->
+<!-- <script src="../static/js/index.js" defer="defer"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>         -->
+<!-- {% endblock %} -->
+
+<!-- {% extends 'join.html' %}
+{% block content %} -->
+<!-- This is a recreation of Unfold's (https://dribbble.com/unfold) parallax scene: https://cdn.dribbble.com/users/14268/screenshots/3275340/northface.gif -->
+<div class="scrollDist"></div>
+<div class="main">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <mask id="m">
+      <g class="cloud1">
+        <rect fill="#fff" width="100%" height="801" y="799" />
+        <image class="mountBg" src="../static/image/index_front_cloud.png" width="1200" height="800"/>
+      </g>
+    </mask>
+    
+    <image class="sky" src="../static/image/index_back_l_cloud.png"  width="1200" height="590" />
+    <image class="cloud1" src="../static/image/index_back_r_cloud.png" width="1200" height="800"/>    
+    <image class="mountMg" src="../static/image/index_front_cloud.png" width="1200" height="800"/>    
+    <image class="cloud2" src="../static/image/index_l_cloud.png" width="1200" height="800"/>    
+    <image class="mountFg" src="../static/image/index_r_cloud.png" width="1200" height="800"/>
+    <text fill="#fff" x="350" y="200">EXPLORE</text>
+    <polyline class="arrow" fill="#fff" points="599,250 599,289 590,279 590,282 600,292 610,282 610,279 601,289 601,250" />
+    
+    <g mask="url(#m)">
+      <rect fill="#fff" width="100%" height="100%" />      
+      <text x="350" y="200" fill="#162a43">FURTHER</text>
+    </g>
+    
+    <rect id="arrowBtn" width="100" height="100" opacity="0" x="550" y="220" style="cursor:pointer"/>
+  </svg>
+</div>
+<!-- {% endblock %} -->
