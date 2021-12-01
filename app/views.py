@@ -84,10 +84,11 @@ def diet_food():
             Z = cal_nutrients.body_classifier(sex, age, height)
             nutrients = cal_nutrients.nutrient(Z, sex, age, activity)
             
-            flash("정보가 안전하게 제출되었습니다! :)")
-            return redirect(url_for('diet_food'))
-        else:
-            flash("개인정보 입력 후 버튼을 눌러주세요 :)")
+            if nutrients != None :
+                flash("정보가 안전하게 제출되었습니다! :)")
+                return redirect(url_for('diet_food'))
+            else:
+                flash("개인정보 입력 후 버튼을 눌러주세요 :)")
 
     if request.method == "POST" and request.form.get('btn2'):
         if nutrients == None:
