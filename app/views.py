@@ -11,7 +11,7 @@ from datetime import datetime
 from .utils import valid_email, valid_password
 from sqlalchemy import desc, text
 import json
-
+import random
 food_lst = None
 foods_nutrients = {}
 nutrients = None
@@ -118,7 +118,7 @@ def diet_food():
             food_nutrients[13] = food.folic_acid * 1000 * 1000
             food_nutrients[14] = food.niacin * 1000
             food_nutrients[15] = food.vitaminC * 1000
-            food_nutrients[16] = food.selenium * 10000 #일일 권장량 55
+            food_nutrients[16] = food.selenium * 1000 * 100 #일일 권장량 55
             food_nutrients[17] = food.vitaminD2 * 1000 * 1000 #일일 권장량 19
             food_nutrients[18] = food.zinc * 1000 #일일 권장량 30
             # food_nutrients[19] = food.fatty_acid #필수 지방산
@@ -138,7 +138,6 @@ def diet_food():
             # tmp = tmp[0]
             for i in range(len(sum_nutrients)):
                 sum_nutrients[i] += tmp[i]
-        print(json_foods_nutrients)
         print(sum_nutrients)
         return redirect(url_for('checker'))
 
@@ -194,12 +193,6 @@ def loading():
 @app.route("/diet_result")
 def diet_result():
     global nutrients, result, food_lst, foods_nutrients, json_foods_nutrients, sum_nutrients
-    # sum_percent_list = [0] * 19
-    # for food in foods_nutrients:
-    #     tmp = list(food.values())
-    #     tmp = tmp[0]
-    #     for i in range(len(tmp)):
-    #         sum_percent_list[i] += tmp[i]
 
     important_nutrient_dic = {14:'niacin',15:'vitaminC',16:'selenium',17:'vitaminD2',18:'zinc'}
     lack_nutrients = []
@@ -208,11 +201,19 @@ def diet_result():
             lack_nutrients.append(important_nutrient_dic[i])
     print(lack_nutrients)
     result_recommend= {}
+    tmp_dic = {}
     for nutrient in lack_nutrients:
-        foods = Food.query.order_by(desc(text(nutrient))).limit(10)
-        result_recommend[nutrient] = []
+        if nutrient == 'vitaminD2':
+            foods = Food.query.order_by(desc(text(nutrient))).limit(10)
+        else:
+            foods = Food.query.order_by(desc(text(nutrient))).limit(50)
+        tmp_dic[nutrient] = []
         for food in foods:
-            result_recommend[nutrient].append(food.food_name)
+            tmp_dic[nutrient].append(food.food_name)
+    print(tmp_dic)
+    for key, value in tmp_dic.items():
+        random.shuffle(value)
+        result_recommend[key] = value[:10]
     print(result_recommend)
     return render_template("check.html",nutrients=nutrients,food_lst=food_lst,\
         foods_nutrients=json_foods_nutrients,result=result, sum_nutrients=sum_nutrients)
@@ -224,3 +225,7 @@ def food_direction():
 @app.route("/visual")
 def visualization():
     return render_template("visual.html")
+
+@app.route("/index_parallax")
+def index_parallax():
+    return render_template("index_parallax.html")
