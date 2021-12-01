@@ -26,7 +26,7 @@ $(function(){
 // personal board의 submit 버튼 입력시 스크롤 이동
 $(document).ready(function() {
     $(".move_button_hidden").on("click", function(event) {
-        var offset = $("#diet_food_search").offset();
+        var offset = $("#move_funtion").offset();
         $('html body').animate({scrollTop : offset.top}, 1000);
     });
 });

@@ -10,12 +10,14 @@ import bcrypt
 from datetime import datetime
 from .utils import valid_email, valid_password
 from sqlalchemy import desc, text
+import json
 
 food_lst = None
-foods_nutrients = []
+foods_nutrients = {}
 nutrients = None
 result = None
-
+json_foods_nutrients = None
+sum_nutrients = None
 # flash(alert) 기능 위한 key 설정
 app.config["SECRET_KEY"] = "diet"
 
@@ -73,7 +75,7 @@ def join_result():
 
 @app.route("/diet", methods=["GET", "POST"])
 def diet_food():
-    global nutrients, food_lst, foods_nutrients
+    global nutrients, food_lst, foods_nutrients, json_foods_nutrients, sum_nutrients
     covid_nutrients = [100,50,19,30]
     if request.method == "POST" and request.form.get('btn') == 'form_personal' :
         if request.form.get('age') and request.form.get('gender') and request.form.get('height') and request.form.get('activity') :
@@ -116,22 +118,35 @@ def diet_food():
             food_nutrients[13] = food.folic_acid * 1000 * 1000
             food_nutrients[14] = food.niacin * 1000
             food_nutrients[15] = food.vitaminC * 1000
-            food_nutrients[16] = food.selenium * 1000 * 1000 #일일 권장량 55
+            food_nutrients[16] = food.selenium * 10000 #일일 권장량 55
             food_nutrients[17] = food.vitaminD2 * 1000 * 1000 #일일 권장량 19
             food_nutrients[18] = food.zinc * 1000 #일일 권장량 30
             # food_nutrients[19] = food.fatty_acid #필수 지방산
+            print(food_nutrients)
             for i in range(len(nutrients)):
                 food_nutrients[i] = round(food_nutrients[i] / nutrients[i] * 100)
             for i in range(len(covid_nutrients)):
                 food_nutrients[15+i] = round(food_nutrients[15 + i] / covid_nutrients[i] * 100)
-            foods_nutrients.append({food_name:food_nutrients[:]})
+            
+            foods_nutrients[food_name] = food_nutrients[:]
+            # foods_nutrients.append({food_name:food_nutrients[:]})
+        json_foods_nutrients = json.dumps(foods_nutrients, ensure_ascii = False)
+        sum_nutrients = [0] * 19
+        for food in foods_nutrients:
+            print(food)
+            tmp = foods_nutrients[food]
+            # tmp = tmp[0]
+            for i in range(len(sum_nutrients)):
+                sum_nutrients[i] += tmp[i]
+        print(json_foods_nutrients)
+        print(sum_nutrients)
         return redirect(url_for('checker'))
-   
+
     return render_template("food_search.html")
 
 @app.route("/kit", methods=['GET', 'POST'])
 def checker():
-    global nutrients, result, food_lst, foods_nutrients
+    global nutrients, result, food_lst, foods_nutrients, json_foods_nutrients, sum_nutrients
     if request.method == 'POST' and request.form.get('btn') == "diet_result" :
         input_data = {
             'test_date':int(datetime.today().month),
@@ -169,7 +184,8 @@ def checker():
         result = str((pred*0.85 + (1-pred)*0.15)*100)[:6]
 
         return redirect(url_for("loading"))
-    return render_template("checker.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients,result=result)
+    return render_template("checker.html",nutrients=nutrients,food_lst=food_lst,\
+        foods_nutrients=json_foods_nutrients,result=result,sum_nutrients=sum_nutrients)
 
 @app.route("/loading")
 def loading():
@@ -177,19 +193,18 @@ def loading():
 
 @app.route("/diet_result")
 def diet_result():
-    global nutrients, result, food_lst, foods_nutrients
-    print(foods_nutrients)
-    sum_percent_list = [0] * 19
-    for food in foods_nutrients:
-        tmp = list(food.values())
-        tmp = tmp[0]
-        for i in range(len(tmp)):
-            sum_percent_list[i] += tmp[i]
+    global nutrients, result, food_lst, foods_nutrients, json_foods_nutrients, sum_nutrients
+    # sum_percent_list = [0] * 19
+    # for food in foods_nutrients:
+    #     tmp = list(food.values())
+    #     tmp = tmp[0]
+    #     for i in range(len(tmp)):
+    #         sum_percent_list[i] += tmp[i]
 
     important_nutrient_dic = {14:'niacin',15:'vitaminC',16:'selenium',17:'vitaminD2',18:'zinc'}
     lack_nutrients = []
-    for i in range(14, len(sum_percent_list)):
-        if sum_percent_list[i] < 100:
+    for i in range(14, len(sum_nutrients)):
+        if sum_nutrients[i] < 100:
             lack_nutrients.append(important_nutrient_dic[i])
     print(lack_nutrients)
     result_recommend= {}
@@ -199,7 +214,8 @@ def diet_result():
         for food in foods:
             result_recommend[nutrient].append(food.food_name)
     print(result_recommend)
-    return render_template("check.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients,result=result)
+    return render_template("check.html",nutrients=nutrients,food_lst=food_lst,\
+        foods_nutrients=json_foods_nutrients,result=result, sum_nutrients=sum_nutrients)
 
 @app.route("/food_direction")
 def food_direction():
