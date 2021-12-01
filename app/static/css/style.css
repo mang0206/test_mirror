@@ -9,7 +9,6 @@ body{
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background-color: #effeff;
 }
 /*--------link style--------*/
 a:link{color: black; text-decoration: none;}
@@ -67,6 +66,7 @@ a:active{color: white;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #effeff;
 }
 .login{
     width: 400px;
@@ -141,6 +141,7 @@ a:active{color: white;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #effeff;
 }
 .join{
     width: 400px;
@@ -210,6 +211,7 @@ a:active{color: white;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #effeff;
 }
 .join_result_container h2{
     margin-bottom: 100px;
@@ -244,6 +246,8 @@ a:active{color: white;}
     width: 100%;
     height: 100%;
     text-align: center;
+    background-color: #effeff;
+    padding-bottom: 50px;
 }
 .inex::before{
     content: "";
@@ -291,7 +295,7 @@ a:active{color: white;}
       opacity: 1;
     }
 }
-.light_bar{
+/* .light_bar{
     position: absolute;
     top: 290px;
     width: 100%;
@@ -322,7 +326,7 @@ a:active{color: white;}
     {
         transform: scaleX(0) translateY(calc(290px - 10px));
     }
-}
+} */
 .virus_blur1{
     width: 120px;
     height: 120px;
@@ -330,8 +334,8 @@ a:active{color: white;}
 
     top: 490px;
     right: 350px;
-	-webkit-animation: text-blur-out 2.5s ease-out 2s both infinite;
-    animation: text-blur-out 2.5s ease-out 2s both infinite;
+	-webkit-animation: text-blur-out 4s ease-out 2s both infinite;
+    animation: text-blur-out 4s ease-out 2s both infinite;
 }
 .virus_blur2{
     width: 150px;
@@ -340,8 +344,8 @@ a:active{color: white;}
 
     top: 400px;
     left: 150px;
-	-webkit-animation: text-blur-out 2s ease-out 1.5s both infinite;
-    animation: text-blur-out 2s ease-out 1.5s both infinite;
+	-webkit-animation: text-blur-out 3s ease-out 2.5s both infinite;
+    animation: text-blur-out 3s ease-out 2.5s both infinite;
 }
 .virus_blur3{
     width: 132px;
@@ -350,8 +354,8 @@ a:active{color: white;}
 
     top: 300px;
     right: 200px;
-	-webkit-animation: text-blur-out 1.5s ease-out 1s both infinite;
-    animation: text-blur-out 1.5s ease-out 1s both infinite;
+	-webkit-animation: text-blur-out 3.5s ease-out 3.5s both infinite;
+    animation: text-blur-out 3.5s ease-out 3.5s both infinite;
 }
 @keyframes text-blur-out {
     0% {
@@ -440,8 +444,8 @@ a:active{color: white;}
     display: flex;
     justify-content: center;
 
-    background: url("../image/visual_img1.jpeg"), rgba(0, 0, 0, 0.5);
-    background-position: 10% 30%;
+    background: url("../image/visual_image.jpeg"), rgba(0, 0, 0, 0.5);
+    background-position: 20% -10%;
     background-size: 850px auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -561,7 +565,7 @@ a:active{color: white;}
 .diet_background{
     width: 100%;
     padding-bottom: 130px;
-    background: linear-gradient(to bottom, #FFF9EB 10%, #FFF0CA 40%, #DEB6EA);
+    background: linear-gradient(to bottom, #FFF9EB 10%, #FFF0CA 40%, #FFE794);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -690,6 +694,13 @@ a:active{color: white;}
     z-index: 1000;   
 }
 /*--------kit--------*/
+#firstChart{
+    margin-bottom: 200px;
+}
+#secondChart{
+    height: 225px;
+    margin-bottom: 200px;
+}
 .kit_clip_img{
     top: 1580px;
     z-index: 900;
@@ -751,14 +762,6 @@ a:active{color: white;}
 }
 .checker_container{
     border: 1px solid;
-}
-#firstChart{
-    height: 600px;
-    margin-bottom: 200px;
-}
-#secondChart{
-    height: 800px;
-    margin-bottom: 200px;
 }
 .chart{
     height: 1000px;
@@ -888,7 +891,6 @@ a:active{color: white;}
     width: 100%;
     height: fit-content;
     background: #19193e;
-    margin-top: 50px;
     padding: 60px 0px 60px 0px;
 
     display: flex;
@@ -909,8 +911,11 @@ a:active{color: white;}
     align-items: left;
     justify-content: left;
 
-    font-size: 15px;
     line-height: 30px;
+}
+.source_2{
+    display: flex;
+    flex-direction: column;
 }
 .ydp01{
     padding: 5px 0px 5px 0px;

@@ -220,52 +220,22 @@ const config_recovered = {
 const confirmedChart = new Chart(ctx_confirmed, config_confirmed);
 const recoveredChart = new Chart(ctx_recovered, config_recovered);
 
-// chart slide
 
 
-// const carouselSlide = document.querySelector('.carousel-slide');
-// const carouselImages = document.querySelector('.carousel-slide .chart');
+// confirm, recover-btn;
+
 //
-// // const confirmedBtn = document.querySelector('#confirm-btn');
-// // const recoveredBtn = document.querySelector('#recover-btn');
+// document.querySelector('#recover-btn').addEventListener('click', function () {
+//     document.querySelector('.carousel-container').style.transform = 'translate(-600px)';
+//     document.querySelector('#confirmed').style.visibility = 'hidden';
+//     document.querySelector('#recovered').style.visibility = 'visible';
 //
-// // Counter
+// })
 //
-// // let counter = 1;
-// // // const size = carouselImages[0].clientWidth;
-// //
-// // carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-// //
-// // // button
-// //
-// // recoveredBtn.addEventListener('click', () => {
-// //     carouselSlide.style.transition = 'transform 0.4s ease-in-out';
-// //     counter++;
-// //     console.log(counter)
-// //
-// // })
-//
-// ..
-//
-// const chartDiv = document.querySelector('.firstChart');
-// const vit_D2 = document.querySelector('#vitD2');
-//
-// vit_D2.addEventListener('mouseover', function () {
+// document.querySelector('#confirm-btn').addEventListener('click', function () {
+//     document.querySelector('.carousel-container').style.transform = 'translate(0)';
+//     document.querySelector('#recovered').style.visibility = 'hidden';
+//     document.querySelector('#confirmed').style.visibility = 'visible';
 //
 //
 // })
-
-
-let slider_chart = document.querySelector('#confirmed');
-let charts = []
-
-function prev() {
-    if (i <= 0) i = charts.length;
-    i--
-    return setChart();
-}
-
-function setChart() {
-    return slider_chart
-}
-
