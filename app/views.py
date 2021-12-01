@@ -181,3 +181,8 @@ def diet_result():
 def visualization():
     return render_template("visual.html")
 
+@app.route('/cleaning')
+def cleaning():
+    food = Food.query.order_by('niacin').limit(50).all()
+    print(type(food))
+    return 
