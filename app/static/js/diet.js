@@ -27,7 +27,7 @@ $(function(){
 $(document).ready(function() {
     $(".move_button_hidden").on("click", function(event) {
         var offset = $("#diet_food_search").offset();
-        $('html body').animate({scrollTop : offset.top}, 1000);
+        $('html, body').animate({scrollTop : offset.top}, 1000);
     });
 });
 
