@@ -9,6 +9,7 @@ from .models import Food, User
 import bcrypt
 from datetime import datetime
 from .utils import valid_email, valid_password
+from sqlalchemy import desc, text
 
 food_lst = None
 foods_nutrients = []
@@ -177,14 +178,27 @@ def loading():
 @app.route("/diet_result")
 def diet_result():
     global nutrients, result, food_lst, foods_nutrients
-    percent_list = [0] * 19
+    print(foods_nutrients)
+    sum_percent_list = [0] * 19
     for food in foods_nutrients:
         tmp = list(food.values())
         tmp = tmp[0]
         for i in range(len(tmp)):
-            print(type(tmp), tmp)
-            percent_list[i] += tmp[i]
-    print(percent_list)
+            sum_percent_list[i] += tmp[i]
+
+    important_nutrient_dic = {14:'niacin',15:'vitaminC',16:'selenium',17:'vitaminD2',18:'zinc'}
+    lack_nutrients = []
+    for i in range(14, len(sum_percent_list)):
+        if sum_percent_list[i] < 100:
+            lack_nutrients.append(important_nutrient_dic[i])
+    print(lack_nutrients)
+    result_recommend= {}
+    for nutrient in lack_nutrients:
+        foods = Food.query.order_by(desc(text(nutrient))).limit(10)
+        result_recommend[nutrient] = []
+        for food in foods:
+            result_recommend[nutrient].append(food.food_name)
+    print(result_recommend)
     return render_template("check.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients,result=result)
 
 @app.route("/food_direction")

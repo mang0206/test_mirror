@@ -1,6 +1,6 @@
 {% extends 'kit.html' %}
 {% block diet_chart %}
-<div class="chart">
+<div class="chart", id="food-data" data-name= "{{ foods_nutrients }}">
     <h1>Inside Your Body 👀</h1>
     <canvas id="firstChart"></canvas>
     <canvas id="secondChart"></canvas>
