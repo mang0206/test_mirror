@@ -124,7 +124,6 @@ section {
 
 
 .content {
-    /*margin: 100px;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,7 +139,7 @@ section {
 .content-prose-box-big {
     display: flex;
     /*align-items: baseline;*/
-    width: 800px;
+    width: 450px;
     /*padding: 1rem;*/
     font-family: 'Jeju Myeongjo', sans-serif;
     font-size: 1.1rem;
@@ -150,7 +149,7 @@ section {
 
 
 .content-prose-box-small-left {
-    margin-left: 145px;
+    /*margin-left: 45px;*/
     padding: 1rem;
     /*align-items: baseline;*/
     /*background-color: #f6d365;*/
@@ -158,7 +157,7 @@ section {
 }
 
 .content-prose-box-small-right {
-    margin-left: 50px;
+    margin-right: -50px;
     padding: 1rem;
     /*background-color: #f6d365;*/
 
@@ -181,62 +180,34 @@ section {
     max-width: 800px;
     width: 95%;
     text-align: left;
-    /*padding: 0.5rem;*/
+    padding: 0.5rem;
     font-family: 'Jeju Myeongjo', sans-serif;
 
 }
 
 
 .carousel-container {
-    width: 100vw;
-    /*margin: auto;*/
-    /*padding-left: 280px;*/
-    padding-bottom: 3rem;
-    /*overflow-x: auto;*/
-}
-
-.carousel-slide {
     display: flex;
-    width: 100%;
-    height: 100%;
-    /*overflow: hidden;*/
-    min-width: 100px;
-    margin: 5rem;
+    padding-top: 3rem;
+    position: relative;
 }
 
-#confirm-btn,
-#recover-btn {
-    border: none;
-    outline: none;
-    background: #888;
-    padding: 8px 20px;
-    font-size: 20px;
-    color: #ddd;
-    border-radius: 30px;
-    cursor: pointer;
-    margin: 10px auto;
-}
-
-#confirm-btn:hover,
-#recover-btn:hover {
-    background-color: #111;
-
-}
 
 .corr-chart {
     margin: 1.8rem;
     text-align: center;
-    width: 800px;
-    height: 400px;
+    width: 500px;
+    height: 320px;
+
 }
 
 .corr-chart  #corr-chart {
-    padding: 1rem;
+    /*padding: 1rem;*/
 }
 
-button {
-    margin: 10px;
-}
+/*button {*/
+/*    margin: 10px;*/
+/*}*/
 
 article {
     margin: 3rem 0;
@@ -304,19 +275,19 @@ article {
 
 .box {
     height: 78vh;
-    width: 80%;
+    width: 720px;
     border-radius: 2rem;
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
     justify-content: center;
     align-items: center;
     border: solid rgb(219, 205, 190) 11px;
     overflow: hidden;
     background: url("../img/사람.jpeg");
     background-repeat: no-repeat;
-    background-position: 20% 100%;
+    background-position: bottom;
     background-size: 30rem;
-    /*position: relative;*/
+    position: relative;
 }
 
 .set {
@@ -393,6 +364,7 @@ article {
 }
 
 .right-circle button {
+    padding: 0.4rem;
     display: flex;
     font-weight: bold;
     border: none;
@@ -422,6 +394,7 @@ article {
     margin-top: -13.5rem;
     margin-left: 11rem;
     color: dimgrey;
+    font-family: 'Jeju Myeongjo', sans-serif;
 }
 
 .circle-titles {
@@ -456,39 +429,16 @@ label {
     margin-bottom: 0;
 }
 
-.vertical {
-    position: absolute;
-    border-left: 4px dotted darkslategrey;
-    display: block;
-    height: 100px;
-    left: -4.5rem;
-    bottom: 4.5rem;
-    /*border-radius: 88px 100px 0 0;*/
-}
-
-/*.vertical-line {*/
-/*    height: 80px;*/
-/*    width: 200px;*/
-/*    background: transparent;*/
-/*    border-radius: 10px 0px 0px 370px/225px;*/
-/*    border: solid 3px darkslategrey;*/
-/*    border-top:none;*/
-/*    border-right:none;*/
-/*    margin:20px;*/
+/*.vertical {*/
+/*    position: absolute;*/
+/*    border-left: 4px dotted darkslategrey;*/
+/*    display: block;*/
+/*    height: 100px;*/
+/*    left: -4.5rem;*/
+/*    bottom: 4.5rem;*/
+/*    !*border-radius: 88px 100px 0 0;*!*/
 /*}*/
 
-/*!*.vertical-line:before {*!*/
-/*!*    height:20px;*!*/
-/*!*    width: 10px;*!*/
-/*!*    border: 3px solid darkslategrey;*!*/
-/*!*    border-radius: 30px 30px 0px 0px /75px 75px 0px 0px ;*!*/
-/*!*    display: block;*!*/
-/*!*    content: "";*!*/
-/*!*    border-bottom:none;*!*/
-/*!*    position:relative;*!*/
-/*!*    top: -9px;*!*/
-/*!*    left: -12px;*!*/
-/*!*}*!*/
 
 .leave {
     position: absolute;
@@ -496,27 +446,7 @@ label {
     left: 20rem;
 }
 
-/*.left-container,*/
-/*.right-container {*/
-/*    width: 28%;*/
-/*    height: 600px;*/
-/*    position: absolute;*/
-/*}*/
 
-/*.left-container {*/
-/*    background-color: #949494;*/
-/*    left: 0;*/
-/*    position: absolute;*/
-/*    margin-left: 50px;*/
-/*}*/
-
-/*.right-container {*/
-/*    background-color: #949494;*/
-/*    right: 0;*/
-/*    position: absolute;*/
-/*    margin-right: 50px;*/
-
-/*}*/
 
 .category-container {
     position: relative;
@@ -561,6 +491,8 @@ label {
     margin-top: 5rem;
     margin-right: 1rem;
     position: absolute;
+    display: flex;
+    flex-direction: column;
 }
 
 .food-chart-area-right {
@@ -575,115 +507,51 @@ label {
 
 /* body 원형 포인트 */
 
-#btn-headache,
-#btn-fever,
-#btn-throat,
-#btn-cough,
-#btn-breathe {
-    width:1px;
-    height: 1px;
+/*#btn-headache,*/
+/*#btn-fever,*/
+/*#btn-throat,*/
+/*#btn-cough,*/
+/*#btn-breathe {*/
+/*    width:1px;*/
+/*    height: 1px;*/
+/*    border-radius: 50%;*/
+/*    border: 3px solid indianred;*/
+/*    background-color: coral;*/
+/*    opacity: 0.7;*/
+/*}*/
+
+
+
+.btn {
     border-radius: 50%;
-    border: 3px solid rgb(183, 93, 135);
-    background-color:  #ac9bdb;
-    opacity: 0.6;
-    /*margin-bottom: 5rem;*/
-    /*position: absolute;*/
-    /*left: 2rem;*/
-    /*padding: 1rem;*/
-
-}
-
-
-#btn-headache {
-}
-
-#btn-headache:hover,
-#btn-fever:hover,
-#btn-throat:hover,
-#btn-cough:hover,
-#btn-breathe:hover {
-    background-color: #f6d365;
-}
-
-
-
-
-
-#person {
-    margin-top: 4rem;
+    border: 3px solid indianred;
+    background-color: coral;
+    opacity: 0.7;
+    /*padding: 1.8rem;*/
+    /*right: 50px;*/
     position: relative;
-    /*margin-right: 11rem;*/
-    /*z-index: 900;*/
-
 }
 
-.body-circle-name {
-    font-size: 20px;
-    font-weight: bolder;
-    font-family: 'Jeju Myeongjo', sans-serif;
-}
-
-
-
-
-.body-circle {
-    display: flex;
-    align-items: baseline;
-    /*bottom: 3;*/
-    /*z-index: 1;*/
-}
-
-
-
-
-.body-circle.head {
-    position: absolute;
-    left: 0;
-}
-
-.body-circle.fever {
-    /*z-index: 9;*/
-    /*position: static;*/
-    /*    margin-left: 10rem;*/
-    /*    margin-top: -2rem;*/
-    margin-left: 10rem;
-}
-
-.body-circle.cough {
-    /*z-index: 9;*/
-    position: static;
-    margin-right: 8rem;
-    /*margin-bottom: 3rem;*/
-}
-
-.body-circle.throat {
-    /*z-index: 9;*/
-    position: static;
-    margin-right: 6rem;
-    margin-top: -1rem;
-    margin-bottom: 2rem;
-}
-
-.body-circle.breathe {
-    position: static;
-    margin-left: 2rem;
-    /*bottom: 6.5rem;*/
-    /*margin-bottom: -5rem;*/
-    /*left: 3rem;*/
-}
-
-
-#btn-headache {
+#btn-head {
     padding: 1.8rem;
+    right: 50px;
 }
 
 #btn-fever {
-    padding: 1.2rem;
+    padding: 1.4rem;
 }
 
 #btn-cough {
-    padding: 1.4rem;
+    padding: 1.2rem;
+    left: 10px
 }
+
+
+
+
+
+
+
 
 #btn-throat {
     padding: 0.5rem;
@@ -693,11 +561,76 @@ label {
     padding: 0.2rem;
 }
 
-.mouse-title {
-    position: absolute;
-    top: 2rem;
-    font-size: 16px;
-    color: dimgrey;
+
+
+
+
+#btn-head:hover,
+#btn-fever:hover,
+#btn-throat:hover,
+#btn-cough:hover,
+#btn-breathe:hover {
+    background-color: indianred;
+    border: 3px solid indianred;
+}
+
+.personDiv {
+    visibility: hidden;
+    font-size: 40px;
+}
+
+.arrow2 {
+    width: 100px;
+    transform: scaleY(-1) rotate(100deg);
+    margin-top: 65px;
+    margin-bottom: -20px;
+    margin-left: 150px;
+}
+
+.arrow3 {
+    width: 60px;
+    transform: rotate(-50deg);
+}
+
+.arrow4 {
+    width: 60px;
+    /*transform: scaleY(-1) rotate(100deg);*/
+    transform: rotate(-50deg);
+}
+
+.arrow2 {
+    width: 100px;
+    transform: scaleY(-1) rotate(100deg);
+
+}
+
+
+
+
+.body-circle-name {
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: 'Jeju Myeongjo', sans-serif;
+}
+
+.personDiv p {
+    font-family: 'Jeju Myeongjo', sans-serif;
+}
+
+.personDiv p span {
+    font-family: 'Jeju Myeongjo', sans-serif;
+    font-size: 14px;
+}
+
+
+.body-circle {
+    /*display: inline-block;*/
+    /*position:static;*/
+    align-items: baseline;
+    /*width: 200px;*/
+    /*height: 50px;*/
+    display: flex;
+    /*flex-direction: column;*/
 }
 
 
@@ -715,5 +648,28 @@ label {
     background-color: #f6d365;
     position: absolute;
     left: 4rem;
+}
+
+
+.arrow-img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: 6px;
+    margin-left: 32rem;
+}
+
+.below-chart {
+    position: relative;
+}
+
+
+.body-result {
+    display: none;
+    position: absolute;
+}
+
+.wrapping-circle {
+    position: relative;
 }
 
