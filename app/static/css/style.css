@@ -8,6 +8,7 @@
 body{
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
 /*--------link style--------*/
 a:link{color: black; text-decoration: none;}
@@ -65,6 +66,7 @@ a:active{color: white;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #effeff;
 }
 .login{
     width: 400px;
@@ -86,6 +88,11 @@ a:active{color: white;}
     width: 250px;
     height: 40px;
     padding-left: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #e8e8e8;
+    box-shadow: inset 6px 6px 12px #cccccc,
+        inset -6px -6px 12px #ffffff;
 }
 #id{
     border: none;
@@ -134,6 +141,7 @@ a:active{color: white;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #effeff;
 }
 .join{
     width: 400px;
@@ -203,6 +211,7 @@ a:active{color: white;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #effeff;
 }
 .join_result_container h2{
     margin-bottom: 100px;
@@ -237,7 +246,8 @@ a:active{color: white;}
     width: 100%;
     height: 100%;
     text-align: center;
-    background: linear-gradient(to bottom, #FFFFFF 30%, #051F18);
+    background-color: #effeff;
+    padding-bottom: 50px;
 }
 .inex::before{
     content: "";
@@ -254,12 +264,17 @@ a:active{color: white;}
     margin-bottom: 200px;
 }
 #with_corona{
-    text-shadow: 1px 1px 1px gray;
+    color: #19193e;
     padding-top: 150px;
-    padding-bottom: 50px;
-    margin-top: 0;
+    margin: 100px 0px 100px 0px;
+
     font-family: sans-serif;
     font-size: 150px;
+    /* text-shadow: 0px 0px 10px #000072,
+                0px 0px 20px #000072,
+                0px 0px 40px #000072; */
+    text-shadow: 0px 0px 10px #a9d3f6,
+                0px 0px 20px #a9d3f6;
 
     animation: fadein 4s;
     -webkit-animation: fadein 4s;
@@ -280,25 +295,92 @@ a:active{color: white;}
       opacity: 1;
     }
 }
+/* .light_bar{
+    position: absolute;
+    top: 290px;
+    width: 100%;
+    height: 10px;
+    opacity: 0.8;
+    border-radius: 10px;
+    background-color: white;
+    z-index: 2;
+    box-shadow: 0px 0px 10px #65b1ff,
+                0px 0px 20px #65b1ff;
+    animation: animateLightbar 4s linear infinite;
+}
+@keyframes animateLightbar
+{
+    0%,5%
+    {
+        transform: scaleX(0) translateY(0);
+    }
+    10%
+    {
+        transform: scaleX(1) translateY(0);
+    }
+    90%
+    {
+        transform: scaleX(1) translateY(calc(290px - 10px));
+    }
+    95%,100%
+    {
+        transform: scaleX(0) translateY(calc(290px - 10px));
+    }
+} */
+.virus_blur1{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+
+    top: 490px;
+    right: 350px;
+	-webkit-animation: text-blur-out 4s ease-out 2s both infinite;
+    animation: text-blur-out 4s ease-out 2s both infinite;
+}
+.virus_blur2{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+
+    top: 400px;
+    left: 150px;
+	-webkit-animation: text-blur-out 3s ease-out 2.5s both infinite;
+    animation: text-blur-out 3s ease-out 2.5s both infinite;
+}
+.virus_blur3{
+    width: 132px;
+    height: 132px;
+    position: absolute;
+
+    top: 300px;
+    right: 200px;
+	-webkit-animation: text-blur-out 3.5s ease-out 3.5s both infinite;
+    animation: text-blur-out 3.5s ease-out 3.5s both infinite;
+}
+@keyframes text-blur-out {
+    0% {
+      -webkit-filter: blur(0.01);
+              filter: blur(0.01);
+    }
+    100% {
+      -webkit-filter: blur(12px) opacity(0%);
+              filter: blur(12px) opacity(0%);
+    }
+}
+
 #intro_detail{
-    /* margin-top: 100px; */
-    margin-bottom: 300px;
+    color: #19193e;
+    margin: 150px 0px 300px 0px;
     text-shadow: 0px 1px 3px white;
 }
 #question{
+    color: #19193e;
     font-size: 100px;
     margin-bottom: -30px;
     text-shadow: 0px 1px 3px black;
 }
 .question_detail{
-    font-size: 20px;
-}
-.blink{
-    animation: blink 0.5s infinite;
-    font-size: 20px;
-}
-@-webkit-keyframes blink {
-    to {opacity: 0;}
+    weight: 800px;
 }
 /*--------index diet--------*/
 .index_inner{
@@ -316,10 +398,11 @@ a:active{color: white;}
     box-shadow: 2px 2px 3px black;
 
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    /* align-items: center; */
+    justify-content: center;
 
-    background: url("../image/diet_img2.jpeg"), rgba(0, 0, 0, 0.5);
+    background: url("../image/egg_avocado.jpeg"), rgba(0, 0, 0, 0.5);
+    background-position: 10%;
     background-size: 850px auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -341,7 +424,7 @@ a:active{color: white;}
 }
 .index_description{
     color: white;
-    text-shadow: 0px 1px 3px black;
+    /* text-shadow: 0px 1px 3px black; */
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -351,6 +434,7 @@ a:active{color: white;}
 /*--------index visual--------*/
 .index_visual_image{
     top: 2200px;
+    left: 500px;
     width: 600px;
     height: 400px;
     border: 7px solid white;
@@ -360,7 +444,8 @@ a:active{color: white;}
     display: flex;
     justify-content: center;
 
-    background: url("../image/visual_img1.jpeg"), rgba(0, 0, 0, 0.5);
+    background: url("../image/visual_image.jpeg"), rgba(0, 0, 0, 0.5);
+    background-position: 20% -10%;
     background-size: 850px auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -375,6 +460,8 @@ a:active{color: white;}
     font-size: 45px;
     font-weight: 700;
     line-height: 25px;
+    text-decoration: underline;
+    text-underline-position: under;
 }
 .detail_header2{
     font-size: 23px;
@@ -386,6 +473,7 @@ a:active{color: white;}
     line-height: 20px;
 }
 .index_description_detail_diet{
+    color: #182558;
     width: 500px;
     margin-top: 30px;
     margin-bottom: 80px;
@@ -398,6 +486,7 @@ a:active{color: white;}
     line-height: 30px;
 }
 .index_description_detail_visual{
+    color: #182558;
     width: 500px;
     margin-top: 30px;
     margin-bottom: 80px;
@@ -405,6 +494,7 @@ a:active{color: white;}
 }
 /*--------img & bubble--------*/
 .doctor{
+    height: fit-content;
     padding-top: 10px;
     display: flex;
     align-items: center;
@@ -441,7 +531,7 @@ a:active{color: white;}
     text-align: center;
 }
 .diet_clip_img{
-    top: 255px;
+    top: 260px;
     z-index: 900;
     position: absolute;
     display: flex;
@@ -475,7 +565,7 @@ a:active{color: white;}
 .diet_background{
     width: 100%;
     padding-bottom: 130px;
-    background: linear-gradient(to bottom, #FFF9EB 10%, #FFF0CA 40%, #DEB6EA);
+    background: linear-gradient(to bottom, #FFF9EB 10%, #FFF0CA 40%, #FFE794);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -604,8 +694,15 @@ a:active{color: white;}
     z-index: 1000;   
 }
 /*--------kit--------*/
+#firstChart{
+    margin-bottom: 200px;
+}
+#secondChart{
+    height: 225px;
+    margin-bottom: 200px;
+}
 .kit_clip_img{
-    top: 820px;
+    top: 1580px;
     z-index: 900;
     position: absolute;
     display: flex;
@@ -621,7 +718,7 @@ a:active{color: white;}
 .kit_personal_board{
     width: fit-content;
     margin: 15px 0px 30px 0px;
-    padding: 16px 20px 16px 20px;
+    padding: 30px 25px 30px 25px;
     border: 10px solid #AD732E;
     border-radius: 10px;
     box-shadow: 0px 1px 3px gray;
@@ -652,7 +749,7 @@ a:active{color: white;}
     margin-bottom: 100px;
 }
 .kit_chart{
-    margin-bottom: 100px;
+    height: 850px;
 }
 /*--------checker--------*/
 .checker{
@@ -665,6 +762,9 @@ a:active{color: white;}
 }
 .checker_container{
     border: 1px solid;
+}
+.chart{
+    height: 1000px;
 }
 .diet_chart{
     display: flex;
@@ -789,20 +889,33 @@ a:active{color: white;}
 /*--------footer--------*/
 .footer{
     width: 100%;
-    height: auto;
-    background: #051F18;
+    height: fit-content;
+    background: #19193e;
+    padding: 60px 0px 60px 0px;
+
+    display: flex;
+    justify-content: space-around;
 }
-.project_12{
+.footer_1{
     color: white;
-    padding: 30px 60px 30px 60px;
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: left;
 }
-.project_12>h6{
-    font-weight: 300;
+.footer_3{
+    width: 700px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+
+    line-height: 30px;
+}
+.source_2{
+    display: flex;
+    flex-direction: column;
 }
 .ydp01{
     padding: 5px 0px 5px 0px;

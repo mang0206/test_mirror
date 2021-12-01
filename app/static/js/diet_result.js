@@ -3,7 +3,7 @@ var memberCountConTxt = $('#my-data').data().name;
   
 
 $({ val : 0 }).animate({ val : memberCountConTxt }, {
-  duration: 2000,
+  duration: 1000,
  step: function() {
    var num = this.val;
    $(".number_count").text(num);

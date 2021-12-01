@@ -3,8 +3,8 @@
 
 // ** Chart 1 **
 // kcalChart, mainChart sheet 준비
-const ctx_common = document.querySelector('#barChart1').getContext('2d');
-const ctx_important = document.querySelector('#barChart2').getContext('2d');
+const ctx_common = document.querySelector('#firstChart').getContext('2d');
+const ctx_important = document.querySelector('#secondChart').getContext('2d');
 
 // Chart.plugins.register({
 //     beforeRender: function (chart) {
