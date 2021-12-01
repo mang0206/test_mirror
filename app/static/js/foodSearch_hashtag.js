@@ -146,7 +146,7 @@ function post_food_lst() {
         foodResult.push(searchList.childNodes[i].childNodes[0].textContent);
     }
 
-    let food_lst = foodResult.join(',');
+    let food_lst = foodResult.join('=');
     submit_button.setAttribute('value',food_lst)
     console.log(food_lst)
 }
