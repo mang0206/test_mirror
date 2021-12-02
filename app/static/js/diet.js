@@ -1,4 +1,4 @@
-//클릭 버튼 색 변경
+//클릭 버튼 색 변경 - 토글
 $(function(){
     let $label_chk = $(".label_chk");
 
