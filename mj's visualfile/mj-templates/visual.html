@@ -17,7 +17,7 @@
 
     <header>
         <nav>
-            <h1 id="project"><a href="#">< Home</a></h1>
+            <h1 id="project"><a href="#">Home</a></h1>
             <p>
                 A project by the folks at
                 <a href="#">The YearDream</a>
@@ -49,19 +49,15 @@
                 </div>
                 <div>
                     <h2>Visualization</h2>
-                    <p>E</p>
+                    <p>Park Mi ju</p>
                 </div>
                 <div>
                     <h2>Design</h2>
-                    <p>F</p>
+                    <p>Kim Hyun Kyung</p>
                 </div>
                 <p>✒︎</p>
 
             </div>
-<!--            <div class="animation">-->
-<!--                <img class="diving-animation"-->
-<!--                     src="../mj-static/img/" alt="diving-image">-->
-<!--            </div>-->
         </section>
 
         <!-- 본문 -->
@@ -70,87 +66,46 @@
             <article class="content">
                 <h2 class="content-title">Intro</h2>
                 <p class="content-prose">
-                    여름엔 냉면, 겨울엔 군고구마 (... 비유적 표현) 처럼 코로나를 상징할 수 있는 음식은 무엇일까요?
-                    이를 위해, 코로나 확진 및 회복에 영향을 주는 식품에 살펴보도록 하겠습니다.
-                    다음의 두 차트는 코로나 확진 및 회복에 긍정적/부정적 영향을 주는 식품들을 보여줍니다.
-                    모델 분석을 통해 입증.
-                    + 콩 종류, 해산물
-
+                    여름엔 냉면 겨울엔 군고구마처럼 코로나를 상징할 수 있는 음식은 무엇일까요?
                 </p>
-<!--                <div class="buttons">-->
-<!--                    <button>확진에 좋고, 나쁜</button>-->
-<!--                    <button>회복에 좋고, 나쁜</button>-->
-<!--                </div>-->
-<!--                <div style="overflow: hidden">-->
-<!--                    <button id="confirm-btn">확진률</button>-->
-<!--                    <button id="recover-btn">회복률</button>-->
+                <p class="content-prose">이를 위해, 국가별 영양소에 따른 확진자와 완치자에 대한 데이터를 분석하고 확진 및 회복에 영향을 주는 식품들을 차트로 나타냈습니다.
+                    두 차트를 살펴본 결과, 확진률을 낮추고 회복률을 높이는 '긍정적인 식품'과 확진률은 높이고 회복률은 낮추는 '부정적인 식품'으로 분류된 것을 확인할 수 있었습니다.</p>
+
                     <div class="carousel-container">
                         <div class="corr-chart" id="confirmed" style="margin-bottom: 9rem">
                             <p style="font-family: 'Jeju Myeongjo', sans-serif; font-size:16px; margin-top:12px"><strong>확진률_음식 간 상관관계</strong></p>
                             <canvas id="confirm-chart"></canvas>
-<!--                            <div class="content-prose-box-big">-->
-<!--                                <div class="content-prose-box-small-left" >-->
-<!--                                    <p class="content-prose-arrow" style="margin-bottom:6px"><i class="fas fa-arrow-down"></i></p>-->
-<!--                                    <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color:forestgreen"><strong>Negative</strong></p>-->
-<!--                                    <p class="content-prose-inbox">-->
-<!--                                        확진을 방지할 수 있는 음식-->
-<!--                                    </p>-->
-<!--                                </div>-->
-<!--                                <div class="content-prose-box-small-right" style="margin-left: 70px">-->
-<!--                                    <p class="content-prose-arrow" style="margin-bottom:6px"><i class="fas fa-arrow-down"></i></p>-->
-<!--                                    <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color: grey"><strong>Positive</strong></p>-->
-<!--                                    <p class="content-prose-inbox">-->
-<!--                                        확진에 가까워질 수 있는 음식-->
-<!--                                    </p>-->
-<!--                                </div>-->
-<!--                            </div>-->
                         </div>
                         <div class="corr-chart" id="recovered" style="margin-bottom: 9rem">
                             <p style="font-family: 'Jeju Myeongjo', sans-serif; font-size:16px; margin-top:12px"><strong>회복률_음식 간 상관관계</strong></p>
                             <canvas id="recover-chart"></canvas>
                             <div class="content-prose-box-big" style="width: 900px">
-<!--                                <div class="content-prose-box-small-left" style="margin-left: 115px; width: 320px">-->
-<!--                                    <p class="content-prose-arrow" style="margin-bottom:6px"><i class="fas fa-arrow-down"></i></p>-->
-<!--                                    <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color:grey"><strong>Negative</strong></p>-->
-<!--                                    <p class="content-prose-inbox">-->
-<!--                                        회복으로부터 멀어질 수 있는 음식-->
-<!--                                    </p>-->
-<!--                                </div>-->
-<!--                                <div class="content-prose-box-small-right" style="width: 330px; margin-left: 20px">-->
-<!--                                    <p class="content-prose-arrow" style="margin-bottom:6px;"><i class="fas fa-arrow-down"></i></p>-->
-<!--                                    <p style="font-family: 'Tiempos Text Web', Georgia, Times, 'Jeju Myeongjo', sans-serif; font-size: 15px; color: forestgreen"><strong>Positive</strong></p>-->
-<!--                                    <p class="content-prose-inbox">-->
-<!--                                        회복에 가까워질 수 있는 음식-->
-<!--                                    </p>-->
-<!--                                </div>-->
                             </div>
                         </div>
+                        <img class="arrow-img" src="../mj-static/img/arrow.png" alt="arrow.png">
+
                     </div>
-<!--                </div>-->
+                <p class="content-prose below-chart">
+                    확진률에선 명확한 상관관계가 보이지만 회복률에선 모호하였다.
+                    이를 해결하기 위해 학습모델을 통해 앞선 상관관계의 근거를 명확하게 하는 동시에
+                    그 과정에서 주요 식품을 추가로 발견하였다.
+                    (spices, offals, sugar crops)
+                    (obecity, eggs)
 
-                <p class="content-prose">
-                    <p class="content-prose">
-                        확진률에선 명확한 상관관계가 보이지만 회복률에선 모호하였다.
-                        이를 해결하기 위해 학습모델을 통해 앞선 상관관계의 근거를 명확하게 하는 동시에
-                        그 과정에서 주요 식품을 추가로 발견하였다.
-                        (spices, offals, sugar crops)
-                        (obecity, eggs)
-                    </p>
-                    <!-- 아마 모델링 그래프 2개가 들어가야 할 것 같다.-->
-
-                    div.modeling
-
-                    <div class="content-prose">Best: 확진률은 낮추고 회복률을 높이는 식품</div>
-                    <div class="content-prose">Worst: 획진률은 높이고 회복률은 줄이는 식품</div>
+<!--                    <div class="content-prose">Best: 확진률은 낮추고 회복률을 높이는 식품</div>-->
+<!--                    <div class="content-prose">Worst: 획진률은 높이고 회복률은 줄이는 식품</div>-->
                 </p>
             </article>
             <article class="content">
                 <h2 class="content-title">
                     <div class="hidden-text">Insight 1</div>
-                    <p class="content-title"> Good <span style="font-size: 25px">vs</span> Bad </p>
+                    <p class="content-title"> Good <span style="font-size: 25px">vs</span>Bad</p>
                 </h2>
                 <p class="content-prose">
-                    두 식품군의 차이를 설명하기 위해 좋은 영양소로 불리는 6개의 요소를 기준으로 해석.
+                    두 식품군의 차이를 알아보기 위해 큰 차이가 나는 영양소를 찾아보니 대략 6가지 영양소에서 유의미한 차이를 찾을 수 있었습니다.
+                    그 영양소는 비타민 D, 비타민 D2, 비타민 D3, 비타민 C, 아연, 셀레늄으로,
+                    실제로 면역기능에 관여하는 것으로 잘 알려진 영양소입니다.
+                    따라서 데이터 기반의 해석을 통해 의학적 사실과 비슷한 결과를 도출해 낼 수 있다고 볼 수 있습니다.
                 </p>
                 <div class="category-container">
                     <img class="sticker-left" src="../mj-static/img/sticker.png" alt="tape">
@@ -205,7 +160,14 @@
                         <div class="food-chart-area-right">
                             <canvas class="right-input-chart"></canvas>
                             <div id="milk_div" class="createText_hidden">
-<!--                                <li></li>-->
+                                <li>
+                                    모델 분석 상 유당은 코로나 면역에 좋지 않은 영향을 끼친다는 것을 알 수 있다.
+                                </li>
+                                <li>그러나 구체적인 이유에 대해 발견하지 못하였으므로 식단을 선정하는 과정에서
+                                    참고하기를 권장
+                                </li>
+
+
                             </div>
                         </div>
                     </div>
@@ -213,7 +175,7 @@
 
                         <!-- 마우스 오버 시 구체적인 시각화 자료 등장하는 방향으로 추가. -->
                         <div class="circle-titles">
-                            <p class="circle-title">🔎마우스를 올려보세요.</p>
+                            <p class="circle-title">🔎영양소를 클릭해보세요.</p>
                             <p class="left"><strong>Good</strong></p>
                             <p class="right"><strong>Bad</strong></p>
                         </div>
@@ -252,44 +214,76 @@
                     <p class="content-title">탄수화물</p>
                 </h2>
                 <p class="content-prose">
-                    회복률을 높이는데는 탄수화물을 잘챙겨먹는 것이 도움되는 것으로 분석됨 – 영양실조가 영향을 끼치는 것으로 보아 회복에는 잘 먹는게 중요하게 보여짐 -> 든든한 1일 식단
+                    회복률을 높이는데는 탄수화물을 잘챙겨먹는 것이 도움되는 것으로 분석되었습니다.
+                    탄수화물의 비중은 긍정적 식품군이 높았으며 이를 통해 평소 식단에 긍정적 식품군에 포함되는 음식은 꼭 넣는 것이 결론을 내렸습니다.
                 </p>
             </article>
 
             <article class="visualization">
                 <h2 class="content-title">
-                    <div class="hidden-text">Challenge.</div>
+                    <div class="hidden-text">Challenge</div>
                     <p class="content-title">증상별 확진률</p>
                 </h2>
                 <p class="content-prose">
                     증상별 코로나 확진률을 보여드립니다.
                 </p>
                 <img class="clip" src="../mj-static/img/clip.png" alt="docter's chart">
-                <div class="box">
-                    <p class="mouse-title">
+                <div class="box" >
+                    <p class="circle-title" style="position: absolute; left: 6rem; margin-top:-27rem">
                         🔎마우스를 올려보세요.
                     </p>
-                    <div class="body-circle head">
-                        <label class="body-circle-name" for="btn-headache">두통</label>
-                        <button id="btn-headache"></button>
+                    <div style="width: 220px; height:100%; position: absolute; left: 0">
+                        <div class="personDiv" id="headDiv">
+                            <img class="arrow2" src="../mj-static/img/KakaoTalk_Photo_2021-12-01-16-17-16%20002.png" alt="arrow.png">
+                            <p>11.2<span>%</span></p>
+                        </div>
+                        <div class="personDiv" id="coughDiv">
+                            <img style="margin-top:-3px" class="arrow2" src="../mj-static/img/KakaoTalk_Photo_2021-12-01-16-17-16%20002.png" alt="arrow.png">
+                            <p>10.3<span>%</span></p>
+                        </div>
                     </div>
-                    <div class="body-circle fever">
-                        <button id="btn-fever"></button>
-                        <label class="body-circle-name" for="btn-fever">고열</label>
+                    <div style="width: 220px; height:100%; position: absolute; right: 0;">
+                        <div class="personDiv" id="feverDiv" style="position: absolute; top: 7rem; left: 0.3rem">
+                            <img style="margin-top:-3px" class="arrow4" src="../mj-static/img/KakaoTalk_Photo_2021-12-01-16-17-16%20004.png" alt="arrow.png">
+                            <p>10.8<span>%</span></p>
+                        </div>
+
+                        <div class="personDiv" id="throatDiv" style="position: absolute; top: 18rem; left: -2rem">
+                            <img style="margin-top:-5px" class="arrow3" src="../mj-static/img/KakaoTalk_Photo_2021-12-01-16-17-16%20003.png" alt="arrow.png">
+                            <p style="position: absolute; left: 4rem; bottom: 0.2rem;">3.1<span>%</span></p>
+                        </div>
+                        <div class="personDiv" id="breatheDiv" style="position: absolute; top: 23rem; left: 1rem">
+                            <img style="margin-top:-3px" class="arrow3" src="../mj-static/img/KakaoTalk_Photo_2021-12-01-16-17-16%20003.png" alt="arrow.png">
+                            <p style="position: absolute; left: 4rem; bottom: -1rem">1<span>%</span></p>
+                        </div>
                     </div>
-                    <div class="body-circle cough">
-                        <label class="body-circle-name" for="btn-cough">마른 기침</label>
-                        <button id="btn-cough"></button>
+                    <div style="width:290px; height: 80%; top: 8rem; right: 12.5rem; position: absolute;">
+                        <div style="position: relative; bottom: 50px">
+                            <label class="body-circle-name" for="btn-head" style="position: relative; right: 60px;">두통</label>
+                            <button id="btn-head" class="btn"></button>
+                        </div>
+                        <div style="position: relative; bottom: 60px; left: 70px;">
+                            <button id="btn-fever" class="btn"></button>
+                            <label class="body-circle-name" for="btn-fever" style="position: relative; left: 10px;">고열</label>
+                        </div>
+                        <div style="position: relative; height: 10%; width: 70%; bottom: 12px; right: 35px;">
+                            <label class="body-circle-name" for="btn-cough" style="position: relative; left: 2px; top: 6px;">마른 기침</label>
+                            <button id="btn-cough" class="btn"></button>
+                        </div>
+                        <div style="position: relative; bottom: 10px; left: 55px;">
+                            <button id="btn-throat" class="btn"></button>
+                            <label class="body-circle-name" for="btn-throat" style="position: relative; left: 4px;">인후통</label>
+                        </div>
+                        <div style="position: relative; top: 50px; left: 90px;">
+                            <button id="btn-breathe" class="btn"></button>
+                            <label class="body-circle-name" for="btn-breathe" style="position: relative; left:0;">호흡 곤란</label>
+                        </div>
+
                     </div>
-                    <div class="body-circle throat">
-                        <button id="btn-throat"></button>
-                        <label class="body-circle-name" for="btn-throat">인후염</label>
-                    </div>
-                    <div class="body-circle breathe">
-                        <label class="body-circle-name" for="btn-breathe">호흡곤란</label>
-                        <button id="btn-breathe"></button>
-                    </div>
-                    <div class="inner-box"></div>
+
+                    <div></div>
+                    <div></div>
+                    <div></div>
 
                 </div>
             </article>

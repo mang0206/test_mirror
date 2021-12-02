@@ -9,17 +9,28 @@ from .models import Food, User
 import bcrypt
 from datetime import datetime
 from .utils import valid_email, valid_password
+from sqlalchemy import desc, text
+import json
+import random
 
 food_lst = None
-foods_nutrients = []
+foods_nutrients = {}
 nutrients = None
 result = None
-
+json_foods_nutrients = None
+sum_nutrients = None
 # flash(alert) 기능 위한 key 설정
 app.config["SECRET_KEY"] = "diet"
 
 @app.route("/")
 def index():
+    global nutrients, food_lst, foods_nutrients, json_foods_nutrients, sum_nutrients, result
+    food_lst = None
+    foods_nutrients = {}
+    nutrients = None
+    result = None
+    json_foods_nutrients = None
+    sum_nutrients = None
     user_id = session.get('login')
     if user_id :
         return render_template("index_login.html")
@@ -72,8 +83,8 @@ def join_result():
 
 @app.route("/diet", methods=["GET", "POST"])
 def diet_food():
-    global nutrients, food_lst, foods_nutrients
-
+    global nutrients, food_lst, foods_nutrients, json_foods_nutrients, sum_nutrients
+    covid_nutrients = [100,50,19,30]
     if request.method == "POST" and request.form.get('btn') == 'form_personal' :
         if request.form.get('age') and request.form.get('gender') and request.form.get('height') and request.form.get('activity') :
             age = float(request.form.get('age'))
@@ -84,18 +95,19 @@ def diet_food():
             Z = cal_nutrients.body_classifier(sex, age, height)
             nutrients = cal_nutrients.nutrient(Z, sex, age, activity)
             
-            flash("정보가 안전하게 제출되었습니다! :)")
-            return redirect(url_for('diet_food'))
-        else:
-            flash("개인정보 입력 후 버튼을 눌러주세요 :)")
+            if nutrients != None :
+                flash("정보가 안전하게 제출되었습니다! :)")
+                return redirect(url_for('diet_food'))
+            else:
+                flash("개인정보 입력 후 버튼을 눌러주세요 :)")
 
     if request.method == "POST" and request.form.get('btn2'):
         if nutrients == None:
-            flash("해시태그 추가 후 음식 제출 버튼을 눌러주세요 :)")
+            flash("개인정보 입력 후 버튼을 눌러주세요 :)")
             return redirect(url_for("diet_food"))
 
         food_lst = request.form.get('btn2')
-        food_lst = food_lst.split(',')
+        food_lst = food_lst.split('=')
         food_nutrients = [0] * 19
         for food_name in food_lst:
             food = Food.query.filter(Food.food_name == food_name).first()
@@ -115,21 +127,32 @@ def diet_food():
             food_nutrients[13] = food.folic_acid * 1000 * 1000
             food_nutrients[14] = food.niacin * 1000
             food_nutrients[15] = food.vitaminC * 1000
-            food_nutrients[16] = food.selenium * 1000 * 1000 #일일 권장량 55
+            food_nutrients[16] = food.selenium * 1000 * 100 #일일 권장량 55
             food_nutrients[17] = food.vitaminD2 * 1000 * 1000 #일일 권장량 19
-            food_nutrients[18] = food.zinc * 1000 #일일 권장량 10
-            # food_nutrients[19] = food.fatty_acid #필수 지방산
+            food_nutrients[18] = food.zinc * 1000 #일일 권장량 30
             for i in range(len(nutrients)):
                 food_nutrients[i] = round(food_nutrients[i] / nutrients[i] * 100)
-            foods_nutrients.append({food_name:food_nutrients[:]})
+            for i in range(len(covid_nutrients)):
+                food_nutrients[15+i] = round(food_nutrients[15 + i] / covid_nutrients[i] * 100)
             
+            foods_nutrients[food_name] = food_nutrients[:]
+            # foods_nutrients.append({food_name:food_nutrients[:]})
+        json_foods_nutrients = json.dumps(foods_nutrients, ensure_ascii = False)
+        sum_nutrients = [0] * 19
+        for food in foods_nutrients:
+            print(food)
+            tmp = foods_nutrients[food]
+            # tmp = tmp[0]
+            for i in range(len(sum_nutrients)):
+                sum_nutrients[i] += tmp[i]
+        print(sum_nutrients)
         return redirect(url_for('checker'))
-   
+
     return render_template("food_search.html")
 
 @app.route("/kit", methods=['GET', 'POST'])
 def checker():
-    global nutrients, result, food_lst, foods_nutrients
+    global nutrients, result, food_lst, foods_nutrients, json_foods_nutrients, sum_nutrients
     if request.method == 'POST' and request.form.get('btn') == "diet_result" :
         input_data = {
             'test_date':int(datetime.today().month),
@@ -167,7 +190,8 @@ def checker():
         result = str((pred*0.85 + (1-pred)*0.15)*100)[:6]
 
         return redirect(url_for("loading"))
-    return render_template("checker.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients,result=result)
+    return render_template("checker.html",nutrients=nutrients,food_lst=food_lst,\
+        foods_nutrients=json_foods_nutrients,result=result,sum_nutrients=sum_nutrients)
 
 @app.route("/loading")
 def loading():
@@ -175,8 +199,34 @@ def loading():
 
 @app.route("/diet_result")
 def diet_result():
-    global nutrients, result, food_lst, foods_nutrients
-    return render_template("check.html",nutrients=nutrients,food_lst=food_lst,foods_nutrients=foods_nutrients,result=result)
+    global nutrients, result, food_lst, foods_nutrients, json_foods_nutrients, sum_nutrients
+
+    important_nutrient_dic = {14:'niacin',15:'vitaminC',16:'selenium',17:'vitaminD2',18:'zinc'}
+    lack_nutrients = []
+    for i in range(14, len(sum_nutrients)):
+        if sum_nutrients[i] < 100:
+            lack_nutrients.append(important_nutrient_dic[i])
+    print(lack_nutrients)
+    result_recommend= {}
+    tmp_dic = {}
+    for nutrient in lack_nutrients:
+        #비타민 D의 경우 유의미한 데이터가 10개로 한정되어 있어서 상위 10개의 데이터만 가지고 온다.
+        if nutrient == 'vitaminD2':
+            foods = Food.query.order_by(desc(text(nutrient))).limit(10)
+        else:
+            foods = Food.query.order_by(desc(text(nutrient))).limit(50)
+        tmp_dic[nutrient] = []
+        for food in foods:
+            tmp_dic[nutrient].append(food.food_name)
+
+    for key, value in tmp_dic.items():
+        random.shuffle(value)
+        result_recommend[key] = value[:4]
+
+    
+
+    return render_template("check.html",nutrients=nutrients,food_lst=food_lst,\
+        foods_nutrients=json_foods_nutrients,result=result, sum_nutrients=sum_nutrients)
 
 @app.route("/food_direction")
 def food_direction():
@@ -185,7 +235,3 @@ def food_direction():
 @app.route("/visual")
 def visualization():
     return render_template("visual.html")
-
-@app.route("/index_parallax")
-def index_parallax():
-    return render_template("index_parallax.html")

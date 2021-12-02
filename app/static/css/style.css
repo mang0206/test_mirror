@@ -311,6 +311,8 @@ a:active{color: white;}
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    background: url("../image/cloud_background.png");
 }
 #intro{
     z-index: 0;
@@ -323,9 +325,9 @@ a:active{color: white;}
     z-index: -1;
     transform: translateZ(50px);
 }
-#group-1{
-    background: url("../image/background.png");
-}
+/* #group-1{
+    background: url("../image/cloud_background.jpg");
+} */
 /*--------intro cloud--------*/
 .index_cloud{
     width: 100%;
