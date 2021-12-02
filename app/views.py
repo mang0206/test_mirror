@@ -127,9 +127,9 @@ def diet_food():
             food_nutrients[13] = food.folic_acid * 1000 * 1000
             food_nutrients[14] = food.niacin * 1000
             food_nutrients[15] = food.vitaminC * 1000
-            food_nutrients[16] = food.selenium * 1000 * 100 #일일 권장량 55
-            food_nutrients[17] = food.vitaminD2 * 1000 * 1000 #일일 권장량 19
-            food_nutrients[18] = food.zinc * 1000 #일일 권장량 30
+            food_nutrients[16] = food.selenium * 1000 * 100
+            food_nutrients[17] = food.vitaminD2 * 1000 * 1000 
+            food_nutrients[18] = food.zinc * 1000 
             for i in range(len(nutrients)):
                 food_nutrients[i] = round(food_nutrients[i] / nutrients[i] * 100)
             for i in range(len(covid_nutrients)):
@@ -140,12 +140,10 @@ def diet_food():
         json_foods_nutrients = json.dumps(foods_nutrients, ensure_ascii = False)
         sum_nutrients = [0] * 19
         for food in foods_nutrients:
-            print(food)
             tmp = foods_nutrients[food]
             # tmp = tmp[0]
             for i in range(len(sum_nutrients)):
                 sum_nutrients[i] += tmp[i]
-        print(sum_nutrients)
         return redirect(url_for('checker'))
 
     return render_template("food_search.html")
@@ -200,13 +198,17 @@ def loading():
 @app.route("/diet_result")
 def diet_result():
     global nutrients, result, food_lst, foods_nutrients, json_foods_nutrients, sum_nutrients
-
+    covid_nutrients = [100,50,19,30]
     important_nutrient_dic = {14:'niacin',15:'vitaminC',16:'selenium',17:'vitaminD2',18:'zinc'}
+    #코로나에 중요하다고 판단한 영양소 중 부족한 영양소 추출
     lack_nutrients = []
     for i in range(14, len(sum_nutrients)):
-        if sum_nutrients[i] < 100:
+        if sum_nutrients[i] < 60:
             lack_nutrients.append(important_nutrient_dic[i])
-    print(lack_nutrients)
+    
+    #부족한 영양소 중 적은 순으로 최대 3개의 영양소만 추천
+    
+    #부족한 영양소마다 상위 50개의 식품중 랜덤으로 4개의 식품 추천
     result_recommend= {}
     tmp_dic = {}
     for nutrient in lack_nutrients:
@@ -221,9 +223,41 @@ def diet_result():
 
     for key, value in tmp_dic.items():
         random.shuffle(value)
-        result_recommend[key] = value[:4]
+        result_recommend[key] = value[:3]
 
-    
+    # 랜덤으로 선택된 식품들의 영양소 비율에 대한 json 데이터 생성
+    recommend_foods_nutrients = {}
+    for key, foods in result_recommend.items():
+        food_nutrients = [0] * 19
+        recommend_foods_nutrients[key] = {}
+        for food_name in foods:
+            food = Food.query.filter(Food.food_name == food_name).first()
+            food_nutrients[0] = food.calorie
+            food_nutrients[1] = food.protein
+            food_nutrients[2] = food.fat 
+            food_nutrients[3] = food.carbohydrate 
+            food_nutrients[4] = food.sugar
+            food_nutrients[5] = food.calcium * 1000
+            food_nutrients[6] = food.phosphorus * 1000   
+            food_nutrients[7] = food.iron * 1000
+            food_nutrients[8] = food.salt * 1000 
+            food_nutrients[9] = food.potassium * 1000
+            food_nutrients[10] = food.vitaminA * 1000 * 1000
+            food_nutrients[11] = food.vitaminB1 * 1000
+            food_nutrients[12] = food.vitaminB2 * 1000
+            food_nutrients[13] = food.folic_acid * 1000 * 1000
+            food_nutrients[14] = food.niacin * 1000
+            food_nutrients[15] = food.vitaminC * 1000
+            food_nutrients[16] = food.selenium * 1000 * 100
+            food_nutrients[17] = food.vitaminD2 * 1000 * 1000 
+            food_nutrients[18] = food.zinc * 1000 
+            for i in range(len(nutrients)):
+                food_nutrients[i] = round(food_nutrients[i] / nutrients[i] * 100)
+            for i in range(len(covid_nutrients)):
+                food_nutrients[15+i] = round(food_nutrients[15 + i] / covid_nutrients[i] * 100)
+            recommend_foods_nutrients[key][food_name] = food_nutrients[:]
+
+    json_foods_nutrients = json.dumps(recommend_foods_nutrients, ensure_ascii = False)
 
     return render_template("check.html",nutrients=nutrients,food_lst=food_lst,\
         foods_nutrients=json_foods_nutrients,result=result, sum_nutrients=sum_nutrients)
