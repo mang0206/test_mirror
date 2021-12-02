@@ -5,6 +5,9 @@
     font-family: 'M PLUS 1', 'Spoqa Han Sans Neo', 'sans-serif';
     vertical-align: baseline;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     margin: 0;
     padding: 0;
@@ -246,54 +249,115 @@ a:active{color: white;}
     width: 100%;
     height: 100%;
     text-align: center;
-    background-color: #effeff;
+
+    background: linear-gradient(to bottom, #d0eaff 40%, #effeff);
     padding-bottom: 50px;
 }
-.inex::before{
-    content: "";
-    opacity: 0.5;
-    position: absolute;
-    background-color: rgb(12, 48, 38);
-}
 .intro{
-    padding-bottom: 200px;
+    height: 90vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 300px;
+
+    background-color: #110B39;
+    scrollbar-width: none;
 }
+.intro::-webkit-scrollbar{
+    display: none !important;
+}
+.intro_group{
+    position: relative;
+    height: 90vh;
+    transform-style: preserve-3d;
+}
+.intro_group .life_w_covid{
+    height: 90vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #110B39;
+}
+.intro_group .and_beyond{
+    color: #110B39;
+
+    height: 90vh;
+    margin: 0;
+}
+.intro_symbol{
+    position: absolute;
+    inset: 0;
+}
+.symbol1{
+    color: white;
+    font-size: 85px;
+    font-weight: 800;
+    margin: 0;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadein 2.5s;
+
+    transform: translateZ(-300px) scale(2);
+}
+.symbol2{
+    color: #110B39;
+    font-size: 110px;
+    font-weight: bold;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: url("../image/cloud_background.png");
+}
+#intro{
+    z-index: 0;
+}
+#l_cloud{
+    /* top: -90px; */
+    transform: translateZ(50px);
+}
+#r_cloud{
+    z-index: -1;
+    transform: translateZ(50px);
+}
+/* #group-1{
+    background: url("../image/cloud_background.jpg");
+} */
+/*--------intro cloud--------*/
+.index_cloud{
+    width: 100%;
+    height: 90vh;
+    opacity: 90%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    transform: translateZ(-200px);
+            /* translateY(100px); */
+}
+.l_cloud{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
+}
+.r_cloud{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+}
+/*--------intro detail--------*/
 #intro_detail{
     font-size: 25px;
     font-weight: 400;
-    margin-bottom: 200px;
-}
-#with_corona{
-    color: #19193e;
-    padding-top: 150px;
-    margin: 100px 0px 100px 0px;
-
-    font-family: sans-serif;
-    font-size: 150px;
-    /* text-shadow: 0px 0px 10px #000072,
-                0px 0px 20px #000072,
-                0px 0px 40px #000072; */
-    text-shadow: 0px 0px 10px #a9d3f6,
-                0px 0px 20px #a9d3f6;
-
-    animation: fadein 4s;
-    -webkit-animation: fadein 4s;
-
-    -webkit-animation-name: zoomIn;
-}
-@-webkit-keyframes fadein {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-@-webkit-keyframes zoomIn {
-    from {
-      opacity: 0;
-      -webkit-transform: scale3d(0.9, 0.9, 0.9);
-      transform: scale3d(0.9, 0.9, 0.9);
-    }
-    50% {
-      opacity: 1;
-    }
+    margin: 300px 0 300px 0;
 }
 /* .light_bar{
     position: absolute;
@@ -330,32 +394,32 @@ a:active{color: white;}
 .virus_blur1{
     width: 120px;
     height: 120px;
-    position: absolute;
+    position: fixed;
 
     top: 490px;
     right: 350px;
-	-webkit-animation: text-blur-out 4s ease-out 2s both infinite;
-    animation: text-blur-out 4s ease-out 2s both infinite;
+	-webkit-animation: text-blur-out 2.5s ease-out 2.5s both infinite;
+    animation: text-blur-out 2.5s ease-out 2.5s both infinite;
 }
 .virus_blur2{
     width: 150px;
     height: 150px;
-    position: absolute;
+    position: fixed;
 
     top: 400px;
     left: 150px;
-	-webkit-animation: text-blur-out 3s ease-out 2.5s both infinite;
-    animation: text-blur-out 3s ease-out 2.5s both infinite;
+	-webkit-animation: text-blur-out 3s ease-out 1s both infinite;
+    animation: text-blur-out 3s ease-out 1s both infinite;
 }
 .virus_blur3{
     width: 132px;
     height: 132px;
-    position: absolute;
+    position: fixed;
 
     top: 300px;
     right: 200px;
-	-webkit-animation: text-blur-out 3.5s ease-out 3.5s both infinite;
-    animation: text-blur-out 3.5s ease-out 3.5s both infinite;
+	-webkit-animation: text-blur-out 1.5s ease-out 2s both infinite;
+    animation: text-blur-out 1.5s ease-out 2s both infinite;
 }
 @keyframes text-blur-out {
     0% {
@@ -379,8 +443,8 @@ a:active{color: white;}
     margin-bottom: -30px;
     text-shadow: 0px 1px 3px black;
 }
-.question_detail{
-    weight: 800px;
+.typing_gif{
+    padding-bottom: 200px;
 }
 /*--------index diet--------*/
 .index_inner{
@@ -417,10 +481,12 @@ a:active{color: white;}
 .link_text_1{
     font-size: 20px;
     font-weight: 500;
+    margin: 0;
 }
 .link_text_2{
     font-size: 40px;
     font-weight: 600;
+    margin: 0;
 }
 .index_description{
     color: white;
@@ -445,7 +511,7 @@ a:active{color: white;}
     justify-content: center;
 
     background: url("../image/visual_image.jpeg"), rgba(0, 0, 0, 0.5);
-    background-position: 20% -10%;
+    background-position: 10% -10%;
     background-size: 850px auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -910,13 +976,12 @@ a:active{color: white;}
     flex-direction: column;
     align-items: left;
     justify-content: left;
-
-    line-height: 30px;
 }
 .source_2{
     display: flex;
     flex-direction: column;
+    padding: 5px 0px 5px 0px;
 }
 .ydp01{
-    padding: 5px 0px 5px 0px;
+    /* padding: 5px 0px 5px 0px; */
 }

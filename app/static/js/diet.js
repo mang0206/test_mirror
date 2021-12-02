@@ -1,4 +1,4 @@
-//클릭 버튼 색 변경
+//클릭 버튼 색 변경 - 토글
 $(function(){
     let $label_chk = $(".label_chk");
 
@@ -26,12 +26,8 @@ $(function(){
 // personal board의 submit 버튼 입력시 스크롤 이동
 $(document).ready(function() {
     $(".move_button_hidden").on("click", function(event) {
-        var offset = $("#diet_food_search").offset();
+        var offset = $("#move_funtion").offset();
         $('html body').animate({scrollTop : offset.top}, 1000);
     });
 });
 
-// input 값이 있거나, 포커스 될 때 lable을 숨김
-// $("input.input_chk").each(function(){
-//     var label = $(this).attr("class");
-// })
