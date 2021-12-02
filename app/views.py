@@ -23,6 +23,13 @@ app.config["SECRET_KEY"] = "diet"
 
 @app.route("/")
 def index():
+    global nutrients, food_lst, foods_nutrients, json_foods_nutrients, sum_nutrients, result
+    food_lst = None
+    foods_nutrients = {}
+    nutrients = None
+    result = None
+    json_foods_nutrients = None
+    sum_nutrients = None
     user_id = session.get('login')
     if user_id :
         return render_template("index_login.html")
@@ -203,6 +210,7 @@ def diet_result():
     result_recommend= {}
     tmp_dic = {}
     for nutrient in lack_nutrients:
+        #비타민 D의 경우 유의미한 데이터가 10개로 한정되어 있어서 상위 10개의 데이터만 가지고 온다.
         if nutrient == 'vitaminD2':
             foods = Food.query.order_by(desc(text(nutrient))).limit(10)
         else:
@@ -213,7 +221,7 @@ def diet_result():
 
     for key, value in tmp_dic.items():
         random.shuffle(value)
-        result_recommend[key] = value[:10]
+        result_recommend[key] = value[:4]
 
     
 
