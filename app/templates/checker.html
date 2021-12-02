@@ -1,11 +1,6 @@
 {% extends 'kit.html' %}
 {% block diet_chart %}
 <div class="chart", id="food-data" data-name= '{{ foods_nutrients }}' data-test = '{{ sum_nutrients }}'>
-    <!-- <article
-      id="electriccars"
-      data-food='{{ foods_nutrients }}'
-      data-sum_nutrietns='{{ sum_nutrients }}'>
-    </article> -->
     <h1>Inside Your Body 👀</h1>
     <canvas id="firstChart"></canvas>
     <canvas id="secondChart"></canvas>
@@ -38,50 +33,12 @@
         <input type="checkbox" name="None_Sympton" id="None_Sympton" class="input_checker">
         <label for="None_Sympton" class="label_checker none_experience">증상 없음</label>
       </div>
-      <!-- <div class='symptom_1'>
-        <input type="checkbox" name="Pains" id="Pains" class="input_checker">
-        <label for="Pains" class="label_checker">근육통</label>
-        <input type="checkbox" name="Nasal_Congestion" id="Nasal_Congestion" class="input_checker">
-        <label for="Nasal_Congestion" class="label_checker">코 막힘</label>
-      </div>
-      <div class='symptom_1'>
-        <input type="checkbox" name="Runny_Nose" id="Runny_Nose" class="input_checker">
-        <label for="Runny_Nose" class="label_checker">콧물</label>
-        <input type="checkbox" name="Diarrhea" id="Diarrhea" class="input_checker">
-        <label for="Diarrhea" class="label_checker">설사</label>
-        <input type="checkbox" name="None_Experiencing" id="None_Experiencing" class="input_checker">
-        <label for="None_Experiencing" class="label_checker none_experience">경험 없음</label>
-      </div> -->
         <div class='section'>
-  
-          <!-- <table style='display:inline;'>국적
-            <tr>
-              <td>
-                <select name="Country">
-                  <option value="Republic of Korean">Republic of Korean</option>
-                  <option value="France">France</option>
-                  <option value="Spain">Spain</option>
-                  <option value="Italy">Italy</option>
-                  <option value="Germany">Germany</option>
-                  <option value="Other_EUR">Other_EUR</option>
-                  <option value="UAE">UAE</option>
-                  <option value="Iran">Iran</option>
-                  <option value="China">China</option>
-                  <option value="Other">Other</option>
-                </select>
-              </td>
-            </tr>
-          </table> -->
   
           <table style='display:inline;'>나이
             <tr>
               <td>
                 <select name="age_60_and_above">
-                  <!-- <option value="Age_0-9">9세 이하</option>
-                  <option value="Age_10-19">10-19세</option>
-                  <option value="Age_20-24">20-24세</option>
-                  <option value="Age_25-59">25-59세</option>
-                  <option value="Age_60+">60세 이상</option> -->
                   <option value="Age_60-">60세 이하</option>
                   <option value="Age_60+">60세 이상</option>
   
@@ -106,9 +63,6 @@
             <tr>
               <td>
                 <select name="test_indication">
-                  <!-- <option value="Contact_Dont-Know">알 수 없음</option>
-                  <option value="Contact_No">접촉 X</option>
-                  <option value="Contact_Yes">접촉 O</option> -->
                   <option value="Contact_with_confirmed">확진자 접촉</option>
                   <option value="Abroad">해외</option>
                   <option value="Other">기타</option>

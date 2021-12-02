@@ -6,74 +6,15 @@
 const ctx_common = document.querySelector('#firstChart').getContext('2d');
 const ctx_important = document.querySelector('#secondChart').getContext('2d');
 
-// Chart.plugins.register({
-//     beforeRender: function (chart) {
-//         if (chart.config.options.showAllTooltips) {
-//             chart.pluginTooltips = [];
-//             chart.config.data.datasets.forEach(function (dataset, i) {
-//
-//                 chart.getDatasetMeta(i).data.forEach(function (sector ,j) {
-//
-//                    chart.pluginTooltips.push(new Chart.Tooltip({
-//                        _chart: chart.chart,
-//                        _chartInstance: chart,
-//                        _data: chart.data,
-//                        _options: chart.options.tooltips,
-//                        _active: [sector]
-//
-//                    }, chart));
-//                 });
-//             });
-//
-//             chart.options.tooltips.enabled = false;
-//         }
-//     },
-//     afterDraw : function (chart, easing) {
-//         if (chart.config.options.showAllTooltips) {
-//             if (!chart.allTooltipsOnce) {
-//                 if (easing !== 1)
-//                     return;
-//                 chart.allTooltipsOnce = true;
-//             }
-//
-//             chart.options.tooltips.enabled = true;
-//             chart.helpers.each(chart.pluginTooltips,
-//                 function (tooltip) {
-//                     tooltip.initialize();
-//                     tooltip.update();
-//                     tooltip.pivot();
-//                     tooltip.transition(easing).draw();
-//
-//                 });
-//             chart.options.tooltips.enabled = false;
-//         }
-//     }
-// });
-
 let labels_common =  ["에너지", "단백질", "지방", "탄수화물", "당", "칼슘", "인", "철",
                     "나트륨", "칼륨", "비타민 A", "비타민 B1", "비타민 B2", "엽산"];
 let labels_important = [ "나이아신", "비타민 C", "셀레늄", "비타민 D2", "아연"]
 
-// var article = document.getElementById('electriccars');
 
-// flask jinja 로 받아오는 값 => nutrients  = dict 으로 받으면,
-// let input_data = {{ foods_nutrients }}
 let input_data = $('#food-data').data().name;
-// let input_data = article.dataset.food;
 
-// let input_data1 = [{'사과': [10, 20, 30, 10, 15, 12, 30, 20, 11, 14, 53, 33, 10, 32, 11, 1,  30, 20, 11, 14]},
-//     {'배': [30, 20, 11, 14, 10, 20, 14, 53, 33, 10, 32, 11, 1, 30, 10, 15, 12, 30, 20, 11]},
-//     {'포도': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]},
-//     {'바나나': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]},
-//     {'멜론': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]}
-// ];
-// flask에서 nutrients의 합계를 받아온다.
-// let sum_nutrients = {{ sum_nutrients }}
-// let sum_nutrients = $('#food-data').data().test;
 let sum_nutrients = $('#food-data').data().test;
-// let sum_nutrients = [82, 199, 140, 54, 121, 65, 74, 133, 134, 54, 130, 80, 101, 122, 54, 19, 132, 110, 64, 67]
 
-// let data1 = {{ foods_nutrients }}
 
 for(let i=0; i<14;i++) {
     if (sum_nutrients[i]>120) {
@@ -90,8 +31,6 @@ for(let j=0;j<5;j++){
         labels_important[j] = "⛔" + labels_important[j]
     }
 }
-
-// console.log(labels_important)
 
 // color list 만들기.
 const color_lst = ['rgb(229, 139, 150)', 'rgb(240, 201, 78)', 'rgb(115, 188, 189)', 'rgb(60, 142, 14)',
@@ -110,7 +49,6 @@ let lst_common = [];
 let lst_important = [];
 let i = 0
 for (let data in input_data) {
-    // let key = Object.keys(input_data[data]).toString()
     let values = input_data[data].slice(0,14);
     let temp = {
         label: data,
@@ -125,7 +63,6 @@ for (let data in input_data) {
 data_common['datasets']=lst_common
 let j = 0
 for (let data in input_data) {
-    // let key = Object.keys(input_data[data]).toString()
     let values = input_data[data].slice(-5);
     let temp = {
         label: data,
@@ -214,5 +151,3 @@ const config_common = {
 
 const barChart_common = new Chart(ctx_common, config_common);
 const barChart_important = new Chart(ctx_important, config_important);
-// const barChart = new Chart(ctx, config_common);
-// const radarChart = new Chart(ctx_radar, config_radar);

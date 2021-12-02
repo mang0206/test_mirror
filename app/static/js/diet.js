@@ -31,7 +31,3 @@ $(document).ready(function() {
     });
 });
 
-// input 값이 있거나, 포커스 될 때 lable을 숨김
-// $("input.input_chk").each(function(){
-//     var label = $(this).attr("class");
-// })
