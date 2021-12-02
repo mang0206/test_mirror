@@ -8,21 +8,28 @@ const ctx_important = document.querySelector('#secondChart').getContext('2d');
 
 let labels_common =  ["에너지", "단백질", "지방", "탄수화물", "당", "칼슘", "인", "철",
                     "나트륨", "칼륨", "비타민 A", "비타민 B1", "비타민 B2", "엽산"];
-let labels_important = [ "나이아신", "비타민 C", "셀레늄", "비타민 D2", "아연", "총필수지방산"]
+let labels_important = [ "나이아신", "비타민 C", "셀레늄", "비타민 D2", "아연"]
 
+// var article = document.getElementById('electriccars');
 
 // flask jinja 로 받아오는 값 => nutrients  = dict 으로 받으면,
-// let input_data = {{ nutrients }};
+// let input_data = {{ foods_nutrients }}
+let input_data = $('#food-data').data().name;
+// let input_data = article.dataset.food;
 
-// let input_data = [{'사과': [10, 20, 30, 10, 15, 12, 30, 20, 11, 14, 53, 33, 10, 32, 11, 1,  30, 20, 11, 14]},
+// let input_data1 = [{'사과': [10, 20, 30, 10, 15, 12, 30, 20, 11, 14, 53, 33, 10, 32, 11, 1,  30, 20, 11, 14]},
 //     {'배': [30, 20, 11, 14, 10, 20, 14, 53, 33, 10, 32, 11, 1, 30, 10, 15, 12, 30, 20, 11]},
 //     {'포도': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]},
 //     {'바나나': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]},
-//     {'멜론': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]},
+//     {'멜론': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]}
 // ];
 // flask에서 nutrients의 합계를 받아온다.
 // let sum_nutrients = {{ sum_nutrients }}
+// let sum_nutrients = $('#food-data').data().test;
+let sum_nutrients = $('#food-data').data().test;
 // let sum_nutrients = [82, 199, 140, 54, 121, 65, 74, 133, 134, 54, 130, 80, 101, 122, 54, 19, 132, 110, 64, 67]
+
+// let data1 = {{ foods_nutrients }}
 
 for(let i=0; i<14;i++) {
     if (sum_nutrients[i]>120) {
@@ -32,7 +39,7 @@ for(let i=0; i<14;i++) {
     }
 }
 
-for(let j=0;j<6;j++){
+for(let j=0;j<5;j++){
     if (sum_nutrients[j+14]>120) {
         labels_important[j] = "🚨" + labels_important[j]
     } else if (sum_nutrients[j+14]<80) {
@@ -40,12 +47,11 @@ for(let j=0;j<6;j++){
     }
 }
 
-console.log(labels_important)
+// console.log(labels_important)
 
 // color list 만들기.
 const color_lst = ['rgb(229, 139, 150)', 'rgb(240, 201, 78)', 'rgb(115, 188, 189)', 'rgb(60, 142, 14)',
-    '#ac9bdb', 'rgb(191, 33, 107)',  'rgb(66, 39, 0)',
-    'rgb(189,156,77)', 'rgb(21,119,143)'];
+    '#ac9bdb', 'rgb(191, 33, 107)',  'rgb(66, 39, 0)', 'rgb(189,156,77)', 'rgb(21,119,143)'];
 
 let data_common = {
     labels: labels_common,
@@ -58,31 +64,33 @@ let data_important = {
 
 let lst_common = [];
 let lst_important = [];
-
+let i = 0
 for (let data in input_data) {
-    let key = Object.keys(input_data[data]).toString()
-    let values = input_data[data][key].slice(0,14);
+    // let key = Object.keys(input_data[data]).toString()
+    let values = input_data[data].slice(0,14);
     let temp = {
-        label: key,
+        label: data,
         data: values,
         fill: true,
-        backgroundColor: color_lst[data]
+        backgroundColor: color_lst[i]
     }
     lst_common.push(temp)
+    i = i + 1
 };
 
 data_common['datasets']=lst_common
-
+let j = 0
 for (let data in input_data) {
-    let key = Object.keys(input_data[data]).toString()
-    let values = input_data[data][key].slice(-6);
+    // let key = Object.keys(input_data[data]).toString()
+    let values = input_data[data].slice(-5);
     let temp = {
-        label: key,
+        label: data,
         data: values,
         fill: true,
-        backgroundColor: color_lst[data]
+        backgroundColor: color_lst[j]
     }
     lst_important.push(temp)
+    j = j + 1
 };
 
 data_important['datasets']=lst_important
@@ -107,6 +115,8 @@ const config_important = {
             },
             x: {
                 stacked: true,
+                max: 150,
+                min: 0,
             },
         },
     },
@@ -136,11 +146,15 @@ const config_common = {
         responsive: true,
         scales: {
             y: {
-                stacked: true
+                stacked: true,
+                
             },
             x: {
                 stacked: true,
+                max: 150,
+                min: 0,
             },
+
         },
     },
     animation: {

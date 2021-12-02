@@ -1,6 +1,11 @@
 {% extends 'kit.html' %}
 {% block diet_chart %}
-<div class="chart">
+<div class="chart", id="food-data" data-name= '{{ foods_nutrients }}' data-test = '{{ sum_nutrients }}'>
+    <!-- <article
+      id="electriccars"
+      data-food='{{ foods_nutrients }}'
+      data-sum_nutrietns='{{ sum_nutrients }}'>
+    </article> -->
     <h1>Inside Your Body 👀</h1>
     <canvas id="firstChart"></canvas>
     <canvas id="secondChart"></canvas>
@@ -10,7 +15,7 @@
 <!--d3-->
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <!--JavaScript -->
-<script src="../static/js/chart.js"></script>
+<script type="text/javascript" src="../static/js/chart.js"></script>
 {% endblock %}
 
 {% block checker %}
