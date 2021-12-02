@@ -11,3 +11,5 @@ __pycache__/
 
 .idea/
 
+ydp01.ini
+.sock

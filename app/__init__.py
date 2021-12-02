@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import desc
 import os
+import pymysql
 db = SQLAlchemy()
 
 app = Flask(__name__)
