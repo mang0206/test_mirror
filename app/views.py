@@ -269,7 +269,3 @@ def food_direction():
 @app.route("/visual")
 def visualization():
     return render_template("visual.html")
-
-@app.route("/index_parallax")
-def index_parallax():
-    return render_template("index_parallax.html")
