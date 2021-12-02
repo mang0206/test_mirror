@@ -12,6 +12,7 @@ from .utils import valid_email, valid_password
 from sqlalchemy import desc, text
 import json
 import random
+
 food_lst = None
 foods_nutrients = {}
 nutrients = None
@@ -23,6 +24,13 @@ app.config["SECRET_KEY"] = "diet"
 
 @app.route("/")
 def index():
+    global nutrients, food_lst, foods_nutrients, json_foods_nutrients, sum_nutrients, result
+    food_lst = None
+    foods_nutrients = {}
+    nutrients = None
+    result = None
+    json_foods_nutrients = None
+    sum_nutrients = None
     user_id = session.get('login')
     if user_id :
         return render_template("index_login.html")
@@ -122,8 +130,6 @@ def diet_food():
             food_nutrients[16] = food.selenium * 1000 * 100 #일일 권장량 55
             food_nutrients[17] = food.vitaminD2 * 1000 * 1000 #일일 권장량 19
             food_nutrients[18] = food.zinc * 1000 #일일 권장량 30
-            # food_nutrients[19] = food.fatty_acid #필수 지방산
-            print(food_nutrients)
             for i in range(len(nutrients)):
                 food_nutrients[i] = round(food_nutrients[i] / nutrients[i] * 100)
             for i in range(len(covid_nutrients)):
@@ -204,6 +210,7 @@ def diet_result():
     result_recommend= {}
     tmp_dic = {}
     for nutrient in lack_nutrients:
+        #비타민 D의 경우 유의미한 데이터가 10개로 한정되어 있어서 상위 10개의 데이터만 가지고 온다.
         if nutrient == 'vitaminD2':
             foods = Food.query.order_by(desc(text(nutrient))).limit(10)
         else:
@@ -214,7 +221,7 @@ def diet_result():
 
     for key, value in tmp_dic.items():
         random.shuffle(value)
-        result_recommend[key] = value[:10]
+        result_recommend[key] = value[:4]
 
     
 
