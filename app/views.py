@@ -94,14 +94,15 @@ def diet_food():
             Z = cal_nutrients.body_classifier(sex, age, height)
             nutrients = cal_nutrients.nutrient(Z, sex, age, activity)
             
-            flash("정보가 안전하게 제출되었습니다! :)")
-            return redirect(url_for('diet_food'))
-        else:
-            flash("개인정보 입력 후 버튼을 눌러주세요 :)")
+            if nutrients != None :
+                flash("정보가 안전하게 제출되었습니다! :)")
+                return redirect(url_for('diet_food'))
+            else:
+                flash("개인정보 입력 후 버튼을 눌러주세요 :)")
 
     if request.method == "POST" and request.form.get('btn2'):
         if nutrients == None:
-            flash("해시태그 추가 후 음식 제출 버튼을 눌러주세요 :)")
+            flash("개인정보 입력 후 버튼을 눌러주세요 :)")
             return redirect(url_for("diet_food"))
 
         food_lst = request.form.get('btn2')
@@ -128,8 +129,6 @@ def diet_food():
             food_nutrients[16] = food.selenium * 1000 * 100 #일일 권장량 55
             food_nutrients[17] = food.vitaminD2 * 1000 * 1000 #일일 권장량 19
             food_nutrients[18] = food.zinc * 1000 #일일 권장량 30
-            # food_nutrients[19] = food.fatty_acid #필수 지방산
-            print(food_nutrients)
             for i in range(len(nutrients)):
                 food_nutrients[i] = round(food_nutrients[i] / nutrients[i] * 100)
             for i in range(len(covid_nutrients)):

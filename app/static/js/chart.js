@@ -6,50 +6,6 @@
 const ctx_common = document.querySelector('#firstChart').getContext('2d');
 const ctx_important = document.querySelector('#secondChart').getContext('2d');
 
-// Chart.plugins.register({
-//     beforeRender: function (chart) {
-//         if (chart.config.options.showAllTooltips) {
-//             chart.pluginTooltips = [];
-//             chart.config.data.datasets.forEach(function (dataset, i) {
-//
-//                 chart.getDatasetMeta(i).data.forEach(function (sector ,j) {
-//
-//                    chart.pluginTooltips.push(new Chart.Tooltip({
-//                        _chart: chart.chart,
-//                        _chartInstance: chart,
-//                        _data: chart.data,
-//                        _options: chart.options.tooltips,
-//                        _active: [sector]
-//
-//                    }, chart));
-//                 });
-//             });
-//
-//             chart.options.tooltips.enabled = false;
-//         }
-//     },
-//     afterDraw : function (chart, easing) {
-//         if (chart.config.options.showAllTooltips) {
-//             if (!chart.allTooltipsOnce) {
-//                 if (easing !== 1)
-//                     return;
-//                 chart.allTooltipsOnce = true;
-//             }
-//
-//             chart.options.tooltips.enabled = true;
-//             chart.helpers.each(chart.pluginTooltips,
-//                 function (tooltip) {
-//                     tooltip.initialize();
-//                     tooltip.update();
-//                     tooltip.pivot();
-//                     tooltip.transition(easing).draw();
-//
-//                 });
-//             chart.options.tooltips.enabled = false;
-//         }
-//     }
-// });
-
 let labels_common =  ["에너지", "단백질", "지방", "탄수화물", "당", "칼슘", "인", "철",
                     "나트륨", "칼륨", "비타민 A", "비타민 B1", "비타민 B2", "엽산"];
 let labels_important = [ "나이아신", "비타민 C", "셀레늄", "비타민 D2", "아연"]
