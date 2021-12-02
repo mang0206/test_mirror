@@ -6,50 +6,6 @@
 const ctx_common = document.querySelector('#firstChart').getContext('2d');
 const ctx_important = document.querySelector('#secondChart').getContext('2d');
 
-// Chart.plugins.register({
-//     beforeRender: function (chart) {
-//         if (chart.config.options.showAllTooltips) {
-//             chart.pluginTooltips = [];
-//             chart.config.data.datasets.forEach(function (dataset, i) {
-//
-//                 chart.getDatasetMeta(i).data.forEach(function (sector ,j) {
-//
-//                    chart.pluginTooltips.push(new Chart.Tooltip({
-//                        _chart: chart.chart,
-//                        _chartInstance: chart,
-//                        _data: chart.data,
-//                        _options: chart.options.tooltips,
-//                        _active: [sector]
-//
-//                    }, chart));
-//                 });
-//             });
-//
-//             chart.options.tooltips.enabled = false;
-//         }
-//     },
-//     afterDraw : function (chart, easing) {
-//         if (chart.config.options.showAllTooltips) {
-//             if (!chart.allTooltipsOnce) {
-//                 if (easing !== 1)
-//                     return;
-//                 chart.allTooltipsOnce = true;
-//             }
-//
-//             chart.options.tooltips.enabled = true;
-//             chart.helpers.each(chart.pluginTooltips,
-//                 function (tooltip) {
-//                     tooltip.initialize();
-//                     tooltip.update();
-//                     tooltip.pivot();
-//                     tooltip.transition(easing).draw();
-//
-//                 });
-//             chart.options.tooltips.enabled = false;
-//         }
-//     }
-// });
-
 let labels_common =  ["에너지", "단백질", "지방", "탄수화물", "당", "칼슘", "인", "철",
                     "나트륨", "칼륨", "비타민 A", "비타민 B1", "비타민 B2", "엽산"];
 let labels_important = [ "나이아신", "비타민 C", "셀레늄", "비타민 D2", "아연", "총필수지방산"]
@@ -58,15 +14,15 @@ let labels_important = [ "나이아신", "비타민 C", "셀레늄", "비타민 
 // flask jinja 로 받아오는 값 => nutrients  = dict 으로 받으면,
 // let input_data = {{ nutrients }};
 
-let input_data = [{'사과': [10, 20, 30, 10, 15, 12, 30, 20, 11, 14, 53, 33, 10, 32, 11, 1,  30, 20, 11, 14]},
-    {'배': [30, 20, 11, 14, 10, 20, 14, 53, 33, 10, 32, 11, 1, 30, 10, 15, 12, 30, 20, 11]},
-    {'포도': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]},
-    {'바나나': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]},
-    {'멜론': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]},
-];
+// let input_data = [{'사과': [10, 20, 30, 10, 15, 12, 30, 20, 11, 14, 53, 33, 10, 32, 11, 1,  30, 20, 11, 14]},
+//     {'배': [30, 20, 11, 14, 10, 20, 14, 53, 33, 10, 32, 11, 1, 30, 10, 15, 12, 30, 20, 11]},
+//     {'포도': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]},
+//     {'바나나': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]},
+//     {'멜론': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]},
+// ];
 // flask에서 nutrients의 합계를 받아온다.
 // let sum_nutrients = {{ sum_nutrients }}
-let sum_nutrients = [82, 199, 140, 54, 121, 65, 74, 133, 134, 54, 130, 80, 101, 122, 54, 19, 132, 110, 64, 67]
+// let sum_nutrients = [82, 199, 140, 54, 121, 65, 74, 133, 134, 54, 130, 80, 101, 122, 54, 19, 132, 110, 64, 67]
 
 for(let i=0; i<14;i++) {
     if (sum_nutrients[i]>120) {
