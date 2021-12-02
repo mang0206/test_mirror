@@ -210,11 +210,13 @@ def diet_result():
         tmp_dic[nutrient] = []
         for food in foods:
             tmp_dic[nutrient].append(food.food_name)
-    print(tmp_dic)
+
     for key, value in tmp_dic.items():
         random.shuffle(value)
         result_recommend[key] = value[:10]
-    print(result_recommend)
+
+    
+
     return render_template("check.html",nutrients=nutrients,food_lst=food_lst,\
         foods_nutrients=json_foods_nutrients,result=result, sum_nutrients=sum_nutrients)
 
