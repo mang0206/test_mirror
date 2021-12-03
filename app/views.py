@@ -233,5 +233,5 @@ def food_direction():
     return render_template("food_direction.html")
 
 @app.route("/visual")
-def visualization():
+def visual():
     return render_template("visual.html")
