@@ -25,8 +25,12 @@
         <div>
             <h3>50점이 넘으면 위험할 수 있습니다!</h3>
         </div>
-        <div class="">
+        <div class=""  id="result-data" data-nutrients= '{{ foods_nutrients }}' data-result = '{{ nutrients }}'>
             영양소 차트 2
+            <script>
+                let nutrients = $('#result-data').data().nutrients;
+                let result = $('#result-data').data().result;
+            </script>
         </div>
         <div>
             추천

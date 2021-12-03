@@ -136,7 +136,6 @@ def diet_food():
                 food_nutrients[15+i] = round(food_nutrients[15 + i] / covid_nutrients[i] * 100)
             
             foods_nutrients[food_name] = food_nutrients[:]
-            # foods_nutrients.append({food_name:food_nutrients[:]})
         json_foods_nutrients = json.dumps(foods_nutrients, ensure_ascii = False)
         sum_nutrients = [0] * 19
         for food in foods_nutrients:
@@ -206,7 +205,10 @@ def diet_result():
         if sum_nutrients[i] < 60:
             lack_nutrients.append(important_nutrient_dic[i])
     
-    #부족한 영양소 중 적은 순으로 최대 3개의 영양소만 추천
+    #부족한 영양소 중 최대 3개의 영양소만 추천
+    random.shuffle(lack_nutrients)
+    if len(lack_nutrients) > 3:
+        lack_nutrients[:3]
     
     #부족한 영양소마다 상위 50개의 식품중 랜덤으로 4개의 식품 추천
     result_recommend= {}
@@ -224,6 +226,7 @@ def diet_result():
     for key, value in tmp_dic.items():
         random.shuffle(value)
         result_recommend[key] = value[:3]
+
 
     # 랜덤으로 선택된 식품들의 영양소 비율에 대한 json 데이터 생성
     recommend_foods_nutrients = {}
@@ -257,9 +260,10 @@ def diet_result():
                 food_nutrients[15+i] = round(food_nutrients[15 + i] / covid_nutrients[i] * 100)
             recommend_foods_nutrients[key][food_name] = food_nutrients[:]
 
+    json_result_recommend = json.dumps(result_recommend, ensure_ascii = False)
     json_foods_nutrients = json.dumps(recommend_foods_nutrients, ensure_ascii = False)
 
-    return render_template("check.html",nutrients=nutrients,food_lst=food_lst,\
+    return render_template("check.html",nutrients=json_result_recommend,food_lst=food_lst,\
         foods_nutrients=json_foods_nutrients,result=result, sum_nutrients=sum_nutrients)
 
 @app.route("/food_direction")
