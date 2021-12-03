@@ -250,7 +250,7 @@ window.onload = function() {
     const children_section = section.children
     console.log(children_section)
 
-    const fb = document.querySelector('#recommendation_btn_first');
+    const fb = document.querySelector('#btn_recommendation_first');
     fb.addEventListener('click', function() {
         let div = document.querySelector('#recommendation_first_chart');
         for (let i=0;i<children_section.length;i++){
@@ -259,7 +259,7 @@ window.onload = function() {
         div.style.display = 'flex';
     })
 
-    const sb = document.querySelector('#recommendation_btn_second');
+    const sb = document.querySelector('#btn_recommendation_second');
     sb.addEventListener('click', function() {
         let div= document.querySelector('#recommendation_second_chart');
         for (let i=0;i<children_section.length;i++){
@@ -268,7 +268,7 @@ window.onload = function() {
         div.style.display = 'flex';
     })
 
-    const tb = document.querySelector('#recommendation_btn_third');
+    const tb = document.querySelector('#btn_recommendation_third');
     tb.addEventListener('click', function() {
         let div = document.querySelector('#recommendation_third_chart');
         for (let i=0;i<children_section.length;i++){
