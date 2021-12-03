@@ -271,9 +271,5 @@ def food_direction():
     return render_template("food_direction.html")
 
 @app.route("/visual")
-def visualization():
+def visual():
     return render_template("visual.html")
-
-@app.route("/index_parallax")
-def index_parallax():
-    return render_template("index_parallax.html")
