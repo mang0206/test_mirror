@@ -1,4 +1,4 @@
-//클릭 버튼 색 변경
+//클릭 버튼 색 변경 - 토글
 $(function(){
     let $label_chk = $(".label_chk");
 
@@ -23,10 +23,11 @@ $(function(){
     
 });
 
-// personal submit 버튼 입력시 스크롤 이동
+// personal board의 submit 버튼 입력시 스크롤 이동
 $(document).ready(function() {
-    $("#personal_submit").click(function(event) {
-        window.scrollTo(200, 500);
-        $('html, body').animate({scrollTop:$(this.hash).offset().top}, 500);
+    $(".move_button_hidden").on("click", function(event) {
+        var offset = $("#move_funtion").offset();
+        $('html body').animate({scrollTop : offset.top}, 1000);
     });
 });
+
