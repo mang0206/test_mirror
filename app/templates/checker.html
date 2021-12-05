@@ -1,18 +1,17 @@
 {% extends 'kit.html' %}
 {% block diet_chart %}
 <div class="chart", id="food-data" data-name= '{{ foods_nutrients }}' data-test = '{{ sum_nutrients }}'>
-    <h1>Inside Your Body 👀</h1>
     <canvas id="secondChart"></canvas>
     <p>
-      코로나 면역에 영향력이 있는 영양소입니다!
+      코로나 면역에 효과있는 영양소입니다!
       <br>
-      ❌❌부족할시에 주의하세요!!!!❌❌
+      ❌❌부족할 경우 주의하세요!!❌❌
     </p>
     <canvas id="firstChart"></canvas>
     <p>
-      🚨 >> 너무 많이 섭취했어요. 조금 줄여주세요
+      🚨 많이 섭취했어요! 조금 줄여주세요 :)
       <br>
-      ❌ >> 너무 부족해요. 많이 필요합니다!!
+      ❌ 너무 부족해요! 많이 필요합니다 ;)
     </p>
 </div>
 <!--chart.js-->

@@ -507,11 +507,8 @@ a:active{color: white;}
     box-shadow: 2px 2px 3px black;
 
     margin-right: 50px;
-    display: flex;
-    justify-content: center;
 
-    background: url("../image/visual_image.jpeg"), rgba(0, 0, 0, 0.5);
-    background-position: 10% -10%;
+    background: url("../image/net_work.jpg"), rgba(0, 0, 0, 0.5);
     background-size: 850px auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -597,7 +594,7 @@ a:active{color: white;}
     text-align: center;
 }
 .diet_clip_img{
-    top: 260px;
+    top: 250px;
     z-index: 900;
     position: absolute;
     display: flex;
@@ -761,10 +758,11 @@ a:active{color: white;}
 }
 /*--------kit--------*/
 #firstChart{
+    height: 500px;
     margin-bottom: 20px;
 }
 #secondChart{
-    height: 20vh;
+    height: 350px;
     margin-bottom: 20px;
 }
 .kit_clip_img{
@@ -813,9 +811,6 @@ a:active{color: white;}
 }
 .kit_analysis{
     margin-bottom: 100px;
-}
-.kit_chart{
-    height: 450px;
 }
 /*--------checker--------*/
 .checker{
