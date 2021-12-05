@@ -138,7 +138,7 @@ btn_breathe.addEventListener('mouseout', deleteDiv);
 
 function showHeadache() {
 
-    let headDiv = document.querySelector('#headDiv');
+    let headDiv = document.querySelector('#btn-headache');
     headDiv.style.visibility = 'visible';
 
 }

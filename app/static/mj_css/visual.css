@@ -274,7 +274,7 @@ article {
 /*}*/
 
 
-.box {
+.person_box {
     height: 78vh;
     width: 720px;
     border-radius: 2rem;
@@ -544,7 +544,7 @@ label {
     position: relative;
 }
 
-#btn-head {
+#btn-headache {
     padding: 1.8rem;
     right: 50px;
 }

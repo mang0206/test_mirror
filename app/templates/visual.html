@@ -265,9 +265,21 @@
                     증상별 코로나 확진률을 보여드립니다.
                 </p>
                 <img class="clip" src="../static/image/clip.png" alt="docter's chart">
-                <div class="box">
-                    <div class="box-mouse">
-                        <p>🔎마우스를 올려보세요.</p>
+                <div class="person_box">
+                    <p class="mouse-title">
+                        🔎마우스를 올려보세요.
+                    </p>
+                    <div class="body-circle head">
+                        <label class="body-circle-name" for="btn-headache">두통</label>
+                        <button id="btn-headache"></button>
+                    </div>
+                    <div class="body-circle fever">
+                        <button id="btn-fever"></button>
+                        <label class="body-circle-name" for="btn-fever">고열</label>
+                    </div>
+                    <div class="body-circle cough">
+                        <label class="body-circle-name" for="btn-cough">마른 기침</label>
+                        <button id="btn-cough"></button>
                     </div>
                     <div>
                         <div class="body-circle head">
