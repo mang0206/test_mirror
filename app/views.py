@@ -208,7 +208,7 @@ def diet_result():
     #부족한 영양소 중 최대 3개의 영양소만 추천
     random.shuffle(lack_nutrients)
     if len(lack_nutrients) > 3:
-        lack_nutrients[:3]
+        lack_nutrients = lack_nutrients[:3]
     
     #부족한 영양소마다 상위 50개의 식품중 랜덤으로 4개의 식품 추천
     result_recommend= {}
@@ -225,7 +225,7 @@ def diet_result():
 
     for key, value in tmp_dic.items():
         random.shuffle(value)
-        result_recommend[key] = value[:3]
+        result_recommend[key] = value[:4]
 
 
     # 랜덤으로 선택된 식품들의 영양소 비율에 대한 json 데이터 생성
@@ -262,7 +262,7 @@ def diet_result():
 
     json_result_recommend = json.dumps(result_recommend, ensure_ascii = False)
     json_foods_nutrients = json.dumps(recommend_foods_nutrients, ensure_ascii = False)
-
+    print(json_foods_nutrients, '\n', json_result_recommend)
     return render_template("check.html",nutrients=json_result_recommend,food_lst=food_lst,\
         foods_nutrients=json_foods_nutrients,result=result, sum_nutrients=sum_nutrients)
 

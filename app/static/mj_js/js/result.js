@@ -1,9 +1,9 @@
 /* flask 에서 받아오는 데이터 */
-let input_data = {'영양소1' : ['음식1', '음식2', '음식3', '음식4'],
-    '영양소2' : ['음식1', '음식2', '음식3', '음식4'],
-    '영양소3' : ['음식1', '음식2', '음식3', '음식4']
-};
-
+// let input_data = {'영양소1' : ['음식1', '음식2', '음식3', '음식4'],
+//     '영양소2' : ['음식1', '음식2', '음식3', '음식4'],
+//     '영양소3' : ['음식1', '음식2', '음식3', '음식4']
+// };
+let input_data = $('#result-data').data().nutrients;
 // let colors = ['grey' ,'lightgrey', 'dimgrey'];
 const ids = ['recommendation_first', 'recommendation_second', 'recommendation_third']
 const classes = ['recommendation_first_back', 'recommendation_second_back', 'recommendation_third_back'];
@@ -65,20 +65,20 @@ window.onload = function() {
 
     const name = ['recommendation_first_chart', 'recommendation_second_chart', 'recommendation_third_chart'];
     // const chart_name = ['#barChart1_common','#barChart1_important','#barChart2_common','#barChart2_important','#barChart3_common','#barChart3_important']
-    const input_datas  = [
-        {
+    const input_datas  = {
+        '비타민C':{
             '사과': [30, 20, 11, 14, 10, 20, 14, 53, 33, 10, 32, 11, 1, 30, 10, 15, 12, 30, 20, 11]
             ,'배': [10, 20, 30, 10, 15, 12, 30, 20, 11, 14, 53, 33, 10, 32, 11, 1,  30, 20, 11, 14]
             ,'포도': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]},
-        {
+        '엽산':{
             '사과': [10, 20, 30, 10, 15, 12, 30, 20, 11, 14, 53, 33, 10, 32, 11, 1,  30, 20, 11, 14]
             ,'배': [30, 20, 11, 14, 10, 20, 14, 53, 33, 10, 32, 11, 1, 30, 10, 15, 12, 30, 20, 11]
             ,'포도': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]},
-        {
+        '셀레늄':{
             '사과': [10, 20, 30, 10, 15, 12, 30, 20, 11, 14, 53, 33, 10, 32, 11, 1,  30, 20, 11, 14]
             ,'배': [30, 20, 11, 14, 10, 20, 14, 53, 33, 10, 32, 11, 1, 30, 10, 15, 12, 30, 20, 11]
             ,'포도': [14, 53, 33, 10, 32, 11,10, 20, 30, 10, 15, 12, 30, 20, 11,  1,  30, 20, 11, 14]}
-    ]
+    }
 
     let labels_common =  ["에너지", "단백질", "지방", "탄수화물", "당", "칼슘", "인", "철",
         "나트륨", "칼륨", "비타민 A", "비타민 B1", "비타민 B2", "엽산"];
