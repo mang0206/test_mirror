@@ -9,14 +9,6 @@
                 <span>현재 상태와 식단 추천을 안내 해드릴게요~</span>
             </div>
         </div>
-        <div class="diet_result_chart">
-            <div>
-                <span>현재 상태와 추천 음식 섭취 후 달라지는 차트</span>
-            </div>
-            <div>
-                <span>오각형 차트</span>
-            </div>
-        </div>
         <div>
             <h2>Covid 확진 확률</h2>
             {% block check %}
@@ -25,16 +17,11 @@
         <div>
             <h3>50점이 넘으면 위험할 수 있습니다!</h3>
         </div>
-        <div class=""  id="result-data" data-nutrients= '{{ foods_nutrients }}' data-result = '{{ nutrients }}'>
-            영양소 차트 2
-            <script>
-                let nutrients = $('#result-data').data().nutrients;
-                let result = $('#result-data').data().result;
-            </script>
+        <div class="" >
+            {% block result_chart %}
+            {% endblock %}
         </div>
-        <div>
-            추천
-        </div>
+
         <div>
             <input type="button" value="메인 페이지로 이동" onClick="location.href='/'" class="move_button">
         </div>

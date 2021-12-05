@@ -29,14 +29,14 @@ const config_sel = {
                 text: '셀레늄'
             }
         },
-        scales: {
-            xAxes: [{
-                ticks: {
-                    fontColor: 'rgb(74,55,31)',
-                    fontSize: 14,
-                }
-            }]
-        }
+        // scales: {
+        //     xAxes: [{
+        //         ticks: {
+        //             fontColor: 'rgb(74,55,31)',
+        //             fontSize: 14,
+        //         }
+        //     }]
+        // }
     }
 }
 // const selChart = new Chart(ctx_sel, config_sel);

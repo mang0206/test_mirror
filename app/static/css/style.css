@@ -761,14 +761,14 @@ a:active{color: white;}
 }
 /*--------kit--------*/
 #firstChart{
-    margin-bottom: 200px;
+    margin-bottom: 20px;
 }
 #secondChart{
-    height: 225px;
-    margin-bottom: 200px;
+    height: 20vh;
+    margin-bottom: 20px;
 }
 .kit_clip_img{
-    top: 1580px;
+    top: 1180px;
     z-index: 900;
     position: absolute;
     display: flex;
@@ -815,7 +815,7 @@ a:active{color: white;}
     margin-bottom: 100px;
 }
 .kit_chart{
-    height: 850px;
+    height: 450px;
 }
 /*--------checker--------*/
 .checker{
