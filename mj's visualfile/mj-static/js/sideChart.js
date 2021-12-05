@@ -3,7 +3,6 @@
 //     '#ac9bdb', 'rgb(191, 33, 107)',  'rgb(66, 39, 0)',
 //     'rgb(189,156,77)', 'rgb(21,119,143)'];
 
-// const ctx_sel = document.querySelector('.sel-Canvas').getContext('2d');
 const label_sel = ['🥇해산물', '🥈채소', '🥉고기']
 const input_data_sel =[32, 4, 4]
 let data_sel = {
@@ -39,10 +38,8 @@ const config_sel = {
         }
     }
 }
-// const selChart = new Chart(ctx_sel, config_sel);
 
 // vit D2
-// const ctx_vitD2 = document.querySelector('.vitD2-Canvas').getContext('2d');
 const label_vitD2 = ['🥇채소', '🥈설탕', '🥉사과']
 const input_data_vitD2 =[14,11,6]
 let data_vitD2 = {
@@ -70,10 +67,8 @@ const config_vitD2 = {
         }
     }
 }
-// const vitD2_Chart = new Chart(ctx_vitD2, config_vitD2);
 
 // vit D3
-// const ctx_vitD3 = document.querySelector('.vitD3-Canvas').getContext('2d');
 const label_vitD3 = ['🥇해산물', '🥈고기', '🥉달걀']
 const input_data_vitD3 =[22,8,4]
 let data_vitD3 = {
@@ -101,10 +96,8 @@ const config_vitD3 = {
         }
     }
 }
-// const vitD3_Chart = new Chart(ctx_vitD3, config_vitD3);
 
 // vit C
-// const ctx_vitC = document.querySelector('.vitC-Canvas').getContext('2d');
 const label_vitC = ['🥇사과', '🥈우유', '🥉설탕']
 const input_data_vitC =[27,8,3]
 let data_vitC = {
@@ -134,11 +127,8 @@ const config_vitC = {
         }
     }
 }
-// const vitC_Chart = new Chart(ctx_vitC, config_vitC);
-
 
 // ay
-// const ctx_ay = document.querySelector('.ay-Canvas').getContext('2d');
 const label_ay = ['🥇고기', '🥈해산물', '🥉곡물']
 const input_data_ay =[16,16,6]
 let data_ay = {
@@ -166,11 +156,8 @@ const config_ay = {
         }
     }
 }
-// const ay_Chart = new Chart(ctx_ay, config_ay);
-
 
 // nai
-// const ctx_nai = document.querySelector('.nai-Canvas').getContext('2d');
 const label_nai = ['🥇고기', '🥈해산물', '🥉채소']
 const input_data_nai =[14,11,11]
 let data_nai = {
@@ -198,10 +185,8 @@ const config_nai = {
         }
     }
 }
-// const nai_Chart = new Chart(ctx_nai, config_nai);
 
 // total
-// const ctx_total = document.querySelector('.total-Canvas').getContext('2d');
 const label_total = ['🥇씨앗류', '🥈곡물', '🥉견과류']
 const input_data_total =[10,8,8]
 let data_total = {
@@ -229,12 +214,10 @@ const config_total = {
         }
     }
 }
-// const total_Chart = new Chart(ctx_total, config_total);
 
 //milk
-
 const label_milk = ['🥇우유', '🥈동물성 지방', '🥉설탕']
-const input_data_milk =[16,11,0]
+const input_data_milk =[16,11,0.1]
 let data_milk = {
     labels: label_milk,
     datasets: [ {
@@ -261,12 +244,7 @@ const config_milk = {
     }
 }
 
-
-
-
-
 // selector
-
 const btn_sel =  document.querySelector('#sel');
 const btn_vitD2 =  document.querySelector('#vitD2');
 const btn_vitD3 =  document.querySelector('#vitD3');
@@ -278,106 +256,205 @@ const btn_milk =  document.querySelector('#milk');
 
 
 // event
-
-btn_sel.addEventListener('mouseover', showSel);
-btn_sel.addEventListener('mouseout', deleteCanvas);
-btn_vitD2.addEventListener('mouseover', showvitD2);
-btn_vitD2.addEventListener('mouseout', deleteCanvas);
-btn_vitD3.addEventListener('mouseover', showvitD3);
-btn_vitD3.addEventListener('mouseout', deleteCanvas);
-btn_nai.addEventListener('mouseover', shownai);
-btn_nai.addEventListener('mouseout', deleteCanvas);
-btn_vitC.addEventListener('mouseover', showvitC);
-btn_vitC.addEventListener('mouseout', deleteCanvas);
-btn_ay.addEventListener('mouseover', showAy);
-btn_ay.addEventListener('mouseout', deleteCanvas);
-btn_total.addEventListener('mouseover', showtotal);
-btn_total.addEventListener('mouseout', deleteCanvas);
-btn_milk.addEventListener('mouseover', showMilk);
-btn_milk.addEventListener('mouseout', deleteRightCanvas);
+btn_sel.addEventListener('click', showSel);
+// btn_sel.addEventListener('dbclick', deleteCanvas);
+btn_vitD2.addEventListener('click', showvitD2);
+// btn_vitD2.addEventListener('dbclick', deleteCanvas);
+btn_vitD3.addEventListener('click', showvitD3);
+// btn_vitD3.addEventListener('dbclick', deleteCanvas);
+btn_nai.addEventListener('click', shownai);
+// btn_nai.addEventListener('dbclick', deleteCanvas);
+btn_vitC.addEventListener('click', showvitC);
+// btn_vitC.addEventListener('dbclick', deleteCanvas);
+btn_ay.addEventListener('click', showAy);
+// btn_ay.addEventListener('dbclick', deleteCanvas);
+btn_total.addEventListener('click', showtotal);
+// btn_total.addEventListener('dbclick', deleteCanvas);
+btn_milk.addEventListener('click', showMilk);
+// btn_milk.addEventListener('dbclick', deleteRightCanvas);
 
 
 function showSel() {
+
+    $('.left-input-chart').remove(); // this is my <canvas> element
+    $('.food-chart-area-left').append('<canvas class="left-input-chart"><canvas>');
+
      let ctx = document.querySelector('.left-input-chart').getContext('2d');
      new Chart(ctx, config_sel);
      let sel = document.querySelector('#sel_div');
      sel.style.display = 'block';
+
+     let parent = document.querySelectorAll('.createText_hidden');
+     for (let i=0; i < parent.length; i++) {
+         let child = parent.item(i);
+         if (child !== sel) {
+             child.style.display = 'none'
+         }}
+
+
 }
 
 function showvitD2() {
+
+    $('.left-input-chart').remove(); // this is my <canvas> element
+    $('.food-chart-area-left').append('<canvas class="left-input-chart"><canvas>');
+
     let ctx = document.querySelector('.left-input-chart').getContext('2d');
     new Chart(ctx, config_vitD2);
     let vitD2 = document.querySelector('#vitD2_div');
     vitD2.style.display = 'block';
+
+    let parent = document.querySelectorAll('.createText_hidden');
+    for (let i=0; i < parent.length; i++) {
+        let child = parent.item(i);
+        if (child !== vitD2) {
+            child.style.display = 'none'
+        }}
 }
+
+
 function showvitD3() {
+
+    $('.left-input-chart').remove(); // this is my <canvas> element
+    $('.food-chart-area-left').append('<canvas class="left-input-chart"><canvas>');
+
+
     let ctx = document.querySelector('.left-input-chart').getContext('2d');
     new Chart(ctx, config_vitD3);
     let vitD3 = document.querySelector('#vitD3_div');
     vitD3.style.display = 'block';
+
+
+
+    let parent = document.querySelectorAll('.createText_hidden');
+    for (let i=0; i < parent.length; i++) {
+        let child = parent.item(i);
+        if (child !== vitD3) {
+            child.style.display = 'none'
+        }}
 }
 function showvitC() {
+
+    $('.left-input-chart').remove(); // this is my <canvas> element
+    $('.food-chart-area-left').append('<canvas class="left-input-chart"><canvas>');
+
+
     let ctx = document.querySelector('.left-input-chart').getContext('2d');
     new Chart(ctx, config_vitC);
     let vitC = document.querySelector('#vitC_div');
     vitC.style.display = 'block';
+
+    let parent = document.querySelectorAll('.createText_hidden');
+    for (let i=0; i < parent.length; i++) {
+        let child = parent.item(i);
+        if (child !== vitC) {
+            child.style.display = 'none'
+        }}
 }
 function showAy() {
+
+    $('.left-input-chart').remove(); // this is my <canvas> element
+    $('.food-chart-area-left').append('<canvas class="left-input-chart"><canvas>');
+
+
     let ctx = document.querySelector('.left-input-chart').getContext('2d');
     new Chart(ctx, config_ay);
     let ay = document.querySelector('#ay_div');
     ay.style.display = 'block';
+
+    let parent = document.querySelectorAll('.createText_hidden');
+    for (let i=0; i < parent.length; i++) {
+        let child = parent.item(i);
+        if (child !== ay) {
+            child.style.display = 'none'
+        }}
 }
 
 function showtotal() {
+
+    $('.left-input-chart').remove(); // this is my <canvas> element
+    $('.food-chart-area-left').append('<canvas class="left-input-chart"><canvas>');
+
     let ctx = document.querySelector('.left-input-chart').getContext('2d');
     new Chart(ctx, config_total);
     // let total = document.querySelector('#total_div');
     // total.style.display = 'block';
+
+    let parent = document.querySelectorAll('.createText_hidden');
+    for (let i=0; i < parent.length; i++) {
+        let child = parent.item(i);
+        if (child !== total) {
+            child.style.display = 'none'
+        }}
+
 }
 function shownai() {
+
+    $('.left-input-chart').remove(); // this is my <canvas> element
+    $('.food-chart-area-left').append('<canvas class="left-input-chart"><canvas>');
+
     let ctx = document.querySelector('.left-input-chart').getContext('2d');
     new Chart(ctx, config_nai);
     let nai = document.querySelector('#nai_div');
     nai.style.display = 'block';
+
+    let parent = document.querySelectorAll('.createText_hidden');
+    for (let i=0; i < parent.length; i++) {
+        let child = parent.item(i);
+        if (child !== nai) {
+            child.style.display = 'none'
+        }}
+
 }
 
+
 function showMilk() {
+
+    $('.right-input-chart').remove(); // this is my <canvas> element
+    $('.food-chart-area-right').append('<canvas class="right-input-chart"><canvas>');
+
     let ctx = document.querySelector('.right-input-chart').getContext('2d');
     new Chart(ctx, config_milk);
     let milk = document.querySelector('#milk_div');
     milk.style.display = 'block';
+
+    let parent = document.querySelectorAll('.createText_hidden');
+    for (let i=0; i < parent.length; i++) {
+        let child = parent.item(i);
+        if (child !== milk) {
+            child.style.display = 'none'
+        }}
 }
 
 
 
 
-function deleteCanvas() {
-    $('.left-input-chart').remove(); // this is my <canvas> element
-    $('.food-chart-area-left').append('<canvas class="left-input-chart"><canvas>');
+// function deleteCanvas() {
+//     $('.left-input-chart').remove(); // this is my <canvas> element
+//     $('.food-chart-area-left').append('<canvas class="left-input-chart"><canvas>');
+//
+//     let sel = document.querySelector('#sel_div');
+//     let vitD2 = document.querySelector('#vitD2_div');
+//     let vitD3 = document.querySelector('#vitD3_div');
+//     let vitC = document.querySelector('#vitC_div');
+//     let ay = document.querySelector('#ay_div');
+//     let nai = document.querySelector('#nai_div');
+//     // let total = document.querySelector('#total_div');
+//
+//     sel.style.display = 'none';
+//     vitD2.style.display = 'none';
+//     vitD3.style.display = 'none';
+//     vitC.style.display = 'none';
+//     ay.style.display = 'none';
+//     nai.style.display = 'none';
+//     // total.style.display = 'none';
+//
+//
+// }
 
-    let sel = document.querySelector('#sel_div');
-    let vitD2 = document.querySelector('#vitD2_div');
-    let vitD3 = document.querySelector('#vitD3_div');
-    let vitC = document.querySelector('#vitC_div');
-    let ay = document.querySelector('#ay_div');
-    let nai = document.querySelector('#nai_div');
-    // let total = document.querySelector('#total_div');
-
-    sel.style.display = 'none';
-    vitD2.style.display = 'none';
-    vitD3.style.display = 'none';
-    vitC.style.display = 'none';
-    ay.style.display = 'none';
-    nai.style.display = 'none';
-    // total.style.display = 'none';
-
-
-}
-
-function deleteRightCanvas() {
-    $('.right-input-chart').remove();
-    $('.food-chart-area-right').append('<canvas class="right-input-chart"><canvas>');
-    // let milk = document.querySelector('#milk_div');
-    // milk.style.display = 'none';
-}
+// function deleteRightCanvas() {
+//     $('.right-input-chart').remove();
+//     $('.food-chart-area-right').append('<canvas class="right-input-chart"><canvas>');
+//     // let milk = document.querySelector('#milk_div');
+//     // milk.style.display = 'none';
+// }
