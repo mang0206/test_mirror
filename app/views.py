@@ -225,14 +225,15 @@ def diet_result():
 
     for key, value in tmp_dic.items():
         random.shuffle(value)
-        result_recommend[key] = value[:4]
+        result_recommend[key] = value[:3]
 
 
     # 랜덤으로 선택된 식품들의 영양소 비율에 대한 json 데이터 생성
     recommend_foods_nutrients = {}
+    key_i = 0
     for key, foods in result_recommend.items():
         food_nutrients = [0] * 19
-        recommend_foods_nutrients[key] = {}
+        recommend_foods_nutrients[key_i] = {}
         for food_name in foods:
             food = Food.query.filter(Food.food_name == food_name).first()
             food_nutrients[0] = food.calorie
@@ -258,8 +259,8 @@ def diet_result():
                 food_nutrients[i] = round(food_nutrients[i] / nutrients[i] * 100)
             for i in range(len(covid_nutrients)):
                 food_nutrients[15+i] = round(food_nutrients[15 + i] / covid_nutrients[i] * 100)
-            recommend_foods_nutrients[key][food_name] = food_nutrients[:]
-
+            recommend_foods_nutrients[key_i][food_name] = food_nutrients[:]
+        key_i += 1
     json_result_recommend = json.dumps(result_recommend, ensure_ascii = False)
     json_foods_nutrients = json.dumps(recommend_foods_nutrients, ensure_ascii = False)
     print(json_foods_nutrients, '\n', json_result_recommend)
