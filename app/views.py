@@ -208,7 +208,7 @@ def diet_result():
     #부족한 영양소 중 최대 3개의 영양소만 추천
     random.shuffle(lack_nutrients)
     if len(lack_nutrients) > 3:
-        lack_nutrients[:3]
+        lack_nutrients = lack_nutrients[:3]
     
     #부족한 영양소마다 상위 50개의 식품중 랜덤으로 4개의 식품 추천
     result_recommend= {}
@@ -230,9 +230,10 @@ def diet_result():
 
     # 랜덤으로 선택된 식품들의 영양소 비율에 대한 json 데이터 생성
     recommend_foods_nutrients = {}
+    key_i = 0
     for key, foods in result_recommend.items():
         food_nutrients = [0] * 19
-        recommend_foods_nutrients[key] = {}
+        recommend_foods_nutrients[key_i] = {}
         for food_name in foods:
             food = Food.query.filter(Food.food_name == food_name).first()
             food_nutrients[0] = food.calorie
@@ -258,11 +259,11 @@ def diet_result():
                 food_nutrients[i] = round(food_nutrients[i] / nutrients[i] * 100)
             for i in range(len(covid_nutrients)):
                 food_nutrients[15+i] = round(food_nutrients[15 + i] / covid_nutrients[i] * 100)
-            recommend_foods_nutrients[key][food_name] = food_nutrients[:]
-
+            recommend_foods_nutrients[key_i][food_name] = food_nutrients[:]
+        key_i += 1
     json_result_recommend = json.dumps(result_recommend, ensure_ascii = False)
     json_foods_nutrients = json.dumps(recommend_foods_nutrients, ensure_ascii = False)
-
+    print(json_foods_nutrients, '\n', json_result_recommend)
     return render_template("check.html",nutrients=json_result_recommend,food_lst=food_lst,\
         foods_nutrients=json_foods_nutrients,result=result, sum_nutrients=sum_nutrients)
 
