@@ -13,14 +13,15 @@
 {% block result_chart %}
 
 <!-- 부족 영양소 및 음식 추천 리스트 들어가는 곳-->
-<div class="recommendation_container"></div>
+<div class='' id="result-data" data-nutrients= '{{ nutrients }}' data-result = '{{ foods_nutrients }}' >
+    <div class="recommendation_container"></div>
 
 <!-- 화살표 및 버튼 들어가는 곳 -->
-<div class="arrow-container"></div>
+    <div class="arrow-container"></div>
 
 <!-- 차트 표시되는 곳 -->
-<div class="recommendation_chart"></div>
-
+    <div class="recommendation_chart"></div>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
 <script src="../static/mj_js\js/result.js"></script>
 
