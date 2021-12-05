@@ -57,7 +57,7 @@ section {
 
 
 .intro-section {
-    height: 100vh;
+    height: 35vh;
     position: relative;
     text-align: center;
     /*overflow: hidden;*/
@@ -91,7 +91,7 @@ section {
 
 }
 
-.members  {
+/* .members  {
     display: inline-block;
     position: relative;
     margin-top: 1rem;
@@ -103,9 +103,9 @@ section {
 }
 
 .members h2 {
-    font-size: 0.9rem;
+    font-size: 0.9rem; */
     /*font-weight: bold;*/
-    margin: 0.5rem 0;
+    /* margin: 0.5rem 0;
     color: rgba(68, 58, 44, 0.81);
 
 }
@@ -113,7 +113,7 @@ section {
 .members p {
     font-family: 'Jeju Myeongjo', sans-serif;
     font-size: 1.1rem;
-}
+} */
 
 /*.diving-animation {*/
 /*    height: 400px;*/
@@ -257,6 +257,7 @@ article {
     display: inline-block;
     overflow: hidden;
     margin-bottom: -2.5rem;
+    z-index: 50;
 }
 
 
@@ -278,8 +279,7 @@ article {
     width: 720px;
     border-radius: 2rem;
     display: flex;
-    /*flex-direction: column;*/
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     border: solid rgb(219, 205, 190) 11px;
     overflow: hidden;
@@ -289,7 +289,20 @@ article {
     background-size: 30rem;
     position: relative;
 }
-
+.box-board {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.box-mouse{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
 .set {
     /*background-color: #949494;*/
     display: flex;
@@ -305,7 +318,6 @@ article {
     font-family: 'Jeju Myeongjo', sans-serif;
 
 }
-
 .left-circle {
     color: rgb(66, 52, 41);
     width: 15rem;
