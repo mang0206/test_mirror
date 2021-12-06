@@ -149,7 +149,7 @@ def diet_food():
                 sum_nutrients[i] += tmp[i]
         return redirect(url_for('checker'))
     else:
-        flash("개인정보 및 음식을 입력 후 버튼을 눌러주세요 :)")
+        flash("개인정보 및 음식 입력 후 버튼을 눌러주세요 :)")
         return redirect(url_for('get_diet_food'))
 
 @app.route("/kit", methods=['GET', 'POST'])
