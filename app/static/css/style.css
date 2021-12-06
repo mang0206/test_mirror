@@ -558,6 +558,7 @@ a:active{color: white;}
 /*--------img & bubble--------*/
 .doctor{
     height: fit-content;
+    margin-bottom: 40px;
     padding-top: 10px;
     display: flex;
     align-items: center;
@@ -586,7 +587,6 @@ a:active{color: white;}
     align-items: flex-start;
 }
 .personal{
-    margin-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -594,7 +594,7 @@ a:active{color: white;}
     text-align: center;
 }
 .diet_clip_img{
-    top: 250px;
+    top: 220px;
     z-index: 900;
     position: absolute;
     display: flex;
@@ -762,11 +762,16 @@ a:active{color: white;}
     margin-bottom: 20px;
 }
 #secondChart{
-    height: 350px;
+    width: 100%;
     margin-bottom: 20px;
 }
+.kit_chart_line{
+    width: 700px;
+    color: lightgray;
+    margin: 50px 0 50px 70px;
+}
 .kit_clip_img{
-    top: 1180px;
+    top: 1350px;
     z-index: 900;
     position: absolute;
     display: flex;
@@ -781,7 +786,7 @@ a:active{color: white;}
 }
 .kit_personal_board{
     width: fit-content;
-    margin: 15px 0px 30px 0px;
+    margin: 30px 0px 30px 0px;
     padding: 30px 25px 30px 25px;
     border: 10px solid #AD732E;
     border-radius: 10px;
@@ -825,7 +830,7 @@ a:active{color: white;}
     border: 1px solid;
 }
 .chart{
-    height: 1000px;
+    height: 100%;
 }
 .diet_chart{
     display: flex;

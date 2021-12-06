@@ -6,6 +6,7 @@
 const ctx_common = document.querySelector('#firstChart').getContext('2d');
 const ctx_important = document.querySelector('#secondChart').getContext('2d');
 
+
 let labels_common =  ["에너지", "단백질", "지방", "탄수화물", "당", "칼슘", "인", "철",
                     "나트륨", "칼륨", "비타민 A", "비타민 B1", "비타민 B2", "엽산"];
 let labels_important = [ "나이아신", "비타민 C", "셀레늄", "비타민 D2", "아연"]
@@ -20,7 +21,7 @@ for(let i=0; i<14;i++) {
     if (sum_nutrients[i]>120) {
         labels_common[i] = "🚨" + labels_common[i]
     } else if (sum_nutrients[i]<80) {
-        labels_common[i] = "⛔" + labels_common[i]
+        labels_common[i] = "⚠" + labels_common[i]
     }
 }
 
@@ -28,7 +29,7 @@ for(let j=0;j<5;j++){
     if (sum_nutrients[j+14]>120) {
         labels_important[j] = "🚨" + labels_important[j]
     } else if (sum_nutrients[j+14]<80) {
-        labels_important[j] = "⛔" + labels_important[j]
+        labels_important[j] = "⚠" + labels_important[j]
     }
 }
 
