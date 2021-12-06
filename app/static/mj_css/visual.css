@@ -56,11 +56,16 @@ section {
 }
 
 
+
+
 .intro-section {
-    height: 100vh;
+    height: 40vh;
     position: relative;
     text-align: center;
-    /*overflow: hidden;*/
+    align-items: center;
+    justify-content: center;
+    /*background-color: #f6d365;*/
+    border-bottom: 3px dotted lightgrey;
 }
 
 .intro-section .main-title,
@@ -91,36 +96,7 @@ section {
 
 }
 
-.members  {
-    display: inline-block;
-    position: relative;
-    margin-top: 1rem;
-}
 
-.members div {
-    margin: 1.2rem;
-    font-size: 18px;
-}
-
-.members h2 {
-    font-size: 0.9rem;
-    /*font-weight: bold;*/
-    margin: 0.5rem 0;
-    color: rgba(68, 58, 44, 0.81);
-
-}
-
-.members p {
-    font-family: 'Jeju Myeongjo', sans-serif;
-    font-size: 1.1rem;
-}
-
-/*.diving-animation {*/
-/*    height: 400px;*/
-/*    position: absolute;*/
-/*    top: 20%;*/
-/*    left: 0;*/
-/*}*/
 
 
 .content {
@@ -201,17 +177,23 @@ section {
 
 }
 
-/* .corr-chart  #corr-chart {
-    padding: 1rem;
-} */
+.carbon {
+    margin-bottom: 0;
+}
 
-/*button {*/
-/*    margin: 10px;*/
-/*}*/
+
 
 article {
     margin: 3rem 0;
+    text-align: center;
 }
+
+#last {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
 
 
 .graphic {
@@ -265,15 +247,13 @@ article {
     display: flex;
     flex-direction: column;
     position: static;
+    margin-top: 0;
 
 }
 
-/*.visualization .content-title {*/
-/*    !*padding: 4rem;*!*/
-/*}*/
 
 
-.person_box {
+.box {
     height: 78vh;
     width: 720px;
     border-radius: 2rem;
@@ -283,7 +263,7 @@ article {
     align-items: center;
     border: solid rgb(219, 205, 190) 11px;
     overflow: hidden;
-    background: url("../image/사람.jpeg");
+    background: url("../mj_image/사람.jpeg");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 30rem;
@@ -532,7 +512,7 @@ label {
     position: relative;
 }
 
-#btn-headache {
+#btn-head {
     padding: 1.8rem;
     right: 50px;
 }
@@ -673,3 +653,17 @@ label {
     position: relative;
 }
 
+footer {
+    background-color: #160e01;
+    height: 150px;
+    /*display: flex;*/
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-top: 3rem;
+}
