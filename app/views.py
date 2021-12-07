@@ -81,11 +81,15 @@ def join():
 def join_result():
     return render_template("join_result.html")
 
-@app.route("/diet", methods=["GET", "POST"])
+@app.route("/diet")
+def get_diet_food():
+    return render_template("food_search.html")
+
+@app.route("/diet", methods=["POST"])
 def diet_food():
     global nutrients, food_lst, foods_nutrients, json_foods_nutrients, sum_nutrients
     covid_nutrients = [100,50,19,30]
-    if request.method == "POST" and request.form.get('btn') == 'form_personal' :
+    if request.form.get('btn') == 'form_personal' :
         if request.form.get('age') and request.form.get('gender') and request.form.get('height') and request.form.get('activity') :
             age = float(request.form.get('age'))
             sex = request.form.get('gender')
@@ -98,10 +102,10 @@ def diet_food():
             if nutrients != None :
                 flash("정보가 안전하게 제출되었습니다! :)")
                 return redirect(url_for('diet_food'))
-            else:
-                flash("개인정보 입력 후 버튼을 눌러주세요 :)")
+        else:
+            flash("개인정보 입력 후 버튼을 눌러주세요 :)")
 
-    if request.method == "POST" and request.form.get('btn2'):
+    elif request.form.get('btn2'):
         if nutrients == None:
             flash("음식 선택 후 버튼을 눌러주세요 :)")
             return redirect(url_for("diet_food"))
@@ -144,8 +148,9 @@ def diet_food():
             for i in range(len(sum_nutrients)):
                 sum_nutrients[i] += tmp[i]
         return redirect(url_for('checker'))
-
-    return render_template("food_search.html")
+    else:
+        flash("개인정보 및 음식 입력 후 버튼을 눌러주세요 :)")
+        return redirect(url_for('get_diet_food'))
 
 @app.route("/kit", methods=['GET', 'POST'])
 def checker():

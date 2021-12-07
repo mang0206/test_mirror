@@ -1,14 +1,18 @@
 const ctx_confirmed = document.querySelector('#confirm-chart').getContext('2d');
 const ctx_recovered = document.querySelector('#recover-chart').getContext('2d');
+const ctx_carbon = document.querySelector('#carbon-chart').getContext('2d');
+
 
 const labels =  [
     '✅식물성 발효식품', '탄수화물', '기름작물', '견과류', '뿌리류', '✅우유', '동물성식품', '동물성지방', '알코올'
 ];
 
+const labels_carbon = ['탄수화물','영양실조', '비만'];
+
 // color list 만들기.
-const color_lst = ['rgb(229, 139, 150)', 'rgb(240, 201, 78)', 'rgb(115, 188, 189)', 'rgb(60, 142, 14)',
-    '#ac9bdb', 'rgb(191, 33, 107)',  'rgb(66, 39, 0)',
-    'rgb(189,156,77)', 'rgb(21,119,143)'];
+// const color_lst = ['rgb(229, 139, 150)', 'rgb(240, 201, 78)', 'rgb(115, 188, 189)', 'rgb(60, 142, 14)',
+//     '#ac9bdb', 'rgb(191, 33, 107)',  'rgb(66, 39, 0)',
+//     'rgb(189,156,77)', 'rgb(21,119,143)'];
 
 
 let data_confirmed = {
@@ -24,6 +28,14 @@ let data_recovered = {
         data: [0.258548, 0.234591, 0.150680, 0.128830, 0.128830, -0.261666, -0.2584442, -0.154008, -0.197118],
     }
     ]}
+
+let data_carbon = {
+    labels: labels_carbon,
+    datasets: [{
+        data: [-0.470241, 0.470568, 0.525496],
+    }
+    ]}
+
 
 const config_confirmed = {
     type: 'bar',
@@ -113,8 +125,47 @@ const config_recovered = {
     }
 };
 
+const config_carbon = {
+    type: 'bar',
+    data: data_carbon,
+    options: {
+        indexAxis: 'y',
+        elements: {
+            bar: {
+                borderWidth: 1.7,
+                backgroundColor: ['#228833',
+                    '#949494',
+                    '#949494',
+                ],
+                borderRadius: 10,
+            },
+            tooltips: {
+                displayColors: false,
+                backgroundColor: '#F29F80',
+                titleFontColor: 'black',
+                textAlign: 'center',
+                bodySpacing: 2,
+                bodyFontColor: '#fff',
+                bodyAlign: 'center',
+                footerFontStyle: 'bold',
+                footerFontColor: '#fff',
+                footerAlign: 'center',
+            }
+        },
+        responsive: true,
+        plugins: {
+            legend: {
+                display: false,
+            },
+        }
+    }
+};
+
+
+
 const confirmedChart = new Chart(ctx_confirmed, config_confirmed);
 const recoveredChart = new Chart(ctx_recovered, config_recovered);
+const carbonChart = new Chart(ctx_carbon, config_carbon);
 
 
 // 증상별 확진률 차트
@@ -138,7 +189,7 @@ btn_breathe.addEventListener('mouseout', deleteDiv);
 
 function showHeadache() {
 
-    let headDiv = document.querySelector('#btn-headache');
+    let headDiv = document.querySelector('#headDiv');
     headDiv.style.visibility = 'visible';
 
 }
