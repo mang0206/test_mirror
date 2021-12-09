@@ -148,6 +148,7 @@ canvas{
     height: 400px;
 }
 .canvas_common{
+    width: 650px;
     height: 800px;
 }
 .recommendation_chart{

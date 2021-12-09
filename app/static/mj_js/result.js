@@ -127,7 +127,7 @@ let sum_nutrients = [82, 199, 140, 54, 121, 65, 74, 133, 134, 54, 130, 80, 101, 
         canvas_common.classList.add('canvas_common');
         canvas_important.classList.add('canvas_important');
 
-        // canvas_common.width = 650;
+        canvas_common.width = 650;
         canvas_common.height = 500;
 
         canvas_important.width = 650;
