@@ -123,9 +123,15 @@ let sum_nutrients = [82, 199, 140, 54, 121, 65, 74, 133, 134, 54, 130, 80, 101, 
 
         let canvas_common = document.createElement('canvas');
         let canvas_important = document.createElement('canvas');
+
         canvas_common.classList.add('canvas_common');
         canvas_important.classList.add('canvas_important');
 
+        canvas_common.width = 650;
+        canvas_common.height = 500;
+
+        canvas_important.width = 650;
+        canvas_important.height = 250;
 
         target_chart.appendChild(canvas_important);
         target_chart.appendChild(canvas_common);
@@ -186,10 +192,10 @@ let sum_nutrients = [82, 199, 140, 54, 121, 65, 74, 133, 134, 54, 130, 80, 101, 
                 hoverRadius: 12,
                 plugins: {
                     legend: {
-                        position: 'right',
+                        position: 'top',
                     },
                 },
-                responsive: true,
+                responsive: false,
                 scales: {
                     y: {
                         stacked: true
@@ -220,10 +226,10 @@ let sum_nutrients = [82, 199, 140, 54, 121, 65, 74, 133, 134, 54, 130, 80, 101, 
                 hoverRadius: 12,
                 plugins: {
                     legend: {
-                        position: 'right',
+                        position: 'top',
                     },
                 },
-                responsive: true,
+                responsive: false,
                 scales: {
                     y: {
                         stacked: true
@@ -247,10 +253,9 @@ let sum_nutrients = [82, 199, 140, 54, 121, 65, 74, 133, 134, 54, 130, 80, 101, 
         let ctx_common = bringDiv.querySelector('.canvas_common').getContext('2d');
         let ctx_important = bringDiv.querySelector('.canvas_important').getContext('2d');
 
-
         new Chart(ctx_important, config_important);
         new Chart(ctx_common, config_common);
-
+        
         let common_css = document.querySelector('.canvas_common');
         common_css.style.width = '300px';
 

@@ -2,16 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
-
-body {
+.visual_body {
     background-color: rgb(237, 230, 222);
     font-size: 62.5%;
     width: 100vm;
     font-family: 'Jeju Myeongjo', sans-serif;
 }
-
 nav {
     display: flex;
     justify-content: space-between;
@@ -21,43 +18,28 @@ nav {
     font-size: 15px;
     vertical-align: baseline;
     font-family: 'Tiempos Text Web',Georgia,Times, sans-serif;
-
-
 }
-
 nav p {
     margin-top: 3px;
     align-items: center;
     /*vertical-align: center;*/
-
 }
-
-a {
+.visual_a {
     color: #feefd7;
     text-decoration: none;
     pointer-events: auto;
 }
-
-
 main {
     align-items: center;
     text-align: center;
     height: 100vh;
     width: 100vw;
     color: rgb(74,55,31);
-
 }
-
 section {
     height: 200vh;
     font-family: 'Tiempos Text Web',Georgia,Times, sans-serif;
-
-
 }
-
-
-
-
 .intro-section {
     height: 40vh;
     position: relative;
@@ -67,16 +49,12 @@ section {
     /*background-color: #f6d365;*/
     border-bottom: 3px dotted lightgrey;
 }
-
 .intro-section .main-title,
 .intro-section .sub-title {
     line-height: 1.2;
     width: 95%;
     text-align: center;
-
 }
-
-
 .intro-section .main-title {
     margin: auto;
     max-width: 600px;
@@ -85,33 +63,23 @@ section {
     /*margin: 5rem 0 3rem 0;*/
     padding: 4rem 0 0 0;
 }
-
 .intro-section .sub-title {
     font-size: 1.3rem;
     margin: 3rem 0;
     color: rgb(74,55,31);
     display: inline-block;
-    font-family: 'Jeju Myeongjo', sans-serif;
-
-
+    /* font-family: 'Jeju Myeongjo', sans-serif; */
 }
-
-
-
-
-.content {
+.visual_content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-
 .content-title {
     font-size: 2.2rem;
     margin: 2rem;
-
 }
-
 .content-prose-box-big {
     display: flex;
     /*align-items: baseline;*/
@@ -120,36 +88,25 @@ section {
     font-family: 'Jeju Myeongjo', sans-serif;
     font-size: 1.1rem;
     line-height: 1.2;
-
 }
-
-
 .content-prose-box-small-left {
     /*margin-left: 45px;*/
     padding: 1rem;
     /*align-items: baseline;*/
     /*background-color: #f6d365;*/
-
 }
-
 .content-prose-box-small-right {
     margin-right: -50px;
     padding: 1rem;
     /*background-color: #f6d365;*/
-
 }
-
 .content-prose-inbox {
     /*margin-left: 150px;*/
     /*text-align: left;*/
     /*border: dotted;*/
     /*margin-top: 20px;*/
     padding: 1rem;
-
-
 }
-
-
 .content-prose {
     font-size: 1.2rem;
     line-height: 1.5;
@@ -158,77 +115,36 @@ section {
     text-align: left;
     padding: 0.5rem;
     font-family: 'Jeju Myeongjo', sans-serif;
-
 }
-
-
 .carousel-container {
     display: flex;
     padding-top: 3rem;
     position: relative;
 }
-
-
 .corr-chart {
     margin: 1.8rem;
     text-align: center;
     width: 500px;
     height: 320px;
-
 }
-
 .carbon {
     margin-bottom: 0;
 }
-
-
-
 article {
     margin: 3rem 0;
     text-align: center;
 }
-
 #last {
     align-items: center;
     text-align: center;
     justify-content: center;
 }
-
-
-
 .graphic {
     border-color: rgb(74,55,31);
-    /*align-items: center;*/
-    /*padding: 14rem;*/
-    /*color: #0C3F5A;*/
-    /*height: 100vh;*/
-    /*position: -webkit-sticky;*/
-    /*position: sticky;*/
     top: 0;
     left: 0;
     right: 0;
-    /*display: -webkit-box;*/
-    /*display: -ms-flexbox;*/
-    /*display: flex;*/
-    /*-webkit-box-orient: vertical;*/
-    /*-webkit-box-direction: normal;*/
-    /*-ms-flex-direction: column;*/
-    /*flex-direction: column;*/
-    /*overflow: hidden;*/
-    /*z-index: 100;*/
-    /*-webkit-transform: translateZ(0);*/
-    /*transform: translateZ(0);*/
-    /*-webkit-font-feature-settings: 'kern' 1,'onum' 0,'liga' 0,'tnum' 1;*/
-    /*font-feature-settings: 'kern' 1,'onum' 0,'liga' 0,'tnum' 1;*/
-    /*-webkit-font-smoothing: antialiased;*/
-    /*-webkit-tap-highlight-color: rgba(0,0,0,0);*/
-    /*background-color: #fff;*/
-    /*color: #282828;*/
-    /*font-weight: 500;*/
-    /*font-family: 'Yeon Sung', cursive;*/
 }
-
-
 .visualization .clip {
     width: 200px;
     height: 150px;
@@ -239,27 +155,21 @@ article {
     display: inline-block;
     overflow: hidden;
     margin-bottom: -2.5rem;
+    z-index: 50;
 }
-
-
 .visualization {
     align-items: center;
     display: flex;
     flex-direction: column;
     position: static;
     margin-top: 0;
-
 }
-
-
-
 .box {
     height: 555px;
     width: 720px;
     border-radius: 2rem;
     display: flex;
-    /*flex-direction: column;*/
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     border: solid rgb(219, 205, 190) 11px;
     overflow: hidden;
@@ -269,7 +179,20 @@ article {
     background-size: 30rem;
     position: relative;
 }
-
+.box-board {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.box-mouse{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
 .set {
     /*background-color: #949494;*/
     display: flex;
@@ -283,9 +206,7 @@ article {
     position: relative;
     /*border: solid 6px grey;*/
     font-family: 'Jeju Myeongjo', sans-serif;
-
 }
-
 .left-circle {
     color: rgb(66, 52, 41);
     width: 15rem;
@@ -304,7 +225,6 @@ article {
     text-align: center;
     align-items: center;
 }
-
 .right-circle {
     width: 15rem;
     height: 15rem;
@@ -320,10 +240,7 @@ article {
     flex-direction: column;
     text-align: center;
     align-items: center;
-
 }
-
-
 .left-circle button {
     display: flex;
     /*margin: 1rem 0 0 4.5rem;*/
@@ -340,9 +257,7 @@ article {
     /*color: red;*/
     margin-top: 0.5rem;
     margin-bottom: 0.1rem;
-
 }
-
 .right-circle button {
     padding: 0.4rem;
     display: flex;
@@ -355,9 +270,6 @@ article {
     margin-bottom: 0.1rem;
     /*margin-top: 6rem;*/
 }
-
-
-
 .hidden-text {
     font-size: 18px;
     color: #949494;
@@ -366,9 +278,6 @@ article {
     margin-top: 2rem;
     margin-bottom: -1.5rem;
 }
-
-
-
 .circle-title {
     font-size: 16px;
     margin-top: -13.5rem;
@@ -376,12 +285,10 @@ article {
     color: dimgrey;
     font-family: 'Jeju Myeongjo', sans-serif;
 }
-
 .circle-titles {
     font-size: 1.8rem;
     display: flex;
 }
-
 .left {
     background-color: burlywood;
     padding: 0.2rem 0.5rem ;
@@ -389,9 +296,7 @@ article {
     top: 5.5rem;
     left: 4rem;
     color: #0C3F5A;
-
 }
-
 .right {
     background-color: burlywood;
     padding: 0.2rem 0.5rem ;
@@ -399,40 +304,20 @@ article {
     top: 5.5rem;
     right: 5.5rem;
     color: #0C3F5A;
-
 }
-
-
 label {
     font-size: 0.85rem;
     color: dimgrey;
     margin-bottom: 0;
 }
-
-/*.vertical {*/
-/*    position: absolute;*/
-/*    border-left: 4px dotted darkslategrey;*/
-/*    display: block;*/
-/*    height: 100px;*/
-/*    left: -4.5rem;*/
-/*    bottom: 4.5rem;*/
-/*    !*border-radius: 88px 100px 0 0;*!*/
-/*}*/
-
-
 .leave {
     position: absolute;
     bottom: 0;
     left: 20rem;
 }
-
-
-
 .category-container {
     position: relative;
 }
-
-
 #vitD2:hover,
 #vitD3:hover,
 #vitC:hover,
@@ -446,14 +331,11 @@ label {
     background-color: #f6d365;
     border-radius: 3rem;
 }
-
 .modeling {
     width: 800px;
     height: 500px;
     background-color: #949494;
 }
-
-
 .left-side-chart {
     position: relative;
 
@@ -461,8 +343,6 @@ label {
 .right-side-chart {
     position: relative;
 }
-
-
 .food-chart-area-left {
     width: 400px;
     height: 500px;
@@ -474,7 +354,6 @@ label {
     display: flex;
     flex-direction: column;
 }
-
 .food-chart-area-right {
     width: 400px;
     height: 500px;
@@ -483,25 +362,6 @@ label {
     left: 100%;
     position: absolute;
 }
-
-
-/* body 원형 포인트 */
-
-/*#btn-headache,*/
-/*#btn-fever,*/
-/*#btn-throat,*/
-/*#btn-cough,*/
-/*#btn-breathe {*/
-/*    width:1px;*/
-/*    height: 1px;*/
-/*    border-radius: 50%;*/
-/*    border: 3px solid indianred;*/
-/*    background-color: coral;*/
-/*    opacity: 0.7;*/
-/*}*/
-
-
-
 .btn {
     border-radius: 50%;
     border: 3px solid indianred;
@@ -581,28 +441,19 @@ label {
 .arrow2 {
     width: 100px;
     transform: scaleY(-1) rotate(100deg);
-
 }
-
-
-
-
 .body-circle-name {
     font-size: 20px;
     font-weight: bolder;
     font-family: 'Jeju Myeongjo', sans-serif;
 }
-
 .personDiv p {
     font-family: 'Jeju Myeongjo', sans-serif;
 }
-
 .personDiv p span {
     font-family: 'Jeju Myeongjo', sans-serif;
     font-size: 14px;
 }
-
-
 .body-circle {
     /*display: inline-block;*/
     /*position:static;*/
@@ -612,8 +463,6 @@ label {
     display: flex;
     /*flex-direction: column;*/
 }
-
-
 .number-left {
     width: 200px;
     height: 200px;
@@ -629,8 +478,6 @@ label {
     position: absolute;
     left: 4rem;
 }
-
-
 .arrow-img {
     width: 150px;
     height: 150px;

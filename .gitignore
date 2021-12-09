@@ -10,6 +10,7 @@ __pycache__/
 .DS_Store
 
 .idea/
+.idea
 
 ydp01.ini
 .sock
