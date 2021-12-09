@@ -129,6 +129,6 @@
     // $('#arrowBtn').on('click', (e)=>{ gsap.to(window, {scrollTo:innerHeight, duration:1.5, ease:'power1.inOut'}); }) // scrollTo requires the ScrollTo plugin (not to be confused w/ ScrollTrigger)
     
 // 부드러운 스크롤 효과
-$(document).ready(function(){ 
-    $("body").smoothWheel() 
-});
+// $(document).ready(function(){ 
+//     $("body").smoothWheel() 
+// });
