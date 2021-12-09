@@ -108,13 +108,8 @@ def diet_food():
 
     elif request.form.get('btn2'):
         if nutrients == None:
-<<<<<<< HEAD
-            flash("음식 선택 후 버튼을 눌러주세요 :)")
-            return redirect(url_for("diet_food"))
-=======
             flash("개인정보 입력 후 버튼을 눌러주세요 :)")
             return redirect(url_for("get_diet_food"))
->>>>>>> d9f32320cdc46ad9225ccc54acfedb6f4de52345
 
         food_lst = request.form.get('btn2')
         food_lst = food_lst.split('=')

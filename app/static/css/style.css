@@ -776,10 +776,14 @@ a:active{color: white;}
 }
 .kit_clip_img{
 <<<<<<< HEAD
+<<<<<<< HEAD
     top: 1350px;
 =======
     top: 1516px;
 >>>>>>> d9f32320cdc46ad9225ccc54acfedb6f4de52345
+=======
+    top: 1370px;
+>>>>>>> HG
     z-index: 900;
     position: absolute;
     display: flex;
