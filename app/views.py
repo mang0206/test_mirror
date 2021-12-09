@@ -83,7 +83,8 @@ def join_result():
 
 @app.route("/diet")
 def get_diet_food():
-    return render_template("food_search.html")
+    return render_template("food_search.html",nutrients=nutrients,food_lst=food_lst,\
+        foods_nutrients=json_foods_nutrients,result=result,sum_nutrients=sum_nutrients)
 
 @app.route("/diet", methods=["POST"])
 def diet_food():
@@ -101,14 +102,19 @@ def diet_food():
             
             if nutrients != None :
                 flash("정보가 안전하게 제출되었습니다! :)")
-                return redirect(url_for('diet_food'))
         else:
             flash("개인정보 입력 후 버튼을 눌러주세요 :)")
+        return redirect(url_for('get_diet_food'))
 
     elif request.form.get('btn2'):
         if nutrients == None:
+<<<<<<< HEAD
             flash("음식 선택 후 버튼을 눌러주세요 :)")
             return redirect(url_for("diet_food"))
+=======
+            flash("개인정보 입력 후 버튼을 눌러주세요 :)")
+            return redirect(url_for("get_diet_food"))
+>>>>>>> d9f32320cdc46ad9225ccc54acfedb6f4de52345
 
         food_lst = request.form.get('btn2')
         food_lst = food_lst.split('=')
@@ -144,7 +150,7 @@ def diet_food():
         sum_nutrients = [0] * 19
         for food in foods_nutrients:
             tmp = foods_nutrients[food]
-            # tmp = tmp[0]
+
             for i in range(len(sum_nutrients)):
                 sum_nutrients[i] += tmp[i]
         return redirect(url_for('checker'))
@@ -268,7 +274,7 @@ def diet_result():
         key_i += 1
     json_result_recommend = json.dumps(result_recommend, ensure_ascii = False)
     json_foods_nutrients = json.dumps(recommend_foods_nutrients, ensure_ascii = False)
-    print(json_foods_nutrients, '\n', json_result_recommend)
+
     return render_template("check.html",nutrients=json_result_recommend,food_lst=food_lst,\
         foods_nutrients=json_foods_nutrients,result=result, sum_nutrients=sum_nutrients)
 

@@ -1,0 +1,11 @@
+
+.chart {
+     position: relative;
+     width : 900px;
+     height: 1150px;
+}
+
+.chart #firstChart {
+     height: 10vh;
+}
+
