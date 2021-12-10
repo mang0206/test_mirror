@@ -950,14 +950,51 @@ a:active{color: white;}
     margin-top: 50px;
 }
 .result_check{
-    height: 300px;
+    height: 400px;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    /* background: url(../image/virus_blur.png);
-    background-repeat: no-repeat;
-    background-position-x: center; */
+
+    position: relative;
 }
+.circle_background,
+.circle_background::before,
+.circle_background::after{
+    position: absolute;
+    left: 33%;
+
+    box-sizing: border-box;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow:
+        0 0 20px #fff,
+        -20px 0 80px #DCC1FF,
+        20px 0 80px #B4E0FF,
+        inset 0 0 50px #fff,
+        inset 50px 0 80px #DCC1FF,
+        inset -50px 0 80px #B4E0FF,
+        inset 50px 0 300px #DCC1FF,
+        inset -50px 0 300px #B4E0FF;
+    animation: pulsate 7s linear infinite;
+}
+@keyframes pulsate {
+    50% {
+      box-shadow:
+        0 0 20px #fff,
+        20px 0 80px #DCC1FF,
+        -20px 0 80px #B4E0FF,
+        inset 0 0 50px #fff,
+        inset -50px 0 80px #DCC1FF,
+        inset 50px 0 80px #B4E0FF,
+        inset -50px 0 300px #DCC1FF,
+        inset 50px 0 300px #B4E0FF;
+    }
+  }
 /*--------visualization--------*/
 .visualization{
     width: 100%;
