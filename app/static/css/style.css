@@ -940,8 +940,8 @@ a:active{color: white;}
     align-items: center;
     justify-content: center;
 }
-.word_cloud{
-    margin-bottom: 100px;
+.number_count{
+    font-weight: 500;
 }
 .move_index{
     margin-bottom: 50px;
@@ -954,9 +954,9 @@ a:active{color: white;}
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background: url(../image/virus_blur.png);
+    /* background: url(../image/virus_blur.png);
     background-repeat: no-repeat;
-    background-position-x: center;
+    background-position-x: center; */
 }
 /*--------visualization--------*/
 .visualization{
