@@ -49,16 +49,13 @@
     font-size: 20px;
 
 }
-
-
-.recommendation_background2 {
+.recommendation_background2{
     width: auto;
     border-left: 98px solid transparent;
     border-right:98px solid transparent;
     border-top: 50px solid lightgray;
     justify-content: center;
 }
-
 .recommendation_first_back {
     background-color: lightgray;
 }
@@ -73,7 +70,7 @@
 
 
 #recommendation_first .background2 {
-    border-top: 100px solid lightgray;
+    border-top: 100px solid #FFE26B;
 }
 
 #recommendation_second .background2 {
@@ -81,7 +78,7 @@
 }
 
 #recommendation_third .background2 {
-    border-top: 100px solid lightgray;
+    border-top: 100px solid #F6A643;
 }
 
 
