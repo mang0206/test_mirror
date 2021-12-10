@@ -312,7 +312,7 @@ a:active{color: white;}
     flex-direction: column;
     justify-content: flex-end;
 
-    background: url("../image/cloud_background.png");
+    background: url(../image/cloud_background.png);
 }
 #intro{
     z-index: 0;
