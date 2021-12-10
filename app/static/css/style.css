@@ -69,7 +69,6 @@ a:active{color: white;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #effeff;
 }
 .login{
     width: 400px;
@@ -144,7 +143,6 @@ a:active{color: white;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #effeff;
 }
 .join{
     width: 400px;
@@ -214,7 +212,6 @@ a:active{color: white;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #effeff;
 }
 .join_result_container h2{
     margin-bottom: 100px;
@@ -312,7 +309,9 @@ a:active{color: white;}
     flex-direction: column;
     justify-content: flex-end;
 
-    background: url(../image/cloud_background.png);
+    background: url(../image/index_cloud.png);
+    /* background-repeat: no-repeat;
+    background-size: cover; */
 }
 #intro{
     z-index: 0;
