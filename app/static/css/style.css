@@ -310,7 +310,7 @@ a:active{color: white;}
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
 
     background: url("../image/cloud_background.png");
 }
@@ -948,6 +948,15 @@ a:active{color: white;}
 }
 .result_to_index{
     margin-top: 50px;
+}
+.result_check{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: url(../image/virus_blur.png);
+    background-repeat: no-repeat;
+    background-position-x: center;
 }
 /*--------visualization--------*/
 .visualization{
