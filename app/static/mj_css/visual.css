@@ -108,10 +108,21 @@ section {
     padding: 1rem;
 }
 .content-prose {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     font-size: 1.2rem;
     line-height: 1.5;
     max-width: 800px;
-    width: 95%;
+    text-align: left;
+    padding: 0.5rem;
+    font-family: 'Jeju Myeongjo', sans-serif;
+}
+.content-prose p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 800px;
     text-align: left;
     padding: 0.5rem;
     font-family: 'Jeju Myeongjo', sans-serif;
