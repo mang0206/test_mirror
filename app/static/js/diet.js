@@ -24,10 +24,20 @@ $(function(){
 });
 
 // personal board의 submit 버튼 입력시 스크롤 이동
+// $(document).ready(function() {
+//     $(".move_button_hidden").on("click", function(event) {
+//         var offset = $("#move_funtion").offset();
+//         $('html body').animate({scrollTop : offset.top}, 1000);
+//     });
+// });
+let personal = $('#personal_div').data().nutrients;
 $(document).ready(function() {
-    $(".move_button_hidden").on("click", function(event) {
+    if (personal !== 'None') {
         var offset = $("#move_funtion").offset();
-        $('html body').animate({scrollTop : offset.top}, 1000);
-    });
+        $('html, body').animate({scrollTop : offset.top}, 400);
+    };
 });
+// $(document).ready(function() {
+//     $('#test').val('원하는 값');
+// });
 

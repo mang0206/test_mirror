@@ -69,7 +69,6 @@ a:active{color: white;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #effeff;
 }
 .login{
     width: 400px;
@@ -144,7 +143,6 @@ a:active{color: white;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #effeff;
 }
 .join{
     width: 400px;
@@ -214,7 +212,6 @@ a:active{color: white;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #effeff;
 }
 .join_result_container h2{
     margin-bottom: 100px;
@@ -288,7 +285,7 @@ a:active{color: white;}
 .intro_symbol{
     position: absolute;
     inset: 0;
-}
+} 
 .symbol1{
     color: white;
     font-size: 85px;
@@ -310,9 +307,11 @@ a:active{color: white;}
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
 
-    background: url("../image/cloud_background.png");
+    background: url(../image/index_cloud.png);
+    /* background-repeat: no-repeat;
+    background-size: cover; */
 }
 #intro{
     z-index: 0;
@@ -462,12 +461,11 @@ a:active{color: white;}
     box-shadow: 2px 2px 3px black;
 
     display: flex;
-    /* align-items: center; */
     justify-content: center;
 
     background: url("../image/egg_avocado.jpeg"), rgba(0, 0, 0, 0.5);
     background-position: 10%;
-    background-size: 850px auto;
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-blend-mode: multiply;
@@ -490,7 +488,6 @@ a:active{color: white;}
 }
 .index_description{
     color: white;
-    /* text-shadow: 0px 1px 3px black; */
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -507,11 +504,8 @@ a:active{color: white;}
     box-shadow: 2px 2px 3px black;
 
     margin-right: 50px;
-    display: flex;
-    justify-content: center;
 
-    background: url("../image/visual_image.jpeg"), rgba(0, 0, 0, 0.5);
-    background-position: 10% -10%;
+    background: url("../image/net_work.jpg"), rgba(0, 0, 0, 0.5);
     background-size: 850px auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -561,6 +555,7 @@ a:active{color: white;}
 /*--------img & bubble--------*/
 .doctor{
     height: fit-content;
+    margin-bottom: 40px;
     padding-top: 10px;
     display: flex;
     align-items: center;
@@ -589,7 +584,6 @@ a:active{color: white;}
     align-items: flex-start;
 }
 .personal{
-    margin-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -597,7 +591,7 @@ a:active{color: white;}
     text-align: center;
 }
 .diet_clip_img{
-    top: 260px;
+    top: 220px;
     z-index: 900;
     position: absolute;
     display: flex;
@@ -718,6 +712,7 @@ a:active{color: white;}
     padding: 10px 0px 10px 0px;
     margin-bottom: 13px;
 }
+
 .submit_button{
     width: fit-content;
     padding: 8px 15px 8px 15px;
@@ -752,7 +747,6 @@ a:active{color: white;}
     top: 500px;
     position: absolute;
     display: none;
-    /* z-index: -999;    */
 }
 .show{
     top: 500px;
@@ -761,14 +755,20 @@ a:active{color: white;}
 }
 /*--------kit--------*/
 #firstChart{
-    margin-bottom: 200px;
+    height: 500px;
+    margin-bottom: 20px;
 }
 #secondChart{
-    height: 225px;
-    margin-bottom: 200px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.kit_chart_line{
+    width: 700px;
+    color: lightgray;
+    margin: 50px 0 50px 70px;
 }
 .kit_clip_img{
-    top: 1580px;
+    top: 1480px;
     z-index: 900;
     position: absolute;
     display: flex;
@@ -783,7 +783,7 @@ a:active{color: white;}
 }
 .kit_personal_board{
     width: fit-content;
-    margin: 15px 0px 30px 0px;
+    margin: 30px 0px 30px 0px;
     padding: 30px 25px 30px 25px;
     border: 10px solid #AD732E;
     border-radius: 10px;
@@ -814,9 +814,6 @@ a:active{color: white;}
 .kit_analysis{
     margin-bottom: 100px;
 }
-.kit_chart{
-    height: 850px;
-}
 /*--------checker--------*/
 .checker{
     width: 100%;
@@ -830,7 +827,7 @@ a:active{color: white;}
     border: 1px solid;
 }
 .chart{
-    height: 1000px;
+    height: 100%;
 }
 .diet_chart{
     display: flex;
@@ -939,12 +936,61 @@ a:active{color: white;}
     align-items: center;
     justify-content: center;
 }
-.word_cloud{
-    margin-bottom: 100px;
+.number_count{
+    font-weight: 500;
 }
 .move_index{
     margin-bottom: 50px;
 }
+.result_to_index{
+    margin-top: 50px;
+}
+.result_check{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    position: relative;
+}
+.circle_background,
+.circle_background::before,
+.circle_background::after{
+    position: absolute;
+    left: 33%;
+
+    box-sizing: border-box;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow:
+        0 0 20px #fff,
+        -20px 0 80px #DCC1FF,
+        20px 0 80px #B4E0FF,
+        inset 0 0 50px #fff,
+        inset 50px 0 80px #DCC1FF,
+        inset -50px 0 80px #B4E0FF,
+        inset 50px 0 300px #DCC1FF,
+        inset -50px 0 300px #B4E0FF;
+    animation: pulsate 7s linear infinite;
+}
+@keyframes pulsate {
+    50% {
+      box-shadow:
+        0 0 20px #fff,
+        20px 0 80px #DCC1FF,
+        -20px 0 80px #B4E0FF,
+        inset 0 0 50px #fff,
+        inset -50px 0 80px #DCC1FF,
+        inset 50px 0 80px #B4E0FF,
+        inset -50px 0 300px #DCC1FF,
+        inset 50px 0 300px #B4E0FF;
+    }
+  }
 /*--------visualization--------*/
 .visualization{
     width: 100%;
@@ -981,7 +1027,4 @@ a:active{color: white;}
     display: flex;
     flex-direction: column;
     padding: 5px 0px 5px 0px;
-}
-.ydp01{
-    /* padding: 5px 0px 5px 0px; */
 }

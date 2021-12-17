@@ -1,11 +1,11 @@
 
- .chart {
+.chart {
      position: relative;
-     width : 50vw;
-     height: 50vh;
- }
+     width : 900px;
+     height: 1090px;
+}
 
 .chart #firstChart {
      height: 10vh;
- }
+}
 

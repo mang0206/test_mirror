@@ -1,26 +1,26 @@
-{% extends 'base.html' %}
-{% block content %}
-<!-- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <title>Data Visualization</title>
     <meta name="description" content="A Way to beat Covid-19">
     <meta name="robots" content="index,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../static/css/visual.css">
-    <link rel="stylesheet" href="../static/css/sideChart.css">
+    <link rel="stylesheet" href="../mj-static/css/visual.css">
+    <link rel="stylesheet" href="../mj-static/css/sideChart.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/jejumyeongjo.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
-<!-- </head> -->
+    <!--    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+</head>
 <body>
 
     <header>
         <nav>
-            <h1 id="project"><a href="/">Home</a></h1>
+            <h1 id="project"><a href="#">< Home</a></h1>
             <p>
                 A project by the folks at
-                <a href="/">The YearDream</a>
+                <a href="#">The YearDream</a>
             </p>
         </nav>
     </header>
@@ -39,13 +39,13 @@
                 <p>✒︎</p>
                 <div>
                     <h2>Analysis</h2>
-                    <p>A</p>
-                    <p>B</p>
+                    <p>Maeng Min Je</p>
+                    <p>Jeong Hyen Woo</p>
                 </div>
                 <div>
                     <h2>Modeling</h2>
-                    <p>C</p>
-                    <p>D</p>
+                    <p>Kim Jun Cheol</p>
+                    <p>Son Chang Yup</p>
                 </div>
                 <div>
                     <h2>Visualization</h2>
@@ -56,7 +56,6 @@
                     <p>Kim Hyun Kyung</p>
                 </div>
                 <p>✒︎</p>
-
             </div>
         </section>
 
@@ -64,14 +63,14 @@
 <!--        <div style="overflow: hidden">-->
         <section class="contents-section">
             <article class="content">
-                <h2 class="content-title">Intro</h2>
+<!--                <h2 class="content-title">Chapter 1</h2>-->
                 <p class="content-prose">
                     여름엔 냉면 겨울엔 군고구마처럼 코로나를 상징할 수 있는 음식은 무엇일까요?
                 </p>
-                <p class="content-prose">이를 위해, 국가별 영양소에 따른 확진자와 완치자에 대한 데이터를 분석하고 확진 및 회복에 영향을 주는 식품들을 차트로 나타냈습니다.
-                    두 차트를 살펴본 결과, 확진률을 낮추고 회복률을 높이는 '긍정적인 식품'과 확진률은 높이고 회복률은 낮추는 '부정적인 식품'으로 분류된 것을 확인할 수 있었습니다.</p>
-
-                    <div class="carousel-container">
+                <p class="content-prose">
+                    이를 위해, 국가별 영양소에 따른 확진자와 완치자에 대한 데이터를 분석한 결과 회복률과 식품군의 상관관계는 모호했지만 다행히 확진률과 식품군의 상관관계는 어느정도 나타났습니다.
+                    비록 작은 실마리지만, 만약 확진률에 영향을 미치는 식품들을 찾을 수 있다면 중요한 영양소를 찾을 수도 있다 생각하여 본격적으로 데이터 분석을 진행하였습니다.
+                <div class="carousel-container">
                         <div class="corr-chart" id="confirmed" style="margin-bottom: 9rem">
                             <p style="font-family: 'Jeju Myeongjo', sans-serif; font-size:16px; margin-top:12px"><strong>확진률_음식 간 상관관계</strong></p>
                             <canvas id="confirm-chart"></canvas>
@@ -86,20 +85,15 @@
 
                     </div>
                 <p class="content-prose below-chart">
-                    확진률에선 명확한 상관관계가 보이지만 회복률에선 모호하였다.
-                    이를 해결하기 위해 학습모델을 통해 앞선 상관관계의 근거를 명확하게 하는 동시에
-                    그 과정에서 주요 식품을 추가로 발견하였다.
-                    (spices, offals, sugar crops)
-                    (obecity, eggs)
-
-<!--                    <div class="content-prose">Best: 확진률은 낮추고 회복률을 높이는 식품</div>-->
-<!--                    <div class="content-prose">Worst: 획진률은 높이고 회복률은 줄이는 식품</div>-->
+                    확진률에선 명확한 상관관계가 보이지만 회복률에선 모호하였기 때문에
+                    이를 해결하기 위해 학습모델을 통해 앞선 상관관계의 근거를 명확하게 하였으며
+                    그 과정에서 주요 식품(해산물, 달걀 등)을 추가로 발견했습니다.
                 </p>
             </article>
             <article class="content">
                 <h2 class="content-title">
                     <div class="hidden-text">Insight 1</div>
-                    <p class="content-title"> Good <span style="font-size: 25px">vs</span>Bad</p>
+                    <p class="content-title"> Good <span style="font-size: 25px">vs</span> Bad</p>
                 </h2>
                 <p class="content-prose">
                     두 식품군의 차이를 알아보기 위해 큰 차이가 나는 영양소를 찾아보니 대략 6가지 영양소에서 유의미한 차이를 찾을 수 있었습니다.
@@ -166,8 +160,6 @@
                                 <li>그러나 구체적인 이유에 대해 발견하지 못하였으므로 식단을 선정하는 과정에서
                                     참고하기를 권장
                                 </li>
-
-
                             </div>
                         </div>
                     </div>
@@ -278,41 +270,13 @@
                             <button id="btn-breathe" class="btn"></button>
                             <label class="body-circle-name" for="btn-breathe" style="position: relative; left:0;">호흡 곤란</label>
                         </div>
-
                     </div>
-
-                    <div></div>
-                    <div></div>
-                    <div></div>
-
                 </div>
             </article>
-            <article class="content">
-                <h2 class="content-title">결론</h2>
-                <p class="content-prose">
-                    분석 자료를 통해 얻은 인사이트.
-                </p>
-            </article>
-
-
         </section>
-
-
-
-
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.js"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/BezierPlugin.min.js"></script>-->
-<!--    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin3.min.js"></script>-->
     <script src="../mj-static/js/visual-main.js"></script>
     <script src="../mj-static/js/sideChart.js"></script>
-
-
 </body>
-{% endblock %}
+</html>

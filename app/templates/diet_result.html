@@ -2,36 +2,38 @@
 {% block content %}
 <div class="diet_background">
     <div class="diet_container">
-        <div class="doctor">
+        <div class="doctor" style="margin: 0;">
             <img src="../static/image/thumbs_up.png" alt="doctor img">
             <div class="doctor_bubble">
-                <span>분석을 모두 마쳤습니다!</span>
-                <span>현재 상태와 식단 추천을 안내 해드릴게요~</span>
+                <span>분석을 모두 마쳤습니다! 코로나로부터 안전할 가능성과</span>
+                <span>현재 모자란 영양소에 따른 식단 추천을 해드릴게요 :)</span>
             </div>
         </div>
-        <div class="diet_result_chart">
-            <div>
-                <span>현재 상태와 추천 음식 섭취 후 달라지는 차트</span>
+        <div class="result_check">
+            <div style="z-index: 100;">
+                <h3>점수가 높을 수록 안전합니다!</h3>
+                {% block check %}
+                {% endblock %}
             </div>
-            <div>
-                <span>오각형 차트</span>
+            <div class="circle_background"></div>
+        </div>
+        <!-- <div>
+            <p style="font-weight: 500;">50점이 넘으면 위험할 수 있습니다!</p>
+        </div> -->
+        <div class="doctor">
+            <img src="../static/image/smile_hands_up.png" alt="doctor img">
+            <div class="doctor_bubble">
+                <span>현재 더 필요한 영양소가 포함된 음식을 순위별로 랜덤 추천해 드려요!</span>
+                <span>추천된 음식의 영양소를 각각 확인해 볼 수 있고,</span>
+                <span>코로나에 대항하기 좋은 영양소도 따로 나오니 유의해 주세요~</span>
             </div>
         </div>
-        <div>
-            <h2>Covid 확진 확률</h2>
-            {% block check %}
+        <div class="result_chart_container">
+            {% block result_chart %}
             {% endblock %}
         </div>
-        <div>
-            <h3>50점이 넘으면 위험할 수 있습니다!</h3>
-        </div>
-        <div class="">
-            영양소 차트 2
-        </div>
-        <div>
-            추천
-        </div>
-        <div>
+
+        <div class="result_to_index">
             <input type="button" value="메인 페이지로 이동" onClick="location.href='/'" class="move_button">
         </div>
     </div>

@@ -283,11 +283,12 @@ function showSel() {
      new Chart(ctx, config_sel);
      let sel = document.querySelector('#sel_div');
      sel.style.display = 'block';
+     let milk = document.querySelector('#milk_div');
 
      let parent = document.querySelectorAll('.createText_hidden');
      for (let i=0; i < parent.length; i++) {
          let child = parent.item(i);
-         if (child !== sel) {
+         if (child !== sel && child !== milk) {
              child.style.display = 'none'
          }}
 
@@ -303,11 +304,12 @@ function showvitD2() {
     new Chart(ctx, config_vitD2);
     let vitD2 = document.querySelector('#vitD2_div');
     vitD2.style.display = 'block';
+    let milk = document.querySelector('#milk_div');
 
     let parent = document.querySelectorAll('.createText_hidden');
     for (let i=0; i < parent.length; i++) {
         let child = parent.item(i);
-        if (child !== vitD2) {
+        if (child !== vitD2 && child !== milk) {
             child.style.display = 'none'
         }}
 }
@@ -325,11 +327,11 @@ function showvitD3() {
     vitD3.style.display = 'block';
 
 
-
+    let milk = document.querySelector('#milk_div');
     let parent = document.querySelectorAll('.createText_hidden');
     for (let i=0; i < parent.length; i++) {
         let child = parent.item(i);
-        if (child !== vitD3) {
+        if (child !== vitD3 && child !== milk) {
             child.style.display = 'none'
         }}
 }
@@ -344,10 +346,11 @@ function showvitC() {
     let vitC = document.querySelector('#vitC_div');
     vitC.style.display = 'block';
 
+    let milk = document.querySelector('#milk_div');
     let parent = document.querySelectorAll('.createText_hidden');
     for (let i=0; i < parent.length; i++) {
         let child = parent.item(i);
-        if (child !== vitC) {
+        if (child !== vitC && child !== milk) {
             child.style.display = 'none'
         }}
 }
@@ -362,10 +365,12 @@ function showAy() {
     let ay = document.querySelector('#ay_div');
     ay.style.display = 'block';
 
+
+    let milk = document.querySelector('#milk_div');
     let parent = document.querySelectorAll('.createText_hidden');
     for (let i=0; i < parent.length; i++) {
         let child = parent.item(i);
-        if (child !== ay) {
+        if (child !== ay && child !== milk) {
             child.style.display = 'none'
         }}
 }
@@ -380,10 +385,11 @@ function showtotal() {
     // let total = document.querySelector('#total_div');
     // total.style.display = 'block';
 
+    let milk = document.querySelector('#milk_div');
     let parent = document.querySelectorAll('.createText_hidden');
     for (let i=0; i < parent.length; i++) {
         let child = parent.item(i);
-        if (child !== total) {
+        if (child !== total && child !== milk) {
             child.style.display = 'none'
         }}
 
@@ -398,10 +404,11 @@ function shownai() {
     let nai = document.querySelector('#nai_div');
     nai.style.display = 'block';
 
+    let milk = document.querySelector('#milk_div');
     let parent = document.querySelectorAll('.createText_hidden');
     for (let i=0; i < parent.length; i++) {
         let child = parent.item(i);
-        if (child !== nai) {
+        if (child !== nai && child !== milk) {
             child.style.display = 'none'
         }}
 
@@ -419,11 +426,11 @@ function showMilk() {
     milk.style.display = 'block';
 
     let parent = document.querySelectorAll('.createText_hidden');
-    for (let i=0; i < parent.length; i++) {
-        let child = parent.item(i);
-        if (child !== milk) {
-            child.style.display = 'none'
-        }}
+    // for (let i=0; i < parent.length; i++) {
+    //     let child = parent.item(i);
+    //     if (child !== milk) {
+    //         child.style.display = 'none'
+    //     }}
 }
 
 
@@ -458,3 +465,5 @@ function showMilk() {
 //     // let milk = document.querySelector('#milk_div');
 //     // milk.style.display = 'none';
 // }
+
+
