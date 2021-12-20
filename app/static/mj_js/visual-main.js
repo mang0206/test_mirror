@@ -9,12 +9,6 @@ const labels =  [
 
 const labels_carbon = ['탄수화물','영양실조', '비만'];
 
-// color list 만들기.
-// const color_lst = ['rgb(229, 139, 150)', 'rgb(240, 201, 78)', 'rgb(115, 188, 189)', 'rgb(60, 142, 14)',
-//     '#ac9bdb', 'rgb(191, 33, 107)',  'rgb(66, 39, 0)',
-//     'rgb(189,156,77)', 'rgb(21,119,143)'];
-
-
 let data_confirmed = {
     labels: labels,
     datasets: [{

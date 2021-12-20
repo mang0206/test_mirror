@@ -20,11 +20,6 @@ let input_data = [{'사과': [10, 20, 30, 10, 15, 12, 30, 20, 11, 14, 53, 33, 10
 ];
 
 
-// Gradient Fill design
-// let gradient = ctx.createLinearGradient(400,0,0,0);
-// gradient.addColorStop(0, '#d88771');
-// gradient.addColorStop(1, '#f6d365');
-
 // color list 만들기.
 const color_lst = ['rgb(229, 139, 150)', 'rgb(240, 201, 78)', 'rgb(115, 188, 189)', 'rgb(60, 142, 14)',
     '#ac9bdb', 'rgb(191, 33, 107)',  'rgb(66, 39, 0)',
@@ -77,60 +72,7 @@ const config_radar = {
     }
 };
 
-// const config_radar = {
-//     type: 'radar',
-//     data: data_radar,
-//     options: {
-//         scales: {
-//             y: {
-//                 stacked: true},
-//             x: {
-//                 stacked: true},
-//         },
-//         plugins: {
-//             filter: {
-//                 propagate: false,
-//             },
-//             legend: {
-//                 position: 'right',
-//             },
-//             'samples-filler-analyser': {
-//                 target: 'chart-analyser'
-//             },
-//             display: true,
-//             title: {
-//                 display: true,
-//                 text: 'Chart version.StackedRadar'
-//             },
-//         },
-//         interaction: {
-//             intersect: false,
-//         },
-//         responsive: true,
-//         // elements: {
-//         //     bar: {
-//         // borderWidth: 0.5,
-//         // borderRadius: 10,
-//
-//         // }
-//     },
-//     // radius: 5,
-//     // hitRadius: 30,
-//     // hoverRadius: 12,
-//     // tension: 10;
-//
-//     // scales: {
-//     //     y: {
-//     //         stacked: true},
-//     //     x: {
-//     //         stacked: true},
-//     // },
-//     // ticks: {
-//     //     callback: function(value) {
-//     //         return "$" + value + "m";
-//     //     }
-//     // }
-// }
+
 
 new Chart(ctx_radar, config_radar);
 
