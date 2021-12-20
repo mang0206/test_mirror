@@ -4,7 +4,6 @@
 //     '영양소3' : ['음식1', '음식2', '음식3', '음식4']
 // };
 let input_data = $('#result-data').data().nutrients;
-// let colors = ['grey' ,'lightgrey', 'dimgrey'];
 const ids = ['recommendation_first', 'recommendation_second', 'recommendation_third']
 const classes = ['recommendation_first_back', 'recommendation_second_back', 'recommendation_third_back'];
 let idx = 0

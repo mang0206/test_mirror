@@ -101,11 +101,9 @@
     border: 1px solid #C0C0C0;
 }
 .delete_btn:hover {
-    /*background: #d88771;*/
     color: #f6d365;
 }
 .search_container {
-    /*display: flex;*/
     display: block;
     justify-content: center;
     align-items: -webkit-center;
@@ -130,10 +128,6 @@
 .search li {
     flex: 1;
 }
-/*.complete-btn {*/
-/*    background: green;*/
-/*}*/
-
 .search_item {
     padding: 0rem 0.5rem;
 }
